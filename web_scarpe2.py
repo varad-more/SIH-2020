@@ -1,5 +1,5 @@
 from selenium import webdriver
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 import pandas as pd
 
 driver = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver")  #configure webdriver to use Chrome browser, set path
@@ -20,3 +20,5 @@ for a in soup.findAll('a',href=True, attrs={'class':'_31qSD5'}):
 	ratings.append(rating.text) 
 	prices.append(price.text)
 
+df = pd.DataFrame({'Product Name':products,'Price':prices,'Rating':ratings}) 
+df.to_csv('products.csv', index=False, encoding='utf-8')
