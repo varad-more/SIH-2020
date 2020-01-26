@@ -1,7 +1,12 @@
 import requests
  
-url="https://www.business-standard.com/article/printer-friendly-version?article_id=120012401722_1"
-# download the url contents in binary format
-myfile = requests.get(url)
+file_url="http://www.dtcc.com/~/media/Files/Downloads/WhitePapers/oxera_2004.pdf"
 
-open('/home/suraj/Desktop/web_scraping/new.txt', 'wb').write(myfile.content)
+
+r = requests.get(file_url, stream = True) 
+  
+with open("/home/suraj/Desktop/web_scraping/Downloaded.pdf","wb") as pdf: 
+    for chunk in r.iter_content(chunk_size=1024): 
+         # writing one chunk at a time to pdf file 
+         if chunk: 
+             pdf.write(chunk)
