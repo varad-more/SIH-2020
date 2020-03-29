@@ -11,6 +11,11 @@ sudo mongod --dbpath=db/
 ## Start UP 
 mongo
 
+## In case of failure
+```
+sudo netstat -plnt
+sudo kill -9 <PID of mongod>
+```
 ## Queries
 ```
 show dbs
@@ -29,4 +34,7 @@ db.corporate_actions.insertOne(
 })
 ```
 
-
+# Starting Server
+```
+node app.js
+```
