@@ -1,4 +1,6 @@
 # JS Setup 
+sudo apt install npm
+npm init
 npm install mongoose
 npm install body-parser
 npm install express
