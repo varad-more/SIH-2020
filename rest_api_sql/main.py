@@ -19,8 +19,9 @@ app = Flask(__name__)
 @app.route('/', methods = ['GET', 'POST']) 
 def home():
 	if(request.method == 'GET'):
-
+		print(mysql)
 		conn = mysql.connect()
+		print (conn)
 		cursor = conn.cursor(pymysql.cursors.DictCursor)
 		cursor.execute("SELECT * FROM company_list")
 		rows = cursor.fetchall()

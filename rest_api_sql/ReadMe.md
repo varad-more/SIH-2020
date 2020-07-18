@@ -2,8 +2,21 @@
 
 ## Installing requirements
 
+### Python requirements
 ```
 python3 install_requirements.py
+```
+
+### Database requirements
+
+Follow steps for installing SQL 
+```
+https://support.rackspace.com/how-to/install-mysql-server-on-the-ubuntu-operating-system/
+```
+
+Incase of permission issue follow the following guide
+```
+https://stackoverflow.com/questions/39281594/error-1698-28000-access-denied-for-user-rootlocalhost
 ```
 
 ## Running the code 
