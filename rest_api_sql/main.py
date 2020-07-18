@@ -2,21 +2,26 @@ import pymysql
 from app import app
 from db_config import mysql
 from flask import jsonify
-from flask import flash, request
+from flask import flash, request, session, redirect, url_for, g
+from flask_httpauth import HTTPTokenAuth
+from markupsafe import escape
 
 
-# Using flask to make an api 
-# import necessary libraries and functions 
+auth = HTTPTokenAuth(scheme='Bearer')
 
-from flask import Flask, jsonify, request 
-  
-# creating a Flask app 
-app = Flask(__name__) 
-  
-# on the terminal type: curl http://127.0.0.1:5000/ 
-# returns hello world when we use GET. 
-# returns the data that we send when we use POST. 
-@app.route('/', methods = ['GET', 'POST']) 
+tokens = {
+    "secret-token-1": "john",
+    "secret-token-2": "susan"
+}
+
+@auth.verify_token
+def verify_token(token):
+    if token in tokens:
+        return tokens[token]
+
+
+@app.route('/read', methods = ['GET', 'POST']) 
+@auth.login_required
 def home():
 	if(request.method == 'GET'):
 		print(mysql)
@@ -29,19 +34,19 @@ def home():
 		resp.status_code = 200
 		print (resp)
 		return  resp
-        # data = "hello world"
 	else : 
 		pass 
 
 
 
-@app.route('/add/<int:num>/<string:company_name>', methods=['POST'])
-def add(num, company_name):
+@app.route('/add/<int:num>/<string:company_name>/<string:location>', methods=['POST'])
+@auth.login_required
+def add(num, company_name,location):
 	try:
 		if request.method == 'POST':
 
-			sql = "INSERT INTO company_list (id, name ) VALUES(%s, %s)"
-			data = (num,company_name)
+			sql = "INSERT INTO company_list (id, company_name, location ) VALUES(%s, %s, %s)"
+			data = (num,company_name, location)
 			conn = mysql.connect()
 			cursor = conn.cursor()
 			cursor.execute(sql, data)
@@ -58,14 +63,10 @@ def add(num, company_name):
 		conn.close()
 
 @app.route('/update/<int:num>/<string:company_name>', methods=['PUT'])
+@auth.login_required
 def update(num, company_name):
 	try:
-		# _json = request.json
-		# _id = _json['id']
-		# _name = _json['name']
-		# _email = _json['email']
-		# _password = _json['pwd']		
-		# validate the received values
+
 		if request.method == 'PUT':
 			
 			sql = "UPDATE company_list SET name=%s WHERE id=%s"
@@ -88,9 +89,8 @@ def update(num, company_name):
 		conn.close()
 		
 
-
-
 @app.route('/delete/<int:num>', methods=['DELETE'])
+@auth.login_required
 def delete(num):
 	try:
 		conn = mysql.connect()
@@ -105,20 +105,10 @@ def delete(num):
 	finally:
 		cursor.close() 
 		conn.close()
-
-  
-# A simple function to calculate the square of a number 
-# the number to be squared is sent in the URL when we use GET 
-# on the terminal type: curl http://127.0.0.1:5000 / home / 10 
-# this returns 100 (square of 10) 
-# @app.route('/home/<int:num>', methods = ['GET']) 
-# def disp(num): 
-  
-#     return jsonify({'data': num**2}) 
-  
   
 # driver function 
-# if __name__ == '__main__': 
-#     # app.run(debug = True) 
-#     app.config['TEMPLATES_AUTO_RELOAD'] = True
-#     app.run(debug=True, host='0.0.0.0')
+if __name__ == '__main__': 
+	app.run(debug = True)
+	app.config['TEMPLATES_AUTO_RELOAD'] = True
+	app.run()
+	# app.run(debug=True, host='0.0.0.0')
