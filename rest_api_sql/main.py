@@ -3,7 +3,6 @@ from app import app
 from db_config import mysql
 from flask import jsonify
 from flask import flash, request
-# from werkzeug import generate_password_hash, check_password_hash
 
 
 # Using flask to make an api 
