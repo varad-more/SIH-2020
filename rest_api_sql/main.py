@@ -24,11 +24,12 @@ def verify_token(token):
 @auth.login_required
 def home():
 	if(request.method == 'GET'):
-		print(mysql)
+		# print(mysql)
 		conn = mysql.connect()
-		print (conn)
+		# print (conn)
 		cursor = conn.cursor(pymysql.cursors.DictCursor)
 		cursor.execute("SELECT * FROM company_list")
+		# cursor.execute("SHOW DATABASES")
 		rows = cursor.fetchall()
 		resp = jsonify(rows)
 		resp.status_code = 200
@@ -39,14 +40,14 @@ def home():
 
 
 
-@app.route('/add/<int:num>/<string:company_name>/<string:location>', methods=['POST'])
+@app.route('/add/<int:num>/<string:company_name>', methods=['POST']) #<string:location>/
 @auth.login_required
-def add(num, company_name,location):
+def add(num, company_name):
 	try:
 		if request.method == 'POST':
 
-			sql = "INSERT INTO company_list (id, company_name, location ) VALUES(%s, %s, %s)"
-			data = (num,company_name, location)
+			sql = "INSERT INTO company_name VALUES( %s, %s)"
+			data = (num,company_name)
 			conn = mysql.connect()
 			cursor = conn.cursor()
 			cursor.execute(sql, data)
