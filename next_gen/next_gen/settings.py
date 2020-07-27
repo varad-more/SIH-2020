@@ -65,13 +65,23 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-#    'next_gen.pipelines.NextGenPipeline': 300,
+#    'next_gen.pipelines.NextGenPipeline': 1,
     'scrapy.pipelines.files.FilesPipeline':1
+    # 'io_spider.pipelines.MyFilesPipeline': 200
 }
 
 DOWNLOAD_TIMEOUT= 1200 
 
-FILES_STORE = 'download'     
+# To store locally 
+FILES_STORE = 'download'   
+
+# # To Store in S3 
+# FILES_STORE = 's3://mysihbucket/all_pds/'
+# FILES_STORE_S3_ACL = 'public-write'
+# AWS_ENDPOINT_URL = 'mysihbucket.s3-accelerate.amazonaws.com '
+
+
+
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

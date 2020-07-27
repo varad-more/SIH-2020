@@ -8,7 +8,17 @@ from scrapy.pipelines.files import FilesPipeline
 from scrapy import Request
 import os
 
+
 class NextGenPipeline(FilesPipeline):
     
-    def process_item(self, item, spider):
-        return item
+    def get_media_requests(self, item, info):
+        return [Request(x, meta={'filename': item.get('file_name')}) for x in item.get(self.files_urls_field, [])]
+    
+    def file_path(self, request, response=None, info=None):
+        url = request.url()
+        media_ext = os.path.splitext(url)[1]
+        return 'full/%s%s' % (request.meta['filename'], media_ext)
+    
+    
+
+    

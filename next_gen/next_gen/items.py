@@ -17,4 +17,5 @@ class NextGenItem(scrapy.Item):
     # name = scrapy.Field()
     file_urls = scrapy.Field()
     files = scrapy.Field()
+    file_name = scrapy.Field()
     
