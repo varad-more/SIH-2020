@@ -14,7 +14,7 @@ import sqlite3
 import pandas as pd
 
 
-database_list=["business-standards","cnbc","financialexpress","livemint","marketwatch","moneycontrol","reuters"]
+database_list=["financialexpress","moneycontrol","yahoo","reuters","livemint","marketwatch"]
 con = sqlite3.connect("/home/suraj/database_sih/"+database_list[0]+".sqlite")
 df=pd.read_sql_query("SELECT * from Articles", con)
 
@@ -42,6 +42,7 @@ print(len(df))
 print("-----------------------")
 
 links=df['url'].tolist()
+df=df['content'].str.lower()
 messages=df['content'].tolist()
 stop_words_removed=[]
 from gensim.parsing.preprocessing import stem_text
