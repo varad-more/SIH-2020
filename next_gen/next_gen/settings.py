@@ -73,12 +73,14 @@ ITEM_PIPELINES = {
 DOWNLOAD_TIMEOUT= 1200 
 
 # To store locally 
-FILES_STORE = 'download'   
+# FILES_STORE = 'download'   
 
 # # To Store in S3 
 # FILES_STORE = 's3://mysihbucket/all_pds/'
 # FILES_STORE_S3_ACL = 'public-write'
 # AWS_ENDPOINT_URL = 'mysihbucket.s3-accelerate.amazonaws.com '
+# AWS_ACCESS_KEY_ID = 'access key id'
+# AWS_SECRET_ACCESS_KEY= 'access key'
 
 
 
