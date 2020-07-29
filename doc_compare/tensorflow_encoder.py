@@ -17,7 +17,12 @@ import pandas as pd
 import sys
 import time
 from sklearn import preprocessing
+import numpy as np
+import skfuzzy as fuzz
+from skfuzzy import control as ctrl
+import random,time
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
 
 
 
@@ -236,11 +241,64 @@ class Article_matcher():
         
         return articles_database
     
+    def fuzzy_logic(self):
+        quality = ctrl.Antecedent(np.arange(0, 100, 1), 'suraj')
+        service = ctrl.Antecedent(np.arange(0, 100, 1), 'abhijit')
+        prev_score =  ctrl.Antecedent(np.arange(0, 100, 1), 'prev_score')
+        score = ctrl.Consequent(np.arange(0, 100, 0.1), 'score')
+
+        quality.automf(3)
+        service.automf(3)
+        prev_score.automf(3)
+        # quality['average'].view()
+        # time.sleep(10)
+
+
+        # Triangle
+        score['low'] = fuzz.trimf(score.universe, [0, 0, 25])
+        score['medium'] = fuzz.trimf(score.universe, [25, 37.5, 50])
+        score['fairly-medium'] = fuzz.trimf(score.universe, [ 50, 62.5,75])
+        score['high'] = fuzz.trimf(score.universe, [75,100, 100])
+
+        # score['low'] = fuzz.trapmf(score.universe, [0, 5, 12.5,25])
+        # score['medium'] = fuzz.trapmf(score.universe, [25, 40, 60 ,75])
+        # score['high'] = fuzz.trapmf(score.universe, [75, 80, 95,100])
+
+        #z fun
+        # score['low'] = fuzz.zmf(score.universe, 0,25)
+        # score['medium'] = fuzz.zmf(score.universe, 25,75)
+        # score['high'] = fuzz.zmf(score.universe, 75,100)
+    
+        rule1 = ctrl.Rule(quality['poor'] | service['poor'] | prev_score['poor'] , score['low'])
+        rule2 = ctrl.Rule(service['average'] | prev_score['average'] | quality['average'], score['medium'])
+        rule3 = ctrl.Rule(service['poor'] | prev_score['average'] | quality['average'], score['fairly-medium'])
+        rule4 = ctrl.Rule(service['good'] | quality['good'] | prev_score['good'], score['high'])
+
+
+        # scoring_ctrl
+        self.scoring_ctrl = ctrl.ControlSystem([rule1, rule2, rule3, rule4])
+
+    def calc(self,scoring_ctrl,quality,service,prev_score):
+        scoring = ctrl.ControlSystemSimulation(scoring_ctrl)
+
+        scoring.input['suraj'] = quality
+        scoring.input['abhijit'] = service
+        scoring.input['prev_score'] = prev_score
+        scoring.compute()
+
+        print (scoring.output['score'])
 
 if __name__ == "__main__":
     start=time.time()
     matcher=Article_matcher("https://tfhub.dev/google/universal-sentence-encoder/1?tf-hub-format=compressed")
     articles_database=matcher.run_all(matcher.embed)
+
+    matcher.fuzzy_logic()
+    quality = 100 #float(random.randint(0,11))
+    service = 100 #float(random.randint(0,11))
+    prev_score = 0 # Prev score
+    matcher.calc(matcher.scoring_ctrl,quality,service,prev_score)
+
     print(time.time()-start)
     with open("dataset.txt", "w") as file1:
         for i,j,action in zip(articles_database["content"],articles_database["url"],articles_database["action"]):
