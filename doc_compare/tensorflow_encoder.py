@@ -25,13 +25,14 @@ def load_universal_encoder(module_url):
     return embed
 
 
-def load_database(database_list=["financialexpress","moneycontrol","yahoo","reuters","livemint","marketwatch"]):
+def load_database(database_list=["financialexpress","moneycontrol","yahoo","reuters","livemint","marketwatch","tenderfoot"]):
     con = sqlite3.connect("/home/suraj/database_sih/"+database_list[0]+".sqlite")
     articles_database=pd.read_sql_query("SELECT * from Articles", con)
     for database in database_list[1:]:
         con = sqlite3.connect("/home/suraj/database_sih/"+database+".sqlite")
         temp = pd.read_sql_query("SELECT * from Articles", con)
         articles_database=articles_database.append(temp)
+    
     return articles_database
 
 
@@ -40,10 +41,12 @@ def clean_database(articles_database):
     articles_database=articles_database.iloc[articles_database['content'].notna().tolist()]
     articles_database=articles_database.iloc[articles_database['content'].notnull().tolist()]
     articles_database=articles_database.drop(articles_database[articles_database['content'] == ''].index)
+    articles_database=articles_database.drop(articles_database[articles_database['content'] == ''].index)
     articles_database=articles_database[~articles_database['content'].duplicated()]
     articles_database['content']=articles_database['content'].str.lower()
     articles_database["present"]=False
-    articles_database["action"]=""  
+    articles_database["action"]="" 
+    
     return articles_database
 
 
@@ -67,16 +70,13 @@ def find_actions(articles_database,cooperate_action,cooperate_action_code):
 
     articles_database.reset_index(inplace = True)
 
-
     for i in cooperate_action_code:
         for num,sentence in enumerate(articles_database["content"]):
             if i in list(gensim.utils.tokenize(sentence)):
                 articles_database.loc[num,['present']]=True
                 articles_database.loc[num,['action']]+=","+i
-
-    articles_database=articles_database.loc[articles_database["present"]]
-
-    articles_database=articles_database.drop(articles_database[articles_database['present'] == False].index)
+    
+    #articles_database=articles_database.loc[articles_database["present"]]
     return articles_database
 
 
@@ -201,23 +201,27 @@ def initialize_CA_vars():
 if __name__ == "__main__":
     start=time.time()
     embed=load_universal_encoder("https://tfhub.dev/google/universal-sentence-encoder/1?tf-hub-format=compressed")
-    articles_database=load_database()
+    articles_database=load_database(["tenderfoot"])
     articles_database=clean_database(articles_database)
     cooperate_action_code,cooperate_action_list=initialize_CA_vars()
     cooperate_action,cooperate_action_code=cooperate_actions_lists_and_code(cooperate_action_list,cooperate_action_code)
     articles_database=find_actions(articles_database,cooperate_action,cooperate_action_code)
+    
     links,stop_words_removed=remove_stopwords_from_database(articles_database)
     corr=run_universal_encoder(embed,stop_words_removed)
     write_output_file(corr,stop_words_removed)
     print(time.time()-start)
-    for i in stop_words_removed:
-        print(i)
-        print("-----------------------------")
+    with open("dataset.txt", "w") as file1:
+        for i,j in zip(articles_database["content"],articles_database["url"]):
+            file1.write("link:"+j+"------------------"+i+"\n")
+            #print(i)
+            file1.write("----------------------------- \n")
 
-    for i,j,action in zip(articles_database["content"],articles_database["url"],articles_database["action"]):
-        print("url:" +j)
-        print("----------")
-        print(i)
-        print("----------")
-        print("action:  ",action)
-        print("##########################")
+    for present,i,j,action in zip(articles_database["present"],articles_database["content"],articles_database["url"],articles_database["action"]):
+        if present:
+            print("url:" +j)
+            print("----------")
+            print(i)
+            print("----------")
+            print("action:  ",action)
+            print("##########################")
