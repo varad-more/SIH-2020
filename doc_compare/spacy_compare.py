@@ -1,18 +1,13 @@
 import numpy as np
-
-
 import gensim
 from gensim.parsing.preprocessing import remove_stopwords
 from gensim.parsing.preprocessing import strip_punctuation
 from gensim.parsing.preprocessing import strip_multiple_whitespaces
 from gensim.parsing.preprocessing import stem_text
-
-
 import sqlite3
 import pandas as pd
 import spacy
 # spacy.prefer_gpu()
-
 import operator
 import time
 import itertools
@@ -119,6 +114,5 @@ if __name__ == "__main__":
     articles_database=clean_database(articles_database)
     links,stop_words_removed=remove_stopwords_from_database(articles_database)
     corr=run_spacy_similarity(stop_words_removed)
-    
     #corr=cosine_similarity(stop_words_removed)
     write_output_file(corr,stop_words_removed,links)

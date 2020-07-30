@@ -1,11 +1,7 @@
 import tensorflow_hub as hub
 import numpy as np
-from matplotlib import pyplot as plt
-from tensorflow.compat.v1 import ConfigProto
-from tensorflow.compat.v1 import InteractiveSession
 import tensorflow
 import os
-import random
 import gensim
 from gensim.parsing.preprocessing import remove_stopwords
 from gensim.parsing.preprocessing import strip_punctuation
@@ -14,13 +10,14 @@ from gensim.parsing.preprocessing import stem_text
 from operator import itemgetter
 import sqlite3
 import pandas as pd
-import sys
 import time
 from sklearn import preprocessing
 import numpy as np
 import skfuzzy as fuzz
 from skfuzzy import control as ctrl
 import random,time
+import itertools
+import requests
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 
@@ -104,6 +101,27 @@ class Article_matcher():
         
         return articles_database
 
+    def connect_database(self):
+        import mysql.connector
+
+        # pip3 install mysql-connector-python 
+
+        mydb = mysql.connector.connect(
+                                        host="localhost",
+                                        user="root",
+                                        password="",
+                                        database="corporate_actions" # Change as per requirements
+                                        )
+
+        self.mycursor = mydb.cursor()
+
+        #Reading from Database
+        self.mycursor.execute("SELECT * FROM company_list")
+        articles_database = pd.DataFrame(self.mycursor.fetchall())
+        articles_database.columns = self.mycursor.keys()
+
+        return articles_database
+
 
 
     def clean_database(self,articles_database):
@@ -160,9 +178,9 @@ class Article_matcher():
 
 
 
-    def run_universal_encoder(self,embed,stop_words_removed):
+    def run_universal_encoder(self,stop_words_removed):
         similarity_input_placeholder = tensorflow.placeholder(tensorflow.string, shape=(None))
-        similarity_message_encodings = embed(similarity_input_placeholder)
+        similarity_message_encodings = self.embed(similarity_input_placeholder)
         corr=None
         message_embeddings_=None
 
@@ -214,21 +232,101 @@ class Article_matcher():
                 file1.write("##########################################----Testing New article-----####################################################"+"\n")
         
 
+    
+    def get_pdf_links(self):
+        pass
 
-    def run_stanford_word_2_vec(self,filename):
-        from gensim.scripts.glove2word2vec import glove2word2vec
-        glove_input_file = filename
-        word2vec_output_file = filename+'.word2vec'
-        glove2word2vec(glove_input_file, word2vec_output_file)
+    def pdf_to_text(self,path):
+        from pdfminer.pdfparser import PDFParser
+        from pdfminer.pdfdocument import PDFDocument
+        from pdfminer.pdfpage import PDFPage
+        from pdfminer.pdfpage import PDFTextExtractionNotAllowed
+        from pdfminer.pdfinterp import PDFResourceManager
+        from pdfminer.pdfinterp import PDFPageInterpreter
+        from pdfminer.pdfdevice import PDFDevice
+
+        # Open a PDF file.
+        fp = open(path, 'rb')
+        # Create a PDF parser object associated with the file object.
+        parser = PDFParser(fp)
+        # Create a PDF document object that stores the document structure.
+        # Supply the password for initialization.
+        document = PDFDocument(parser, "")
+        # Check if the document allows text extraction. If not, abort.
+        if not document.is_extractable:
+            raise PDFTextExtractionNotAllowed
+        # Create a PDF resource manager object that stores shared resources.
+        rsrcmgr = PDFResourceManager()
+        # Create a PDF device object.
+        device = PDFDevice(rsrcmgr)
+        # Create a PDF interpreter object.
+        interpreter = PDFPageInterpreter(rsrcmgr, device)
+        # Process each page contained in the document.
+        for page in PDFPage.create_pages(document):
+            interpreter.process_page(page)
+        
+        print(rsrcmgr.getvalue())
+
+    def read_pdfs(self):
+        import urllib.request as urllib2
+        import ssl
+        from tika import parser
+        #context = ssl._create_unverified_context()
+
+        pdf_links=self.get_pdf_links()
+        pdf_links=["https://www.ril.com/DownloadFiles/CorporateAnnouncements/ShutdownJamnagarReg30.pdf","https://www.ril.com/DownloadFiles/CorporateAnnouncements/Consolidated%20Scrutinizer%20Report%20-%20170720%20final.pdf"
+                        "https://www.ril.com/DownloadFiles/CorporateAnnouncements/RIl%20-%20Voting%20Results%20SE.pdf","https://www.ril.com/DownloadFiles/CorporateAnnouncements/Updateonallotmentofrightsshares.pdf"]
+        pdf_data= pd.DataFrame()
+        pdf_data["content"]=""
+        pdf_data["present"]=""
+        pdf_data["action"]=""
+        for link in pdf_links:
+            #pdf= urllib2.urlopen(link,context=context)
+            r = requests.get(link,verify=False,stream=True)
+            with open('/tmp/metadata.pdf', 'wb') as fd:
+                for chunk in r.iter_content(2000):
+                    fd.write(chunk)
+            
+            
+            #file1 = open("output_pdftotext_tika.txt","w+")
+            #file1.write(raw['content'])
+            #file1.close()
+            #pdf=requests.get(link,verify=False)
+            #print(pdf)
+            pdf=self.pdf_to_text("/tmp/metadata.pdf")
+            print(pdf)
+            h
+            pdf_data["data"]=pdf_data["data"].append()
+
+        return pdf_data
+    
+    
+    def stanford_check_similarity(self,a):
+        return self.model.wmdistance(a[0],a[1])
+
+    def stanford_glove_to_word_2_vec(self,filename="/home/suraj/model_sih/stanford/glove.840B.300d.txt"):
+        if not os.path.isfile(filename+'.word2vec'):
+            from gensim.scripts.glove2word2vec import glove2word2vec
+            glove_input_file = filename
+            word2vec_output_file = filename+'.word2vec'
+            glove2word2vec(glove_input_file, word2vec_output_file)
+        
+    def run_stanford_word_2_vec(self,stop_words_removed,filename="/home/suraj/model_sih/stanford/glove.840B.300d.txt.word2vec"):
+        
         from gensim.models import KeyedVectors
-        # load the Stanford GloVe model
-        model = KeyedVectors.load_word2vec_format(word2vec_output_file, binary=False)
-
+        
+        self.model = KeyedVectors.load_word2vec_format(filename, binary=False)
+        #distance = model.wmdistance(sentence_obama, sentence_president)
+        
+        temp=list(itertools.product(stop_words_removed, repeat=2))
+        output = list(map(self.stanford_check_similarity,temp))
+        corr=np.asarray(output).reshape((len(stop_words_removed),len(stop_words_removed)))
+        print(corr)
         # calculate: (king - man) + woman = ?
         result = model.most_similar(positive=['woman', 'king'], negative=['man'], topn=1)
     
 
-    def run_all(self,embed):
+    def run_all(self):
         
         articles_database=self.load_database(["tenderfoot","tenderfoot_three"])
         articles_database=self.clean_database(articles_database)
@@ -236,9 +334,9 @@ class Article_matcher():
         cooperate_action,cooperate_action_code=self.cooperate_actions_lists_and_code(cooperate_action_list,cooperate_action_code)
         articles_database=self.find_actions(articles_database,cooperate_action,cooperate_action_code)
         links,stop_words_removed,CA_names=self.remove_stopwords_from_database(articles_database)
-        corr=self.run_universal_encoder(embed,stop_words_removed)
+        corr=self.run_universal_encoder(stop_words_removed)
         self.write_output_file(corr,stop_words_removed,links,CA_names)
-        
+        #self.run_stanford_word_2_vec(stop_words_removed=stop_words_removed)
         return articles_database
     
     def fuzzy_logic(self):
@@ -250,36 +348,22 @@ class Article_matcher():
         quality.automf(3)
         service.automf(3)
         prev_score.automf(3)
-        # quality['average'].view()
-        # time.sleep(10)
-
-
+        
         # Triangle
         score['low'] = fuzz.trimf(score.universe, [0, 0, 25])
         score['medium'] = fuzz.trimf(score.universe, [25, 37.5, 50])
         score['fairly-medium'] = fuzz.trimf(score.universe, [ 50, 62.5,75])
         score['high'] = fuzz.trimf(score.universe, [75,100, 100])
 
-        # score['low'] = fuzz.trapmf(score.universe, [0, 5, 12.5,25])
-        # score['medium'] = fuzz.trapmf(score.universe, [25, 40, 60 ,75])
-        # score['high'] = fuzz.trapmf(score.universe, [75, 80, 95,100])
-
-        #z fun
-        # score['low'] = fuzz.zmf(score.universe, 0,25)
-        # score['medium'] = fuzz.zmf(score.universe, 25,75)
-        # score['high'] = fuzz.zmf(score.universe, 75,100)
-    
         rule1 = ctrl.Rule(quality['poor'] | service['poor'] | prev_score['poor'] , score['low'])
         rule2 = ctrl.Rule(service['average'] | prev_score['average'] | quality['average'], score['medium'])
         rule3 = ctrl.Rule(service['poor'] | prev_score['average'] | quality['average'], score['fairly-medium'])
         rule4 = ctrl.Rule(service['good'] | quality['good'] | prev_score['good'], score['high'])
 
-
-        # scoring_ctrl
         self.scoring_ctrl = ctrl.ControlSystem([rule1, rule2, rule3, rule4])
 
-    def calc(self,scoring_ctrl,quality,service,prev_score):
-        scoring = ctrl.ControlSystemSimulation(scoring_ctrl)
+    def calc(self,quality,service,prev_score):
+        scoring = ctrl.ControlSystemSimulation(self.scoring_ctrl)
 
         scoring.input['suraj'] = quality
         scoring.input['abhijit'] = service
@@ -291,14 +375,15 @@ class Article_matcher():
 if __name__ == "__main__":
     start=time.time()
     matcher=Article_matcher("https://tfhub.dev/google/universal-sentence-encoder/1?tf-hub-format=compressed")
-    articles_database=matcher.run_all(matcher.embed)
-
+    #articles_database=matcher.run_all()
+    d=matcher.read_pdfs()
+    """
     matcher.fuzzy_logic()
     quality = 100 #float(random.randint(0,11))
     service = 100 #float(random.randint(0,11))
     prev_score = 0 # Prev score
-    matcher.calc(matcher.scoring_ctrl,quality,service,prev_score)
-
+    matcher.calc(quality,service,prev_score)
+    """
     print(time.time()-start)
     with open("dataset.txt", "w") as file1:
         for i,j,action in zip(articles_database["content"],articles_database["url"],articles_database["action"]):
