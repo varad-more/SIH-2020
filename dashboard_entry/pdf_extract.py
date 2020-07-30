@@ -56,24 +56,6 @@ def extract_currency_relations(doc):
 
 def get_ca_type(text_string):  
     text_string = text_string.lower()
-    '''
-    stop_words = set(stopwords.words('english')) 
-    word_tokens = word_tokenize(text_string.lower())
-    filtered_sentence = [w for w in word_tokens if not w in stop_words] 
-    filtered_sentence = [] 
-    for w in word_tokens: 
-        if w not in stop_words: 
-            filtered_sentence.append(w) 
-    # print(word_tokens) 
-    # print("\n\n\nfilter ", filtered_sentence)
-    print(sum('employee' in s for s in filtered_sentence)
-
-    div = len(re.findall('DEVOPAM', text_string))
-    
-    m = re.search('employee', text_string, re.MULTILINE)  # Match
-    # <re.Match object; span=(4, 5), match='X'>
-    print(m)
-    '''
     div = {"dividend" : 0, 'interim' : 0}
     bon = {"bonus" : 0, "bonus rights" : 0,"bonus shares" : 0, "bonus issue":0}
     ss = {"stock split": 0, "split":0}
@@ -98,6 +80,25 @@ def get_date():
     raw = parser.from_file('C:\\Temporary\\docs\\corporate_actions\\HU2.pdf')
     md = raw['metadata']
     print(md['date'])
+
+def get_other_dates():
+    matches = []
+    try:
+        matches = list(datefinder.find_dates(text_string, index=True, strict=False))
+        print(matches)
+        for match in matches:
+            print("match ",match)
+    except TypeError:
+        print ("TypeError")
+    except Error as e:
+        print("An error occured", e)
+    finally:
+        sorted_dates = sorted(matches)
+        print(sorted_dates) 
+    rec_date = str(sorted_dates[0])
+    pay_date = str(sorted_dates[len(sorted_dates-1])
+    return rec_date, pay_date
+        
 
 def connect_database():
     try:
@@ -128,36 +129,13 @@ if __name__ == "__main__":
     for pdf in pdf_list:
         read_pdf(pdf)
         text_string = read_text_file()
-        # nlp = spacy.load('en_core_web_lg')
-        # doc = nlp(text_string)
+        nlp = spacy.load('en_core_web_lg')
+        doc = nlp(text_string)
 
         ca_name = get_ca_type(text_string)
         date = get_date()
-
-        '''
-        matches = []
-        try:
-            matches = list(datefinder.find_dates(text_string, index=True, strict=False))
-            print((matches))
-            for match in matches:
-                print("match ",match)
-        except TypeError:
-            print ("TypeError")
-        except:
-            print("An unknown error occured")
-        finally:
-            #put dates in panda
-            sorted_dates = sorted(matches)
-            print(sorted_dates)
+        # rec_date, pay_date = get_other_dates()
         
-        matches = list(datefinder.find_dates(text_string, index=True, strict=False))
-        print((matches))
-        for match in matches:
-            print("match ",match)
-        sorted_dates = sorted(matches)
-        print(sorted_dates) 
-        
-        '''
-        sql = "CREATE TABLE IF NOT EXISTS dashboard (ca_name VARCHAR(20) NOT NULL, date VARCHAR(20), rec_date VARCHAR(20)"
+        sql = "CREATE TABLE IF NOT EXISTS dashboard (ca_name VARCHAR(20) NOT NULL, date VARCHAR(10), rec_date VARCHAR(10), pay_date VARCHAR(10)"
         cursor.execute(sql)
         
