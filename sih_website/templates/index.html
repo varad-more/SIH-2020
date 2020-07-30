@@ -4,6 +4,12 @@
     <div class = "container border float-right" style="width:450px;height:700px">
     <h1 style="color:#80c72f;"> NEWS </h1 >
     </div>
+    
+    {% for d in data %}
+    <p> {{ d.url_of_file }}</p>
+    <br>
+    {% endfor %}
+    
     <div class = "container border float-left" style="width:450px;height:700px">
     <h1 style="color:#80c72f;"> Latest Corporate Actions  </h1 >
     </div>

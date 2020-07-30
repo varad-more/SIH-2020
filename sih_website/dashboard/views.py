@@ -3,12 +3,21 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import UserRegistrationForm
 from django.contrib.auth.decorators import login_required,permission_required
+from dashboard.models import file_download
 
 # Create your views here.
 
 @login_required
 def index (request):
-    return render (request , 'index.html')
+    data = file_download.objects.all()[:5  ]
+    content = {
+        'data':data
+    }
+
+    '''
+    mysql data fetch
+    '''
+    return render (request , 'index.html',content)
 
 @login_required
 def report(request):
