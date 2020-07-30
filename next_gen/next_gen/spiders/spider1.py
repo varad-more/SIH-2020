@@ -19,7 +19,7 @@ class spider1(scrapy.Spider):
         mydatabase = mysql.connector.connect (host = 'localhost', user = 'root', database = 'temp_sih')
         mycursor = mydatabase.cursor()
         
-        # mydatabase = mysql.connector.connect (host='database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com', user='admin', password='Aws@11234',database='innodb')
+        # mydatabase = mysql.connector.connect (host='database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com', user='admin', password='SIH_2020',database='innodb')
         # mycursor = mydatabase.cursor()
 
         print (mycursor)
