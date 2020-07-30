@@ -3,6 +3,8 @@ from scrapy.loader import ItemLoader
 from next_gen.items import NextGenItem
 import mysql.connector 
 import boto3
+import hashlib
+
 
 class spider1(scrapy.Spider):
     name = "spider1"
@@ -16,11 +18,11 @@ class spider1(scrapy.Spider):
         # link = response.xpath("//a")
         # print(link)
         
-        # mydatabase = mysql.connector.connect (host = 'localhost', user = 'root', database = 'temp_sih')
-        # mycursor = mydatabase.cursor()
-        
-        mydatabase = mysql.connector.connect (host='database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com', user='admin', password='SIH_2020',database='corporate_actions',)
+        mydatabase = mysql.connector.connect (host = 'localhost', user = 'root',password='', database = 'temp_sih')
         mycursor = mydatabase.cursor()
+        
+        # mydatabase = mysql.connector.connect (host='database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com', user='admin', password='SIH_2020',database='corporate_actions',)
+        # mycursor = mydatabase.cursor()
 
         print (mycursor)
 
@@ -29,6 +31,7 @@ class spider1(scrapy.Spider):
             if (abs_urls[-4:] == '.pdf'):
                 loader = ItemLoader(item = NextGenItem(),selector=link)
                 absolute_url = response.urljoin(abs_urls)
+                str_absolute_url = str(absolute_url)
                 # print (absolute_url)
                 temp_filename = abs_urls.split('/')
                 final_filename = ''
@@ -44,11 +47,13 @@ class spider1(scrapy.Spider):
                 query_value = (str(absolute_url))
                 mycursor.execute(query_search,(query_value,))
                 result = mycursor.fetchall()
+                file_hash_temp =  hashlib.sha1(str_absolute_url.encode())
+                file_hash = file_hash_temp.hexdigest()
 
                 # print (len(result))
                 if (len(result) == 0 ):
-                    values = (company_name, parent_link ,final_filename)
-                    query_insert = "INSERT INTO Table_1 (company_name, parent_link,file_url)  values (%s,%s,%s)"
+                    values = (company_name, parent_link ,final_filename,file_hash)
+                    query_insert = "INSERT INTO Table_1 (company_name, parent_link,file_url,sha_file)  values (%s,%s,%s,%s)"
                     mycursor.execute (query_insert, values)
                     mydatabase.commit()
                     loader.add_value('file_urls', absolute_url)
