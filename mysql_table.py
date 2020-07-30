@@ -3,10 +3,30 @@ import re
 from mysql.connector import Error
 
 try:
-    conn = mysql.connector.connect(host='localhost',
-                                         database='fis_2',
-                                         user='root',
-                                         password='')
+    conn = mysql.connector.connect(host='database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com',
+                                         user='admin',
+                                         password='SIH_2020')
+    if conn.is_connected():
+        db_Info = conn.get_server_info()
+        print("Connected to MySQL Server version ", db_Info)
+        cursor = conn.cursor()
+        cursor.execute("create database corporate_actions;")
+        cursor.execute('create database web_server;')
+        cursor.execute("show databases")
+        res = cursor.fetchall()
+        print("Available databases: ", res)
+
+except Error as e:
+    print("Error while connecting to MySQL", e)
+
+finally:
+    cursor.close()
+
+try:
+    conn = mysql.connector.connect(host='database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com',
+                                         database='corporate_actions',
+                                         user='admin',
+                                         password='SIH_2020')
     if conn.is_connected():
         db_Info = conn.get_server_info()
         print("Connected to MySQL Server version ", db_Info)
@@ -17,33 +37,22 @@ try:
 
 except Error as e:
     print("Error while connecting to MySQL", e)
-# finally:
-#     if (connection.is_connected()):
-#         cursor.close()
-#         connection.close()
-#         print("MySQL connection is closed")
-# conn = mysql.connector.connect(
-#     host = "localhost",
-#     user = "root",
-#     password = "",
-#     database = "fis_2"
-# )
 
 cursor = conn.cursor()
 
-found = False
+# found = False
 
-for db in cursor:
-    pattern = "[(,')]"
-    db_string = re.sub(pattern,"", str(db))
-    if(db_string == 'fis_2'):
-        found = True
-        print("database fis_2 exists")
-        cursor.execute("use fis_2")
+# for db in cursor:
+#     pattern = "[(,')]"
+#     db_string = re.sub(pattern,"", str(db))
+#     if(db_string == 'fis_2'):
+#         found = True
+#         print("database fis_2 exists")
+#         cursor.execute("use fis_2")
 
-    if(not found):
-        cursor.execute("CREATE database fis_2")
-        cursor.execute("use fis_2")
+#     if(not found):
+#         cursor.execute("CREATE database fis_2")
+#         cursor.execute("use fis_2")
 
 
 # sql = "DROP TABLE IF EXISTS Articles"
@@ -66,7 +75,7 @@ sql = "CREATE TABLE IF NOT EXISTS Articles (article_id INT AUTO_INCREMENT PRIMAR
 cursor.execute(sql)
 ##table created
 
-cursor.execute("INSERT INTO Articles (article_id, article_url, article_title, article_keywords, article_content, article_author, article_old_rank, article_new_rank, article_error) VALUES('1','1','url','title','keywords','content','author','2','4','error')")
+# cursor.execute("INSERT INTO Articles (article_id, article_url, article_title, article_keywords, article_content, article_author, article_old_rank, article_new_rank, article_error) VALUES('1','url','title','keywords','content','author','2','4','error')")
 
 ##Pages
 sql = "CREATE TABLE IF NOT EXISTS Pages (page_id int NOT NULL,page_url VARCHAR(30),page_keywords VARCHAR(30),page_old_rank int NOT NULL,page_new_rank int NOT NULL)"
@@ -95,7 +104,8 @@ cursor.execute(sql)
 # cursor.execute("INSERT INTO Securities (security_type,ISIN, trade_volume,listed_on_exchange,Exchange_symbol) VALUES ('e','f','1','g','h')")
 
 ##Table_1
-sql = "CREATE TABLE IF NOT EXISTS Table_1 (ID TEXT NOT NULL,company_name TEXT NULL,parent_link VARCHAR(20),file_url VARCHAR(20),publish_date VARCHAR(5))"
+sql = "CREATE TABLE IF NOT EXISTS Table_1 (ID TEXT NOT NULL,company_name TEXT NULL,parent_link VARCHAR(20),file_url VARCHAR(20))" #,publish_date VARCHAR(5))" 
+# publish date removal and varchar 300.
 cursor.execute(sql)
 
 # cursor.execute("INSERT INTO Table_1 (parent_link,file_url,publish_date) VALUES ('e','f','1')")
@@ -116,6 +126,10 @@ conn.commit()
 # cursor.execute("SELECT * FROM Article LIMIT 0")
 # fname = cursor.fetchone()[0]
 # print(fname)
+cursor.execute("SHOW TABLES")
+result= cursor.fetchall()
+print ('########Created table:',result)
+
 cursor.execute("SELECT * FROM Articles")
 articles = cursor.fetchall()
 print(articles)
