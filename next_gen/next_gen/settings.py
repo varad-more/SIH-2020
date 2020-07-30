@@ -73,7 +73,7 @@ ITEM_PIPELINES = {
 DOWNLOAD_TIMEOUT= 1200 
 
 # To store locally 
-# FILES_STORE = 'download'   
+FILES_STORE = 'download'   
 
 # # To Store in S3 
 # FILES_STORE = 's3://mysihbucket/all_pds/'
