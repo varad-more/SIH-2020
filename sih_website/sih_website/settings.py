@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'sih_website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'temp_sih',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST':'localhost',
+        'NAME': 'web_server',
+        'USER': 'admin',
+        'PASSWORD': 'SIH_2020',
+        'HOST':'database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com',
         'PORT':'3306',
     }
 }

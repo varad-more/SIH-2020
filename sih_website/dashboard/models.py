@@ -8,3 +8,10 @@ class file_download(models.Model):
 
     class meta:
         db_table = "file_download"
+
+
+class corp_action_data (models.Model):
+    company_name = models.CharField(max_length=255)
+    ca_type = models.CharField(max_length=255)
+    data = models.CharField(max_length=5000)
+
