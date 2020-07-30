@@ -62,46 +62,49 @@ for db in cursor:
 # cursor.execute(sql)
 
 ##Articles
-sql = "CREATE TABLE IF NOT EXISTS Articles (Article_Id int NOT NULL,Article_url VARCHAR(30),Article_title VARCHAR(30),   Article_keywords VARCHAR(30),Article_content VARCHAR(30),Article_author VARCHAR(30),Article_old_rank int NOT NULL,Article_new_rank int NOT NULL,Article_error VARCHAR(5),Article_verified BOOLEAN NULL)"
+sql = "CREATE TABLE IF NOT EXISTS Articles (article_id INT AUTO_INCREMENT PRIMARY KEY,article_url VARCHAR(30),article_title VARCHAR(30),article_keywords VARCHAR(30),article_content VARCHAR(30),article_author VARCHAR(30),article_old_rank int NOT NULL,article_new_rank int NOT NULL,article_error VARCHAR(5),article_verified BOOLEAN NULL)"
 cursor.execute(sql)
+##table created
 
-# cursor.execute("INSERT INTO Articles (Article_Id, Article_url, Article_title, Article_keywords, Article_content, Article_author, Article_old_rank, Article_new_rank, Article_error) VALUES('1','url','title','keywords','content','author','2','4','error')")
+cursor.execute("INSERT INTO Articles (article_id, article_url, article_title, article_keywords, article_content, article_author, article_old_rank, article_new_rank, article_error) VALUES('1','1','url','title','keywords','content','author','2','4','error')")
 
 ##Pages
-sql = "CREATE TABLE IF NOT EXISTS Pages (Page_Id int NOT NULL,Page_url VARCHAR(30),Page_keywords VARCHAR(30),Page_old_rank int NOT NULL,Page_new_rank int NOT NULL)"
+sql = "CREATE TABLE IF NOT EXISTS Pages (page_id int NOT NULL,page_url VARCHAR(30),page_keywords VARCHAR(30),page_old_rank int NOT NULL,page_new_rank int NOT NULL)"
+# sql = "CREATE TABLE IF NOT EXISTS Pages (page_id int NOT NULL,page_url VARCHAR(30),page_keywords VARCHAR(30),page_old_rank int NOT NULL,page_new_rank int NOT NULL, FORIEGN KEY (page_id) REFERENCES Articles(article_id))"
+
 cursor.execute(sql)
 
-# cursor.execute("INSERT INTO Pages (Page_Id ,Page_url, Page_keywords, Page_old_rank, Page_new_rank) VALUES ('1','url','keywords','2','4')")
+# cursor.execute("INSERT INTO Pages (page_id ,page_url, page_keywords, page_old_rank, page_new_rank) VALUES ('1','url','keywords','2','4')")
 
 ##Websites
-sql = "CREATE TABLE IF NOT EXISTS Websites (Web_Id int NOT NULL,Web_url VARCHAR(30),Web_old_rank int NOT NULL,Web_new_rank int NOT NULL)"
+sql = "CREATE TABLE IF NOT EXISTS Websites (web_id int NOT NULL,web_url VARCHAR(30),web_old_rank int NOT NULL,web_new_rank int NOT NULL)"
 cursor.execute(sql)
 
-# cursor.execute("INSERT INTO Websites (Web_Id, Web_url, Web_old_rank, Web_new_rank) VALUES ('1','url','2','4')")
+# cursor.execute("INSERT INTO Websites (web_id, web_url, web_old_rank, web_new_rank) VALUES ('1','url','2','4')")
 
 ##Company
-sql = "CREATE TABLE IF NOT EXISTS Company (Company_name TEXT NULL,Securities_ex VARCHAR(10),Company_web_link VARCHAR(30),Op_timeline VARCHAR(10),Trading_location VARCHAR(10))"
+sql = "CREATE TABLE IF NOT EXISTS Company (company_name TEXT NULL,securities_ex VARCHAR(10),company_web_link VARCHAR(30),op_timeline VARCHAR(10),trading_location VARCHAR(10))"
 cursor.execute(sql)
 
-# cursor.execute("INSERT INTO Company (Company_name, Securities_ex, Company_web_link, Op_timeline, Trading_location) VALUES ('Jio','a','b','c','d')")
+# cursor.execute("INSERT INTO Company (company_name, securities_ex, company_web_link, op_timeline, trading_location) VALUES ('Jio','a','b','c','d')")
 
 ##Securities
-sql = "CREATE TABLE IF NOT EXISTS Securities (Company_name TEXT NULL,Security_type VARCHAR(10),ISIN VARCHAR(10),Trade_volume TEXT NOT NULL,Listed_on_exchange VARCHAR(20),Exchange_symbol VARCHAR(10))"
+sql = "CREATE TABLE IF NOT EXISTS Securities ( ID int NOT NULL,company_name TEXT NULL,security_type VARCHAR(10),ISIN VARCHAR(10),trade_volume TEXT NOT NULL,listed_on_exchange VARCHAR(20),Exchange_symbol VARCHAR(10),PRIMARY KEY (ID), FOREIGN KEY (ID) REFERENCES Articles(article_Id))"
 cursor.execute(sql)
 
-# cursor.execute("INSERT INTO Securities (Security_type,ISIN, Trade_volume,Listed_on_exchange,Exchange_symbol) VALUES ('e','f','1','g','h')")
+# cursor.execute("INSERT INTO Securities (security_type,ISIN, trade_volume,listed_on_exchange,Exchange_symbol) VALUES ('e','f','1','g','h')")
 
 ##Table_1
-sql = "CREATE TABLE IF NOT EXISTS Table_1 (Company_name TEXT NULL,Parent_link VARCHAR(20),file_url VARCHAR(20),publish_date VARCHAR(5))"
+sql = "CREATE TABLE IF NOT EXISTS Table_1 (ID TEXT NOT NULL,company_name TEXT NULL,parent_link VARCHAR(20),file_url VARCHAR(20),publish_date VARCHAR(5))"
 cursor.execute(sql)
 
-# cursor.execute("INSERT INTO Table_1 (Parent_link,file_url,publish_date) VALUES ('e','f','1')")
+# cursor.execute("INSERT INTO Table_1 (parent_link,file_url,publish_date) VALUES ('e','f','1')")
 
 ##Dashboard
-sql = "CREATE TABLE IF NOT EXISTS Dashboard (Date_ca TEXT NULL,Company_name TEXT NULL,CA_name TEXT NULL,Security_id_type TEXT NULL,Id_value TEXT NULL,Ex_date TEXT NULL,Rec_date TEXT NULL,Pay_date TEXT NULL, Other VARCHAR(30),Exception BOOLEAN NULL,Remarks VARCHAR(10))"
+sql = "CREATE TABLE IF NOT EXISTS Dashboard (date_ca TEXT NULL,company_name TEXT NULL,ca_name TEXT NULL,security_id_type TEXT NULL,id_value TEXT NULL,ex_date TEXT NULL,rec_date TEXT NULL,pay_date TEXT NULL, other VARCHAR(30),exception BOOLEAN NULL,remarks VARCHAR(10))"
 cursor.execute(sql)
 
-# cursor.execute("INSERT INTO Dashboard (Date_ca, Company_name, CA_name, Security_id_type, Id_value, Ex_date, Rec_date, Pay_date, Other, Exception, Remarks) VALUES ('feb2020','jio','dividend','security','id','ex','rec','pay','other',False,'remarks')")
+# cursor.execute("INSERT INTO Dashboard (date_ca, company_name, ca_name, security_id_type, id_value, ex_date, Rrate, Pay_date, Other, Exception, Remarks) VALUES ('feb2020','jio','dividend','security','id','ex','rec','pay','other',False,'remarks')")
 
 sql = "CREATE TABLE IF NOT EXISTS corporate_actions (id INT AUTO_INCREMENT PRIMARY KEY, company_name VARCHAR(255), type VARCHAR(255), data VARCHAR(5000))"
 cursor.execute(sql)
@@ -138,8 +141,8 @@ cursor.execute("SELECT * FROM corporate_actions")
 corporate_actions = cursor.fetchall()
 print(corporate_actions)
 
-# sql = "CREATE TABLE Pages (Page_Id int NOT NULL,Page_url VARCHAR(30),Page_keywords VARCHAR(30),Page_old_rank int NOT NULL,
-#     Page_new_rank int NOT NULL,
-#     FOREIGN KEY (Page_Id) REFERENCES Articles(Article_Id)
+# sql = "CREATE TABLE Pages (page_id int NOT NULL,page_url VARCHAR(30),page_keywords VARCHAR(30),page_old_rank int NOT NULL,
+#     page_new_rank int NOT NULL,
+#     FOREIGN KEY (page_id) REFERENCES Articles(article_Id)
 # )"
 # cursor.execute(sql)
