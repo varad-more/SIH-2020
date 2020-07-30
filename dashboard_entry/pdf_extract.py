@@ -7,6 +7,7 @@ from nltk.tokenize import word_tokenize
 import mysql.connector
 from mysql.connector import Error
 import glob, io, os
+import re
 
 def read_pdf(pdf):
     raw = parser.from_file(pdf)
@@ -54,7 +55,7 @@ def extract_currency_relations(doc):
             relations.append((money.head.head, money))
     return relations
 
-def get_ca_type(text_string):  
+def get_ca_type_1(text_string):  
     text_string = text_string.lower()
     div = {"dividend" : 0, 'interim' : 0}
     bon = {"bonus" : 0, "bonus rights" : 0,"bonus shares" : 0, "bonus issue":0}
@@ -123,6 +124,7 @@ def connect_database():
 
 
 if __name__ == "__main__":
+    start_time = time.time()
     conn,cursor = connect_database()
     print(conn)
     pdf_list = glob.glob("../next_gen/next_gen/full/*.pdf")
@@ -132,10 +134,11 @@ if __name__ == "__main__":
         nlp = spacy.load('en_core_web_lg')
         doc = nlp(text_string)
 
-        ca_name = get_ca_type(text_string)
         date = get_date()
         # rec_date, pay_date = get_other_dates()
+        ca_name = get_ca_type_1(text_string)
         
         sql = "CREATE TABLE IF NOT EXISTS dashboard (ca_name VARCHAR(20) NOT NULL, date VARCHAR(10), rec_date VARCHAR(10), pay_date VARCHAR(10)"
         cursor.execute(sql)
+    print(time.time() - start_time)
         
