@@ -10,8 +10,8 @@ try:
         db_Info = conn.get_server_info()
         print("Connected to MySQL Server version ", db_Info)
         cursor = conn.cursor()
-        cursor.execute("create database corporate_actions;")
-        cursor.execute('create database web_server;')
+        cursor.execute("create database pythanos_main;")
+        # cursor.execute('create database web_server;')
         cursor.execute("show databases")
         res = cursor.fetchall()
         print("Available databases: ", res)
@@ -24,7 +24,7 @@ finally:
 
 try:
     conn = mysql.connector.connect(host='database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com',
-                                         database='corporate_actions',
+                                         database='pythanos_main',
                                          user='admin',
                                          password='SIH_2020')
     if conn.is_connected():
@@ -71,89 +71,131 @@ cursor = conn.cursor()
 # cursor.execute(sql)
 
 ##Articles
-sql = "CREATE TABLE IF NOT EXISTS Articles (article_id INT AUTO_INCREMENT PRIMARY KEY,article_url VARCHAR(30),article_title VARCHAR(30),article_keywords VARCHAR(30),article_content VARCHAR(30),article_author VARCHAR(30),article_old_rank int NOT NULL,article_new_rank int NOT NULL,article_error VARCHAR(5),article_verified BOOLEAN NULL)"
+sql = """CREATE TABLE IF NOT EXISTS articles
+                                    (
+                                        id INT PRIMARY KEY auto_increment,
+                                        url varchar(1000) UNIQUE,
+                                        company_name varchar(500),
+                                        error INT,
+                                        authors varchar(1000),
+                                        publish_date varchar(1000),
+                                        title varchar(1000),
+                                        content varchar(10000),
+                                        keywords varchar(5000), 
+                                        filename varchar(5000),
+                                        rank FLOAT
+                                    );"""
+
 cursor.execute(sql)
 ##table created
 
-# cursor.execute("INSERT INTO Articles (article_id, article_url, article_title, article_keywords, article_content, article_author, article_old_rank, article_new_rank, article_error) VALUES('1','url','title','keywords','content','author','2','4','error')")
+
+
+sql = """CREATE TABLE IF NOT EXISTS links
+                                    (
+                                     from_id INT,
+                                        to_id INT,
+                                        UNIQUE(from_id, to_id)
+                                    );"""
+cursor.execute(sql)
+
+sql = """CREATE TABLE IF NOT EXISTS webs
+                                    (   name varchar(100),
+                                        url varchar(1000) UNIQUE,
+                                        web_rank FLOAT
+                                    );"""
+cursor.execute(sql)
+
+sql = """CREATE TABLE IF NOT EXISTS errors
+                                    (
+                                        url varchar(1000) UNIQUE,
+                                        exception varchar(2000)
+                                    );"""
+
+cursor.execute(sql)
+
 
 ##Pages
-sql = "CREATE TABLE IF NOT EXISTS Pages (page_id int NOT NULL,page_url VARCHAR(30),page_keywords VARCHAR(30),page_old_rank int NOT NULL,page_new_rank int NOT NULL)"
-# sql = "CREATE TABLE IF NOT EXISTS Pages (page_id int NOT NULL,page_url VARCHAR(30),page_keywords VARCHAR(30),page_old_rank int NOT NULL,page_new_rank int NOT NULL, FORIEGN KEY (page_id) REFERENCES Articles(article_id))"
+sql = """CREATE TABLE IF NOT EXISTS pages 
+        (pages_id INT PRIMARY KEY auto_increment,
+         url varchar(1000) UNIQUE, 
+         keywords varchar(5000), 
+         website varchar(5000), 
+         error INT, 
+         old_rank FLOAT, 
+         new_rank FLOAT, 
+         moved INT, 
+         filename varchar(500));"""
 
 cursor.execute(sql)
 
 # cursor.execute("INSERT INTO Pages (page_id ,page_url, page_keywords, page_old_rank, page_new_rank) VALUES ('1','url','keywords','2','4')")
 
 ##Websites
-sql = "CREATE TABLE IF NOT EXISTS Websites (web_id int NOT NULL,web_url VARCHAR(30),web_old_rank int NOT NULL,web_new_rank int NOT NULL)"
-cursor.execute(sql)
+# sql = "CREATE TABLE IF NOT EXISTS websites (web_id int NOT NULL, web_url VARCHAR(100), web_old_rank int NOT NULL, web_new_rank int NOT NULL)"
+# cursor.execute(sql)
 
 # cursor.execute("INSERT INTO Websites (web_id, web_url, web_old_rank, web_new_rank) VALUES ('1','url','2','4')")
 
 ##Company
-sql = "CREATE TABLE IF NOT EXISTS Company (company_name TEXT NULL,securities_ex VARCHAR(10),company_web_link VARCHAR(30),op_timeline VARCHAR(10),trading_location VARCHAR(10))"
+sql = "CREATE TABLE IF NOT EXISTS company (company_name TEXT NULL,securities_ex VARCHAR(10),company_web_link VARCHAR(30),op_timeline VARCHAR(10),trading_location VARCHAR(10))"
 cursor.execute(sql)
 
 # cursor.execute("INSERT INTO Company (company_name, securities_ex, company_web_link, op_timeline, trading_location) VALUES ('Jio','a','b','c','d')")
 
 ##Securities
-sql = "CREATE TABLE IF NOT EXISTS Securities ( ID int NOT NULL,company_name TEXT NULL,security_type VARCHAR(10),ISIN VARCHAR(10),trade_volume TEXT NOT NULL,listed_on_exchange VARCHAR(20),Exchange_symbol VARCHAR(10),PRIMARY KEY (ID), FOREIGN KEY (ID) REFERENCES Articles(article_Id))"
+sql = "CREATE TABLE IF NOT EXISTS securities ( id int NOT NULL,company_name TEXT NULL,security_type VARCHAR(100),isin VARCHAR(20),trade_volume TEXT NOT NULL,listed_on_exchange VARCHAR(20),exchange_symbol VARCHAR(100),PRIMARY KEY (id), FOREIGN KEY (id) REFERENCES articles(id))"
 cursor.execute(sql)
 
 # cursor.execute("INSERT INTO Securities (security_type,ISIN, trade_volume,listed_on_exchange,Exchange_symbol) VALUES ('e','f','1','g','h')")
 
 ##Table_1
-sql = "CREATE TABLE IF NOT EXISTS Table_1 (ID TEXT NOT NULL,company_name TEXT NULL,parent_link VARCHAR(20),file_url VARCHAR(20))" #,publish_date VARCHAR(5))" 
+sql = "CREATE TABLE IF NOT EXISTS crawler_2 (id  int AUTO_INCREMENT PRIMARY KEY, company_name varchar (100) NULL,parent_link VARCHAR(250),file_url VARCHAR(250), sha_file varchar(200))" #,publish_date VARCHAR(5))" 
 # publish date removal and varchar 300.
 cursor.execute(sql)
 
 # cursor.execute("INSERT INTO Table_1 (parent_link,file_url,publish_date) VALUES ('e','f','1')")
 
 ##Dashboard
-sql = "CREATE TABLE IF NOT EXISTS Dashboard (date_ca TEXT NULL,company_name TEXT NULL,ca_name TEXT NULL,security_id_type TEXT NULL,id_value TEXT NULL,ex_date TEXT NULL,rec_date TEXT NULL,pay_date TEXT NULL, other VARCHAR(30),exception BOOLEAN NULL,remarks VARCHAR(10))"
+sql = "CREATE TABLE IF NOT EXISTS dashboard (date_ca TEXT NULL,company_name TEXT NULL,ca_name TEXT NULL,security_id_type TEXT NULL,id_value TEXT NULL,ex_date TEXT NULL,rec_date TEXT NULL,pay_date TEXT NULL, other VARCHAR(30),exception BOOLEAN NULL,remarks VARCHAR(10))"
 cursor.execute(sql)
 
 # cursor.execute("INSERT INTO Dashboard (date_ca, company_name, ca_name, security_id_type, id_value, ex_date, Rrate, Pay_date, Other, Exception, Remarks) VALUES ('feb2020','jio','dividend','security','id','ex','rec','pay','other',False,'remarks')")
 
-sql = "CREATE TABLE IF NOT EXISTS corporate_actions (id INT AUTO_INCREMENT PRIMARY KEY, company_name VARCHAR(255), type VARCHAR(255), data VARCHAR(5000))"
+sql = "CREATE TABLE IF NOT EXISTS historic_data (id INT AUTO_INCREMENT PRIMARY KEY, company_name VARCHAR(255), type VARCHAR(255), data VARCHAR(5000))"
 cursor.execute(sql)
 
 conn.commit() 
 
-# print("Insterted"+ str(cursor.rowcount) + "row into vocab_table")
 
-# cursor.execute("SELECT * FROM Article LIMIT 0")
-# fname = cursor.fetchone()[0]
-# print(fname)
 cursor.execute("SHOW TABLES")
 result= cursor.fetchall()
 print ('########Created table:',result)
 
-cursor.execute("SELECT * FROM Articles")
+cursor.execute("SELECT * FROM articles")
 articles = cursor.fetchall()
 print(articles)
-cursor.execute("SELECT * FROM Pages")
+cursor.execute("SELECT * FROM pages")
 Pages = cursor.fetchall()
 print(Pages)
-cursor.execute("SELECT * FROM Websites")
+cursor.execute("SELECT * FROM webs")
 Websites = cursor.fetchall()
 print(Websites)
-cursor.execute("SELECT * FROM Company")
+cursor.execute("SELECT * FROM company")
 Company = cursor.fetchall()
 print(Company)
-cursor.execute("SELECT * FROM Table_1")
+cursor.execute("SELECT * FROM crawler_2")
 Table_1 = cursor.fetchall()
 print(Table_1)
-cursor.execute("SELECT * FROM Securities")
+cursor.execute("SELECT * FROM securities")
 Securities = cursor.fetchall()
 print(Securities)
-cursor.execute("SELECT * FROM Dashboard")
+cursor.execute("SELECT * FROM dashboard")
 Dashboard = cursor.fetchall()
 print(Dashboard)
-cursor.execute("SELECT * FROM corporate_actions")
-corporate_actions = cursor.fetchall()
-print(corporate_actions)
+# cursor.execute("SELECT * FROM corporate_actions")
+# corporate_actions = cursor.fetchall()
+# print(corporate_actions)
 
 # sql = "CREATE TABLE Pages (page_id int NOT NULL,page_url VARCHAR(30),page_keywords VARCHAR(30),page_old_rank int NOT NULL,
 #     page_new_rank int NOT NULL,
