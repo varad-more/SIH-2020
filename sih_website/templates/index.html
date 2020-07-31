@@ -4,14 +4,23 @@
     <div class = "container border float-right" style="width:450px;height:700px">
     <h1 style="color:#80c72f;"> NEWS </h1 >
     </div>
-    
-    {% for d in data %}
-    <p> {{ d.url_of_file }}</p>
-    <br>
-    {% endfor %}
-    
-    <div class = "container border float-left" style="width:450px;height:700px">
+
+    <div class = "container border float-left overflow-auto" style="width:800px;height:700px">
     <h1 style="color:#80c72f;"> Latest Corporate Actions  </h1 >
+        <table class= "border"  style ="height:700px">
+            <tr>
+            <td> company name</td>
+            <td> CA type</td>
+            <td> data </td>
+            </tr>
+            {% for d in data %}
+            <tr>
+                <td>  {{ d.company_name }} </td>
+                <td>  {{ d.ca_type }} </td>
+                <td>  {{ d.data }} </td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
     {% endblock %}
     
