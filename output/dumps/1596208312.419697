@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<title>Attention Required! | Cloudflare</title>
+<meta id="captcha-bypass" name="captcha-bypass"/>
+<meta charset="utf-8"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<meta content="noindex, nofollow" name="robots"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="/cdn-cgi/styles/cf.errors.css" id="cf_styles-css" media="screen,projection" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" type="text/css" media="screen,projection" /><![endif]-->
+<style type="text/css">body{margin:0;padding:0}</style>
+<!--[if gte IE 10]><!--><script src="/cdn-cgi/scripts/zepto.min.js" type="text/javascript"></script><!--<![endif]-->
+<!--[if gte IE 10]><!--><script src="/cdn-cgi/scripts/cf.common.js" type="text/javascript"></script><!--<![endif]-->
+<style type="text/css">
+  #cf-wrapper #spinner {width:69px; margin:  auto;}
+  #cf-wrapper #cf-please-wait{text-align:center}
+  .attribution {margin-top: 32px;}
+  .bubbles { background-color: #f58220; width:20px; height: 20px; margin:2px; border-radius:100%; display:inline-block; }
+  #cf-wrapper #challenge-form { padding-top:25px; padding-bottom:25px; }
+  #cf-hcaptcha-container { text-align:center;}
+  #cf-hcaptcha-container iframe { display: inline-block;}
+  @keyframes fader     { 0% {opacity: 0.2;} 50% {opacity: 1.0;} 100% {opacity: 0.2;} }
+  #cf-wrapper #cf-bubbles { width:69px; }
+  @-webkit-keyframes fader { 0% {opacity: 0.2;} 50% {opacity: 1.0;} 100% {opacity: 0.2;} }
+  #cf-bubbles > .bubbles { animation: fader 1.6s infinite;}
+  #cf-bubbles > .bubbles:nth-child(2) { animation-delay: .2s;}
+  #cf-bubbles > .bubbles:nth-child(3) { animation-delay: .4s;}
+</style>
+</head>
+<body>
+<div id="cf-wrapper">
+<div class="cf-alert cf-alert-error cf-cookie-error" data-translate="enable_cookies" id="cookie-alert">Please enable cookies.</div>
+<div class="cf-error-details-wrapper" id="cf-error-details">
+<div class="cf-wrapper cf-header cf-error-overview">
+<h1 data-translate="challenge_headline">One more step</h1>
+<h2 class="cf-subheadline"><span data-translate="complete_sec_check">Please complete the security check to access</span> www.thehindubusinessline.com</h2>
+</div><!-- /.header -->
+<div class="cf-section cf-highlight cf-captcha-container">
+<div class="cf-wrapper">
+<div class="cf-columns two">
+<div class="cf-column">
+<div class="cf-highlight-inverse cf-form-stacked">
+<form action="/companies/announcements/R.S.-Butola-is-new-IOC-Chairman/article20105231.ece?__cf_chl_captcha_tk__=d14a8175eb4d406ad8a026f9ba16f0843d2d551b-1596208314-0-ARuxc3iEzEPQ9pzDT1eMZyUZlsdSU3jQri1xyMxBr1ml2XI4P4iOynDc2CAnsyea_yuMgRDpeMUou9e7FyZ8zAVqQIJROQ2vdbLyfcOb6q35xFqOy6R8zU3c7bPkXP3gQRzpYNJAWxKkzLVKc58gPfDRb3kD3NZ-Lhn6dboT6Yh6YMczYmaJdKvkYrrY3vq600mJKtQlx4a9sPDreptaWIyrPgTCFR-7eVgq9zCIlXWKBUwAxgIiMXk8WTKwF3ZAyReF0KwRuprk4SUtWYK5I52QIWiwsfrW0Omc7ie55d1Aj1gaiEVRU3AUyIlnieHJu58mxRsShAxQuo59k1-pjKzNTUzSEsro58sC7oTVDyVBO_Fs0I_9HHrnJYPmssRIajx1tj7m6SkBiKE7_JTx-ZcfksuLZAEWO7Rf1cLE3RcKQ5S11qq4KSbQaP7YQRrd2R0kqY73lz210RQAOqY6ur5zTAPBSf1oxBBHqHlIA3e3RktZUf5ENJLa-MlQCB3aWWSmB5RSx9H6GG792xwzICQiBPxI8quzR7d9AAXdyg2XuJkvT5Ffeo-92eROPwXECXOZAiDp4-lyId1jdEOFDnP4kxj9GH1okCqMgPbNGZRnO6Em4Ay-cGawIguBu5eefw" class="challenge-form" enctype="application/x-www-form-urlencoded" id="challenge-form" method="POST">
+<input name="r" type="hidden" value="d1aa608fbad31d5b4a2e072e543db7d3ac7412ef-1596208314-0-Af4JF7CyB157LSCJ2iyJZsbVNoYdq9hbgh8YEwKr2nx/wGkwGFRLgXB274ueic0d5SdE4kkcAlxECrnNRIG/XLWvZU9c0jajbijiZE+tvozWjrZKDJ0oBCod0T/tSXcgMr1MHdPJ7/K+QESwWu/5Wf0YJOxLkfKbN3/I9xb0sGlcv0Y8KIL3pwR+d2y0xGQNjmnLAjV280wT1mDFx9OTn1CY0xyBHD2t5Xr8oOi92O/3Yn94HA10cmL8HaLoKxr4+xFRCYe30AFyBvEfifXKdtc+4HIlI2S9jEoZzCjA2Qslf73VGPgUpB6h62vR/ctc6z7sgOsEjQvcvtzKSrUSA6n4oaPDLZpPoLDN75fYPQ+2rPgxXSFPeJ5iT1H8V8KL8D+dNuZtCqWClIgroAPZxGNcCVfuTDCF8kCkZxy+Me6a2DjyjBECvOCeL3bGqJ3Wjh/fgs2L1eA6KPGU2BeCqoBrCykyse/9kEZ3jEAsR9U+auAdR0vNzvIfY1aU+UzzzApbpe106Vy6HQKNlViwJ+lcEyEiQqoL6rwTBpHguV2d+0O8HVKWDR75VwatKEQxGAx0c2BocitEdutRwy2+4hlnoDDtoQmskrRezUih05llCMmWH1cfk6oSZVwVNa66KVZG0ADkVHqRtGkMjDuH02/K+v+zlz8OdHRENEmAm1LdV33CrDFKoBd+cHobQL7JAfBN5fAnOo4PmjF2VaoVBu0ZYziBiMgbgtRI8LskY4CRSb+QDq+Ly0hW2fFEsDrQNOFKO4hhADcitROK/B6YPxfEQ2jJ56O9/96suubCvafM1hwcapBpWwB7d2x7vVH3MHDDvFKWWwXeNCanKojbSszqJmtqRk7SN2zq93WjIWj9+0wu0eNrprX4WpGZ1xm0JSmGv1kbpaJ+11BRiZiwHbNcFLwRBWxjWC+9u9TwnI4Zu8Szb0PkgPjjbaligLvgO4vuhtMBOa3XRRlUOAF0H0N7AKI3fGfK491JhhSjUNalh2/GI7JlIfv2gDyq0xW5EFit1ksKfzp0YE1nCX7V1PBMzdgQk/pb4cEOnRKvD+OSq3Xy565/bIvmumjNGbW/izek1ZMntOzo33TJt8UQBSY9lesqbHUba20alWxPEwaFu8xxx8zMEjVRyGvLDTI8FXXXuyFcVFUMw/n8iRyRysqmQfOP/LM9vOeI7q+992mgZI76Rge0esgnmqAIJVasvcoCBZZ/aCOKlbdkPCyGYY+qAJ28njo1fbMMk2oYltHymbj9tqKhqFTsryLATiLkwBEV69JgK7XDthl41Cw1dJDcHqd+hvRrKxE1G5rTqeyyKSa/NsY4bIRWkUCjW4t403prC/rYwwbz+4gR8+z3B0ul6u++m7w2jbYJ17k2/CQY7NDSH4Hud0B/pGiYZ3COSg4fqoOdz82o0rVsRHwkrcAe4FC/E8ddhvBC7InjMkgcoCMJhZviB5OcB38h+DE+hsig5eeFWoQp5jnJq34P2KDnXfFCkRhJngQCgrX3S4OP3GnoG7BS8sq2IhWCEDu4eNQ8KzI2tsu2e1QIyQnyxiK/vUWk57Rt2BQH+ZuLKEiv"/>
+<input name="cf_captcha_kind" type="hidden" value="h"/>
+<input name="vc" type="hidden" value=""/>
+<script async="" data-ray="5bb8412f4a62697d" data-sitekey="33f96e6a-38cd-421b-bb68-7806e1764460" data-type="normal" src="/cdn-cgi/scripts/hcaptcha.challenge.js" type="text/javascript"></script>
+<noscript class="cf-captcha-info" id="cf-captcha-bookmark">
+<h1 data-translate="turn_on_js" style="color:#bd2426;">Please turn JavaScript on and reload the page.</h1>
+</noscript>
+<div data-translate="turn_on_cookies" id="no-cookie-warning" style="display:none">
+<h1 data-translate="turn_on_cookies" style="color:#bd2426;">Please enable Cookies.</h1>
+</div>
+<script type="text/javascript">
+  //<![CDATA[
+    var a = function() {try{return !!window.addEventListener} catch(e) {return !1} },
+      b = function(b, c) {a() ? document.addEventListener("DOMContentLoaded", b, c) : document.attachEvent("onreadystatechange", b)};
+      b(function(){
+        var cookiesEnabled=(navigator.cookieEnabled)? true : false;
+        if(!cookiesEnabled){
+          var q = document.getElementById('no-cookie-warning');q.style.display = 'block';
+        }
+      });
+  //]]>
+  </script>
+<div id="trk_captcha_js" style="background-image:url('/cdn-cgi/images/trace/captcha/nojs/h/transparent.gif?ray=5bb8412f4a62697d')"></div>
+</form>
+</div>
+</div>
+<div class="cf-column">
+<div class="cf-screenshot-container">
+<span class="cf-no-screenshot"></span>
+</div>
+</div>
+</div><!-- /.columns -->
+</div>
+</div><!-- /.captcha-container -->
+<div class="cf-section cf-wrapper">
+<div class="cf-columns two">
+<div class="cf-column">
+<h2 data-translate="why_captcha_headline">Why do I have to complete a CAPTCHA?</h2>
+<p data-translate="why_captcha_detail">Completing the CAPTCHA proves you are a human and gives you temporary access to the web property.</p>
+</div>
+<div class="cf-column">
+<h2 data-translate="resolve_captcha_headline">What can I do to prevent this in the future?</h2>
+<p data-translate="resolve_captcha_antivirus">If you are on a personal connection, like at home, you can run an anti-virus scan on your device to make sure it is not infected with malware.</p>
+<p data-translate="resolve_captcha_network">If you are at an office or shared network, you can ask the network administrator to run a scan across the network looking for misconfigured or infected devices.</p>
+<p data-translate="resolve_captcha_privacy_pass"> Another way to prevent getting this page in the future is to use Privacy Pass. You may need to download version 2.0 now from the <a href="https://chrome.google.com/webstore/detail/privacy-pass/ajhmfdgkijocedmfjonnpjfojldioehi">Chrome Web Store</a>.</p>
+</div>
+</div>
+</div><!-- /.section -->
+<div class="cf-error-footer cf-wrapper">
+<p>
+<span class="cf-footer-item">Cloudflare Ray ID: <strong>5bb8412f4a62697d</strong></span>
+<span class="cf-footer-separator">•</span>
+<span class="cf-footer-item"><span>Your IP</span>: 103.19.224.215</span>
+<span class="cf-footer-separator">•</span>
+<span class="cf-footer-item"><span>Performance &amp; security by</span> <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>
+</p>
+</div><!-- /.error-footer -->
+</div><!-- /#cf-error-details -->
+</div><!-- /#cf-wrapper -->
+<script type="text/javascript">
+  window._cf_translation = {};
+  
+  
+</script>
+</body>
+</html>

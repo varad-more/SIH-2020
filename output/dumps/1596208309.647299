@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<title>Attention Required! | Cloudflare</title>
+<meta id="captcha-bypass" name="captcha-bypass"/>
+<meta charset="utf-8"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<meta content="noindex, nofollow" name="robots"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="/cdn-cgi/styles/cf.errors.css" id="cf_styles-css" media="screen,projection" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" type="text/css" media="screen,projection" /><![endif]-->
+<style type="text/css">body{margin:0;padding:0}</style>
+<!--[if gte IE 10]><!--><script src="/cdn-cgi/scripts/zepto.min.js" type="text/javascript"></script><!--<![endif]-->
+<!--[if gte IE 10]><!--><script src="/cdn-cgi/scripts/cf.common.js" type="text/javascript"></script><!--<![endif]-->
+<style type="text/css">
+  #cf-wrapper #spinner {width:69px; margin:  auto;}
+  #cf-wrapper #cf-please-wait{text-align:center}
+  .attribution {margin-top: 32px;}
+  .bubbles { background-color: #f58220; width:20px; height: 20px; margin:2px; border-radius:100%; display:inline-block; }
+  #cf-wrapper #challenge-form { padding-top:25px; padding-bottom:25px; }
+  #cf-hcaptcha-container { text-align:center;}
+  #cf-hcaptcha-container iframe { display: inline-block;}
+  @keyframes fader     { 0% {opacity: 0.2;} 50% {opacity: 1.0;} 100% {opacity: 0.2;} }
+  #cf-wrapper #cf-bubbles { width:69px; }
+  @-webkit-keyframes fader { 0% {opacity: 0.2;} 50% {opacity: 1.0;} 100% {opacity: 0.2;} }
+  #cf-bubbles > .bubbles { animation: fader 1.6s infinite;}
+  #cf-bubbles > .bubbles:nth-child(2) { animation-delay: .2s;}
+  #cf-bubbles > .bubbles:nth-child(3) { animation-delay: .4s;}
+</style>
+</head>
+<body>
+<div id="cf-wrapper">
+<div class="cf-alert cf-alert-error cf-cookie-error" data-translate="enable_cookies" id="cookie-alert">Please enable cookies.</div>
+<div class="cf-error-details-wrapper" id="cf-error-details">
+<div class="cf-wrapper cf-header cf-error-overview">
+<h1 data-translate="challenge_headline">One more step</h1>
+<h2 class="cf-subheadline"><span data-translate="complete_sec_check">Please complete the security check to access</span> www.thehindubusinessline.com</h2>
+</div><!-- /.header -->
+<div class="cf-section cf-highlight cf-captcha-container">
+<div class="cf-wrapper">
+<div class="cf-columns two">
+<div class="cf-column">
+<div class="cf-highlight-inverse cf-form-stacked">
+<form action="/companies/announcements/zoho-building-250-bed-hospital-in-kattankulathur-near-chennai/article32159740.ece?__cf_chl_captcha_tk__=764d617d7a11df3a5f6e1d06e4801e464fe0c646-1596208311-0-AcrmJR0eW2z4N5bd_DTy9TcFMzLbAQoucgf2jC_f5pFVUGBmISWZi4AAHWKQjkdloWRRav8TsnJpbrBr6arAy4XAoPbspn0k9QSt1G1WwWC_iC-AuUftZZepLU85_-QR2cZi0pkaF58ftNcE1KPTA-2J5jFriZN1pQc_kQfDaKBrpXAfM1xHlHNHmGrgm9AxHE0vl5SCb0kcUkbvztBY5cOFgOKPLxxbSk9n2rg1QqZD3iJrJEo93HzI1Y1BehMe2Gi-lPSJn2dwQ5fW3y6XJbJ324IEsk-M47K45roq5Rn0nM41TRIRHXqKQtU4h3x2w602GYOx9rdyNyDELuUzXOtha8zDhTklbp8FOQosmEh_t3XOhkAw1p-FocGRYoWShxr0x72lM2UPYFgsHam161_Y7rQdGV2LF5IMI99rMqxjOtkV_7ohyeGEaC4LP3-QLV-bdUQa8cacox1q7DaYwvQRbOgMPXJqXHaP5x019uY-xnHXaZCjP8J33TWpGpn-qYDuDrLRBW-XUzNgzxFbsvyusERtxy8NAqctJPS8_GqDGSKxHgWY0QFoMvZBqNKAcBZCSFWfDVSK5RSY816xpJg9epiHvHl4_u1Uu9sCZIGaPp7V7xRHm83rK21cEq5btGiU4TQiKlNKsjBv9lbFL1HlbKRVmPIGS9rAL_DhZ6QF" class="challenge-form" enctype="application/x-www-form-urlencoded" id="challenge-form" method="POST">
+<input name="r" type="hidden" value="19436db0260680275cde3e93ebf56b360b28de92-1596208311-0-ATdD/JTYYfxbgRNM+BnGdlSd62yPC4B6qra4dGMBlgXwbuPWlNJD6eG2Mx3mKTm3hppoTy6y4oWkIZb4gkxsfQ+qAkoRjl5x4DPpbY2Mc3b/t+OemrgFnkSFcYuzQv3s8VkS4fYPpwhC67pkjWPj6gAyeXIOkGiN/HY67VTXzIiEgV3/vVfYdNZVnC6bPHh9dJFYUczhCOBNtvIxZznQX5gP0C6SJ5XSDAv+dEpcoZOrvnR/6oqk874AJr2z/ObZJCCHDmHY2Gl5TO2dkog8ttxwqvZ5mKH5GqpAZnZHdVLHN5lR98d7l1sQqPYNTSr9aU7T8WAs5ZCg4saEtMsp1dMyfRMt60r+BBGQcJKpg6Vz/pdfm5Bb5U2uUyQjMn9uaiqdOSQ2eKT3nw4kb1kZAmd8AbPW3ZIQdyKTqLaOVUJlubp6nGZHBhzbWz1pAStM+ppeN9qllIP1NKvAq1Sl5bDssiPzuu6dHyNJT1Zfz+v53gjTb45kWDcIWYrjgiry2t7nUBVSbAdbILHWiDYl8OuVYoAmGtEsmBXVLgyw+jAoPbmfr1V+eyNNXVWewvoJsuK8r1q2mbcUKTq5OjYoIQvNLfh4BRxRKfr5eZhqj0HF2cbqiw7qi0jhqh4ZbbGNfTTrho+csdYuK+pTI46CnwBRhKSMgwvu/dyk3NoHrwV0YmX3sWV2cWs5szNiGCgGU651kAdeFRt82Pr+KABiJGD1sLaMongnjbNB6sVX23KFqLsydS7w13K/SjWzC2nQhh6iKvWMaokBdrOw9NfXmzpMKpl4a2jhFbJQZjB8esxFxjue84xNVn8aqbhV3r4X+1pF/xmWijjlE8+uf7Did18cE/bdBG8wPPvCi8wyzeLeke2KdAstvho+doxCEgvCkQ7ekye34mzL9dNQi5iDncHdr+rvYfqK+1l4DsA3Nwu7j5CM5lMg019De6pGjIgb6GwaziejqZIibP7M87X0zJSBBeBm/pyxlqlO0QnURRCyu2+7wR8tfYiiyNdowYNXRguO3m2z3J3wJnkx27nhiTNuwcW9UlmDhiRLh/wtIwE2uGRNwfKzmUrARqdTEEqNBmqEbqHQCij8EHcKZ6y5xpa/zHreteoVA10nkS34jSbzhp1g9XiNcm6df/3QCksCf3RfPii7g/sKpfLYvcYpH3ra/hEfruFK6FMFinFoFK8RxmD7jxRWi/MlY6dlFA1OwZ57C4dR5/mI1bpPK81MpvIBjKW5KBJgQo+52omfS0J/0BB06VAJHfk+EijMySNSXM72wS6fx/GV/KIMmSh5eUwGD7cEcm6876PA02SDCqg1gm83u/61jPda+ocLUWBeks2cc9HmWCDCZ+Km7BPPZEDZ3wQladwA8LFFkQfLcxDFdlirWXV362G6OsuUsxZQA7qYDa2TV7SDqNIoM8kAgoW2+peeeKaXdVxGGBmgRcxQhzKX2dI8jB18+t27zEU/S1Q56tHMJBt5KNA48PYPUxewpxu10TUtrvt/JAoI2I1aLgP5wgnEcAf9CwLIKCGXuYuGyc9vpJ2Wid8E2MO/AlTYbOjriZYmqGIEoN65i/TH"/>
+<input name="cf_captcha_kind" type="hidden" value="h"/>
+<input name="vc" type="hidden" value=""/>
+<script async="" data-ray="5bb8411dee636acf" data-sitekey="33f96e6a-38cd-421b-bb68-7806e1764460" data-type="normal" src="/cdn-cgi/scripts/hcaptcha.challenge.js" type="text/javascript"></script>
+<noscript class="cf-captcha-info" id="cf-captcha-bookmark">
+<h1 data-translate="turn_on_js" style="color:#bd2426;">Please turn JavaScript on and reload the page.</h1>
+</noscript>
+<div data-translate="turn_on_cookies" id="no-cookie-warning" style="display:none">
+<h1 data-translate="turn_on_cookies" style="color:#bd2426;">Please enable Cookies.</h1>
+</div>
+<script type="text/javascript">
+  //<![CDATA[
+    var a = function() {try{return !!window.addEventListener} catch(e) {return !1} },
+      b = function(b, c) {a() ? document.addEventListener("DOMContentLoaded", b, c) : document.attachEvent("onreadystatechange", b)};
+      b(function(){
+        var cookiesEnabled=(navigator.cookieEnabled)? true : false;
+        if(!cookiesEnabled){
+          var q = document.getElementById('no-cookie-warning');q.style.display = 'block';
+        }
+      });
+  //]]>
+  </script>
+<div id="trk_captcha_js" style="background-image:url('/cdn-cgi/images/trace/captcha/nojs/h/transparent.gif?ray=5bb8411dee636acf')"></div>
+</form>
+</div>
+</div>
+<div class="cf-column">
+<div class="cf-screenshot-container">
+<span class="cf-no-screenshot"></span>
+</div>
+</div>
+</div><!-- /.columns -->
+</div>
+</div><!-- /.captcha-container -->
+<div class="cf-section cf-wrapper">
+<div class="cf-columns two">
+<div class="cf-column">
+<h2 data-translate="why_captcha_headline">Why do I have to complete a CAPTCHA?</h2>
+<p data-translate="why_captcha_detail">Completing the CAPTCHA proves you are a human and gives you temporary access to the web property.</p>
+</div>
+<div class="cf-column">
+<h2 data-translate="resolve_captcha_headline">What can I do to prevent this in the future?</h2>
+<p data-translate="resolve_captcha_antivirus">If you are on a personal connection, like at home, you can run an anti-virus scan on your device to make sure it is not infected with malware.</p>
+<p data-translate="resolve_captcha_network">If you are at an office or shared network, you can ask the network administrator to run a scan across the network looking for misconfigured or infected devices.</p>
+<p data-translate="resolve_captcha_privacy_pass"> Another way to prevent getting this page in the future is to use Privacy Pass. You may need to download version 2.0 now from the <a href="https://chrome.google.com/webstore/detail/privacy-pass/ajhmfdgkijocedmfjonnpjfojldioehi">Chrome Web Store</a>.</p>
+</div>
+</div>
+</div><!-- /.section -->
+<div class="cf-error-footer cf-wrapper">
+<p>
+<span class="cf-footer-item">Cloudflare Ray ID: <strong>5bb8411dee636acf</strong></span>
+<span class="cf-footer-separator">•</span>
+<span class="cf-footer-item"><span>Your IP</span>: 103.19.224.215</span>
+<span class="cf-footer-separator">•</span>
+<span class="cf-footer-item"><span>Performance &amp; security by</span> <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>
+</p>
+</div><!-- /.error-footer -->
+</div><!-- /#cf-error-details -->
+</div><!-- /#cf-wrapper -->
+<script type="text/javascript">
+  window._cf_translation = {};
+  
+  
+</script>
+</body>
+</html>

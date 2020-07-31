@@ -1,0 +1,923 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script><script defer="defer" type="text/javascript">
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "8549097" });
+  (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script><noscript defer="defer"><img src="https://sb.scorecardresearch.com/p?c1=2&amp;c2=8549097&amp;cv=2.0&amp;cj=1"/></noscript><script defer="defer" type="text/javascript">
+(function(i,s,o,g,r,a,m){
+	i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  	})
+  	(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-795349-14', 'auto');
+
+
+	ga('send', 'pageview');
+</script><script>
+ (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M57NDHZ');
+ </script><script type="text/javascript">
+window._ttCc = window._ttCc || [];_ttCc.push(function(){
+  window._taboola = window._taboola || [];
+
+  	_taboola.push({category:'auto',tracking:'ref=taboola'});
+
+  !function (e, f, u, i) {
+    if (!document.getElementById(i)){
+      e.async = 1;
+      e.src = u;
+      e.id = i;
+      f.parentNode.insertBefore(e, f);
+    }
+  }(document.createElement('script'),
+  document.getElementsByTagName('script')[0],
+  '//cdn.taboola.com/libtrc/indiatoday-businesstoday/loader.js',
+  'tb_loader_script');
+  if(window.performance && typeof window.performance.mark == 'function')
+{window.performance.mark('tbl_ic');}
+});
+</script><style>
+#taboola-below-category-thumbnails,#taboola-below-video-thumbnails,#taboola-below-photo-thumbnails{background-color:#fff; padding:10px; margin-top:10px;}
+#taboola-below-article-thumbnails a,#taboola-below-video-thumbnails a{color:#000;}
+#taboola-below-article-thumbnails a span,#taboola-below-video-thumbnails a span{color:#000 !important;}
+
+#taboola-right-rail-thumbnails a span,#taboola-below-photo-thumbnails a span{color:#000 !important;}
+
+
+@media screen and (max-width: 480px){
+#taboola-below-category-thumbnails[data-feed-main-container-id="taboola-below-category-thumbnails"].tbl-feed-full-width {
+    margin-left: -0px !important;
+    margin-right: -0px !important;
+}
+}
+</style><meta content="text/html; charset=utf-8" http-equiv="content-type"/><base href="/"/><title>Corporate news, Latest Indian corporate industry news and world corporate industry news</title><meta content="Business today offering the latest happenings in the boardrooms of big corporate houses, their quarterly results and the policies they make or amend to boost their business." name="description"/><meta content="Corporate houses, big corporate houses, Q1 results, Q2 results, Quarterly results, Corporate policies, business policies, business houses, business, business news," name="keywords"/><meta content="50576790299" property="fb:pages"/><meta content="23230437118" property="fb:pages"/><meta content="IE=9" http-equiv="X-UA-Compatible"/><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/css/homepage-new.css" rel="stylesheet" type="text/css"/><link href="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/css/responsive.css" rel="stylesheet" type="text/css"/><link href="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/css/jquery.bxslider.css" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Roboto:700,500,400,900" rel="stylesheet" type="text/css"/><script src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/js/jquery.min.1.8.2.js" type="text/javascript"></script><meta content="28AD13B9E2353694C455F57D02382A94" name="msvalidate.01"/><link href="/images/favicon.ico" rel="shortcut icon"/><link href="https://m.businesstoday.in/category/corporate/1/10.html" media="only screen and (max-width: 640px)" rel="alternate"/><script type="text/javascript">
+		function canonicalUrlRedirection() {
+			var canonicalUrl = "";
+			var links = document.getElementsByTagName("link");
+			for (var i = 0; i < links.length; i ++) {
+				if (links[i].getAttribute("media") == "only screen and (max-width: 640px)") {
+					canonicalUrl = links[i].getAttribute("href");
+					break;
+				}
+			}
+			if (canonicalUrl != "") {	window.location.href = canonicalUrl;	}
+		}
+		var redirectagent=navigator.userAgent.toLowerCase();
+		var mode=window.location.toString().split("mode=")[1];
+		var redirect_devices=["vnd.wap.xhtml+xml","sony","symbian","S60","SymbOS","nokia","samsung","mobile","windows ce","epoc","opera mini","nitro","j2me","midp-","cldc-","netfront","mot","up.browser","up.link","audiovox","blackberry","ericsson","panasonic","philips","sanyo","sharp","sie-","portalmmm","blazer","avantgo","danger","palm","series60","palmsource","pocketpc","smartphone","rover","ipaq","au-mic","alcatel","ericy","vodafone","wap1","wap2","teleca","playstation","lge","lg-","iphone","android","htc","dream","webos","bolt","nintendo"];
+		if(!(redirectagent.indexOf("ipad")>=0)){
+		for(var i in redirect_devices){
+		if(redirectagent.indexOf(redirect_devices[i])!=-1){
+		if(mode!="classic"){
+		canonicalUrlRedirection();
+		}}}};
+		</script><link href="https://www.businesstoday.in/current/corporate" rel="canonical"/><meta content="ptjHPmYzguNQWPJFUi6qXsbRUOPtURdrlKblQjT51Cc" name="google-site-verification"/><meta content="5f579d20ed83ed4a" name="y_key"/><script type="text/javascript">
+			$(document).ready(function(){
+			$('.homeright img').addClass('color-chunk');
+		});
+		
+		$(document).ready(function() {$("#tab2").hide();$("#tab3").hide();
+			$("#taba a").click(function(){$("#tab1").show().slideDown(300);$("#tab2").hide().slideUp(300);$("#tab3").hide().slideUp(300);$("#taba").removeClass("grey");$("#tabbb").addClass("grey");$("#tabb").addClass("grey");});
+			$("#tabb a").click(function(){$("#tab2").show().slideDown(300);$("#tab1").hide().slideUp(300);$("#tab3").hide().slideUp(300);$("#tabbb").addClass("grey");$("#tabb").removeClass("grey");$("#taba").addClass("grey");});
+			$("#tabbb a").click(function(){$("#tab2").hide().slideUp(300);$("#tab1").hide().slideUp(300);$("#tab3").show().slideDown(300);$("#tabbb").removeClass("grey");$("#tabb").addClass("grey");$("#taba").addClass("grey");});
+		});
+		
+		$(document).ready(function(e) {$('.bt-tab').hide();$('.bt-tab:first').show();$('ul.one-two li:first a').addClass('bt-active');$('ul.one-two li a').click(function(){
+				$('ul.one-two li a').removeClass('bt-active');$(this).addClass('bt-active');
+				$('.bt-tab').hide();var getAttr = $(this).attr('href')$(getAttr).show();
+				return false;
+			});
+			$('.photo-video').hide();$('.photo-video:first').show();$('.hotrightnow-head a').addClass('current');$('.hotrightnow-head a, .hotrightnow-head-videos a').click(function(){
+				$('.hotrightnow-head a, .hotrightnow-head-videos a').removeClass('current');$(this).addClass('current');
+				$('.photo-video').hide();var getAttr = $(this).attr('href');$(getAttr).show();
+				return false;
+				
+			});
+		});
+		</script><style type="text/css">.alpha { width: 97.3% !important; padding:10px}.box { height:385px;}
+		/*#taba h3, #tabb h3 { font-size: 14px!Important;}*/
+		/*add in CSS*/		
+		.pagination { float:right;}.pagination ul { padding:0px; margin:0px;}.pagination ul li { list-style:none; padding:3px 10px; background:#333333; float:left; margin-right:5px;  }.pagination ul li a { color:#fff; width:30px; text-align:center}.topinnerbox { padding:0px;}.topzone {margin-top: 10px;}.sectionlistheading { background:none!Important; margin-bottom:-65px; display:block;}.sectionlistheading a { color:#000!Important}.share-section { position:relative; bottom:-83px;}.share-story ul, .share_story ul { width:310px;}
+		</style><script>
+function getCookie(e){return(e=(document.cookie+";").match(new RegExp(e+"=.*;")))&&e[0].split(/=|;/)[1]}
+				  var adcookie = getCookie("gdpr_ad_ck");
+</script><script type="text/javascript">
+                var PWT={};
+                var googletag = googletag || {};
+                googletag.cmd = googletag.cmd || [];
+                PWT.jsLoaded = function(){
+            (function() {
+                var gads = document.createElement('script');
+                var useSSL = 'https:' == document.location.protocol;
+                gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+                var node = document.getElementsByTagName('script')[0];
+                node.parentNode.insertBefore(gads, node);
+            })();
+            };
+            (function() {
+                var purl = window.location.href;
+                var url = '//ads.pubmatic.com/AdServer/js/pwt/156066/550';
+                var profileVersionId = '';
+                if(purl.indexOf('pwtv=')>0){
+                    var regexp = /pwtv=(.*?)(&|$)/g;
+                    var matches = regexp.exec(purl);
+                    if(matches.length >= 2 && matches[1].length > 0){
+                        profileVersionId = '/'+matches[1];
+                    }
+                }
+                var wtads = document.createElement('script');
+                wtads.async = true;
+                wtads.type = 'text/javascript';
+                wtads.src = url+profileVersionId+'/pwt.js';
+                var node = document.getElementsByTagName('script')[0];
+                node.parentNode.insertBefore(wtads, node);
+            })();
+            </script><script>
+                      googletag.cmd.push(function() {
+                        googletag.defineSlot('/1007232/Businesstoday_ROS_DesktopMasthead_728x90', [728, 90], 'div-gpt-ad-1506670791889-0').addService(googletag.pubads());
+                        googletag.defineSlot('/1007232/Businesstoday_ROS_Desktop_300x250_ATF', [300, 250], 'div-gpt-ad-1506670791889-1').addService(googletag.pubads());
+                        googletag.defineSlot('/1007232/Businesstoday_ROS_Desktop_300x100', [300, 100], 'div-gpt-ad-1506670791889-2').addService(googletag.pubads());
+                        googletag.defineSlot('/1007232/Businesstoday_ROS_Desktop_300x600_BTF', [300, 600], 'div-gpt-ad-1506670791889-3').addService(googletag.pubads());
+                        googletag.defineSlot('/1007232/Businesstoday_ROS_Desktop_728x90_BTF', [728, 90], 'div-gpt-ad-1506670791889-4').addService(googletag.pubads());
+                        googletag.pubads().enableSingleRequest();
+						if(adcookie==0){
+						googletag.pubads().setRequestNonPersonalizedAds(1); // for personalised ad  
+						}
+						
+							googletag.pubads().setTargeting('category', ['current','corporate']);
+						
+                        googletag.pubads().collapseEmptyDivs();
+                        googletag.enableServices();
+                      });
+                    </script><script type="text/javascript">
+                         var zmt_mtag;
+                        function zd_get_placements(){
+                         zmt_mtag = zmt_get_tag(821,"40341");
+                         p40341_1 = zmt_mtag.zmt_get_placement("zt_40341_1", "40341", "1" , "2089" , "31" , "8" ,"1", "1");
+                         p40341_2 = zmt_mtag.zmt_get_placement("zt_40341_2", "40341", "2" , "2089" , "54" , "8" ,"1", "1");
+                        
+                         zmt_mtag.zmt_set_async();
+                         zmt_mtag.zmt_load(zmt_mtag); 
+                        } 
+                        </script><script async="" src="https://saxp.zedo.com/sclient/tt3/fmos.js" type="text/javascript"></script></meta></head><body><div class="skinning-top"><link href="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/css/topnav.css" rel="stylesheet" type="text/css"/><script src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/js/topnav.js" type="text/javascript"></script><script language="javascript" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/js/ajaxinclude.js" type="text/javascript"></script><link href="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/css/scroll.css" rel="stylesheet" type="text/css"/><script src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/js/jquery.mCustomScrollbar.concat.min.js"></script><script>
+		(function($){
+			$(window).load(function(){
+				$("#content-1").mCustomScrollbar({
+					setTop:"540px"
+				});
+			});
+		})(jQuery);
+	</script><style type="text/css">
+#widget-ajex-loader{display:none;background: rgba(0,0,0,.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 99999;}
+#widget-ajex-loader .widget-loader{
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+nav ul li{ line-height: 25px; font-family: roboto; font-size: 16px; font-weight: 500;}
+.logoit-one {height: 70px;width: 415px;float: none;text-align: center; padding-top: 10px;margin: 0 auto;}
+.redborder{ background:#fff}
+.redborder1234567{ background:#fff}
+.sponser-strip{ height:133px;}
+.itgd_links { margin:0!Important;}
+.skinning-top, .header-ad  { text-align:center; margin-top:0px;}
+.posrel-new{ width:95.6%;}nav ul li{margin-right:2px;}
+/* new menu changes */
+nav{display:flex;justify-content:center;width:1040px}
+        nav ul{width:940px}
+        .searc-icon{background:#ee1c25!important;width:43px;height:50px;margin:0;display:flex;align-items:center;justify-content:center;padding:0;float:none}
+        .searc-icon svg{fill:#fff;width:43px;height:29px}
+        nav .user_login{float:right;margin-left:2px}
+        nav .user_login ul{width:auto}
+        nav .user_login ul li{margin:0;height:50px;padding:0;width:45px;display:flex;align-items:center;justify-content:center;position:relative}
+		nav .user_login ul li a:hover{
+		    background-color:transparent;
+		  }
+        nav .user_login ul li svg{position:relative;top:-1px}
+        nav .user_login ul li:hover{background-color:#00aeed}
+        nav .user_login ul li.is_logged_in svg{fill:#00aeed}
+        nav .user_login ul li:hover svg{fill:#fff}
+        nav .user_login ul ul{width:140px;background-color:#00aeed;position:absolute;top:100%;right:0;display:none;z-index:10}
+        nav .user_login ul ul li{background-color:transparent;display:block;width:100%;height:auto;border-bottom:1px solid #9ae4ff}
+        nav .user_login ul ul li a{color:#fff;display:inline-block;padding:8px 15px;width:100%;box-sizing:border-box;text-align:left}
+        nav .user_login ul ul li a:hover{background-color:transparent;color:#fff;background-color:#1ab9f3}
+        nav .user_login ul li.is_logged_in:hover > ul{display:block}
+		/*.home-icon, .home-icon:hover{ height:39px; width:37px; padding: 5px 1px 6px;}
+		.home-icon a { padding:0; margin:0;}
+		.lifestyle { width:auto}*/
+        @media screen and (max-width: 1199px) {
+        nav{width:1024px}
+        .app{background-size:34px;background-position:8px 16px}
+        }
+        @media screen and (max-width: 991px) and (min-width: 768px) {
+        nav{width:100%}
+        nav ul{width:100%}
+        .searc-icon{width:40px}
+        nav .user_login{margin-left:1px}
+        nav .user_login ul li{width:37px}
+        nav .user_login ul li svg{width:18px;height:18px}
+        .searc-icon svg{width:38px;height:25px}
+        .app{background-size:40px;background-position:8px 13px}
+        nav .user_login ul ul li a{padding:6px 15px}
+        }
+.lifestyle { right:-80px;}
+@media screen and (max-width:800px){.sponser-strip{ height:215px;}}
+.bschoos_sponsors { width:100%; margin:0 auto; height:50px; margin-top:15px;}
+@media screen and (max-width: 800px){.bschoos_sponsors{ height:92px; }#top_ad{display:block}}
+@media screen and (max-width: 767px){#top_ad{display: none}}
+@media screen and (max-width: 586px){.bschoos_sponsors{ height:145px;}}
+@media screen and (max-width: 360px){.bschoos_sponsors{ height:187px;}}
+</style><div id="page-sso"></div><script language="javascript" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/js/common-sso.js" type="text/javascript"></script><script>
+function GetQueryStringParams(sParam){
+	 var sPageURL = window.location.href;
+	 var sURLVariables = sPageURL.split('#');
+	 for (var i = 0; i < sURLVariables.length; i++) {
+		 var sParameterName = sURLVariables[i].split('=');
+			 if (sParameterName[0] == sParam) {
+					return sParameterName[1];
+			 }    
+	 }
+}
+	
+	</script><div id="div-gpt-ad-1515674992632-0" style="width:970px;margin:0 auto;text-align:center"><script>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1515674992632-0'); });
+                </script></div><div class="header-ad"><div id="zt_40341_1" style="display:show"><script id="zt_40341_1" language="javascript"> 
+                
+                if(typeof zmt_mtag !='undefined' && typeof zmt_mtag.zmt_render_placement !='undefined')
+                {
+                     zmt_mtag.zmt_render_placement(p40341_1);
+                }
+                 </script></div></div><div class="redborder"><header><div class="logoit-one"><a href="https://www.businesstoday.in/" style="display:block; height:68px;"><img alt="Business Today" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/newpage/bt-updated-logo.png"/></a></div></header><div class="clear"></div><script type="text/javascript">storyRelatedAjaxInclude("/updatetime.jsp")</script></div><div class="clear"></div><div class="menues"><nav><div class="app sp_bg"><a href="https://www.businesstoday.in/" title="BT Home">Businesstoday</a></div><ul><li class="home-icon sp_bg home_b"><a href="https://www.businesstoday.in/" title="Businesstoday home"></a></li><li class="bizwrap_b"><a href="/current/economy-politics">ECONOMY</a><style>
+		.videoIconTime { position: absolute; right: 5px; bottom: 17px; background: #000; padding: 3px 5px;}
+		.platDetailVideoIcon { height: 15px !important; width: 12px !important; background: url(https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/play_logo.jpg) no-repeat !important; float: left; display: inline-block; position: relative !important; top: 2px !important; bottom: inherit !important;  left: 0 !important; right: inherit !important;}
+		.platDetailVideoTime {  display: inline-block; font-size: 13px; line-height: 16px;  color: #fff; z-index: 3; float: left; margin-left: 4px;}
+    </style><div class="lifestyle bizwrap_bb"><div class="life-news"><a href="/current/economy-politics/xiaomi-tcl-trade-bodies-welcomes-tv-manufacturing-restrictions-to-boost-make-in-india/story/411692.html"><img alt="Xiaomi, TCL, trade bodies welcome TV manufacturing restrictions to boost Make in India" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/tv_imports_144_310720085925.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Xiaomi, TCL, trade bodies welcome TV manufacturing restrictions to boost Make in India" width="144"/>Xiaomi, TCL, trade bodies welcome TV manufacturing restrictions to boost Make in India</a></div><div class="life-news"><a href="/current/economy-politics/niti-aayog-recommends-privatisation-of-3-public-sector-lenders/story/411691.html"><img alt="NITI Aayog recommends privatisation of 3 public sector lenders" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/niti_aayog_144_010615073712_310720084721.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="NITI Aayog recommends privatisation of 3 public sector lenders" width="144"/>NITI Aayog recommends privatisation of 3 public sector lenders</a></div><div class="life-news"><a href="/current/economy-politics/no-cut-in-govt-q1-spending-even-as-revenues-dip-48/story/411688.html"><img alt="No cut in govt's Q1 spending even as revenues dip 48%" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/economy144_310720080548.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="No cut in govt's Q1 spending even as revenues dip 48%" width="144"/>No cut in govt's Q1 spending even as revenues dip 48%</a></div><div class="life-news"><a href="/current/economy-politics/fiscal-deficit-widens-to-rs-662-lakh-crore-in-q1-on-poor-tax-revenues/story/411687.html"><img alt="Fiscal deficit widens to Rs 6.62 lakh crore in Q1 on poor tax revenues" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/rupee_144_191119111728_290520081415_300620054206_310720080025.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Fiscal deficit widens to Rs 6.62 lakh crore in Q1 on poor tax revenues" width="144"/>Fiscal deficit widens to Rs 6.62 lakh crore in Q1 on poor tax revenues</a></div><div class="life-news"><a href="/current/economy-politics/eight-core-industries-output-down-for-4th-straight-month-contracts-15-in-june/story/411684.html"><img alt="Eight core industries’ output down for 4th straight month, contracts 15% in June" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/rourkela_1_144_200420083650_310720073605.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Eight core industries’ output down for 4th straight month, contracts 15% in June" width="144"/>Eight core industries' output down for 4th straight month, contracts 15% in June</a></div></div></li><li class="markets_b"><a href="/current/corporate">CORPORATE</a><style>
+		.videoIconTime { position: absolute; right: 5px; bottom: 17px; background: #000; padding: 3px 5px;}
+		.platDetailVideoIcon { height: 15px !important; width: 12px !important; background: url(https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/play_logo.jpg) no-repeat !important; float: left; display: inline-block; position: relative !important; top: 2px !important; bottom: inherit !important;  left: 0 !important; right: inherit !important;}
+		.platDetailVideoTime {  display: inline-block; font-size: 13px; line-height: 16px;  color: #fff; z-index: 3; float: left; margin-left: 4px;}
+    </style><div class="lifestyle bizwrap_bb"><div class="life-news"><a href="/current/corporate/edelweiss-opts-out-of-lic-pre-ipo-advisor-selection-process/story/411694.html"><img alt="Edelweiss opts out of LIC pre-IPO advisor selection process" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/ipo_144_180220040430_270720122758_310720101351.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Edelweiss opts out of LIC pre-IPO advisor selection process" width="144"/>Edelweiss opts out of LIC pre-IPO advisor selection process</a></div><div class="life-news"><a href="/current/corporate/rural-business-growing-3x-urban-this-fiscal-britannia/story/411693.html"><img alt="Rural business growing 3x urban this fiscal: Britannia" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/britannia_144_310720094256.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Rural business growing 3x urban this fiscal: Britannia" width="144"/>Rural business growing 3x urban this fiscal: Britannia</a></div><div class="life-news"><a href="/current/corporate/tata-motors-q1-results-second-straight-quarterly-loss-at-rs-8438-crore-as-covid-19-disrupts-sales/story/411681.html"><img alt="Tata Motors Q1 results: Second straight quarterly loss at Rs 8,438 crore as COVID-19 disrupts sales" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/tata_motors_144_020619052720_020719052849_290220024712_100720022706_310720065011.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Tata Motors Q1 results: Second straight quarterly loss at Rs 8,438 crore as COVID-19 disrupts sales" width="144"/>Tata Motors Q1 results: Second straight quarterly loss at Rs 8,438 crore as COVID-19 disrupts sales</a></div><div class="life-news"><a href="/current/corporate/mukesh-ambani-calls-for-2g-free-indiaurges-govt-to-take-necessary-policy-measures/story/411674.html"><img alt="Mukesh Ambani calls for 2G-free India,urges govt to take necessary policy measures" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/bt_buzz_ril_144_290420041704_310720052230.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Mukesh Ambani calls for 2G-free India,urges govt to take necessary policy measures" width="144"/>Mukesh Ambani calls for 2G-free India,urges govt to take necessary policy measures</a></div><div class="life-news"><a href="/current/corporate/indian-oil-q1-net-profit-drops-47-to-rs-1911-crore-fuel-sales-down-29/story/411665.html"><img alt="Indian Oil Q1 net profit drops 47% to Rs 1,911 crore, fuel sales down 29%" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/indian_oil_144_080618084310_240620045159_310720043658.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Indian Oil Q1 net profit drops 47% to Rs 1,911 crore, fuel sales down 29%" width="144"/>Indian Oil Q1 net profit drops 47% to Rs 1,911 crore, fuel sales down 29%</a></div></div></li><li class="sector_b"><a href="/markets">MARKETS</a><style>
+		.videoIconTime { position: absolute; right: 5px; bottom: 17px; background: #000; padding: 3px 5px;}
+		.platDetailVideoIcon { height: 15px !important; width: 12px !important; background: url(https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/play_logo.jpg) no-repeat !important; float: left; display: inline-block; position: relative !important; top: 2px !important; bottom: inherit !important;  left: 0 !important; right: inherit !important;}
+		.platDetailVideoTime {  display: inline-block; font-size: 13px; line-height: 16px;  color: #fff; z-index: 3; float: left; margin-left: 4px;}
+    </style><div class="lifestyle markets_bb"><div class="life-news"><a href="/markets/company-stock/jet-airways-share-hits-5-upper-circuit-after-airline-acquires-six-boeing-aircraft/story/411680.html"><img alt="Jet Airways share hits 5% upper circuit after airline acquires six Boeing aircraft" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/stocks16_144_110320115844_310720064359.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Jet Airways share hits 5% upper circuit after airline acquires six Boeing aircraft" width="144"/>Jet Airways share hits 5% upper circuit after airline acquires six Boeing aircraft</a></div><div class="life-news"><a href="/markets/market-perspective/sensex-falls-129-points-nifty-closes-at-11073-amid-weak-global-cues/story/411679.html"><img alt="Sensex falls 129 points, Nifty closes at 11,073 amid weak global cues" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/stocks17_144_120320100007_310720064044.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Sensex falls 129 points, Nifty closes at 11,073 amid weak global cues" width="144"/>Sensex falls 129 points, Nifty closes at 11,073 amid weak global cues</a></div><div class="life-news"><a href="/markets/company-stock/tata-motors-share-price-closes-higher-ahead-of-q1-earnings/story/411677.html"><img alt="Tata Motors share price closes higher ahead of Q1 earnings" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/tata_motors_144_020619052720_020719052849_290220024712_210320094257_070420120528_310720061411.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Tata Motors share price closes higher ahead of Q1 earnings" width="144"/>Tata Motors share price closes higher ahead of Q1 earnings</a></div><div class="life-news"><a href="/markets/company-stock/torrent-pharma-share-price-all-time-high-on-q1-earnings-net-profit/story/411671.html"><img alt="Torrent Pharma share price hits all-time high on strong Q1 earnings" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/share_144x130_092019020355_310720045843.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Torrent Pharma share price hits all-time high on strong Q1 earnings" width="144"/>Torrent Pharma share price hits all-time high on strong Q1 earnings</a></div><div class="life-news"><a href="/markets/company-stock/sbi-share-price-rises-5-on-stellar-q1-earnings/story/411669.html"><img alt="SBI share price rises 5% on stellar Q1 earnings" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/1_144x130_161219092414_310720044853.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="SBI share price rises 5% on stellar Q1 earnings" width="144"/>SBI share price rises 5% on stellar Q1 earnings</a></div></div></li><li class="sector_b"><a href="/personal-finance">MONEY</a><style>
+		.videoIconTime { position: absolute; right: 5px; bottom: 17px; background: #000; padding: 3px 5px;}
+		.platDetailVideoIcon { height: 15px !important; width: 12px !important; background: url(https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/play_logo.jpg) no-repeat !important; float: left; display: inline-block; position: relative !important; top: 2px !important; bottom: inherit !important;  left: 0 !important; right: inherit !important;}
+		.platDetailVideoTime {  display: inline-block; font-size: 13px; line-height: 16px;  color: #fff; z-index: 3; float: left; margin-left: 4px;}
+    </style><div class="lifestyle money_bb"><div class="life-news"><a href="/markets/market-perspective/stock-market-new-equity-investors-are-a-mature-lot-not-just-robinhood-traders/story/411659.html"><img alt="Stock market: New equity investors are a mature lot, not just 'Robinhood' traders" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/stock_market_144_310720041551.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Stock market: New equity investors are a mature lot, not just 'Robinhood' traders" width="144"/>Stock market: New equity investors are a mature lot, not just 'Robinhood' traders</a></div><div class="life-news"><a href="/bt-insight/analysis/bt-insight-should-you-invest-in-high-interest-rate-fds-of-small-finance-banks/story/411556.html"><img alt="BT Insight: Should you invest in high interest rate FDs of small finance banks?" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/btinsight_fds_144_300720062459.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="BT Insight: Should you invest in high interest rate FDs of small finance banks?" width="144"/>BT Insight: Should you invest in high interest rate FDs of small finance banks?</a></div><div class="life-news"><a href="/bt-buzz/news/bt-buzz-esg-funds-rally-up-to-46pc-since-march-should-you-invest/story/411448.html"><img alt="BT Buzz: ESG funds rally up to 46% since March; should you invest?" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/bt_buzz_esg_144_290720063810.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="BT Buzz: ESG funds rally up to 46% since March; should you invest?" width="144"/>BT Buzz: ESG funds rally up to 46% since March; should you invest?</a></div><div class="life-news"><a href="/bt-buzz/news/bt-buzz-mindspace-business-parks-reit-ipo-closes-tomorrow-should-you-invest/story/411322.html"><img alt="BT Buzz: Mindspace Business Parks REIT IPO closes tomorrow; should you invest?" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/bt_buzz_ipo_144_280720072002.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="BT Buzz: Mindspace Business Parks REIT IPO closes tomorrow; should you invest?" width="144"/>BT Buzz: Mindspace Business Parks REIT IPO closes tomorrow; should you invest?</a></div><div class="life-news"><a href="/current/economy-politics/investors-pump-rs-124-lakh-crore-into-mutual-funds-in-june-quarter/story/411178.html"><img alt="Investors pump Rs 1.24 lakh crore into mutual funds in June quarter" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/rupee_144_170420112608_270720033943.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Investors pump Rs 1.24 lakh crore into mutual funds in June quarter" width="144"/>Investors pump Rs 1.24 lakh crore into mutual funds in June quarter</a></div></div></li><li class="sector_b"><a href="/sectors">INDUSTRY</a><style>
+		.videoIconTime { position: absolute; right: 5px; bottom: 17px; background: #000; padding: 3px 5px;}
+		.platDetailVideoIcon { height: 15px !important; width: 12px !important; background: url(https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/play_logo.jpg) no-repeat !important; float: left; display: inline-block; position: relative !important; top: 2px !important; bottom: inherit !important;  left: 0 !important; right: inherit !important;}
+		.platDetailVideoTime {  display: inline-block; font-size: 13px; line-height: 16px;  color: #fff; z-index: 3; float: left; margin-left: 4px;}
+    </style><div class="lifestyle sector_bb"><div class="life-news"><a href="/current/corporate/edelweiss-opts-out-of-lic-pre-ipo-advisor-selection-process/story/411694.html"><img alt="Edelweiss opts out of LIC pre-IPO advisor selection process" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/ipo_144_180220040430_270720122758_310720101351.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Edelweiss opts out of LIC pre-IPO advisor selection process" width="144"/>Edelweiss opts out of LIC pre-IPO advisor selection process</a></div><div class="life-news"><a href="/current/economy-politics/niti-aayog-recommends-privatisation-of-3-public-sector-lenders/story/411691.html"><img alt="NITI Aayog recommends privatisation of 3 public sector lenders" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/niti_aayog_144_010615073712_310720084721.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="NITI Aayog recommends privatisation of 3 public sector lenders" width="144"/>NITI Aayog recommends privatisation of 3 public sector lenders</a></div><div class="life-news"><a href="/sectors/banks/we-have-built-strong-immunity-says-sbi-chairman-as-bad-loans-drop-in-q1/story/411690.html"><img alt="'We have built strong immunity', says SBI Chairman as bad loans drop in Q1" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/sbireuters_144_121214034444_030120043337_050620122219_310720084017.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="'We have built strong immunity', says SBI Chairman as bad loans drop in Q1" width="144"/>'We have built strong immunity', says SBI Chairman as bad loans drop in Q1</a></div><div class="life-news"><a href="/sectors/auto/kia-motors-completes-1-lakh-sales-in-record-time/story/411683.html"><img alt="Kia Motors completes 1 lakh sales in record time" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/kia144_310720072321.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Kia Motors completes 1 lakh sales in record time" width="144"/>Kia Motors completes 1 lakh sales in record time</a></div><div class="life-news"><a href="/current/corporate/tata-motors-q1-results-second-straight-quarterly-loss-at-rs-8438-crore-as-covid-19-disrupts-sales/story/411681.html"><img alt="Tata Motors Q1 results: Second straight quarterly loss at Rs 8,438 crore as COVID-19 disrupts sales" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/tata_motors_144_020619052720_020719052849_290220024712_100720022706_310720065011.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Tata Motors Q1 results: Second straight quarterly loss at Rs 8,438 crore as COVID-19 disrupts sales" width="144"/>Tata Motors Q1 results: Second straight quarterly loss at Rs 8,438 crore as COVID-19 disrupts sales</a></div></div></li><li class="sector_b"><a href="/technology">TECH</a><style>
+		.videoIconTime { position: absolute; right: 5px; bottom: 17px; background: #000; padding: 3px 5px;}
+		.platDetailVideoIcon { height: 15px !important; width: 12px !important; background: url(https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/play_logo.jpg) no-repeat !important; float: left; display: inline-block; position: relative !important; top: 2px !important; bottom: inherit !important;  left: 0 !important; right: inherit !important;}
+		.platDetailVideoTime {  display: inline-block; font-size: 13px; line-height: 16px;  color: #fff; z-index: 3; float: left; margin-left: 4px;}
+    </style><div class="lifestyle technology_bb"><div class="life-news"><a href="/technology/news/google-announces-pixel-4a-launch-date-via-a-puzzle-check-out-specs-features/story/411686.html"><img alt="Google announces Pixel 4A launch date via a puzzle; check out specs, features" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/screenshot_2020_07_31_at_541_144_310720075421.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Google announces Pixel 4A launch date via a puzzle; check out specs, features" width="144"/>Google announces Pixel 4A launch date via a puzzle; check out specs, features</a></div><div class="life-news"><a href="/technology/twitter-confirms-phone-spear-phishing-attack-behind-high-profile-bitcoin-scam/story/411675.html"><img alt="" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/screenshot_2020-07-23_at_2_1200_200731180927.10._1-370x208.png" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="" width="144"/>Twitter confirms phone spear-phishing attack behind high-profile bitcoin scam</a></div><div class="life-news"><a href="/technology/after-spotify-telegram-files-complaint-against-apple-app-stores-commission-fee/story/411661.html"><img alt="" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/screenshot_2020-04-02_at_1_1200_200731161814.57.-370x208.png" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="" width="144"/>After Spotify, Telegram files complaint against Apple App Store's commission fee</a></div><div class="life-news"><a href="/technology/honor-9a-honor-9s-and-magicbook-15-laptop-launched-in-india-everything-you-need-to-know/story/411642.html"><img alt="Honor MagicBook 15" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/honor11s-370x208_1200_200731173912.jpeg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Honor MagicBook 15" width="144"/>Honor 9A, Honor 9S and MagicBook 15 laptop launched in India: Everything you need to know</a></div><div class="life-news"><a href="/technology/oppo-reno-4-pro-arrives-in-india-price-specifications-and-top-features/story/411643.html"><img alt="" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/oppo_reno_4_pro_2-370x208_1200_200731173916.jpeg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="" width="144"/>Oppo Reno 4 Pro arrives in India: Price, specifications, and top features</a></div></div></li><li class="opinion_b"><a href="/opinion">OPINION</a><style>
+		.videoIconTime { position: absolute; right: 5px; bottom: 17px; background: #000; padding: 3px 5px;}
+		.platDetailVideoIcon { height: 15px !important; width: 12px !important; background: url(https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/play_logo.jpg) no-repeat !important; float: left; display: inline-block; position: relative !important; top: 2px !important; bottom: inherit !important;  left: 0 !important; right: inherit !important;}
+		.platDetailVideoTime {  display: inline-block; font-size: 13px; line-height: 16px;  color: #fff; z-index: 3; float: left; margin-left: 4px;}
+    </style><div class="lifestyle opinion_bb"><div class="life-news"><a href="/opinion/columns/indian-economy-why-are-private-companies-prone-to-financial-frauds-corporates-tax-havens/story/411453.html"><img alt="Rebooting Economy XI: Why are private companies so prone to financial frauds?" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/scams_144_290720065908.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Rebooting Economy XI: Why are private companies so prone to financial frauds?" width="144"/>Rebooting Economy XI: Why are private companies so prone to financial frauds?</a></div><div class="life-news"><a href="/opinion/columns/covid19-pandemic-an-opportunity-in-disguise-for-indian-real-estate-realty-sector-coronavirus-lockdown/story/411317.html"><img alt="How COVID-19 pandemic is an opportunity in disguise for India's realty sector" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/housing_144_280720061003.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="How COVID-19 pandemic is an opportunity in disguise for India's realty sector" width="144"/>How COVID-19 pandemic is an opportunity in disguise for India's realty sector</a></div><div class="life-news"><a href="/opinion/columns/intraday-trading-post-sebi-circular-brokers-margins-coronavirus-lockdown-stock-markets-shares/story/411247.html"><img alt="How things will change for intraday traders post the recent SEBI circular" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/market_144_280720095708.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="How things will change for intraday traders post the recent SEBI circular" width="144"/>How things will change for intraday traders post the recent SEBI circular</a></div><div class="life-news"><a href="/opinion/columns/indian-economy-covid19-private-sector-healthcare-public-hospitals-coronavirus/story/411219.html"><img alt="Rebooting Economy X: COVID-19 puts question mark on private sector's efficiency in healthcare" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/pvt_144_270720091338.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Rebooting Economy X: COVID-19 puts question mark on private sector's efficiency in healthcare" width="144"/>Rebooting Economy X: COVID-19 puts question mark on private sector's efficiency in healthcare</a></div><div class="life-news"><a href="/opinion/perspective/banning-chinese-apps-is-easy-what-about-smartphone-makers-xiaomi-huawei-vivo-and-oppo/story/411200.html"><img alt="Banning Chinese apps is easy; what about Xiaomi, Huawei, Vivo and Oppo?" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/smartphone_144x130_270720064447.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" title="Banning Chinese apps is easy; what about Xiaomi, Huawei, Vivo and Oppo?" width="144"/>Banning Chinese apps is easy; what about Xiaomi, Huawei, Vivo and Oppo?</a></div></div></li><li class="photo_b"><a href="/photos">PHOTOS</a><style>
+		.videoIconTime { position: absolute; right: 5px; bottom: 17px; background: #000; padding: 3px 5px;}
+		.platDetailVideoIcon { height: 15px !important; width: 12px !important; background: url(https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/play_logo.jpg) no-repeat !important; float: left; display: inline-block; position: relative !important; top: 2px !important; bottom: inherit !important;  left: 0 !important; right: inherit !important;}
+		.platDetailVideoTime {  display: inline-block; font-size: 13px; line-height: 16px;  color: #fff; z-index: 3; float: left; margin-left: 4px;}
+    </style><div class="lifestyle photo_bb"><div class="life-news"><a href="/photos/panorama/addicted-to-pubg-some-other-gaming-options-to-choose-from/1894.html"><div style="position:relative; padding-left:13px; float:left"><img alt="Addicted to PUBG? Some other gaming options to choose from" height="133" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/Photo_gallery/if-not-pubg-then-what_144_310720124559.jpg" title="Addicted to PUBG? Some other gaming options to choose from" width="144"/><img class="mediaimg" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/photo-icon-small.png"/></div><div class="cnt">Addicted to PUBG? Some other gaming options to choose from</div></a></div><div class="life-news"><a href="/photos/bt-newsflicks/new-project-announcements-projects-completion-crash-in-april-june/1893.html"><div style="position:relative; padding-left:13px; float:left"><img alt="New project announcements, projects completion crash in April-June" height="133" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/Photo_gallery/thumb-3-144_300720115748.jpg" title="New project announcements, projects completion crash in April-June" width="144"/><img class="mediaimg" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/photo-icon-small.png"/></div><div class="cnt">New project announcements, projects completion crash in April-June</div></a></div><div class="life-news"><a href="/photos/panorama/top-10-most-attractive-employer-brands-in-india/1892.html"><div style="position:relative; padding-left:13px; float:left"><img alt="Top 10 most attractive employer brands in India" height="133" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/Photo_gallery/most-attractive-employer-brands-144_300720124028.jpg" title="Top 10 most attractive employer brands in India" width="144"/><img class="mediaimg" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/photo-icon-small.png"/></div><div class="cnt">Top 10 most attractive employer brands in India</div></a></div><div class="life-news"><a href="/photos/bt-newsflicks/commercial-vehicle-industry-slowdown-prolongs-due-to-covid-19/1891.html"><div style="position:relative; padding-left:13px; float:left"><img alt="Commercial vehicle industry: Slowdown prolongs due to COVID-19" height="133" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/Photo_gallery/commercial-vehicle-sales-crash-thumb-144_290720080343.jpg" title="Commercial vehicle industry: Slowdown prolongs due to COVID-19" width="144"/><img class="mediaimg" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/photo-icon-small.png"/></div><div class="cnt">Commercial vehicle industry: Slowdown prolongs due to COVID-19</div></a></div><div class="life-news"><a href="/photos/panorama/rafale-jet-can-it-become-a-game-changer-for-the-indian-air-force/1890.html"><div style="position:relative; padding-left:13px; float:left"><img alt="Rafale jet: Can it become a game changer for the Indian Air Force?" height="133" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/Photo_gallery/one-of-worlds-most-powerful-fighter-jets_144_280720104403.jpg" title="Rafale jet: Can it become a game changer for the Indian Air Force?" width="144"/><img class="mediaimg" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/photo-icon-small.png"/></div><div class="cnt">Rafale jet: Can it become a game changer for the Indian Air Force?</div></a></div></div></li><li class="video_b"><a href="/videos">VIDEOS</a><style>
+		.videoIconTime { position: absolute; right: 5px; bottom: 17px; background: #000; padding: 3px 5px;}
+		.platDetailVideoIcon { height: 15px !important; width: 12px !important; background: url(https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/play_logo.jpg) no-repeat !important; float: left; display: inline-block; position: relative !important; top: 2px !important; bottom: inherit !important;  left: 0 !important; right: inherit !important;}
+		.platDetailVideoTime {  display: inline-block; font-size: 13px; line-height: 16px;  color: #fff; z-index: 3; float: left; margin-left: 4px;}
+    </style><div class="lifestyle video_bb"><div class="life-news"><a href="/videos/news-reel/bezos-surprised-as-amazon-posts-biggest-profit-in-26-years-amid-pandemic/411685.html"><div style="position:relative; padding-left:13px; float:left;"><img alt="Bezos surprised as Amazon posts biggest profit in 26 years amid pandemic" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/thumb_179_310720073749.jpg" title="Bezos surprised as Amazon posts biggest profit in 26 years amid pandemic" width="144"/><span class="videoIconTime"><span class="platDetailVideoIcon"></span><span class="platDetailVideoTime">04:42</span></span></div><div class="cnt">Bezos surprised as Amazon posts biggest profit in 26 years amid pandemic</div></a></div><div class="life-news"><a href="/videos/news-reel/china-against-forced-decoupling-of-economies-pubg-changes-privacy-policy/411652.html"><div style="position:relative; padding-left:13px; float:left;"><img alt="China against forced decoupling of economies; PUBG changes privacy policy" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/thumb_web_1_179_310720032437.jpg" title="China against forced decoupling of economies; PUBG changes privacy policy" width="144"/><span class="videoIconTime"><span class="platDetailVideoIcon"></span><span class="platDetailVideoTime">03:19</span></span></div><div class="cnt">China against forced decoupling of economies; PUBG changes privacy policy</div></a></div><div class="life-news"><a href="/videos/news-reel/job-loss-insurance-cover-is-needed-during-covid-19-pandemic/411636.html"><div style="position:relative; padding-left:13px; float:left;"><img alt="Job loss insurance cover is needed during COVID-19 pandemic" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/thumb_web_179_310720015232.jpg" title="Job loss insurance cover is needed during COVID-19 pandemic" width="144"/><span class="videoIconTime"><span class="platDetailVideoIcon"></span><span class="platDetailVideoTime">04:38</span></span></div><div class="cnt">Job loss insurance cover is needed during COVID-19 pandemic</div></a></div><div class="life-news"><a href="/videos/news-reel/trump-looks-to-ban-tiktok-final-decision-to-come-soon/411593.html"><div style="position:relative; padding-left:13px; float:left;"><img alt="Trump looks to ban Tiktok, final decision to come soon" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/thumb_1_179_310720091935.jpg" title="Trump looks to ban Tiktok, final decision to come soon" width="144"/><span class="videoIconTime"><span class="platDetailVideoIcon"></span><span class="platDetailVideoTime">02:23</span></span></div><div class="cnt">Trump looks to ban Tiktok, final decision to come soon</div></a></div><div class="life-news"><a href="/videos/news-reel/facebooks-zuckerberg-falters-at-congressional-hearings-on-alleged-abuse-of-power/411572.html"><div style="position:relative; padding-left:13px; float:left;"><img alt="Facebook's Zuckerberg falters at Congressional hearings on alleged abuse of power" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/thumb_179_300720085138.jpg" title="Facebook's Zuckerberg falters at Congressional hearings on alleged abuse of power" width="144"/><span class="videoIconTime"><span class="platDetailVideoIcon"></span><span class="platDetailVideoTime">01:52</span></span></div><div class="cnt">Facebook's Zuckerberg falters at Congressional hearings on alleged abuse of power</div></a></div></div></li><li class="blogs_b"><a href="/magazine">MAGAZINE</a><style>
+		.videoIconTime { position: absolute; right: 5px; bottom: 17px; background: #000; padding: 3px 5px;}
+		.platDetailVideoIcon { height: 15px !important; width: 12px !important; background: url(https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/play_logo.jpg) no-repeat !important; float: left; display: inline-block; position: relative !important; top: 2px !important; bottom: inherit !important;  left: 0 !important; right: inherit !important;}
+		.platDetailVideoTime {  display: inline-block; font-size: 13px; line-height: 16px;  color: #fff; z-index: 3; float: left; margin-left: 4px;}
+    </style><div class="lifestyle blogs_bb"><div class="life-news"><a href="/magazine/issue/august92020" style="display:block; text-align:center"><img alt="August 9, 2020" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/bt_cover_230720090817.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" style="display:block; text-align: center; margin: 0 auto;" title="August 9, 2020" width="98"/>August 9, 2020</a></div><div class="life-news"><a href="/magazine/issue/july262020" style="display:block; text-align:center"><img alt="July 26, 2020" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/bt_26july_cover_090720093522.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" style="display:block; text-align: center; margin: 0 auto;" title="July 26, 2020" width="98"/>July 26, 2020</a></div><div class="life-news"><a href="/magazine/issue/july122020" style="display:block; text-align:center"><img alt="July 12, 2020" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/bt_cover_ns_250620054324.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" style="display:block; text-align: center; margin: 0 auto;" title="July 12, 2020" width="98"/>July 12, 2020</a></div><div class="life-news"><a href="/magazine/issue/june282020" style="display:block; text-align:center"><img alt="June 28, 2020" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/bt_cover_ns_120620053626.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" style="display:block; text-align: center; margin: 0 auto;" title="June 28, 2020" width="98"/>June 28, 2020</a></div><div class="life-news"><a href="/magazine/issue/june142020" style="display:block; text-align:center"><img alt="June 14, 2020" data-ak="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/bt_cover_ns_280520093221.jpg" height="130" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/lazyload-grey.gif" style="display:block; text-align: center; margin: 0 auto;" title="June 14, 2020" width="98"/>June 14, 2020</a></div></div></li></ul><div class="searc-icon sprit"><svg style="enable-background:new 0 0 16 16;" version="1.1" viewbox="0 0 16 16" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><circle cx="2" cy="8" r="2"></circle><circle cx="8" cy="8" r="2"></circle><circle cx="14" cy="8" r="2"></circle></svg></div><div class="user_login"><ul><li class="ssologin"><a class="ck_subscribe_mk" href="https://auth.indiatoday.in/saml_login/other/aHR0cHM6Ly93d3cuYnVzaW5lc3N0b2RheS5pbi9jdXJyZW50L2NvcnBvcmF0ZSNzc29sb2dpbj0x" target="_parent"><svg fill="#a4a4a4" height="20px" viewbox="0 0 32 32" width="20px" xmlns="http://www.w3.org/2000/svg"><title></title><path d="M22.56,16.53a9.95,9.95,0,0,1-13.12,0A15,15,0,0,0,1,30a1,1,0,0,0,1,1H30a1,1,0,0,0,1-1A15,15,0,0,0,22.56,16.53Z"></path><circle cx="16" cy="9" r="8"></circle></svg></a><ul class="dropdown"><li><a href="https://www.businesstoday.in/attrs.jsp">Settings</a></li><li><a href="javascript:void(0)" id="ssologout">Logout</a></li></ul></li></ul></div><div class="clear"></div></nav><script type="text/javascript">storyRelatedAjaxInclude("/ros-topnavigation-special.jsp")</script></div><script type="text/javascript">storyRelatedAjaxInclude("/responsive-navigation-secondnav-menu.html")</script><div class="topAd728x90" style="float: left; width: 100%;"><div id="top_ad" style=" top: 10px; z-index: 9; margin: 0 auto 5px; float:none; height:auto; right:inherit; width: 728px;position:relative"><div data-zedoads="728x90/categorylist.jsp_Topnav" id="zedotopnavads"><div id="div-gpt-ad-1506670791889-0" style="height:90px; width:728px;"><script>
+                        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1506670791889-0'); });
+                        </script></div></div></div></div><div style="clear:both"></div><div id="div-gpt-ad-1512023129438-0" style=" width:970px; clear:both; margin:10px auto;"><script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1512023129438-0'); });
+</script></div><div id="widget-ajex-loader"><img alt="Loading..." class="widget-loader" src="https://akm-img-a-in.tosshub.com/indiatoday/../sites/all/themes/itg/images/loading.gif"/></div></div><div class="beaking_news"><script async="" type="text/javascript">ajaxinclude(/breaking.jsp);</script></div><div class="clear"></div><div id="main_container" style="position:relative; "><div id="wapper"><div class="homeleft"><div class="topstories leftmarg"><div class="alpha"><div id="pathway"><div class="pathone"><a href="/">Home</a></div><div class="pathtwo"><a href="https://www.businesstoday.in/current">BIZ WRAP</a></div><div class="paththree"><span class="selected">Corporate</span></div></div><div class="left-column1"><div class="article"><div class="topinnerbox" ctitle="Edelweiss opts out of LIC pre-IPO advisor selection process" url="/current/corporate/edelweiss-opts-out-of-lic-pre-ipo-advisor-selection-process/story/411694.html"><div class="topzone"><h2><a href="/current/corporate/edelweiss-opts-out-of-lic-pre-ipo-advisor-selection-process/story/411694.html">Edelweiss opts out of LIC pre-IPO advisor selection process</a></h2></div><div class="byline"> BusinessToday.In </div><a href="/current/corporate/edelweiss-opts-out-of-lic-pre-ipo-advisor-selection-process/story/411694.html"><img alt="Edelweiss opts out of LIC pre-IPO advisor selection process" border="0" class="images" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/ipo_660_180220040430_270720122759_310720101352.jpg" title="Edelweiss opts out of LIC pre-IPO advisor selection process"/></a><div class="clear"></div><p><p>Edelweiss Financial Services has opted out of the process of pre-initial public offering (IPO) advisor selection on concerns related to conflict of interest</p></p><div class="clear"></div><div class="share-story"><div class="share-icon" ctitle="Edelweiss opts out of LIC pre-IPO advisor selection process" url="/current/corporate/edelweiss-opts-out-of-lic-pre-ipo-advisor-selection-process/story/411694.html"></div><ul id="411694" style="border:none"></ul></div></div></div></div></div><div class="divclear"></div><div class="leftbar"><div class="clr"> </div><div class="clr"> </div><div class="boxcont" ctitle="Rural business growing 3x urban this fiscal: Britannia" url="/current/corporate/rural-business-growing-3x-urban-this-fiscal-britannia/story/411693.html"><div class="box"><div class="posrel"><a href="/current/corporate/rural-business-growing-3x-urban-this-fiscal-britannia/story/411693.html"><img border="0" height="225" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/britannia_350_310720094255.jpg" width="100%"/></a><h3><a href="/current/corporate/rural-business-growing-3x-urban-this-fiscal-britannia/story/411693.html">Rural business growing 3x urban this fiscal: Britannia</a></h3></div><div class="innerbox inner-st"><p>Increased MNREGA spends, reverse migration and a good monsoon have caused a surge in rural consumption</p><div class="clear"></div><div class="share-story"><div class="share-icon"></div><ul id="411693" style="border:none"></ul></div></div></div><div class="more"><a href="/current/corporate/rural-business-growing-3x-urban-this-fiscal-britannia/story/411693.html" target="_blank">More</a></div></div><div class="boxcont" ctitle="Mukesh Ambani calls for 2G-free India,urges govt to take necessary policy measures" url="/current/corporate/mukesh-ambani-calls-for-2g-free-indiaurges-govt-to-take-necessary-policy-measures/story/411674.html"><div class="box"><div class="posrel"><a href="/current/corporate/mukesh-ambani-calls-for-2g-free-indiaurges-govt-to-take-necessary-policy-measures/story/411674.html"><img border="0" height="225" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/bt_buzz_ril_350_290420041704_310720052229.jpg" width="100%"/></a><h3><a href="/current/corporate/mukesh-ambani-calls-for-2g-free-indiaurges-govt-to-take-necessary-policy-measures/story/411674.html">Mukesh Ambani calls for 2G-free India,urges govt to take necessary policy measures</a></h3></div><div class="innerbox inner-st"><p>Reliance Industries Limited (RIL) chairman Mukesh Ambani on Friday urged the government to take urgent policy measures to make India 2G-free</p><div class="clear"></div><div class="share-story"><div class="share-icon"></div><ul id="411674" style="border:none"></ul></div></div></div><div class="more"><a href="/current/corporate/mukesh-ambani-calls-for-2g-free-indiaurges-govt-to-take-necessary-policy-measures/story/411674.html" target="_blank">More</a></div></div><div class="boxcont" ctitle="Sun Pharma posts Q1 net loss of Rs 1,655 crore; revenue stands at Rs 7,585 crore" url="/current/corporate/sun-pharma-posts-q1-net-loss-of-rs-1655-crore-revenue-stands-at-rs-7585-crore/story/411657.html"><div class="box"><div class="posrel"><a href="/current/corporate/sun-pharma-posts-q1-net-loss-of-rs-1655-crore-revenue-stands-at-rs-7585-crore/story/411657.html"><img border="0" height="225" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/sun_pharma_350_012019070451_261219034502_190720052922_310720040055.jpg" width="100%"/></a><h3><a href="/current/corporate/sun-pharma-posts-q1-net-loss-of-rs-1655-crore-revenue-stands-at-rs-7585-crore/story/411657.html">Sun Pharma posts Q1 net loss of Rs 1,655 crore; revenue stands at Rs 7,585 crore</a></h3></div><div class="innerbox inner-st"><p>Sun Pharma's earnings before interest, tax, depreciation and amortisation (EBITDA) fell 7.6 percent on-year to Rs 1,843.6 crore</p><div class="clear"></div><div class="share-story"><div class="share-icon"></div><ul id="411657" style="border:none"></ul></div></div></div><div class="more"><a href="/current/corporate/sun-pharma-posts-q1-net-loss-of-rs-1655-crore-revenue-stands-at-rs-7585-crore/story/411657.html" target="_blank">More</a></div></div><div class="boxcont" ctitle="Money laundering case: ED moves SC against bail to ex-Fortis promoter Shivinder Singh" url="/current/corporate/money-laundering-case-ed-moves-sc-against-bail-ex-fortis-promoter-shivinder-singh/story/411651.html"><div class="box"><div class="posrel"><a href="/current/corporate/money-laundering-case-ed-moves-sc-against-bail-ex-fortis-promoter-shivinder-singh/story/411651.html"><img border="0" height="225" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/religare_350_180620111724_220620063331_170720055804_230720031410_310720031825.jpg" width="100%"/></a><h3 class="sectionlistheading"><a href="/current/corporate/money-laundering-case-ed-moves-sc-against-bail-ex-fortis-promoter-shivinder-singh/story/411651.html">Money laundering case: ED moves SC against bail to ex-Fortis promoter Shivinder Singh</a></h3></div><div class="innerbox inner-st share-section"><div class="share-story"><div class="share-icon"></div><ul id="411651" style="border:none"></ul></div></div></div><div class="more"><a href="/current/corporate/money-laundering-case-ed-moves-sc-against-bail-ex-fortis-promoter-shivinder-singh/story/411651.html" target="_blank">More</a></div></div><div class="boxcont" ctitle="SBI Q1 results: Profit rises 81% to Rs 4,189 crore, NII stands at Rs 26,641.6 crore" url="/current/corporate/sbi-q1-results-profit-rises-81-to-rs-4189-crore-nii-stands-at-rs-266416-crore/story/411640.html"><div class="box"><div class="posrel"><a href="/current/corporate/sbi-q1-results-profit-rises-81-to-rs-4189-crore-nii-stands-at-rs-266416-crore/story/411640.html"><img border="0" height="225" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/sbi_home_loans_350_300320063119_230720124432_310720022046.jpg" width="100%"/></a><h3><a href="/current/corporate/sbi-q1-results-profit-rises-81-to-rs-4189-crore-nii-stands-at-rs-266416-crore/story/411640.html">SBI Q1 results: Profit rises 81% to Rs 4,189 crore, NII stands at Rs 26,641.6 crore</a></h3></div><div class="innerbox inner-st"><p>State Bank of India (SBI) on Friday reported an 81 per cent rise in net profit at Rs 4,189.3 in April-June quarter of fiscal 2020-21</p><div class="clear"></div><div class="share-story"><div class="share-icon"></div><ul id="411640" style="border:none"></ul></div></div></div><div class="more"><a href="/current/corporate/sbi-q1-results-profit-rises-81-to-rs-4189-crore-nii-stands-at-rs-266416-crore/story/411640.html" target="_blank">More</a></div></div><div class="boxcont" ctitle="BT BUZZ: How Indian consumers are going the extra mile to build immunity" url="/current/corporate/bt-buzz-how-indian-consumers-are-going-the-extra-mile-to-build-immunity/story/411622.html"><div class="box"><div class="posrel"><a href="/current/corporate/bt-buzz-how-indian-consumers-are-going-the-extra-mile-to-build-immunity/story/411622.html"><img border="0" height="225" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/bt_buzz_immunity_350_310720122313.jpg" width="100%"/></a><h3 class="sectionlistheading"><a href="/current/corporate/bt-buzz-how-indian-consumers-are-going-the-extra-mile-to-build-immunity/story/411622.html">BT BUZZ: How Indian consumers are going the extra mile to build immunity</a></h3></div><div class="innerbox inner-st share-section"><div class="share-story"><div class="share-icon"></div><ul id="411622" style="border:none"></ul></div></div></div><div class="more"><a href="/current/corporate/bt-buzz-how-indian-consumers-are-going-the-extra-mile-to-build-immunity/story/411622.html" target="_blank">More</a></div></div><div class="boxcont" ctitle="Amazon takes on Tesla; to invest $10 billion in satellite broadband plan" url="/current/corporate/amazon-takes-on-tesla-to-invest-10-billion-in-satellite-broadband-plan/story/411610.html"><div class="box"><div class="posrel"><a href="/current/corporate/amazon-takes-on-tesla-to-invest-10-billion-in-satellite-broadband-plan/story/411610.html"><img border="0" height="225" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/amazon_350_010520104433_310720104148.jpg" width="100%"/></a><h3 class="sectionlistheading"><a href="/current/corporate/amazon-takes-on-tesla-to-invest-10-billion-in-satellite-broadband-plan/story/411610.html">Amazon takes on Tesla; to invest $10 billion in satellite broadband plan</a></h3></div><div class="innerbox inner-st share-section"><div class="share-story"><div class="share-icon"></div><ul id="411610" style="border:none"></ul></div></div></div><div class="more"><a href="/current/corporate/amazon-takes-on-tesla-to-invest-10-billion-in-satellite-broadband-plan/story/411610.html" target="_blank">More</a></div></div></div><div class="middlebar"><div class="clr"> </div><div class="clr"> </div><div class="boxcont" ctitle="Tata Motors Q1 results: Second straight quarterly loss at Rs 8,438 crore as COVID-19 disrupts sales" url="/current/corporate/tata-motors-q1-results-second-straight-quarterly-loss-at-rs-8438-crore-as-covid-19-disrupts-sales/story/411681.html"><div class="box"><div class="posrel"><a href="/current/corporate/tata-motors-q1-results-second-straight-quarterly-loss-at-rs-8438-crore-as-covid-19-disrupts-sales/story/411681.html"><img border="0" height="225" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/tata_motors_350_020619052720_020719052849_290220024711_100720022706_310720065011.jpg" width="100%"/></a><h3><a href="/current/corporate/tata-motors-q1-results-second-straight-quarterly-loss-at-rs-8438-crore-as-covid-19-disrupts-sales/story/411681.html">Tata Motors Q1 results: Second straight quarterly loss at Rs 8,438 crore as COVID-19 disrupts sales</a></h3></div><div class="innerbox inner-st"><p>Tata Motors Limited on Friday recorded a loss for the second straight quarter in Q1FY21 as the coronavirus lockdowns negatively hit its sales in India and overseas</p><div class="clear"></div><div class="share-story"><div class="share-icon" ctitle="Tata Motors Q1 results: Second straight quarterly loss at Rs 8,438 crore as COVID-19 disrupts sales" url="/current/corporate/tata-motors-q1-results-second-straight-quarterly-loss-at-rs-8438-crore-as-covid-19-disrupts-sales/story/411681.html"></div><ul id="411681" style="border:none"></ul></div></div></div><div class="more"><a href="/current/corporate/tata-motors-q1-results-second-straight-quarterly-loss-at-rs-8438-crore-as-covid-19-disrupts-sales/story/411681.html" target="_blank">More</a></div></div><div class="boxcont" ctitle="Indian Oil Q1 net profit drops 47% to Rs 1,911 crore, fuel sales down 29%" url="/current/corporate/indian-oil-q1-net-profit-drops-47-to-rs-1911-crore-fuel-sales-down-29/story/411665.html"><div class="box"><div class="posrel"><a href="/current/corporate/indian-oil-q1-net-profit-drops-47-to-rs-1911-crore-fuel-sales-down-29/story/411665.html"><img border="0" height="225" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/indian_oil_350_080618084310_240620045158_310720043658.jpg" width="100%"/></a><h3><a href="/current/corporate/indian-oil-q1-net-profit-drops-47-to-rs-1911-crore-fuel-sales-down-29/story/411665.html">Indian Oil Q1 net profit drops 47% to Rs 1,911 crore, fuel sales down 29%</a></h3></div><div class="innerbox inner-st"><p>The profit of the country's largest oil firm declined as coronavirus-induced lockdown negatively hit fuel demand and shrank refining margins</p><div class="clear"></div><div class="share-story"><div class="share-icon" ctitle="Indian Oil Q1 net profit drops 47% to Rs 1,911 crore, fuel sales down 29%" url="/current/corporate/indian-oil-q1-net-profit-drops-47-to-rs-1911-crore-fuel-sales-down-29/story/411665.html"></div><ul id="411665" style="border:none"></ul></div></div></div><div class="more"><a href="/current/corporate/indian-oil-q1-net-profit-drops-47-to-rs-1911-crore-fuel-sales-down-29/story/411665.html" target="_blank">More</a></div></div><div class="boxcont" ctitle="Focussed on digitising MSMEs in India, on-boarding more sellers: Amazon" url="/current/corporate/focussed-on-digitising-msmes-in-india-on-boarding-more-sellers-amazon/story/411654.html"><div class="box"><div class="posrel"><a href="/current/corporate/focussed-on-digitising-msmes-in-india-on-boarding-more-sellers-amazon/story/411654.html"><img border="0" height="225" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/amazon_hyderabad_350_040320092211_170420061837_200720083710_310720033456.jpg" width="100%"/></a><h3><a href="/current/corporate/focussed-on-digitising-msmes-in-india-on-boarding-more-sellers-amazon/story/411654.html">Focussed on digitising MSMEs in India, on-boarding more sellers: Amazon</a></h3></div><div class="innerbox inner-st"><p>Amazon and other e-commerce players have been aggressively investing in expanding infrastructure and adding solutions to enhance consumer and seller experience</p><div class="clear"></div><div class="share-story"><div class="share-icon" ctitle="Focussed on digitising MSMEs in India, on-boarding more sellers: Amazon" url="/current/corporate/focussed-on-digitising-msmes-in-india-on-boarding-more-sellers-amazon/story/411654.html"></div><ul id="411654" style="border:none"></ul></div></div></div><div class="more"><a href="/current/corporate/focussed-on-digitising-msmes-in-india-on-boarding-more-sellers-amazon/story/411654.html" target="_blank">More</a></div></div><div class="boxcont" ctitle="JSW Energy terminates Rs 5,321 crore acquisition of GMRs Kamalanga Power plant" url="/current/corporate/jsw-energy-terminates-rs-5321-crore-acquisition-of-gmr-kamalanga-power-plant/story/411644.html"><div class="box"><div class="posrel"><a href="/current/corporate/jsw-energy-terminates-rs-5321-crore-acquisition-of-gmr-kamalanga-power-plant/story/411644.html"><img border="0" height="225" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/jsw_350_170220053040_310720024116.jpg" width="100%"/></a><h3><a href="/current/corporate/jsw-energy-terminates-rs-5321-crore-acquisition-of-gmr-kamalanga-power-plant/story/411644.html">JSW Energy terminates Rs 5,321 crore acquisition of GMR's Kamalanga Power plant</a></h3></div><div class="innerbox inner-st"><p>JSW Group is already in a mission to control costs and conserve cash to make the companies resilient to handle eventualities</p><div class="clear"></div><div class="share-story"><div class="share-icon" ctitle="JSW Energy terminates Rs 5,321 crore acquisition of GMRs Kamalanga Power plant" url="/current/corporate/jsw-energy-terminates-rs-5321-crore-acquisition-of-gmr-kamalanga-power-plant/story/411644.html"></div><ul id="411644" style="border:none"></ul></div></div></div><div class="more"><a href="/current/corporate/jsw-energy-terminates-rs-5321-crore-acquisition-of-gmr-kamalanga-power-plant/story/411644.html" target="_blank">More</a></div></div><div class="boxcont" ctitle="Nokia reports unexpected rise in profits in Q2 ahead of CEO change" url="/current/corporate/nokia-reports-unexpected-rise-in-profits-in-q2-ahead-of-ceo-change/story/411627.html"><div class="box"><div class="posrel"><a href="/current/corporate/nokia-reports-unexpected-rise-in-profits-in-q2-ahead-of-ceo-change/story/411627.html"><img border="0" height="225" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/nokia_350_310720125348.jpg" width="100%"/></a><h3 class="sectionlistheading"><a href="/current/corporate/nokia-reports-unexpected-rise-in-profits-in-q2-ahead-of-ceo-change/story/411627.html">Nokia reports unexpected rise in profits in Q2 ahead of CEO change</a></h3></div><div class="innerbox inner-st share-section"><div class="share-story"><div class="share-icon" ctitle="Nokia reports unexpected rise in profits in Q2 ahead of CEO change" url="/current/corporate/nokia-reports-unexpected-rise-in-profits-in-q2-ahead-of-ceo-change/story/411627.html"></div><ul id="411627" style="border:none"></ul></div></div></div><div class="more"><a href="/current/corporate/nokia-reports-unexpected-rise-in-profits-in-q2-ahead-of-ceo-change/story/411627.html" target="_blank">More</a></div></div><div class="boxcont" ctitle="Gilead raises 2020 sales forecast to include revenue from COVID-19 drug remdesivir" url="/sectors/pharma/gilead-raises-2020-sales-forecast-to-include-revenue-from-covid-19-drug-remdesivir/story/411616.html"><div class="box"><div class="posrel"><a href="/sectors/pharma/gilead-raises-2020-sales-forecast-to-include-revenue-from-covid-19-drug-remdesivir/story/411616.html"><img border="0" height="225" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/gilead_350_240420013841_310720113534.jpg" width="100%"/></a><h3><a href="/sectors/pharma/gilead-raises-2020-sales-forecast-to-include-revenue-from-covid-19-drug-remdesivir/story/411616.html">Gilead raises 2020 sales forecast to include revenue from COVID-19 drug remdesivir</a></h3></div><div class="innerbox inner-st"><p>Gilead's second-quarter sales fell nearly 10% from a year earlier to $5.1 billion, short of the average analyst estimate of $5.3 billion, according to Refinitiv</p><div class="clear"></div><div class="share-story"><div class="share-icon" ctitle="Gilead raises 2020 sales forecast to include revenue from COVID-19 drug remdesivir" url="/sectors/pharma/gilead-raises-2020-sales-forecast-to-include-revenue-from-covid-19-drug-remdesivir/story/411616.html"></div><ul id="411616" style="border:none"></ul></div></div></div><div class="more"><a href="/sectors/pharma/gilead-raises-2020-sales-forecast-to-include-revenue-from-covid-19-drug-remdesivir/story/411616.html" target="_blank">More</a></div></div><div class="boxcont" ctitle="Facebook to expand Jio-WhatsApp model to other countries: Mark Zuckerberg" url="/current/corporate/facebook-to-expand-jio-whatsapp-model-in-india-and-other-countries-mark-zuckerberg/story/411602.html"><div class="box"><div class="posrel"><a href="/current/corporate/facebook-to-expand-jio-whatsapp-model-in-india-and-other-countries-mark-zuckerberg/story/411602.html"><img border="0" height="225" src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/zuckerberg_350_310720100539.jpg" width="100%"/></a><h3 class="sectionlistheading"><a href="/current/corporate/facebook-to-expand-jio-whatsapp-model-in-india-and-other-countries-mark-zuckerberg/story/411602.html">Facebook to expand Jio-WhatsApp model to other countries: Mark Zuckerberg</a></h3></div><div class="innerbox inner-st share-section"><div class="share-story"><div class="share-icon" ctitle="Facebook to expand Jio-WhatsApp model to other countries: Mark Zuckerberg" url="/current/corporate/facebook-to-expand-jio-whatsapp-model-in-india-and-other-countries-mark-zuckerberg/story/411602.html"></div><ul id="411602" style="border:none"></ul></div></div></div><div class="more"><a href="/current/corporate/facebook-to-expand-jio-whatsapp-model-in-india-and-other-countries-mark-zuckerberg/story/411602.html" target="_blank">More</a></div></div></div><div class="divclear"></div></div><div class="divclear"></div><div class="pagination"><ul><li><a class="currentpage">1</a></li><li><a href="/current/corporate?page=2">2</a></li><li><a href="/current/corporate?page=3">3</a></li><li><a href="/current/corporate?page=4">4</a></li><li><a href="/current/corporate?page=5">5</a></li><li><a class="prevnext" href="/current/corporate?page=6">Next &gt;</a></li><li><a class="prevnext" href="/current/corporate?page=15"> &gt;&gt;</a></li></ul></div><div class="divclear"></div><div id="taboola-below-category-thumbnails"></div><script type="text/javascript">
+	window._ttCc = window._ttCc || [];_ttCc.push(function(){
+      window._taboola = window._taboola || [];
+      _taboola.push({
+        mode: 'alternating-thumbnails-a',
+        container: 'taboola-below-category-thumbnails',
+        placement: 'Below Category Thumbnails',
+        target_type: 'mix'
+      });
+	  });
+    </script><script>function _ttRunCode(t){for(;t.length;){(0,t.splice(0,1)[0])()}}window._ttStRunCode=0,window._ttCodeLoad=window._ttCodeLoad||[],window._ttCc=window._ttCc||[],_ttRunCode(_ttCodeLoad),jQuery(document).ready(function(){jQuery(window).scroll(function(){_ttStRunCode||(_ttStRunCode=1,_ttRunCode(_ttCc))})});</script><div class="divclear"></div></div><style type="text/css">.homeright .ad{ position:relative; z-index:999;}div[id^="mainContainer12091"] {height:auto !important}
+    .socialshare-rightsec{width:auto;}
+	.socialshare-rightsec ul{list-style:none;}
+	.socialshare-rightsec ul li{width:auto; display:inline}
+	.socialshare-rightsec ul li a{background:url(https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/right-panel-icon.png) no-repeat 0 0; width:38px; display:inline-block; margin-left:17px;}
+	.socialshare-rightsec ul li a.fb{background-position:0 0px; height:33px;}
+	.socialshare-rightsec ul li a.ytube{background-position:-49px 0; height:33px;}
+	.socialshare-rightsec ul li a.tw{background-position:-98px 0; height:33px;}
+	.socialshare-rightsec ul li a.gp{background-position:-146px 0; height:33px;}
+	.socialshare-rightsec ul li a.message{background-position:-192px 0; height:33px;}
+	.socialshare-rightsec ul li a.mapp{background-position:-239px 0; height:33px;}
+    .tabolabg{background-color: #fff;padding: 5px;box-sizing: border-box;}    
+    </style><div class="homeright"><div class="colum"><div class="newstay-connected"><div id="searchform"><form action="/search.jsp" method="get" name="searchform1" onsubmit="return validatesearch('mod_search_searchword');" style="margin:0;padding:0;"><div class="search-inner"><input name="option" type="hidden" value="com_search"/><div id="scc_inGssHomeSbOnly"></div><input class="submit-btn" name="" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/find-icon.png" type="image" value="search"/></div></form><style>
+#searchOverlay .scc_overlay, #searchOverlay .web .scc_img_tab_g, section {
+	width: 100%;
+}
+.scc_overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width:100%;
+	height: 100%;
+	z-index: 10;
+	background-color: rgba(0, 0, 0, .5);
+	display: none; z-index:9999
+}
+.scc_overlayWrapper {
+	background: #FFF;
+	border: 2px solid #e9e9e9;
+	padding: 5px 20px 10px;
+	top: 50%;
+	width: 300px;
+	margin: 0 auto;
+	margin-top:25%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+.scc_overlayTitle p {
+	color: #000;
+	font-size: 16px;
+	text-align: center;
+	font-weight: 700; margin:15px 0;
+}
+.scc_overlayContent {
+	background: #4d4d4d;
+	border: 2px solid #e9e9e9;
+	padding: 25px;
+	text-align: center;
+}
+.scc_closeOlay {
+	font-size: 20px;
+	color: #010101;
+	cursor: pointer;
+	text-align: right;
+	font-weight: 700;
+}
+.scc_closeOlay {
+	font-size: 20px;
+	color: #010101;
+	cursor: pointer;
+	text-align: right;
+	font-weight: 700;
+}
+.scc_ppButtonWrap {
+	margin: 20px 0 0;
+}
+.scc_ppBtnReSpeak {
+	background: #242424;
+}
+.scc_ppBtnReSpeak, .scc_ppBtnSubmit {
+	width: 100%;
+	display: inline-block;
+	padding: 10px;
+	color: #FFF;
+	font-size: 18px;
+	text-decoration: none;
+}
+a {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	color: #000;
+	text-decoration: none;
+}
+.scc_searchBox{position:relative;}
+.scc_searchBox button{display:none;}
+.newstay-connected input.input-box{width:202px; padding-right:31px;}
+.scc_micLink.scc_tlkHsbNw{position: absolute;right: 43px;top: 4px;}
+.scc_ppBtnReSpeak,.scc_ppBtnSubmit{width:auto; padding:10px 33%;}
+.scc_ppBtnSubmit{background-color:#970005; padding:10px 36%; margin-top:10px;}
+</style><script>
+(function($) {
+    var browser = browser_detector();
+    var lang = "en-US";
+	var recognizing = false;
+	var patience = 3;
+    function naviPlatfrm() {
+        return true;
+        if (navigator.platform == "MacIntel" || navigator.platform == "Win32") {
+            return true;
+        }
+        return false;
+    }
+    $("#scc_inGssHomeSbOnly").html(inGssHomeSearchBox());
+    //Speach Recogonization FUNCTIOM
+    if (browser == 'chrome') {
+        var recognition = new webkitSpeechRecognition();
+    } else {
+        $(".scc_tlkNw").hide();
+        $(".scc_tlkHsbNw").hide();
+    }
+    $(".scc_settingFilterShow").click(function() {
+        $(".scc_FltrWrap").toggle();
+        $("#scc_settingFilters").toggle();
+    });
+    //On click event for Header tab
+    $(".scc_fHead").click(function() {
+        isphotovideonotavail = false;
+        $(".scc_fHead").removeClass('scc_redActive');
+        $(this).addClass('scc_redActive');
+        $("#scc_all ol").empty();
+        $("#scc_resultStats").empty();
+        activeTab = $(this).attr('tab');
+        if (activeTab == "photos" || activeTab == "videos") {
+            $("#scc_webPagi").hide();
+        }
+        currentPage = 1;
+        startPageNum = 1;
+        nextPage = 1;
+        filter = "m1";
+        H = 0;
+        Rati = 0;
+        var q = $("#scc_search_txt").val();
+    });
+    //Spaeach Recogonization option function call
+    $(".scc_tlkNw").click(function() {
+        $(".scc_tlkNw").hide();
+        $(".scc_spk_stat_txt").html("Listening");
+        speech_recognition();
+    });
+
+    $(".scc_tlkHsbNw").click(function() {
+        $(".scc_tlkHsbNw").hide();
+        $(".scc_spk_stat_txt_hsb").html("Listening");
+        speech_recognition_hsb();
+    });
+    $(".scc_search_btn").click(function() {
+        $('#right_search_txt').val($('#scc_search_txt').val());
+        search_btn();
+    });
+    $(".scc_search_mic_btn").click(function() {
+        $('#right_search_txt').val($('#scc_search_txt').val());
+        search_btn();
+    });
+    function inGssHomeSearchBox() {
+        var ighsb = "<div class='scc_searchBox'><label for='mod_search_searchword' style='display:none;'></label><input id='mod_search_searchword' type='text' onkeypress='return blockSpecialChar(event)' onkeyup='removeClass()' data-trn-holder='Enter search keyword' placeholder='Enter search keyword' autocomplete='on' name='searchword' class='scc_search scc_advancedSearchTextbox trn input-box' style='height:28px;'><a href='#' title='scc_micLink' name='scc_micLink' class='scc_micLink scc_tlkHsbNw'><svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 288 287.5' enable-background='new 0 0 288 287.5' xml:space='preserve'> <path fill='none' stroke='#929497' stroke-width='10' stroke-miterlimit='10' d='M170.448,153.013 c0,13.821-11.206,25.022-25.022,25.022l0,0c-13.817,0-25.023-11.201-25.023-25.022V67.22c0-13.821,11.206-25.023,25.023-25.023l0,0 c13.816,0,25.022,11.202,25.022,25.023V153.013z'/> <g><defs><rect id='SVGID_1_' x='75.171' y='159.195' width='139.908' height='126.305'/></defs> <clipPath id='SVGID_2_'><use xlink:href='#SVGID_1_' overflow='visible'/></clipPath> <path clip-path='url(#SVGID_2_)' fill='none' stroke='#929497' stroke-width='10' stroke-miterlimit='10' d='M209.435,152.046 c0,35.538-28.808,64.345-64.345,64.345l0,0c-35.537,0-64.344-28.807-64.344-64.345V73.402c0-35.537,28.807-64.344,64.344-64.344 l0,0c35.537,0,64.345,28.807,64.345,64.344V152.046z'/> </g> <line fill='#808184' stroke='#929497' stroke-width='10' stroke-miterlimit='10' x1='145.125' y1='246.188' x2='145.125' y2='215.088'/> <line fill='#808184' stroke='#929497' stroke-width='10' stroke-miterlimit='10' x1='129.576' y1='246.961' x2='160.674' y2='246.961'/> </svg></a><button type='submit' class='scc_btn scc_btn-success scc_search_home_btn'></button></div><div class='scc_overlay'><div class='scc_overlayWrapper'><div class='scc_overlayTitle trn'><p>Speak Now</p></div><div class='scc_overlayContent'><svg style='margin:0px auto;' version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='25%' height='25%' viewBox='0 0 216 216' enable-background='new 0 0 216 216' xml:space='preserve'><circle fill='#DBDBDA' cx='108' cy='108' r='107'/><circle fill='#EE3A4D' cx='108' cy='108' r='83'/><g><defs><rect id='SVGID_1_' x='67.753' y='109.387' width='75.333' height='64'/></defs><clipPath id='SVGID_2_'><use xlink:href='#SVGID_1_'  overflow='visible'/></clipPath><path clip-path='url(#SVGID_2_)' fill='none' stroke='#FFFFFF' stroke-width='8' stroke-miterlimit='10' d='M131.066,108.65c0,13.08-10.604,23.684-23.684,23.684l0,0c-13.079,0-23.682-10.604-23.682-23.684V71.349c0-13.08,10.603-23.683,23.682-23.683l0,0c13.08,0,23.684,10.603,23.684,23.683V108.65z'/></g><path fill='#FFFFFF' d='M119.42,110c0,6.259-5.373,11.333-11.999,11.333l0,0c-6.628,0-12.001-5.074-12.001-11.333V86c0-6.259,5.373-11.333,12.001-11.333l0,0c6.626,0,11.999,5.074,11.999,11.333V110z'/><rect x='102.42' y='134.721' fill='#FFFFFF' width='10' height='14'/></svg><br/> <span class='scc_spk_stat_txt_hsb trn' style='display:none;'>Listening</span> <br/><div class='scc_ppButtonWrap'><a name='re_speak' type='submit' href='#' class='scc_btn scc_btn-success scc_ppBtnReSpeak scc_tlkHsbNw trn' style='display:none;'>Re Speak</a><a name='submit' type='submit'  href='JavaScript:Void(0);' class='scc_btn scc_btn-success scc_ppBtnSubmit scc_search_home_mic_btn trn' style='display:none;'>Submit</a></div></div><div class='scc_closeOlay speech_recognitionEnd'>x</div></div></div>";
+        return ighsb;
+    }
+    //Fuction for browser detection
+    function browser_detector() {
+        var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+        if (isOpera) {
+            var browser = "opera";
+        }
+        // Firefox 1.0+
+        var isFirefox = typeof InstallTrigger !== 'undefined';
+        if (isFirefox) {
+            var browser = "firefox";
+        }
+        // At least Safari 3+: "[object HTMLElementConstructor]"
+        var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+        if (isSafari) {
+            var browser = "safari";
+        }
+        // Internet Explorer 6-11
+        var isIE = /*@cc_on!@*/ false || !!document.documentMode;
+        if (isIE) {
+            var browser = "IE";
+        }
+        // Edge 20+
+        var isEdge = !isIE && !!window.StyleMedia;
+        if (isEdge) {
+            var browser = "edge";
+        }
+        // Chrome 1+
+        var isChrome = !!window.chrome && !!window.chrome.webstore || navigator.userAgent.indexOf(' OPR/') >= 0 || navigator.userAgent.indexOf('Chrome') >= 0;
+        if (isChrome) {
+            var browser = "chrome";
+        }
+        // Blink engine detection
+        var isBlink = (isChrome || isOpera) && !!window.CSS;
+        if (isBlink) {
+            var engine = "blink";
+        }
+        return browser;
+    }
+    $('.speech_recognitionEnd').click(function() {
+        speech_recognitionEnd();
+    });
+    function speech_recognitionEnd() {
+        $(".scc_overlay").hide();
+        $(".scc_tlkNw").show();
+        recognition.stop();
+        recognition.onstop = function() {
+            recognizing = false;
+            inputEl.placeholder = oldPlaceholder;
+        };
+    }
+    function speech_recognition_hsb() {
+        $(".scc_overlay").show();
+        var inputEl = document.querySelector('input[name=searchword]');
+        recognition.continuous = true;
+        recognition.lang = lang;
+        event.preventDefault();
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        inputEl.value = finalTranscript = '';
+        recognition.start();
+        recognition.onstart = function() {
+            oldPlaceholder = inputEl.placeholder;
+            //document.getElementById("mod_search_searchword").focus();
+            inputEl.placeholder = "Start Talking";
+            $(".scc_spk_stat_txt_hsb").show();
+            $(".scc_search_home_mic_btn").hide();
+            recognizing = true;
+            restartTimer();
+        };
+        recognition.onend = function() {
+            recognizing = false;
+            $(".scc_tlkHsbNw").show();
+            clearTimeout(timeout);
+            if (oldPlaceholder !== null) {
+                inputEl.placeholder = oldPlaceholder;
+            }
+        };
+        recognition.onresult = function(event) {
+            $(".scc_search_home_mic_btn").show();
+            $(".scc_tlkHsbNw").show();
+            clearTimeout(timeout);
+            for (var i = event.resultIndex; i < event.results.length; ++i) {
+                if (event.results[i].isFinal) {
+                    finalTranscript += event.results[i][0].transcript;
+                }
+            }
+            finalTranscript = capitalize(finalTranscript);
+            inputEl.value = finalTranscript;
+            $(".scc_spk_stat_txt_hsb").html(finalTranscript);
+            restartTimer();
+            //$( ".overlay" ).hide();
+            $("#gsc-i-id1").trigger(jQuery.Event('keydown', {
+                which: 13
+            }));
+        };
+    }
+    function speech_recognition() {
+        $(".scc_overlay").show();
+        var inputEl = document.querySelector('input[name=searchword]');
+        recognition.continuous = true;
+
+        recognition.lang = lang;
+
+        event.preventDefault();
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        inputEl.value = finalTranscript = '';
+        recognition.start();
+        recognition.onstart = function() {
+            oldPlaceholder = inputEl.placeholder;
+            document.getElementById("scc_search_txt").focus();
+            //inputEl.placeholder = "Start Talking";
+            $(".scc_spk_stat_txt").show();
+            $(".scc_search_mic_btn").hide();
+            recognizing = true;
+            restartTimer();
+        };
+        recognition.onend = function() {
+            recognizing = false;
+            $(".scc_tlkNw").show();
+            clearTimeout(timeout);
+            if (oldPlaceholder !== null) {
+                inputEl.placeholder = oldPlaceholder;
+            }
+        };
+
+        recognition.onresult = function(event) {
+            $(".scc_search_mic_btn").show();
+            $(".scc_tlkNw").show();
+            clearTimeout(timeout);
+            for (var i = event.resultIndex; i < event.results.length; ++i) {
+                if (event.results[i].isFinal) {
+                    finalTranscript += event.results[i][0].transcript;
+                }
+            }
+            finalTranscript = capitalize(finalTranscript);
+            inputEl.value = finalTranscript;
+
+            $(".scc_spk_stat_txt").html(finalTranscript);
+            finalTranscript = '';
+            restartTimer();
+            //$( ".overlay" ).hide();
+            $("#gsc-i-id1").trigger(jQuery.Event('keydown', {
+                which: 13
+            }));
+        };
+    }
+    // Capitalize a string
+    function capitalize(str) {
+        return str.length ? str[0].toUpperCase() + str.slice(1) : str;
+    }
+    function restartTimer() {
+        timeout = setTimeout(function() {
+            recognition.stop();
+        }, patience * 2000);
+    }
+    function getNumber(number) {
+        number = parseInt(number, 10);
+        return isNaN(number) || number === null || typeof(number) === 'undefined' ? 0 : number;
+    }
+    function search_home_btn() {
+        currentPage = 1;
+		var x = getRndInteger();
+		var y = getRndInteger();
+        $("#scc_resultStats").empty();
+        var res = $("#scc_inGssHomeSbOnly").attr("resultUrl");
+        var qVal = $("#scc_inGssHomeSbOnly #mod_search_searchword").val();
+        if (qVal != '' && qVal.length > 0 ) {
+			window.location.href = "https://www.businesstoday.in/search.jsp?option=com_search&searchword=" + qVal.toLowerCase().split(' ').join('_')+"&x="+x+"&y="+y;
+        }
+    }
+	$("#scc_inGssHomeSbOnly .scc_search_home_mic_btn").on('click', function() {
+        search_home_btn();
+    });
+    $('.scc_overlay').click(function() {
+        //$('.scc_overlay').hide();
+    });
+    $(document).mouseup(function(e) {
+		//$('.scc_overlay').hide();
+    });
+    $(document).ready(function() {
+       
+        $("#scc_inGssHomeSbOnly").ready(function() {
+            var homeSccLang = $("#scc_inGssHomeSbOnly").attr('scc_lang');
+            
+        });
+        $("#scc_inGssSearchResBlk").ready(function() {
+            if (naviPlatfrm()) {
+                $("#scc_inGssSearchResBlk").addClass('web');
+                $("#scc_inGssHomeSbOnly").addClass('web');
+            }
+        });
+        if (naviPlatfrm()) {
+            $("#scc_settingFilters").hide();
+            $(".scc_fltrWrpWeb").css("display", "inline-block");
+            $(".scc_settingFilterShow").css("display", "none");
+            $("#scc_cng_vw").removeClass('scc_mob_blk');
+            $("#scc_cng_vw").addClass('scc_desk_blk');
+        }
+    });
+})(jQuery);
+
+function getRndInteger() {
+  return Math.floor(Math.random() * 100);;
+}
+</script><script>
+ 						function validatesearch(modsearch) {var srchtextvalue = document.getElementById(modsearch);
+     					var re = new RegExp("^(?=.*[a-zA-Z0-9 ]).*$");
+						if(re.test(srchtextvalue.value)) {
+                        }else{srchtextvalue.value = ''}
+							if(srchtextvalue.value=='') {alert('Please enter text to search.');return false;}
+							if(srchtextvalue.value!='') {
+								if(srchtextvalue.value!='') {var x=srchtextvalue.value;var y = '';var iChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_.-';?:%,! ";
+									for (var i = 0; i < x.length; i++) {
+									x = x.replace(" ","_");
+										if (!(iChars.indexOf(x.charAt(i)) != -1)) {	} else {y += x.charAt(i);}
+									}
+			  						srchtextvalue.value = y.trim();	}	}	return true;	}
+ 					</script></div><div class="socialshare-rightsec"><ul><li><a class="fb" href="https://www.facebook.com/BusinessToday" onclick="ga('send', 'event', 'SOCIALLINKS-FB', 'click','1', 1, {'nonInteraction': 1});return true;" rel="noopener" target="_blank" title="facebook"></a></li><li><a class="ytube" href="https://www.youtube.com/user/businesstodayindia" onclick="ga('send', 'event', 'SOCIALLINKS-YOUTUBE', 'click','1', 1, {'nonInteraction': 1});return true;" rel="noopener" target="_blank" title="You Tube"></a></li><li><a class="tw" href="https://www.twitter.com/BT_India" onclick="ga('send', 'event', 'SOCIALLINKS-TWITTER', 'click','1', 1, {'nonInteraction': 1});return true;" rel="noopener" target="_blank" title="twitter"></a></li><li><a class="message" href="/newsletter.jsp" onclick="ga('send', 'event', 'SOCIALLINKS-NEWSLETTER', 'click','1', 1, {'nonInteraction': 1});return true;" title="mail"></a></li><li><a class="mapp" href="https://subscriptions.intoday.in/subscriptions/businesstoday/digital-magazine-subscription.jsp" onclick="ga('send', 'event', 'SOCIALLINKS-APP', 'click','1', 1, {'nonInteraction': 1});return true;" rel="noopener" target="_blank" title="Digital Magazine Subscription"></a></li></ul></div></div></div><div class="colum" style="margin-bottom:20px;"><div class="new-col"><div class="ad"><div style="font-size:11px; color:#ccc; padding:0px 0px 3px 0px; display:none; text-align:center">Advertisement</div><div data-zedoads="300x250/categorylist.jsp_RightnavMR1" id="zedoads1"><div id="div-gpt-ad-1506670791889-1" style="height:250px; width:300px;"><script>
+                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1506670791889-1'); });
+                    </script></div></div></div></div></div><div class="colum"><script type="text/javascript">storyRelatedAjaxInclude("/economics-in-numbers.html")</script></div><div class="colum"><script>storyRelatedAjaxInclude("/staticcontent_chunk.jsp?contentTitle=HOMESUBSCRIBECHUNKNEW")</script></div><div data-zedoads="300x100/categorylist.jsp_Topnav" id="zedotopnavads1"><div class="colum" style="margin-bottom:20px;"><div id="div-gpt-ad-1506670791889-2" style="height:100px; width:300px;"><script>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1506670791889-2'); });
+                </script></div></div></div><div class="colum" id="static_coolest_banner" style="margin-top:0px;"><script>storyRelatedAjaxInclude("/staticcontent_chunk.jsp?contentTitle=Coolest-startup-banner")</script></div><div class="colum"><div class="boxcont last noshadow blkbg debate"><div class="tabhead" id="taba"><h3><a href="javascript:void(0);" onclick="ga('send', 'event', 'TOPNEWS', 'click','1', 1, {'nonInteraction': 1});return true;">LATEST</a></h3></div><div class="tabhead grey" id="tabb" style="left: 135px;"><h3><a href="javascript:void(0);" onclick="_gaq.push(['_trackEvent', 'MUSTREAD', 'CLICK', '1']);return true;">Must Read</a></h3></div><div class="tabhead grey" id="tabbb" style="left: 135px; "><h3><a href="javascript:void(0);" onclick="_gaq.push(['_trackEvent', 'TECHNEWS', 'CLICK', '1']);return true;">TECH NEWS</a></h3></div><div class="clear"></div><div id="tab1"><ul class="topstr-list topmarging"><li><a href="/current/corporate/edelweiss-opts-out-of-lic-pre-ipo-advisor-selection-process/story/411694.html"><img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/ipo_1_80_120320041013_120720043319_270720122757_310720101350.jpg" style="float:left; margin-right:15px;"> Edelweiss opts out of LIC pre-IPO advisor selection process</img></a></li><li><a href="/current/corporate/rural-business-growing-3x-urban-this-fiscal-britannia/story/411693.html"><img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/britannia_80_310720094255.jpg" style="float:left; margin-right:15px;"> Rural business growing 3x urban this fiscal: Britannia</img></a></li><li><a href="/current/economy-politics/xiaomi-tcl-trade-bodies-welcomes-tv-manufacturing-restrictions-to-boost-make-in-india/story/411692.html"><img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/tv_imports_80_310720085924.jpg" style="float:left; margin-right:15px;"> Xiaomi, TCL, trade bodies welcome TV manufacturing restrictions to boost Make in India</img></a></li><li><a href="/current/economy-politics/niti-aayog-recommends-privatisation-of-3-public-sector-lenders/story/411691.html"><img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/niti_aayog_80_010615073712_310720084720.jpg" style="float:left; margin-right:15px;"> NITI Aayog recommends privatisation of 3 public sector lenders</img></a></li><li><a href="/sectors/banks/we-have-built-strong-immunity-says-sbi-chairman-as-bad-loans-drop-in-q1/story/411690.html"><img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/sbireuters_80_121214034444_030120043336_050620122218_310720084016.jpg" style="float:left; margin-right:15px;"> 'We have built strong immunity', says SBI Chairman as bad loans drop in Q1</img></a></li></ul><div class="more"><a href="/latest" target="_blank()">More</a></div></div><div id="tab2"><ul class="topstr-list topmarging"><li><a href="/sectors/telecom/reliance-jio-prime-airtel-vodafone-idea-4g-offers/story/247051.html"><img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/jionew_559_102416021342_144_022717052509.jpg" style="float:left; margin-right:15px;width:80px;height:80px;">Reliance Jio Prime vs Airtel, Vodafone, Idea 4G offers</img></a></li><li><a href="/sectors/telecom/reliance-jio-plans-to-bring-5g-internet-to-your-smartphones/story/247129.html"><img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/jionew_559_102416021342_144_022817043002.jpg" style="float:left; margin-right:15px;width:80px;height:80px;">Reliance Jio plans to bring 5G internet to your smartphones</img></a></li><li><a href="/sectors/auto/maruti-suzuki-opens-online-booking-for-baleno-rs/story/247040.html"><img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/baleno-maruti_144_102615011525_030716041354_051616094035_022717031227.jpg" style="float:left; margin-right:15px;width:80px;height:80px;">Maruti Suzuki opens online booking for Baleno RS</img></a></li><li><a href="/current/corporate/india-inc-to-get-9.5-per-cent-salary-hike-this-year/story/246830.html"><img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/jobs-3_144_031515020804_022217031643.jpg" style="float:left; margin-right:15px;width:80px;height:80px;">India Inc to get 9.5 per cent salary hike this year</img></a></li><li><a href="/current/corporate/five-tips-to-get-a-good-salary-hike/story/246896.html"><img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/5_144_022417115419.jpg" style="float:left; margin-right:15px;width:80px;height:80px;">Five tips to get a good salary hike this year</img></a></li></ul></div><div id="tab3"><ul class="topstr-list topmarging"><li><a href="/technology/news/google-announces-pixel-4a-launch-date-via-a-puzzle-check-out-specs-features/story/411686.html"><img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/screenshot_2020_07_31_at_541_80_310720075420.jpg" style="float:left; margin-right:15px;">Google announces Pixel 4A launch date via a puzzle; check out specs, features</img></a></li><li><a href="/technology/twitter-confirms-phone-spear-phishing-attack-behind-high-profile-bitcoin-scam/story/411675.html"><img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/screenshot_2020-07-23_at_2_1200_200731180927.10._1-88x50.png" style="float:left; margin-right:15px;">Twitter confirms phone spear-phishing attack behind high-profile bitcoin scam</img></a></li><li><a href="/technology/after-spotify-telegram-files-complaint-against-apple-app-stores-commission-fee/story/411661.html"><img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/screenshot_2020-04-02_at_1_1200_200731161814.57.-88x50.png" style="float:left; margin-right:15px;">After Spotify, Telegram files complaint against Apple App Store's commission fee</img></a></li><li><a href="/technology/oppo-reno-4-pro-arrives-in-india-price-specifications-and-top-features/story/411643.html"><img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/oppo_reno_4_pro_2-88x50_1200_200731173916.jpeg" style="float:left; margin-right:15px;">Oppo Reno 4 Pro arrives in India: Price, specifications, and top features</img></a></li><li><a href="/technology/honor-9a-honor-9s-and-magicbook-15-laptop-launched-in-india-everything-you-need-to-know/story/411642.html"><img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/honor11s-88x50_1200_200731173912.jpeg" style="float:left; margin-right:15px;">Honor 9A, Honor 9S and MagicBook 15 laptop launched in India: Everything you need to know</img></a></li></ul><div class="more"><a href="/technology/news" target="_blank()">More</a></div></div></div></div><div class="colum" style="margin-top:-10px;"><div class="item boxcont ipdwidth mr-right" style="margin-top:15px;background-color:#e5e5e5!important; margin-left:-6px;"><div id="div-gpt-ad-1506670791889-3" style="height:600px; width:300px;"><script>
+                            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1506670791889-3'); });
+                            </script></div></div></div><div class="colum"></div><div class="colum" style="margin-bottom:20px;"></div><div class="colum"></div><div class="colum" style="margin-bottom:10px;"></div></div></div></div></body></html><div class="clear"></div><div class="clear"></div><script type="text/javascript">
+		$('.loadmoreview').css('top', '-50px');
+		$('.loadmoreview .boxcont').hide(10);
+		var l_len = $('.leftbar .loadmoreview .boxcont').length;
+		var m_len = $('.middlebar .loadmoreview .boxcont').length;
+		var scrollcomplete = 'no';
+		function cardloads() {
+			if(scrollcomplete=='no') {
+				$('.loadmoreview').show(10);
+				scrollcomplete = 'yes';
+				if(l_len>=m_len) {		var t_len = l_len; 	} else if(m_len >= l_len) {			var t_len = m_len;		}
+				for(i=0;i<t_len;i++) {
+					$('.leftbar .loadmoreview .boxcont:eq('+i+')').slideDown(2500);
+					$('.middlebar .loadmoreview .boxcont:eq('+i+')').slideDown(2500);
+					$('.leftbar .loadmoreview').animate({top: '1px'},2000);
+					$('.middlebar .loadmoreview').animate({top: '1px'},2000);
+				}
+			}
+		}
+		if($(window).height() > $('#cardsDisplaygetting').offset().top) {
+			cardloads();
+		} else if($(window).scrollTop() >= 3000) {
+			cardloads();
+		} else {
+			$(window).scroll(function(){
+				if(scrollcomplete=='no') {
+					if($(window).scrollTop() >= 4000){
+						cardloads();
+					}
+				}
+			});
+		}
+	</script><script type="text/javascript">
+		$(document).ready(function(){
+			var widthtomove = (parseInt($(document).width()));
+			$('#busleft').animate({left:+widthtomove},10000);
+			$('#busright').animate({right:+widthtomove},10000);
+			var devise_width = $(window).width();
+			$('.mob-nab').click(function() {
+				if (devise_width <= 600 && !$('.mobile-nav').html().match('BIZ WRAP')) {
+					var newdata = ('<ul><li><h2><a href="'+Contant.SITE_URL_RELATIVE+'sectionlist/100/1/biz-wrap.html" class="nav_padding">BIZ WRAP <span class="triangle-right"></span></a></h2></li><li><h2><a href="'+Contant.SITE_URL_RELATIVE+'market/111/1/markets.html" class="nav_padding">Markets <span class="triangle-right"></span></a></h2></li><li ><h2><a href="'+Contant.SITE_URL_RELATIVE+'sectionlist/109/1/money.html" class="nav_padding">MONEY <span class="triangle-right"></span></a></h2></li><li><h2><a href="'+Contant.SITE_URL_RELATIVE+'sectionlist/101/1/sectors.html" class="nav_padding">INDUSTRY <span class="triangle-right"></span></a></h2></li><li><h2><a href="'+Contant.SITE_URL_RELATIVE+'sectionlist/110/1/technology.html" class="nav_padding">TECH <span class="triangle-right"></span></a></h2></li><li ><h2><a href="'+Contant.SITE_URL_RELATIVE+'sectionlist/36/1/case-study.html" class="nav_padding">CASE STUDY <span class="triangle-right"></span></a></h2></li><li ><h2><a href="'+Contant.SITE_URL_RELATIVE+'categorylist/102/1/bt-perspective.html" class="nav_padding">OPINION <span class="triangle-right"></span></a></h2></li><li><h2><a href="'+Contant.SITE_URL_RELATIVE+'videos" class="nav_padding">Videos <span class="triangle-right"></span></a></h2></li><li><h2><a href="'+Contant.SITE_URL_RELATIVE+'galleries" class="nav_padding">photos <span class="triangle-right"></span></a></h2></li><li><h2><a target="_blank" href="'+Contant.SITE_URL_RELATIVE+'budget" class="nav_padding">BUDGET 2015 <span class="triangle-right"></span></a></h2></li></ul>');
+					$('.mobile-nav').append(newdata);
+					$('.mobile-nav ul').slideDown('slow');
+				} else	{	$('.mobile-nav ul').toggle('slow'); 	}						
+			});
+		});
+		$(document).ready(function(){
+			$('.boxcont').mouseover(function(){
+				if(!$(this).children('div.box').children('.innerbox').children('.share-story').html().match('facebook')) {		
+					contentURL = $(this).attr('url');
+					if(!contentURL.match('http')) {		contentURL = 'https://www.businesstoday.in/'+contentURL;		}
+					contentTitle = $(this).attr('ctitle');
+					var contenttotwrite = "<li><iframe class='frame' scrolling='no' frameborder='0' src='https://www.facebook.com/plugins/like.php?href="+contentURL+"&amp;layout=button_count&amp;show_faces=true&amp;&amp;width=80&amp;action=like&amp;font&amp;colorscheme=light&amp;height=25' style='border:none; overflow:hidden; width:100px; height:25px;' allowtransparency='true'></iframe></li><li><iframe class='frame' scrolling='no' frameborder='0' allowtransparency='true' src='https://platform.twitter.com/widgets/tweet_button.1346833764.html#_=1346847881207&amp;count=horizontal&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer="+contentURL+"&amp;size=m&amp;text="+escape(contentTitle)+"%20-%20Business%20Today&amp;url="+contentURL+"&amp;via=bt_india' class='twitter-share-button twitter-count-horizontal' style='width: 100px; height: 20px;' title='Twitter Tweet Button' data-twttr-rendered='true'></iframe></li>";
+					$('.open').css({display:'none'});	
+					$(this).children('div.box').children('.innerbox').children('.share-story').children('.share-icon').css({display:'none'});
+					$(this).children('div.box').children('.innerbox').children('.share-story').children('ul').fadeIn('slow');
+					$(this).children('div.box').children('.innerbox').children('.share-story').children('ul').html(contenttotwrite);
+					$(this).mouseleave(function(){		$('.share-story ul').css({display:'none'});			$('.share-icon').fadeIn('slow');	});
+				} else {
+					$(this).children('div.box').children('.innerbox').children('.share-story').children('ul').fadeIn('slow');
+					$(this).children('div.box').children('.innerbox').children('.share-story').children('.share-icon').css({display:'none'}); 
+				}
+			});
+		});
+		$(document).ready(function() {
+			$('.topinnerbox').mouseover(function(){
+				if(!$(this).children('div.share-story').html().match('facebook')) {		
+					contentURL = $(this).attr('url');
+					if(!contentURL.match('http')) {		contentURL = 'https://www.businesstoday.in/'+contentURL;			}
+					contentTitle = $(this).attr('ctitle');
+					var contenttotwrite = "<li><iframe class='frame' scrolling='no' frameborder='0' src='https://www.facebook.com/plugins/like.php?href="+contentURL+"&amp;layout=button_count&amp;show_faces=true&amp;&amp;width=80&amp;action=like&amp;font&amp;colorscheme=light&amp;height=25' style='border:none; overflow:hidden; width:100px; height:25px;' allowtransparency='true'></iframe></li><li><iframe class='frame' scrolling='no' frameborder='0' allowtransparency='true' src='https://platform.twitter.com/widgets/tweet_button.1346833764.html#_=1346847881207&amp;count=horizontal&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer="+contentURL+"&amp;size=m&amp;text="+escape(contentTitle)+"%20-%20Business%20Today&amp;url="+contentURL+"&amp;via=bt_india' class='twitter-share-button twitter-count-horizontal' style='width: 100px; height: 20px;' title='Twitter Tweet Button' data-twttr-rendered='true'></iframe></li>";
+					$('.open').css({display:'none'});	
+					$(this).children('div.share-story').children('.share-icon').css({display:'none'});
+					$(this).children('div.share-story').children('ul').fadeIn('slow');
+					$(this).children('div.share-story').children('ul').html(contenttotwrite);
+					$(this).mouseleave(function(){		$('.share-story ul').css({display:'none'});			$('.share-icon').fadeIn('slow');		});								
+				} else {
+					$(this).children('div.share-story').children('ul').fadeIn('slow');
+					$(this).children('div.share-story').children('.share-icon').css({display:'none'}); 
+				}
+			});
+		});
+	</script><div class="index-footer"><style>.footertag img.btm-itlogo{filter:none;}.footer_new_nav { background:#191718; width:100%; margin-top:20px;}.footer_new_nav ul { width:1003px; margin: 0 auto;}.footer_new_nav ul li { font-family:roboto; text-transform:uppercase; color:#fff; padding:10px 10px; float:left; list-style:none;  }.footer_new_nav ul li a { color:#fff; text-decoration:none;}.below-footer { background:url(https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/images/best-ceo/bttom-bg.jpg); overflow:hidden; width:100%; border-top:1px solid #2f2f2f }#footer-new {background: none repeat scroll 0 0 rgba(0, 0, 0, 0);margin: 0 auto;width: 1000px;}</style><div class="clear"></div><div class="footer_new_nav"><ul><li><a href="/current/economy-politics" target="_blank">ECONOMY</a></li><li><a href="/current/corporate" target="_blank">CORPORATE</a><li><a href="/markets" target="_blank">MARKETS</a><li><a href="/personal-finance" target="_blank">MONEY</a><li><a href="/sectors" target="_blank">INDUSTRY</a><li><a href="/technology" target="_blank">TECH</a><li><a href="/opinion" target="_blank">OPINION</a></li><li><a href="/photos" target="_blank">PHOTOS</a></li><li><a href="/videos" target="_blank">VIDEOS</a></li><li><a href="/magazine" target="_blank">MAGAZINE</a></li></li></li></li></li></li></ul><div class="clear"></div></div><div class="below-footer"><div class="footertag"><footer><div class="bottomad" style="margin:20px auto; width:728px;"><div class="loadingad"><div id="div-gpt-ad-1506670791889-4" style="height:90px; width:728px;"><script>
+                            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1506670791889-4'); });
+                            </script></div></div><div id="zt_40341_2" style="display:show"><script id="zt_40341_2" language="javascript"> 
+                    
+                    if(typeof zmt_mtag !='undefined' && typeof zmt_mtag.zmt_render_placement !='undefined')
+                    {
+                         zmt_mtag.zmt_render_placement(p40341_2);
+                    }
+                     </script></div></div><div id="footer-new" style="display:block !important"><iframe frameborder="0" height="230" scrolling="no" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/footer/bt-footer-new.html" title="btfooter" width="98%"></iframe></div></footer></div></div><script type="text/javascript">
+	$(function () {
+	  var msie6 = $.browser == 'msie' && $.browser.version < 7;
+	  if (!msie6 && $('.leftad')!=undefined && $('.leftad').html()!=null) {
+	    var top = $('.leftad').offset().top - parseFloat($('.leftad').css('margin-top').replace(/auto/, 0));
+	    $(window).scroll(function (event) {
+	      var y = $(this).scrollTop();
+	      if (y >= top) {
+	        $('.leftad .div').addClass('fixed');
+			$('.leftad .divs').addClass('fix');
+	      } else {
+	        $('.leftad .div').removeClass('fixed');
+			$('.leftad .divs').removeClass('fix');
+	      }
+	    });
+	  } 
+	});
+</script><script type="text/javascript">
+	$(function () {
+	  var msie6 = $.browser == 'msie' && $.browser.version < 7;
+	  if (!msie6 && $('.rightad')!=undefined && $('.rightad').html()!=null) {
+	    var top = $('.rightad').offset().top - parseFloat($('.rightad').css('margin-top').replace(/auto/, 0));
+	    $(window).scroll(function (event) {
+	      var y = $(this).scrollTop();
+	      if (y >= top) {
+	        $('.rightad .div').addClass('fixed-r');
+			$('.rightad .divs').addClass('fix-r');
+	      } else {
+	        $('.rightad .div').removeClass('fixed-r');
+			$('.rightad .divs').removeClass('fix-r');
+	      }
+	    });
+	  } 
+	});
+</script><script type="text/javascript">
+		winscreen();
+		$(window).resize(function() {
+			winscreen();
+		});
+		
+		function winscreen(){
+		if (document.body.offsetWidth>=1250) {
+				if (document.getElementById("leftrightads") != null || document.getElementById("leftrightads") != undefined)
+				{document.getElementById("leftrightads").style.display="block";
+					var lft = ((document.body.offsetWidth-1000)/2);
+					document.getElementById("leftrightads").style.left=lft+'px';
+				}
+			} 
+			else { 
+				if (document.getElementById("leftrightads") != null || document.getElementById("leftrightads") != undefined){
+				document.getElementById("leftrightads").style.display="none"; }}
+		}
+
+		var myUserAgent = navigator.userAgent.toLowerCase();
+		if(myUserAgent.match('ipad')) {
+			   $('.leftad, .rightad').remove();
+			}
+	</script><script charset="utf-8" src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/js/jquery.lazyload.min.js?v=4" type="text/javascript"></script><script src="https://akm-img-a-in.tosshub.com/sites/btmt/businesstoday/resources/js/javascript.js" type="text/javascript"></script><script>
+		$(document).ready(function(){
+			$('html').removeClass('chrome webkit safari win js');			
+		});
+	</script><style type="text/css">#leftrightads .rightad {right: -145px !important;}</style><script async="" data-id="gdprconsentpolicy" data-name="cookies-policy" src="https://akm-img-a-in.tosshub.com/sites/common/js/gdpr/gdpr_changes.min.js?v=1.1" type="text/javascript"></script><script type="text/javascript">
+window.addEventListener('load',   
+ function() {
+	$.ajax({
+		type : 'get',
+		
+		url : '/getRichMedia.jsp?page=ros',
+		
+		contentType: 'application/json',
+		dataType: 'json',
+		success : function(response){
+			 if(!response.error && response.data.length>0){
+				adsData = response.data;
+				writeRichMediaScript(adsData);
+			}
+		}
+	});
+});
+function writeRichMediaScript(adsData){
+	if(adsData.length==0) return ;
+	$.each(adsData,function( k,v){
+		var scriptHead = document.createElement('script');
+		scriptHead.type= 'text/javascript';
+		scriptHead.id = 'richhead'+k;
+		scriptHead.text = v.header_script;
+		document.head.appendChild(scriptHead);
+		if(v.body_script.length){
+			var scriptBody = document.createElement('script');
+			scriptBody.type= 'text/javascript';
+			scriptBody.id = 'richbody'+k;
+			scriptBody.text = v.body_script;
+			document.body.prepend(scriptBody);
+		}
+	});
+
+}
+ </script></div><div style="display:block; height:0; width:0;"><svg version="1.1" xmlns="https://www.w3.org/2000/svg"><filter id="greyscale"><fecolormatrix type="matrix" values="0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0"></fecolormatrix></filter></svg></div><script type="text/javascript">
+		var myUserAgent = navigator.userAgent.toLowerCase();
+		if(myUserAgent.match('ipad')) {	   $('.leftad, .rightad').remove();		}
+	</script><script type="text/javascript">
+	   window._ttCc = window._ttCc || [];_ttCc.push(function(){
+   	   window._taboola = window._taboola || [];
+	  _taboola.push({flush: true});
+	  });
+	</script><script type="text/javascript">
+    var _sf_async_config={};
+    /** CONFIGURATION START **/
+    _sf_async_config.uid = 60355;
+    _sf_async_config.domain = 'businesstoday.in';
+    _sf_async_config.useCanonical = true;
+	_sf_async_config.sections = 'current';
+	_sf_async_config.authors = '';
+	_sf_async_config.title = '';
+	
+    /** CONFIGURATION END **/
+    window._sf_endpt=(new Date()).getTime();
+	(function() {
+	       var s = document.createElement("script"),
+	       el = document.getElementsByTagName("script")[0];
+	       s.async = true;
+	       s.src = (document.location.protocol == "https:" ? "https://": "http://") + "static.chartbeat.com/js/chartbeat.js";
+	       el.parentNode.insertBefore(s, el);
+	})();
+</script>

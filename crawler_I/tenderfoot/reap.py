@@ -6,7 +6,7 @@ This module is the initial ranker for the CA scraping bot.
 __version__ = '1'
 __author__ = 'Abhijit Acharya'
 
-import sqlite3
+import mysql.connector
 
 error_string = """
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n
@@ -28,15 +28,24 @@ class Reaper(object):
     """Reaper class ranks the links"""
 
     def __init__(self, iterations):
-        self.iterations   = iterations
-        print(text_color.HEADER_COLOR + "Initialized Reaper object" + text_color.ENDC)
+        self.iterations = iterations
+        print(text_color.HEADER_COLOR
+              + "Initialized Reaper object"
+              + text_color.ENDC)
         super(Reaper, self).__init__()
 
     # Connect to database
     def connect_database(self):
         try:
-            self.connection = sqlite3.connect('output/tenderfoot.sqlite')
-            self.cursor = self.connection.cursor()
+            self.connection = mysql.connector.connect(
+                     host="database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com",
+                     user="admin",
+                     password="SIH_2020",
+                     database="pythanos_main"
+                   )
+
+            # self.connection = sqlite3.connect('output/tenderfoot.sqlite')
+            self.cursor = self.connection.cursor(buffered=True)
             print(text_color.GREEN_COLOR + "Database connected" + text_color.ENDC)
         except Exception as ex:
             print(text_color.FAILED_COLOR + error_string.format(ex) + text_color.ENDC)
@@ -47,7 +56,7 @@ class Reaper(object):
             print(text_color.WARNING_COLOR + "Getting from ids" + text_color.ENDC)
             # Find the ids that send out page rank - we only are interested
             # in pages in the SCC that have in and out links
-            self.cursor.execute('''SELECT DISTINCT from_id FROM Links''')
+            self.cursor.execute('''SELECT DISTINCT from_id FROM links''')
             self.from_ids = list()
             for row in self.cursor:
                 self.from_ids.append(row[0])
@@ -61,17 +70,23 @@ class Reaper(object):
             # Find the ids that receive page rank
             self.to_ids = list()
             self.links = list()
-            self.cursor.execute('''SELECT DISTINCT from_id, to_id FROM Links''')
+            self.cursor.execute('''SELECT DISTINCT from_id, to_id FROM links''')
             for row in self.cursor:
                 from_id = row[0]
                 to_id = row[1]
-                if from_id == to_id : continue
-                if from_id not in self.from_ids : continue
-                if to_id not in self.from_ids : continue
+                if from_id == to_id:
+                    continue
+                if from_id not in self.from_ids:
+                    continue
+                if to_id not in self.from_ids:
+                    continue
                 self.links.append(row)
-                if to_id not in self.to_ids : self.to_ids.append(to_id)
+                if to_id not in self.to_ids:
+                    self.to_ids.append(to_id)
         except Exception as ex:
-            print(text_color.FAILED_COLOR + error_string.format(ex) + text_color.ENDC)
+            print(text_color.FAILED_COLOR
+                  + error_string.format(ex)
+                  + text_color.ENDC)
 
     # Get page ranks
     def get_page_ranks(self):
@@ -79,7 +94,7 @@ class Reaper(object):
             # Get latest page ranks for strongly connected component
             self.prev_ranks = dict()
             for node in self.from_ids:
-                self.cursor.execute('''SELECT new_rank FROM Pages WHERE id = ?''', (node, ))
+                self.cursor.execute('''SELECT new_rank FROM pages WHERE pages_id = %s''', (node, ))
                 row = self.cursor.fetchone()
                 self.prev_ranks[node] = row[0]
         except Exception as ex:
@@ -91,16 +106,20 @@ class Reaper(object):
             # sval = input('How many iterations:')
             sval = self.iterations
             many = 1
-            if ( len(sval) > 0 ) : many = round(int(sval))
+            if (len(sval) > 0):
+                many = round(int(sval))
 
             # Sanity check
-            if len(self.prev_ranks) < 1 :
-                print(text_color.FAILED_COLOR + "Nothing to reap. Check your data." + text_color.ENDC)
-                quit()
+            if len(self.prev_ranks) < 1:
+                print(text_color.FAILED_COLOR
+                      + "Nothing to reap. Check your data."
+                      + text_color.ENDC)
+                # quit()
+                return
 
             # Page Rank loop
             for i in range(many):
-                self.next_ranks = dict();
+                self.next_ranks = dict()
                 total = 0.0
                 for (node, old_rank) in list(self.prev_ranks.items()):
                     total = total + old_rank
@@ -110,11 +129,13 @@ class Reaper(object):
                 for (node, old_rank) in list(self.prev_ranks.items()):
                     self.give_ids = list()
                     for (from_id, to_id) in self.links:
-                        if from_id != node : continue
-
-                        if to_id not in self.to_ids: continue
+                        if from_id != node:
+                            continue
+                        if to_id not in self.to_ids:
+                            continue
                         self.give_ids.append(to_id)
-                    if ( len(self.give_ids) < 1 ) : continue
+                    if (len(self.give_ids) < 1):
+                        continue
                     amount = old_rank / len(self.give_ids)
 
                     for id in self.give_ids:
@@ -150,9 +171,9 @@ class Reaper(object):
     # Put the final ranks back into the database
     def update_new_ranks(self):
         try:
-            self.cursor.execute('''UPDATE Pages SET old_rank=new_rank''')
-            for (id, new_rank) in list(self.next_ranks.items()) :
-                self.cursor.execute('''UPDATE Pages SET new_rank=? WHERE id=?''', (new_rank, id))
+            self.cursor.execute('''UPDATE pages SET old_rank=new_rank''')
+            for (id, new_rank) in list(self.next_ranks.items()):
+                self.cursor.execute('''UPDATE pages SET new_rank=%s WHERE pages_id=%s''', (new_rank, id))
             self.connection.commit()
         except Exception as ex:
             print(text_color.FAILED_COLOR + error_string.format(ex) + text_color.ENDC)
