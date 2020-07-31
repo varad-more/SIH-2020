@@ -4,51 +4,27 @@ from tika import parser
 import time
 from nltk.corpus import stopwords 
 from nltk.tokenize import word_tokenize
+import mysql.connector
+from mysql.connector import Error
 import glob, io, os
-from PIL import Image 
-import pytesseract 
-import sys 
-from pdf2image import convert_from_path 
-import os
-import pandas as pd
 import re
 
 def read_pdf(pdf):
     raw = parser.from_file(pdf)
     # print(raw['content'])
-    file1 = open("output_of_pdf_read.txt","w")
-    try:
-        file1.write(raw['content'])
-    except:
-        print("image pdf problem")
-        read_pdf_by_ocr(pdf)
+    # print("\nMETADATA\n\n", raw['metadata'])
+    file1 = open("output_of_pdf_read.txt","w+")
+    file1.write(raw['content'])
     file1.close()
 
-def read_pdf_by_ocr(pdf): #check append mode
-    pages = convert_from_path(pdf, 500)
-    image_counter = 1
-    for page in pages:
-        filename = "page_"+str(image_counter)+".jpg"
-        page.save(filename, 'JPEG')
-        image_counter = image_counter + 1
-    filelimit = image_counter-1
-    outfile = "output_of_pdf_read.txt"
-    file2 = open(outfile, "a") 
-    for i in range(1, filelimit + 1): 
-        filename = "page_"+str(i)+".jpg"
-        text = str(((pytesseract.image_to_string(Image.open(filename)))))
-        text = text.replace('-\n', '')
-        file2.write(text)
-    file2.close()
-
 def read_text_file():
-    file1 = open("output_of_pdf_read.txt","r") 
-    # double check this path, might need to add full folder path 
+    file1 = open("output_of_pdf_read.txt","r")
     text_file = file1.read()
     return text_file
 
 def filter_spans(spans):
-    # Spacy fn to filter a sequence of spans so they don't contain overlaps
+    # Filter a sequence of spans so they don't contain overlaps
+    # For spaCy 2.1.4+: this function is available as spacy.util.filter_spans()
     get_sort_key = lambda span: (span.end - span.start, -span.start)
     sorted_spans = sorted(spans, key=get_sort_key, reverse=True)
     result = []
@@ -79,53 +55,7 @@ def extract_currency_relations(doc):
             relations.append((money.head.head, money))
     return relations
 
-def currencies():
-    nlp = spacy.load('en_core_web_lg')
-    doc = nlp(text_string)
-    print("\n*** CURRENCY RELATIONS ***\n")
-    relations = extract_currency_relations(doc)
-    for r1, r2 in relations:
-        print("{:<10}\t{}\t{}".format(r1.text, r2.ent_type_, r2.text))
-
 def get_ca_type_1(text_string):  
-    text_string = text_string.lower()
-    # regex = r"( bankrupt(cy| ))|( demerge )|( liquidat)"
-    # regex = r"(dividend)|(interim)"
-    # regex = r"(bonus (right|issue|share|))"
-    # regex = r"(reverse{0} stock split)|( split)"
-    # regex = r"(reverse stock split)|(reverse)"
-    # regex = r"(issue(. | ))(right(s | )|(right(s | )(issue|))"
-    # regex = r"(merger)|(mrgr)|(acquisition)|(acquir..)"
-    # regex = r"(employee)|(scheme)"
-    word_search = {'type':["other",
-                    "dividend", 
-                    "bonus", 
-                    "stock split", 
-                    "reverse stock split", 
-                    "rights issue", 
-                    "merge and acquisition", 
-                    "employee"], 
-                    'regex':[r"( bankrupt(cy| ))|( demerge )|( liquidat)",
-                     r"(dividend)|(interim)",
-                     r"(bonus (right|issue|share|))",
-                     r"(reverse{0} stock split)|( split)",
-                     r"(reverse stock split)|(reverse)",
-                     r"(issue(. | ))(right(s | )|(right(s | )(issue|))",
-                     r"(merger)|(mrgr)|(acquisition)|(acquir..)",
-                     r"(employee)|(scheme)" ] ,
-                    'sum':[0, 0, 0, 0, 0, 0, 0, 0]}
-    df = pd.DataFrame(word_search)
-
-    for row in df.itertuples():
-        regex = row['regex']
-        row['sum'] = len(re.findall(regex, text_string))
-        
-    print(df)
-    ca_name = (df['type'][df.sum == df.sum.max()])
-
-    return ca_name
-
-def get_ca_type_2(text_string):  
     text_string = text_string.lower()
     div = {"dividend" : 0, 'interim' : 0}
     bon = {"bonus" : 0, "bonus rights" : 0,"bonus shares" : 0, "bonus issue":0}
@@ -150,12 +80,7 @@ def get_ca_type_2(text_string):
 def get_date(pdf):
     raw = parser.from_file(pdf)
     md = raw['metadata']
-    # print(md)
-    try:
-        date = md['date']
-    except KeyError:
-        date = md['Creation-Date']
-    return(date[0:10])
+    print(md['date'])
 
 def get_other_dates():
     matches = []
@@ -175,18 +100,6 @@ def get_other_dates():
     pay_date = str(sorted_dates[len(sorted_dates-1])
     return rec_date, pay_date
         
-def get_div_data(text_string):
-    # ratio
-    ratio = ""
-    regex = r"(\d+)([a-zA-Z]+)( per equity share )([a-zA-Z]+)(\d+)"
-    match = re.search(regex, text_string)  
-    if match != None:
-        ratio = "Rs. "+ match.group(1) +"per equity share of Rs. "+ match.group(5)
-    
-    perc=""
-
-    return perc,ratio
-
 
 def connect_database():
     try:
@@ -218,16 +131,14 @@ if __name__ == "__main__":
     for pdf in pdf_list:
         read_pdf(pdf)
         text_string = read_text_file()
+        nlp = spacy.load('en_core_web_lg')
+        doc = nlp(text_string)
 
         date = get_date(pdf)
         # rec_date, pay_date = get_other_dates()
         ca_name = get_ca_type_1(text_string)
-        if ca_name=='dividend':
-            perc,ratio = get_div_data(text_string)
-            sql = "CREATE TABLE IF NOT EXISTS dashboard (ca_name VARCHAR(20) NOT NULL, date VARCHAR(10), perc VARCHAR(10), ratio VARCHAR(10)"
-        else:       
-            sql = "CREATE TABLE IF NOT EXISTS dashboard (ca_name VARCHAR(20) NOT NULL, date VARCHAR(10), rec_date VARCHAR(10), pay_date VARCHAR(10)"
+        
+        sql = "CREATE TABLE IF NOT EXISTS dashboard (ca_name VARCHAR(20) NOT NULL, date VARCHAR(10), rec_date VARCHAR(10), pay_date VARCHAR(10)"
         cursor.execute(sql)
-
-    print("main time = ", time.time() - start_time)
+    print(time.time() - start_time)
         
