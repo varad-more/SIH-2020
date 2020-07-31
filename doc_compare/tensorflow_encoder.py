@@ -6,28 +6,37 @@ import gensim
 from gensim.parsing.preprocessing import remove_stopwords
 from gensim.parsing.preprocessing import strip_punctuation
 from gensim.parsing.preprocessing import strip_multiple_whitespaces
-from gensim.parsing.preprocessing import stem_text
+#from gensim.parsing.preprocessing import stem_text
 from operator import itemgetter
 import sqlite3
 import pandas as pd
 import time
 from sklearn import preprocessing
-import numpy as np
 import skfuzzy as fuzz
 from skfuzzy import control as ctrl
 import random,time
 import itertools
 import requests
+from io  import StringIO
+from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
+from pdfminer.converter import TextConverter
+from pdfminer.layout import LAParams
+from pdfminer.pdfpage import PDFPage
+import mysql.connector
+import urllib.request as urllib2
+import ssl
+        
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-
-
-
 
 class Article_matcher():
     def __init__(self,module_url):
         self.cooperate_action_code,self.cooperate_action_list=self.initialize_CA_vars()
         self.embed=self.load_universal_encoder(module_url)
+        self.connect_database()
         
+    def __del__(self):
+        self.mycursor.close()
+        self.mydb.close()
 
     def initialize_CA_vars(self):
         cooperate_action_code=["ANN","ARR" ,"ASSM" ,"BB" 	,"BKRP" ,"BON" ,"BR" 	,#"CALL" 	,
@@ -37,7 +46,7 @@ class Article_matcher():
                                 "ODDLT","PID" ,"PO" ,"PRCHG" ,"PRF" ,"PVRD" 	,"RCAP"  ,"REDEM" ,	"RTS" ,"SCCHG" ,"SCSWP" ,
                                 "SD" ,"SECRC" ,"TKOVR"]
 
-        cooperate_action_list=[ "Announcement","Arrangement","Assimilation","Buy Back","Bankruptcy","Bonus Issue","Bonus Rights",
+        cooperate_action_list=[ "Announcement","Arrangement","Assimilation","Buy Back","Bankruptcy","Bonus","Bonus Issue","Bonus Rights",
                                     # "Call",
                                         "Capital Reduction",
                                         "Company Meeting",
@@ -78,14 +87,15 @@ class Article_matcher():
                                         "Security Swap",
                                         "Subdivision",
                                         "Security Reclassification",
-                                        "Takeover"]
+                                        "Takeover","Equity"]
 
         return cooperate_action_code,cooperate_action_list
 
-
-
+    def set_exclude_variable(self):
+        self.exclude=["allotment"]
+        
     def load_universal_encoder(self,module_url):
-        print("--------------------------------------------------------------------------")
+        print("--------------------------------loading_model------------------------------------------")
         embed = hub.Module(module_url)
         print("model loaded")
         return embed
@@ -102,54 +112,65 @@ class Article_matcher():
         return articles_database
 
     def connect_database(self):
-        import mysql.connector
+        
+        self.mydb = mysql.connector.connect(host='database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com',
+                                         database='pythanos_main',
+                                         user='admin',
+                                         password='SIH_2020')
 
-        # pip3 install mysql-connector-python 
-
-        mydb = mysql.connector.connect(
-                                        host="localhost",
-                                        user="root",
-                                        password="",
-                                        database="corporate_actions" # Change as per requirements
-                                        )
-
-        self.mycursor = mydb.cursor()
-
-        #Reading from Database
-        self.mycursor.execute("SELECT * FROM company_list")
+        self.mycursor = self.mydb.cursor()
+        
+        
+    def get_articles(self):
+        self.mycursor.execute("SELECT * FROM articles ")
         articles_database = pd.DataFrame(self.mycursor.fetchall())
-        articles_database.columns = self.mycursor.keys()
-
+        #articles_database.columns = self.mycursor.keys()
+        print(articles_database)
+        g
         return articles_database
 
 
 
     def clean_database(self,articles_database):
         articles_database=articles_database.iloc[articles_database['content'].notna().tolist()]
+        
         articles_database=articles_database.iloc[articles_database['content'].notnull().tolist()]
+        
         articles_database=articles_database.drop(articles_database[articles_database['content'] == ''].index)
+        
         articles_database=articles_database[~articles_database['content'].duplicated()]
+        
         articles_database['content']=articles_database['content'].str.lower()
+        
         articles_database["present"]=False
         articles_database["action"]="" 
         
         return articles_database
 
     def cooperate_actions_lists_and_code(self,cooperate_action_list,cooperate_action_code):
+        
         cooperate_action_list=[x.lower() for x in cooperate_action_list]
+        
         cooperate_action_code=[x.lower() for x in cooperate_action_code]
+        
         cooperate_action=pd.DataFrame(cooperate_action_list,columns=['CA'])
+        
         cooperate_action["CA"]=cooperate_action["CA"].str.lower()
+        
         return cooperate_action,cooperate_action_code
 
 
 
     def find_actions(self,articles_database,cooperate_action,cooperate_action_code):
+        articles_database["action"]="" 
+        articles_database["content"]=articles_database["content"].map(str)
 
         for i in cooperate_action["CA"]:
-            articles_database["present"]=articles_database["present"] | articles_database["content"].str.match(i, case=False)
-            articles_database.loc[articles_database["content"].str.match(i, case=False),["action"]]+=","+i
-
+ 
+            articles_database["present"]=articles_database["present"] | articles_database["content"].str.contains(i, case=False)
+            
+            articles_database.loc[articles_database["content"].str.contains(i, case=False),["action"]]+=","+i
+            
         articles_database.reset_index(inplace = True)
 
         for i in cooperate_action_code:
@@ -158,10 +179,16 @@ class Article_matcher():
                     articles_database.loc[num,['present']]=True
                     articles_database.loc[num,['action']]+=","+i
         
-        articles_database=articles_database.loc[articles_database["present"]]
+        #articles_database=articles_database.loc[articles_database["present"]]
         
         return articles_database
 
+    def get_CA_info(self,articles_database):
+        articles_database=articles_database.loc[articles_database["present"]]
+        for ca in articles_database:
+
+            pass
+            
 
     def remove_stopwords_from_database(self,articles_database):
         links=articles_database['url'].tolist()
@@ -171,7 +198,7 @@ class Article_matcher():
 
         for message in messages:
             message = strip_punctuation(message)
-            message=stem_text(message)
+            #message=stem_text(message)
             message = strip_multiple_whitespaces(message)
             stop_words_removed.append(remove_stopwords(message))
         return links,stop_words_removed,CA_names
@@ -183,7 +210,6 @@ class Article_matcher():
         similarity_message_encodings = self.embed(similarity_input_placeholder)
         corr=None
         message_embeddings_=None
-
 
         chunks = [stop_words_removed[x:x+1000] for x in range(0, len(stop_words_removed), 1000)]
 
@@ -234,104 +260,65 @@ class Article_matcher():
 
     
     def get_pdf_links(self):
-        pass
+        self.mycursor.execute("SELECT file_url FROM crawler_2 where ca_checked is NULL")
+        pdf_links = pd.DataFrame(self.mycursor.fetchall())
+        self.mycursor.execute("UPDATE crawler_2 set ca_checked=0 where ca_checked is NULL")
+        pdf_links=pdf_links[0].tolist()
+        return pdf_links
+    
 
     def pdf_to_text(self,path):
-        from pdfminer.pdfparser import PDFParser
-        from pdfminer.pdfdocument import PDFDocument
-        from pdfminer.pdfpage import PDFPage
-        from pdfminer.pdfpage import PDFTextExtractionNotAllowed
-        from pdfminer.pdfinterp import PDFResourceManager
-        from pdfminer.pdfinterp import PDFPageInterpreter
-        from pdfminer.pdfdevice import PDFDevice
+        pagenums = set()
+        output = StringIO()
+        manager = PDFResourceManager()
+        converter = TextConverter(manager, output, laparams=LAParams())
+        interpreter = PDFPageInterpreter(manager, converter)
 
-        # Open a PDF file.
-        fp = open(path, 'rb')
-        # Create a PDF parser object associated with the file object.
-        parser = PDFParser(fp)
-        # Create a PDF document object that stores the document structure.
-        # Supply the password for initialization.
-        document = PDFDocument(parser, "")
-        # Check if the document allows text extraction. If not, abort.
-        if not document.is_extractable:
-            raise PDFTextExtractionNotAllowed
-        # Create a PDF resource manager object that stores shared resources.
-        rsrcmgr = PDFResourceManager()
-        # Create a PDF device object.
-        device = PDFDevice(rsrcmgr)
-        # Create a PDF interpreter object.
-        interpreter = PDFPageInterpreter(rsrcmgr, device)
-        # Process each page contained in the document.
-        for page in PDFPage.create_pages(document):
+        infile = open(path, 'rb')
+        for page in PDFPage.get_pages(infile, pagenums):
             interpreter.process_page(page)
-        
-        print(rsrcmgr.getvalue())
+        infile.close()
+        converter.close()
+        text = output.getvalue()
+        output.close
 
+        return text
+
+    
     def read_pdfs(self):
-        import urllib.request as urllib2
-        import ssl
-        from tika import parser
         #context = ssl._create_unverified_context()
-
         pdf_links=self.get_pdf_links()
-        pdf_links=["https://www.ril.com/DownloadFiles/CorporateAnnouncements/ShutdownJamnagarReg30.pdf","https://www.ril.com/DownloadFiles/CorporateAnnouncements/Consolidated%20Scrutinizer%20Report%20-%20170720%20final.pdf"
-                        "https://www.ril.com/DownloadFiles/CorporateAnnouncements/RIl%20-%20Voting%20Results%20SE.pdf","https://www.ril.com/DownloadFiles/CorporateAnnouncements/Updateonallotmentofrightsshares.pdf"]
+        if len(pdf_links)==0:
+            print("no links")
+            return 
         pdf_data= pd.DataFrame()
         pdf_data["content"]=""
         pdf_data["present"]=""
         pdf_data["action"]=""
-        for link in pdf_links:
+        pdf_data["url"]=""
+        print(len(pdf_links))
+        for link in pdf_links[1:5]:
+            try:
             #pdf= urllib2.urlopen(link,context=context)
-            r = requests.get(link,verify=False,stream=True)
-            with open('/tmp/metadata.pdf', 'wb') as fd:
-                for chunk in r.iter_content(2000):
-                    fd.write(chunk)
-            
-            
-            #file1 = open("output_pdftotext_tika.txt","w+")
-            #file1.write(raw['content'])
-            #file1.close()
-            #pdf=requests.get(link,verify=False)
-            #print(pdf)
-            pdf=self.pdf_to_text("/tmp/metadata.pdf")
-            print(pdf)
-            h
-            pdf_data["data"]=pdf_data["data"].append()
+                r = requests.get(link,verify=False,stream=True)
+                with open('data.pdf', 'wb') as fd:
+                    for chunk in r.iter_content(2000):
+                        fd.write(chunk)
+                print(link)
+                pdf=self.pdf_to_text("data.pdf")
+                pdf_data=pdf_data.append({"content":strip_multiple_whitespaces(pdf),"url":link},ignore_index=True)
+                print("------------------------------")
+            except:
+                print("couldn't download from "+link)
+        return pdf_data  
 
-        return pdf_data
-    
-    
-    def stanford_check_similarity(self,a):
-        return self.model.wmdistance(a[0],a[1])
-
-    def stanford_glove_to_word_2_vec(self,filename="/home/suraj/model_sih/stanford/glove.840B.300d.txt"):
-        if not os.path.isfile(filename+'.word2vec'):
-            from gensim.scripts.glove2word2vec import glove2word2vec
-            glove_input_file = filename
-            word2vec_output_file = filename+'.word2vec'
-            glove2word2vec(glove_input_file, word2vec_output_file)
+    def run_article_matching(self):
         
-    def run_stanford_word_2_vec(self,stop_words_removed,filename="/home/suraj/model_sih/stanford/glove.840B.300d.txt.word2vec"):
-        
-        from gensim.models import KeyedVectors
-        
-        self.model = KeyedVectors.load_word2vec_format(filename, binary=False)
-        #distance = model.wmdistance(sentence_obama, sentence_president)
-        
-        temp=list(itertools.product(stop_words_removed, repeat=2))
-        output = list(map(self.stanford_check_similarity,temp))
-        corr=np.asarray(output).reshape((len(stop_words_removed),len(stop_words_removed)))
-        print(corr)
-        # calculate: (king - man) + woman = ?
-        result = model.most_similar(positive=['woman', 'king'], negative=['man'], topn=1)
-    
-
-    def run_all(self):
-        
-        articles_database=self.load_database(["tenderfoot","tenderfoot_three"])
+        #articles_database=self.load_database(["tenderfoot","tenderfoot_three"])
+        articles_database=self.get_articles()
         articles_database=self.clean_database(articles_database)
         cooperate_action_code,cooperate_action_list=self.initialize_CA_vars()
-        cooperate_action,cooperate_action_code=self.cooperate_actions_lists_and_code(cooperate_action_list,cooperate_action_code)
+        cooperate_action,cooperate_action_code=self.cooperate_actions_lists_and_code(self.cooperate_action_list,self.cooperate_action_code)
         articles_database=self.find_actions(articles_database,cooperate_action,cooperate_action_code)
         links,stop_words_removed,CA_names=self.remove_stopwords_from_database(articles_database)
         corr=self.run_universal_encoder(stop_words_removed)
@@ -339,6 +326,36 @@ class Article_matcher():
         #self.run_stanford_word_2_vec(stop_words_removed=stop_words_removed)
         return articles_database
     
+    def update_pdf_database(self,pdf_data):
+
+        for i,j in zip(pdf_data["action"].tolist(),pdf_data["url"].tolist()):
+            a=(i,j)
+            print(a)
+            self.mycursor.execute("UPDATE crawler_2 set ca_type=%s WHERE file_url=%s",a)
+        self.mycursor.execute("UPDATE crawler_2 set ca_checked=1 where ca_checked=0")
+        
+
+
+    def run_pdf_data_extraction(self):
+        pdf_data=self.read_pdfs()
+        if pdf_data is None:
+            print("no pdf")
+            return 
+        cooperate_action,cooperate_action_code=self.cooperate_actions_lists_and_code(self.cooperate_action_list,self.cooperate_action_code)
+        pdf_data=self.find_actions(pdf_data,cooperate_action,cooperate_action_code)
+        self.update_pdf_database(pdf_data)
+        
+        """
+        print(pdf_data)
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        for present,action,content in zip(pdf_data["present"],pdf_data["action"],pdf_data['content']):
+            print(content)
+            print("\n ---------------------------------------")
+            if present:
+                print("action found : "+ action+ "\n"+"content:\n"+content+"\n-----------------------------")
+        """
+
+
     def fuzzy_logic(self):
         quality = ctrl.Antecedent(np.arange(0, 100, 1), 'suraj')
         service = ctrl.Antecedent(np.arange(0, 100, 1), 'abhijit')
@@ -375,16 +392,19 @@ class Article_matcher():
 if __name__ == "__main__":
     start=time.time()
     matcher=Article_matcher("https://tfhub.dev/google/universal-sentence-encoder/1?tf-hub-format=compressed")
-    #articles_database=matcher.run_all()
-    d=matcher.read_pdfs()
+    #while True:
+        #articles_database=matcher.run_article_matching()
+    pdf_data=matcher.run_pdf_data_extraction()
+    
     """
     matcher.fuzzy_logic()
     quality = 100 #float(random.randint(0,11))
     service = 100 #float(random.randint(0,11))
     prev_score = 0 # Prev score
     matcher.calc(quality,service,prev_score)
-    """
+    
     print(time.time()-start)
+    articles_database=pdf_data
     with open("dataset.txt", "w") as file1:
         for i,j,action in zip(articles_database["content"],articles_database["url"],articles_database["action"]):
             file1.write("link:"+j+"    Action :  "+action+"\n")
@@ -400,3 +420,4 @@ if __name__ == "__main__":
             print("----------")
             print("action:  ",action)
             print("##########################")
+    """
