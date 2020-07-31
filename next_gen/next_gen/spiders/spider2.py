@@ -7,9 +7,15 @@ import boto3
 class spider2(scrapy.Spider):
     name = "spider2"
 
+    '''
     start_urls = ["https://www.silvertouch.com"
     # ,"https://www.tatamotors.com/"
     ]
+    '''
+
+    def start_requests(self):
+        yield scrapy.Request('https://www.ril.com', self.parse)
+        yield scrapy.Request('https://www.silvertouch.com', self.parse)
 
     def parse (self, response):
         '''
@@ -21,11 +27,11 @@ class spider2(scrapy.Spider):
         to find the link
         '''
         links = response.xpath("//@href").extract()
-
         target_link = []
         for link in links:
-            if (link.find("investors")>0) | ((link.find("corporate")>0)) :
+            if (link.find("investors")>0) | (link.find("Investors")>0) |((link.find("corporate")>0)) :
                 target_link.append(link)
+                yield scrapy.Request(link, self.parse)
             else:
                 pass
         print (target_link)
