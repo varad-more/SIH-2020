@@ -36,18 +36,18 @@ class Reaper(object):
     # Connect to database
     def connect_database(self):
         try:
-            # self.connection = mysql.connector.connect(
-            #   host="localhost",
-            #   user="root",
-            #   password="Abhijit@123",
-            #   database="deadpan"
-            # )
             self.connection = mysql.connector.connect(
-                     host="database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com",
-                     user="admin",
-                     password="SIH_2020",
-                     database="pythanos_main"
-                   )
+              host="localhost",
+              user="root",
+              password="Abhijit@123",
+              database="deadpan"
+            )
+            # self.connection = mysql.connector.connect(
+            #          host="database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com",
+            #          user="admin",
+            #          password="SIH_2020",
+            #          database="pythanos_main"
+            #        )
             # self.connection = mysql.connector.connect(
             #           host="database-1.ce0yosk0xfgx.us-east-1.rds.amazonaws.com",
             #           user="admin",
@@ -121,7 +121,7 @@ class Reaper(object):
 
             # Page Rank loop
             for i in range(many):
-                self.next_ranks = dict();
+                self.next_ranks = dict()
                 total = 0.0
                 for (node, old_rank) in list(self.prev_ranks.items()):
                     total = total + old_rank

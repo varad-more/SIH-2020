@@ -37,8 +37,8 @@ class Hollow(object):
 
     def __init__(self, arg, starturl):
         super(Hollow, self).__init__()
-        escapes = ''.join([chr(char) for char in range(1, 32)])
-        self.translator = str.maketrans('', '', escapes)
+        # escapes = ''.join([chr(char) for char in range(1, 32)])
+        # self.translator = str.maketrans('', '', escapes)
         self.companies = list(dict.fromkeys(['hexaware', 'coca', 'intel', 'cola', 'suzuki','snapdeal', 'shopclues', 'nissan', 'volkswagen', 'airtel', 'lg', 'air india', 'airbus', 'daimler', 'donohoe', 'samsung', 'walmart', 'hitachi', 'siemens', 'wilmar', 'endurance', 'lloyds', 'bp', 'bpcl', 'google', 'petrochina', 'petronet', 'jio', 'britannia', 'nippon', 'pepsi', 'pepsico', 'fiat', 'waymo', 'chrysler', 'kfc', 'goldman', 'boeing', 'amazon', 'lodha', 'flipkart' ,'Bharat' , 'lnt', 'lti', 'toubro', 'larsen', 'paytm', 'forge', 'sachs', 'acc', 'apollo', 'tyre', 'ashok', 'leyland', 'aban', 'offshore', 'abbott', 'abg', 'shipyard', 'adani', 'enterprises', 'aditya', 'birla', 'nuvo', 'aftek', 'aia', 'alembic', 'alfa', 'laval', 'allsec', 'alok', 'alstom', 'anant', 'raj', 'amara', 'raja', 'batteries', 'amtek', 'ansal', 'spacex', 'properties', 'infrastructure', 'asahi', 'glass', 'electronics', 'star', 'astrazeneca', 'atlas', 'copco', 'aurobindo', 'axles', 'mitsubishi', 'aventis', 'abb', 'ltd', 'aventis', 'crop', 'atcom', 'atco', 'adlabs', 'films', 'atn', 'electricals', 'ballarpur', 'balmer', 'lawrie', 'balrampur', 'chini', 'mills', 'bannari', 'amman', 'sugars', 'bata', 'berger', 'paints', 'bharat', 'bijlee', 'bharat', 'earth', 'movers', 'bharat', 'forge', 'bharat', 'heavy', 'electricals', 'bharat', 'bhushan', 'strips', 'binani', 'blue', 'dart', 'express', 'bombay', 'rayon', 'fashions', 'bongaigaon', 'refinery', 'bosch', 'chassis', 'systems', 'bharat', 'electronics', 'birla', 'nvidia', 'tesla', 'britannia', 'biocon', 'bsel', 'infrastructure', 'realty', 'baffin', 'bajaj', 'hindustan', 'carborundum', 'universal', 'castrol', 'chambal', 'fertiliser', 'ccl', 'century', 'plyboards', 'century', 'container', 'corporation', 'coromandel', 'clariant', 'classic', 'diamonds', 'colgate', 'palmolive', 'country', 'club', 'cranes', 'softwares', 'crew', 'bos', 'cummins', 'cadila', 'crompton', 'greaves', 'cesc', 'chemplast', 'sanmar', 'cinevista', 'creative', 'eye', 'crest', 'crisil', 'cummins', 'cybermate', 'infotek', 'cyberspace', 'dabur', 'dalmia', 'cements', 'dynamatic', 'dewan', 'corp', 'dishman', "divi's", 'laboratories', 'donear', 'dredging', 'kulkarni', 'developers', 'silk', 'educomp', 'elder', 'elecon', 'electrosteel', 'castings', 'esab', 'essar', 'shipping', 'essar', 'everest', 'kanto', 'cylinder', 'exide', 'eicher', 'motor', 'emami', 'parry', 'electrolux', 'kelvinator', 'elgitread', 'eskay', 'essel', 'propack', 'etc', 'eveready', 'excel', 'travancore', 'finolex', 'flex', 'force', 'motors', 'fag', 'bearings', 'fcl', 'fdc', 'finolex', 'cables', 'forbes', 'gokak', 'framatome', 'frontier', 'fujitsu', 'icim', 'gateway', 'distriparks', 'gemini', 'genus', 'overseas', 'electronics', 'geodesic', 'systems', 'geojit', 'geometric', 'software', 'solution', 'glaxosmithkline', 'consumers', 'glenmark', 'gmr', 'godrej', 'consumers', 'godrej', 'graphite', 'grasim', 'great', 'shipping', 'greaves', 'cotton', 'greenply', 'grindwell', 'norton', 'gruh', 'ambuja', 'cement', 'gas', 'co.', 'state', 'chem.', 'gulf', 'gail', 'gammon', 'gillette', 'havell', 'helios', 'matheson', 'himadri', 'inds.', 'hindalco', 'hinduja', 'tmt', 'hindustan', 'hindustan', 'glass', 'hindustan', 'sanitaryware', 'inds', 'hindustan', 'zinc', 'honeywell', 'apple', 'leela', 'hcl', 'hdfc', 'hero', 'honda', 'motors', 'hindustan', 'lever', 'hindustan', 'machine', 'tools', 'ht', 'igate', 'il&fs', 'investmart', 'cements', 'hotels', 'petrochemicals', 'corp', 'indraprastha', 'enterprises', 'ingersoll-rand', 'ipca', 'laboratories', 'itd', 'cementation', 'ig', 'petrochemicals', 'ivrcl', 'infrastructures', 'infosys', 'cement', 'jain', 'jaiprakash', 'associates', 'jammu', 'kashmir', 'jaybharat', 'real', 'jb', 'jbf', 'jindal', 'saw', 'jindal', 'stainless', 'jindal', 'jk', 'cements', 'jm', 'jmc', 'jsw', 'jubilant', 'organosys', 'jyoti', 'structures', 'jet', 'airways', 'kajaria', 'ceramics', 'kalpataru', 'transmission', 'kansai', 'nerolac', 'paints', 'kei', 'kemrock', 'exports', 'kennametal', 'kesoram', 'kirloskar', 'brothers', 'kirloskar', 'engines', 'kirloskar', 'pneumatic', 'ksb', 'pumps', 'kotak', 'mahindra', 'ksl', 'realty', 'infrastructure', 'lakshmi', 'foods', 'lakshmi', 'machine', 'works', 'lic', 'lumax', 'madras', 'aluminium', 'madras', 'cements', 'mahanagar', 'telephone', 'mahindra', 'gesco', 'developers', 'mahindra', 'ugine', 'mangalam', 'cement', 'manugraph', 'marg', 'maruti', 'udyog', 'mcleod', 'russel', 'mcnally', 'bharat', 'mercator', 'moser', 'baer', 'motherson', 'sumi', 'systems', 'motor', 'mrf', 'mastek', 'max', 'megasoft', 'merck', 'mrpl', 'nagarjuna', 'nagarjuna', 'nahar', 'spinning', 'mills', 'aluminium', 'fertilizer', 'nava', 'bharat', 'nestle', 'nicholas', 'piramal', 'nrb', 'bearings', 'nucleus', 'software', 'exports', 'niit', 'ntpc', 'ocl', 'opto', 'circuits', 'ongc', 'prithvi', 'procter', 'gamble', 'hygiene', 'provogue', 'rajshree', 'sugars', 'ramsarup', 'ranbaxy', 'laboratories', 'rashtriya', 'chemicals', 'fertilizers', 'ratnamani', 'tubes', 'reliance', 'rolta', 'ruchi', 'soya', 'radico', 'khaitan', 'raymond', 'plant', 'sakthi', 'sugars', 'sangam', 'sanghi', 'satyam', 'computer', 'shipping', 'simplex', 'infrastructures', 'solectron', 'centum', 'electronics', 'marine', 'engg', 'iron', 'spanco', 'telesystems', 'srei', 'infrastructure', 'sterlite', 'sterlite', 'optical', 'strides', 'arcolab', 'suashish', 'diamonds', 'subex', 'azure', 'subhash', 'sujana', 'sun', 'surana', 'authority', 'elxsi', 'tata', 'tcs', 'tea', 'techno', 'electric', 'television', 'eighteen', 'torrent', 'transport', 'triveni', 'tube', 'tulip', 'titan', 'tvs', 'motor', 'spirits', 'usha', 'martin', 'uttam', 'galva', 'vaibhav', 'gems', 'videocon', 'videsh', 'sanchar', 'nigam', 'voltas', 'vakrangee', 'softwares', 'varun', 'shipping', 'walchandnagar', 'welspun', 'stahl', 'rohren', 'wockhardt', 'wipro', 'yes']))
         self.arg = arg
         self.starturl = starturl
@@ -46,7 +46,7 @@ class Hollow(object):
 
     # Remove punctuations
     def preprocessing(self,line):
-        line = line.translate(self.translator)
+        # line = line.translate(self.translator)
 
         puncts = ""
         for i in string.punctuation:
@@ -83,18 +83,18 @@ class Hollow(object):
     def connect_to_existing_table_or_create(self):
         try:
             # Connect to database
-            # self.connection = mysql.connector.connect(
-            #   host="localhost",
-            #   user="root",
-            #   password="Abhijit@123",
-            #   database="deadpan"
-            # )
             self.connection = mysql.connector.connect(
-                     host="database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com",
-                     user="admin",
-                     password="SIH_2020",
-                     database="pythanos_main"
-                   )
+              host="localhost",
+              user="root",
+              password="Abhijit@123",
+              database="deadpan"
+            )
+            # self.connection = mysql.connector.connect(
+            #          host="database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com",
+            #          user="admin",
+            #          password="SIH_2020",
+            #          database="pythanos_main"
+            #        )
             # self.connection = mysql.connector.connect(
             #           host="database-1.ce0yosk0xfgx.us-east-1.rds.amazonaws.com",
             #           user="admin",
@@ -208,13 +208,15 @@ class Hollow(object):
                     # Get one article and hollow it
                     article = Article(row[1])
                     # Get html from dump
-                    with open('output/dumps/'+row[3],'r') as f:
+                    with open('output/dumps/'+row[3],'r', encoding='utf-8') as f:
                         try:
                             # data = json.load(f)
                             # html_str = data[str(row[0])]
                             html_str = f.read()
                         except Exception as ex:
                             print(ex)
+                        finally:
+                            f.close()
 
                     try:
                         # html from file
@@ -225,13 +227,14 @@ class Hollow(object):
                     article.parse()
 
                     content_text = self.preprocessing(str(article.text))
-                    if content_text=="NONE":
+                    # print(content_text)
+                    if content_text == "NONE":
                         self.cursor.execute('UPDATE articles SET error=%s WHERE url=%s',(-1,row[1]))
                         continue
 
                     # Remove anythong less than 50 chars...
                     if len(article.text)>50:
-                        self.cursor.execute('UPDATE articles SET authors=%s, publish_date=%s, title=%s, content=%s, company_name=%s WHERE url=%s', (str(article.authors), article.publish_date, article.title, content_text, str(company_names), row[1]))
+                        self.cursor.execute('UPDATE articles SET authors=%s, publish_date=%s, title=%s, content=%s, company_name=%s WHERE url=%s', (str(article.authors), article.publish_date, article.title, content_text[:9999], str(company_names), row[1]))
                         # self.cursor.execute('UPDATE webs SET web_rank=%s WHERE url=%s',(int(self.web_rank)+0,self.starturl))
                     else:
                         self.cursor.execute('UPDATE articles SET error=%s WHERE url=%s',(-1,row[1]))
@@ -241,7 +244,7 @@ class Hollow(object):
                 except Exception as ex:
                     # All done for today
                     sys.stdout.write('\rDone!!                                                     ')
-                    print('')
+                    print(ex)
                     print(text_color.FAILED_COLOR + 'No undrained HTML articles found' + text_color.ENDC)
                     break
                 self.connection.commit()

@@ -58,7 +58,7 @@ class Helper:
     def get_filename(self):
         # If current filesize > 200MB then generate new file name
         filename = str(datetime.timestamp(datetime.now()))
-        open('output/dumps/'+filename, 'a').close()
+        open('output/dumps/'+filename, 'a', encoding='utf-8').close()
         return filename
 
     # def dump_html(self, row, soup, filename):
@@ -73,12 +73,12 @@ class Helper:
     #             print(ex)
     #         finally:
     #             f.close()
-    
+
     def dump_html(self, row, soup, filename):
         # Insert html
-        with open('output/dumps/'+filename, 'w') as f:
+        with open('output/dumps/'+filename, 'w', encoding='utf-8') as f:
             try:
-                f.write(str(soup.html))
+                f.write(str(soup))
             except Exception as ex:
                 print(ex)
             finally:
@@ -110,7 +110,7 @@ class Deadpan(object):
         self.website_url = website_url
         self.many = str(many)
         self.starturl = website_url
-        self.POSITIVE = 1
+        self.POSITIVE = 0.5
         self.NEGATIVE = 0.3
         super(Deadpan, self).__init__()
         # try:
@@ -152,18 +152,18 @@ class Deadpan(object):
     def create_table_if_not_exists(self):
         try:
             # Connect to database
-            # self.connection = mysql.connector.connect(
-            #   host="localhost",
-            #   user="root",
-            #   password="Abhijit@123",
-            #   database="deadpan"
-            # )
             self.connection = mysql.connector.connect(
-                     host="database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com",
-                     user="admin",
-                     password="SIH_2020",
-                     database="pythanos_main"
-                   )
+              host="localhost",
+              user="root",
+              password="Abhijit@123",
+              database="deadpan"
+            )
+            # self.connection = mysql.connector.connect(
+            #          host="database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com",
+            #          user="admin",
+            #          password="SIH_2020",
+            #          database="pythanos_main"
+            #        )
             # self.connection = mysql.connector.connect(
             #           host="""database-1.ce0yosk0xfgx.us-east-1.rds.amazonaws.com""",
             #           user="admin",
@@ -322,6 +322,7 @@ class Deadpan(object):
                     try:
                         # document = urlopen(req, context=self.SSL_CONTEXT,timeout = 1)
                         document = requests.get(url,headers=headers,timeout=3,verify=False)
+                        # print("Obtained document")
                     except Exception as ex:
                         print(text_color.FAILED_COLOR
                               + "Timeout"
@@ -332,6 +333,7 @@ class Deadpan(object):
 
                     # html_doc = document.read()
                     html_doc = document.text.strip()
+                    # print("html extracted")
                     # if document.getcode() != 200:
                     if document.status_code != 200:
                         print(text_color.FAILED_COLOR
@@ -353,6 +355,7 @@ class Deadpan(object):
                         continue
 
                     soup = BeautifulSoup(html_doc, "html.parser")
+                    # print("Obtained soup")
                 except KeyboardInterrupt:
                     print(text_color.FAILED_COLOR + 'Deadpan interrupted by user...' + text_color.ENDC)
                     break
