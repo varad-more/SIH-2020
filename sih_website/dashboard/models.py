@@ -19,4 +19,6 @@ class corp_action_data (models.Model):
     data = models.CharField(max_length=5000)
 
     class meta:
-        db_tabel = "corp_action_data"
+        db_table = "corp_action_data"
+
+    

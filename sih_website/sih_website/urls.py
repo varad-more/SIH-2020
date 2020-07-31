@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path    
 from django.contrib.auth import views as auth_views
 
-from dashboard.views import index,report,rep_generatoion,register
+from dashboard.views import index,report,rep_generatoion,register, pdf_downloader
 
 
 urlpatterns = [
@@ -26,6 +26,7 @@ urlpatterns = [
     path ('future_expected', report, name='report'),
     path ('report_gen', rep_generatoion, name='report_gen'),
     path ('register',register, name ='register'),
+    path ('pdf_downloader', pdf_downloader, name= 'pdf_downloader'),
     path ('login',auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path ('logout',auth_views.LogoutView.as_view(template_name='logout.html'), name='logout'),
 ]
