@@ -40,6 +40,8 @@ except Error as e:
 
 cursor = conn.cursor()
 
+sql = """ALTER DATABASE pythanos_main CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;"""
+cursor.execute(sql)
 
 
 
@@ -76,8 +78,8 @@ sql = """CREATE TABLE IF NOT EXISTS articles
 
 cursor.execute(sql)
 
-sql = """ALTER TABLE articles CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"""
-cursor.execute(sql)
+# sql = """ALTER TABLE articles CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"""
+# cursor.execute(sql)
 
 
 ##links
