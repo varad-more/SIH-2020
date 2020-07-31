@@ -7,10 +7,8 @@ __version__ = '2'
 __author__ = 'Abhijit Acharya'
 
 import gc
-import os
 import sys
 import ssl
-import json
 import requests
 # import urllib
 # import sqlite3
@@ -47,32 +45,10 @@ class Helper:
     def __init__(self):
         pass
 
-    # def get_filename(self, filename):
-    #     # If current filesize > 200MB then generate new file name
-    #     if os.stat('output/dumps/'+filename).st_size > 200000000:
-    #         filename = str(datetime.timestamp(datetime.now()))
-    #         open('output/dumps/'+filename, 'a').close()
-    #         return filename
-    #     return filename
-
     def get_filename(self):
-        # If current filesize > 200MB then generate new file name
         filename = str(datetime.timestamp(datetime.now()))
         open('output/dumps/'+filename, 'a', encoding='utf-8').close()
         return filename
-
-    # def dump_html(self, row, soup, filename):
-    #     # Insert html
-    #     with open('output/dumps/'+filename, 'r+') as f:
-    #         try:
-    #             data = json.load(f)
-    #             data[row[0]] = "".join([str(soup)])
-    #             f.seek(0)
-    #             json.dump(data, f)
-    #         except Exception as ex:
-    #             print(ex)
-    #         finally:
-    #             f.close()
 
     def dump_html(self, row, soup, filename):
         # Insert html
@@ -397,27 +373,36 @@ class Deadpan(object):
                         href = urljoin(url, href)
 
                     hashpos = href.find('#')
-                    if(hashpos > 1) : href = href[:hashpos]
+                    if(hashpos > 1):
+                        href = href[:hashpos]
                     if(href.endswith('.png') or href.endswith('.jpg') or href.endswith('.gif') or href.endswith('.jpeg')) : continue
-                    if(href.endswith('/')) : href = href[:-1]
+                    if(href.endswith('/')):
+                        href = href[:-1]
 
-                    if(len(href) < 1) : continue
+                    if(len(href) < 1):
+                        continue
 
                     # Check if the URL belongs to specified domains
                     found = False
                     for web in webs:
-                        if(href.startswith(web)) :
+                        if(href.startswith(web)):
                             found = True
                             break
-                    if not found : continue # go to next loop if it links off the required website
+                    if not found:
+                        # go to next loop if it links off the required website
+                        continue
 
                     # Else insert
-                    self.cursor.execute('INSERT IGNORE INTO pages(url, website, keywords, new_rank) VALUES(%s, %s, NULL, 1.0)',(href, self.website_name))
-                    self.cursor.execute('SELECT pages_id FROM pages WHERE url=%s LIMIT 1',(href,))
+                    self.cursor.execute('''INSERT IGNORE INTO pages(url, website
+                                        , keywords, new_rank)
+                                        VALUES(%s, %s, NULL, 1.0)'''
+                                        , (href, self.website_name))
+                    self.cursor.execute('''SELECT pages_id FROM pages WHERE
+                                          url=%s LIMIT 1''', (href,))
                     try:
                         row = self.cursor.fetchone()
                         toid = row[0]
-                    except:
+                    except Exception as ex:
                         print(text_color.FAILED_COLOR
                               + 'Could not retrieve id'
                               + text_color.ENDC)
