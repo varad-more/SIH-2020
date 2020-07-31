@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="_MtqwvhzkqudIOBjL5c2e_dktc3ItBiEEpv_AKmmGC8" name="google-site-verification"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Outlook India Magazine: Latest news today, news analysis, opinion on India, world, sports, entertainment</title>
+<meta content="Outlook India, more than just a news magazine, offers today's news, top headlines, videos, photos and blogs on India, politics, world, business, cricket and Bollywood besides hot topics and top stories of the day." id="description" itemprop="description" name="description">
+<meta content="Outlook India, Outlook magazine, Latest news, News today, Top news today, Top headlines, News analysis, India politics, Opinion, Entertainment, Sports news, News videos, Outlook magazine latest issue, Current affairs, News in English, English news magazine, Business news, Sports news, Cricket, Bollywood, Hot news today. Live update, Current news, Breaking news" id="keywords" itemprop="keywords" name="keywords"/>
+<meta content="Outlook India, Outlook magazine, Latest news, News today, Top news today, Top headlines, News analysis, India politics, Opinion, Entertainment, Sports news, News videos, Outlook magazine latest issue, Current affairs, News in English, English news magazine, Business news, Sports news, Cricket, Bollywood, Hot news today. Live update, Current news, Breaking news" id="news_keywords" name="news_keywords"/>
+<link href="//pubads.g.doubleclick.net" rel="dns-prefetch"/>
+<link crossorigin="" href="//pubads.g.doubleclick.net" rel="preconnect"/>
+<link href="//www.google-analytics.com" rel="dns-prefetch"/>
+<link crossorigin="" href="//www.google-analytics.com" rel="preconnect"/>
+<link href="//www.googletagservices.com" rel="dns-prefetch"/>
+<link href="//partner.googleadservices.com" rel="dns-prefetch"/>
+<link href="//tpc.googlesyndication.com" rel="dns-prefetch"/>
+<link href="//cm.g.doubleclick.net" rel="dns-prefetch"/>
+<link href="//fonts.gstatic.com" rel="dns-prefetch"/>
+<link crossorigin="" href="//fonts.gstatic.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch">
+<link crossorigin="" href="//fonts.googleapis.com" rel="preconnect"/>
+<link href="https://www.outlookindia.com/favicon.ico" rel="icon" type="image/x-icon">
+<meta content="https://www.outlookindia.com/" property="og:site_name"/>
+<link href="https://www.outlookindia.com/rss/home" rel="alternate" title="Outlook India Home Stories" type="application/rss+xml"/><link href="/public/uploads/ios_144.png" rel="apple-touch-icon">
+<link href="https://www.outlookindia.com/" rel="canonical">
+<!-- CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&amp;display=swap" rel="stylesheet"/>
+<link href="/css/home/home_new_v4.css" rel="stylesheet"/>
+<script src="https://www.outlookindia.com/jquery/jquery-1.11.3.min.js"></script>
+<!-- DFP -->
+<script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+   googletag.defineSlot('/1053654/OL_728x90_HP_Header', [728, 90], 'div-gpt-ad-1569840768653-0').addService(googletag.pubads());
+   googletag.defineSlot('/1053654/OL_HP_300x600', [300, 600], 'div-gpt-ad-1557387208690-0').addService(googletag.pubads());
+   googletag.defineSlot('/1053654/OL_300x250_HP_02', [300, 250], 'div-gpt-ad-1560233857975-0').addService(googletag.pubads());
+   googletag.defineSlot('/1053654/OL_HP_970x250', [970, 250], 'div-gpt-ad-1556539390064-0').addService(googletag.pubads());
+   googletag.defineSlot('/1053654/OL_HP_Footer_970x90', [970, 90], 'div-gpt-ad-1556171230351-0').addService(googletag.pubads());
+   googletag.defineSlot('/1053654/OL_300x250_HP', [300, 250], 'div-gpt-ad-1568794405612-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+  ga('create', 'UA-9108659-2', 'outlookindia.com');
+  ga('send', 'pageview');
+ function mygaEvent(action,label){
+	  ga('send', 'event', 'Ad Free', action, label);
+ }
+</script>
+<!-- Begin comScore Tag -->
+<script>
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "22214668" });
+  (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script>
+<noscript>
+<img src="https://b.scorecardresearch.com/p?c1=2&amp;c2=22214668&amp;cv=2.0&amp;cj=1"/>
+</noscript>
+<!-- End comScore Tag -->
+<script>
+if(window.location.hostname=="images.outlookindia.com")
+{
+	window.location.href="https://www.outlookindia.com";
+}
+$(window).scroll(function() {
+    $.each($('img'), function() {
+        if ( $(this).attr('data-src') && $(this).offset().top < ($(window).scrollTop() + $(window).height() + 10) ) {
+            var source = $(this).data('src');
+            $(this).attr('src', source);
+            $(this).removeAttr('data-src');
+        }
+    })
+})
+</script>
+<script> 
+window._izq = window._izq || []; window._izq.push(["init"]); 
+</script>
+<script src="https://cdn.izooto.com/scripts/30b5a9e3264ec4cfb2cee377cadc58665320bff5.js"></script>
+<!-- DO NOT MODIFY -->
+<!-- Global site tag (gtag.js) - AdWords: 935642793 -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-935642793"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-935642793');
+</script>
+<script>
+jQuery("document").ready(function(){
+   jQuery("#weather_date").load('/outlookcdn/menu_date.php');
+});
+</script>
+<!-- FOR AdPushpup -->
+<script data-cfasync="false" type="text/javascript">(function(w, d) { var s = d.createElement('script'); s.src = '//cdn.adpushup.com/41584/adpushup.js'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script>
+</link></link></link></link></meta></head>
+<body>
+<header>
+<!-- TOP STRIP -->
+<div class="top_header">
+<div class="container">
+<div class="weather_date" id="weather_date">
+<a><i aria-hidden="true" class="fa fa-calendar"></i> July 31, 2020 
+					<!--<img src="/images/home_new/cloud.png" alt=""> 23 &#176 C--></a>
+</div>
+<!-- college survey-->
+<style type="text/css">
+
+                .collegesurvey{width:52%;float: left;margin-right: 5%;}
+
+                .weather_date{float: left;width:15%}
+
+     </style>
+<div class="collegesurvey">
+<a href="https://www.outlookindia.com/survey/"> <img src="https://www.outlookindia.com//images/Colleges-Survey-2020.jpg" style="width:660px;!important"/></a>
+</div>
+<!-- college survey-->
+<!-- TOP SEARCH -->
+<div class="top_search">
+<div class="search_inner">
+<form action="/outlooksearch" id="searchbox_partner-pub-8484176841147392:5546753431" method="post" name="globalsearchhead">
+<input name="cx" type="hidden" value="partner-pub-8484176841147392:5546753431"/>
+<input name="cof" type="hidden" value="FORID:11"/>
+<input autocomplete="off" class="tp_search" id="q" name="q" placeholder="Search" type="text" value=""/>
+<i aria-hidden="true" class="fa fa-search"></i>
+</form>
+</div>
+</div>
+<!-- TOP SEARCH -->
+<div class="login_section">
+<a href="https://www.outlookindia.com/registration/login">Login  </a> |<a href="https://www.outlookindia.com/registration">Register</a>
+</div>
+</div>
+</div>
+<!-- TOP STRIP -->
+<div class="container">
+<!-- LOGO SECTION -->
+<div class="logo_section">
+<div class="logo">
+<a href="/">
+<img src="https://www.outlookindia.com/images/home/logo.png"/>
+<br/><p>the fully loaded magazine</p>
+</a>
+</div>
+<!-- BANNER 728 x 90 -->
+<div class="ad_section">
+<!-- /1053654/OL_728x90_HP_Header -->
+<div id="div-gpt-ad-1569840768653-0">
+<script>
+						googletag.cmd.push(function() { googletag.display('div-gpt-ad-1569840768653-0'); });
+					  </script>
+</div>
+</div>
+<!-- BANNER 728 x 90 -->
+<div class="year_panel">
+<a href="https://www.outlookindia.com/topic/novel-coronavirus-outbreak/107261">
+<!--<img src="/images/home_new/poshan-top1.jpg" alt="Poshan">-->
+<img alt="Corona" src="/images/corona_banner.png"/>
+</a>
+</div>
+</div>
+<!-- LOGO SECTION -->
+<!-- MENU SECTION -->
+<nav>
+<ul class="main_navigation_menu">
+<li><a href="/"><i aria-hidden="true" class="fa fa-home"></i></a></li>
+<li>
+<a href="/magazine">Magazine <i aria-hidden="true" class="fa fa-caret-down"></i></a>
+<ul class="desktop_submenu">
+<li><a href="https://www.outlookindia.com/magazine">Current Issue</a></li>
+<li><a href="https://www.outlookindia.com/magazine/subsection/cover-stories/2">Cover Story</a></li>
+<li><a href="https://www.outlookindia.com/magazine/subsection/opinions/5">Opinion</a></li>
+<li><a href="https://www.outlookindia.com/magazine/subsection/interviews/4">Interviews</a></li>
+<li><a href="https://www.outlookindia.com/magazine/section/national/19">India</a></li>
+<li><a href="https://www.outlookindia.com/magazine/section/international/20">World</a></li>
+<li><a href="https://www.outlookindia.com/magazine/section/sports/22">Sports</a></li>
+<li><a href="https://www.outlookindia.com/magazine/section/business/18">Business</a></li>
+<li><a href="https://www.outlookindia.com/magazine/section/arts-entertainment/23">Entertainment</a></li>
+<li><a href="https://www.outlookindia.com/magazine/section/books/24">Books</a></li>
+<li><a href="https://www.outlookindia.com/magazine/section/poliglot/40">Poliglot</a></li>
+<li><a href="https://www.outlookindia.com/magazine/archive">Previous Issues</a></li>
+<li><a href="https://subscription.outlookindia.com">Subscription</a></li>
+</ul>
+</li>
+<li><a href="/website/section/national/19/">India</a></li>
+<li><a href="/sports/cricket">Cricket</a></li>
+<li><a href="/website/subsection/opinion/5">Opinion</a></li>
+<li><a href="/videos">Videos</a></li>
+<li><a href="/photos">Photos</a></li>
+<li><a href="/website/section/international/20/">World</a></li>
+<li><a href="/arts-entertainment">Entertainment</a></li>
+<li><a href="/website/section/business/18/">Business</a></li>
+<li><a href="/magazine/archive">Archives</a></li>
+<li><a href=" https://subscription.outlookindia.com/?utm_source=outlook_menubar" target="_blank">Subscription</a></li>
+</ul>
+<ul class="second_navigat_menu">
+<li><a href="https://www.outlookhindi.com/" target="_blank">hindi</a></li>
+<li><a href="https://www.outlookbusiness.com/" target="_blank">business</a></li>
+<li><a href="https://www.outlookindia.com/outlookmoney/" target="_blank">money</a></li>
+<li><a href="https://www.outlookindia.com/outlooktraveller/" target="_blank">traveller</a></li>
+<li><a href="https://www.responsibletourismindia.com/" target="_blank">responsible tourism</a></li>
+<li><a class="menu_cls" href="https://poshan.outlookindia.com/" target="_blank">Poshan</a></li>
+<!--<li><a href="https://poshan.outlookindia.com/1000days" target="_blank"><b>1000days</b></a></li>-->
+<li>
+<a href="">others <i aria-hidden="true" class="fa fa-caret-down"></i></a>
+<ul class="other_initiative">
+<li><a href="https://www.outlookindia.com/csr" target="_blank">CSR</a></li>
+<li><a href="https://www.outlookhindi.com/agriculture" target="_blank">Agriculture</a></li>
+<li><a href="http://speakout.outlookindia.com/" target="_blank">Speakout</a></li>
+<li><a href="https://www.outlookindia.com/website/section/automobiles/32/">Automobiles</a></li>
+<li><a href="https://www.outlookindia.com/salutingthebravest/" target="_blank">Saluting the bravest</a></li>
+</ul>
+</li>
+<li class="social_media">
+<a href="https://www.facebook.com/Outlookindia" target="_blank"><i aria-hidden="true" class="fa fa-facebook"></i></a>
+<a href="https://twitter.com/outlookindia/" target="_blank"><i aria-hidden="true" class="fa fa-twitter"></i></a>
+<a href="http://www.instagram.com/outlookindia" target="_blank"><i aria-hidden="true" class="fa fa-instagram"></i></a>
+<a href="https://www.youtube.com/user/OutlookMagazine" target="_blank"><i aria-hidden="true" class="fa fa-youtube-play"></i></a>
+<a href="https://www.outlookindia.com/rssfeed" target="_blank"><i aria-hidden="true" class="fa fa-rss"></i></a>
+</li>
+</ul>
+</nav>
+<!-- MENU SECTION -->
+</div>
+</header>
+<div class="container">
+<!-- assembly Election 2019-->
+<!-- assembly Election 2019-->
+<section id="top_section">
+<!-- TOP STORIES -->
+<div id="home_top_stories">
+<div class="box_shadow" id="left_lead">
+<div class="row">
+<div class="left_content">
+<div style="font-size:11px;color:red;">Cover Story</div>
+<h1>
+<a href="https://www.outlookindia.com/magazine/story/sports-news-from-ludo-to-rummy-online-gaming-comes-to-roost-during-covid-times-but-what-is-the-real-deal/303502">From Ludo To Rummy, Online Gaming Comes To Roost During COVID Times, But What Is The Real Deal? </a>
+</h1>
+<aside>
+<p>Online gaming has seen a sharp rise during the lockdown. App makers continue to take advantage of...</p>
+</aside>
+</div>
+<div class="left_img_content">
+<a href="https://www.outlookindia.com/magazine/story/sports-news-from-ludo-to-rummy-online-gaming-comes-to-roost-during-covid-times-but-what-is-the-real-deal/303502">
+<img alt="From Ludo To Rummy, Online Gaming Comes To Roost During COVID Times, But What Is The Real Deal?" src="https://images.outlookindia.com/public/home_stories/44959eed78187d16c0f4e9996d17d49c_280_455.jpg"/>
+</a>
+</div>
+</div>
+<div class="row">
+<div class="lead_related_story">
+<ul>
+<li class="story">
+<div class="image_div">
+<a href="https://www.outlookindia.com/website/story/india-news-if-supreme-court-accepts-white-lies-what-resort-do-i-have-saifuddin-soz/357733"><img alt="If Supreme Court Accepts 'White Lies', What Resort Do I Have: Saifuddin Soz " class="img-fluid" src="https://images.outlookindia.com/public/home_stories/890add1c0fcff1b963b8f1cae45beefa_133_200.jpg"/></a>
+</div>
+<div style="margin-left:10px;font-size:11px;color:red;"></div>
+<p>
+<a href="https://www.outlookindia.com/website/story/india-news-if-supreme-court-accepts-white-lies-what-resort-do-i-have-saifuddin-soz/357733">If Supreme Court Accepts 'White Lies', What Resort Do I Have: Saifuddin Soz </a>
+</p>
+</li>
+<li class="story">
+<div class="image_div">
+<a href="https://www.outlookindia.com/website/story/india-news-delhi-lg-rejects-aap-govts-decision-to-allow-hotels-weekly-markets-under-unlock-3/357741"><img alt="Delhi LG Rejects Kejriwal Govt's Decision To Allow Hotels, Weekly Markets Under Unlock 3" class="img-fluid" src="https://images.outlookindia.com/public/home_stories/5764cb5fb0eb8ca2405acf386c851af0_133_200.jpg"/></a>
+</div>
+<div style="margin-left:10px;font-size:11px;color:red;"></div>
+<p>
+<a href="https://www.outlookindia.com/website/story/india-news-delhi-lg-rejects-aap-govts-decision-to-allow-hotels-weekly-markets-under-unlock-3/357741">Delhi LG Rejects Kejriwal Govt's Decision To Allow Hotels, Weekly Markets Under Unlock 3</a> | <a href="https://www.outlookindia.com/website/story/india-news-bjp-derives-sadistic-pleasure-by-inflicting-pain-misery-on-delhiites-aap/357749"><font color="red">AAP Hits Back</font></a>
+</p>
+</li>
+<li class="story">
+<div class="image_div">
+<a href="https://www.outlookindia.com/website/story/india-news-ahead-of-rajasthan-assembly-session-ashok-gehlot-camp-mlas-to-be-shifted-to-jaisalmer-today-report/357708"><img alt="Over 50 Gehlot Camp MLAs Moved To Jaisalmer Ahead Of Assembly Session, Others To Follow" class="img-fluid" src="https://images.outlookindia.com/public/home_stories/c97597fd9ad325661dd363fbb57061b9_133_200.jpg"/></a>
+</div>
+<div style="margin-left:10px;font-size:11px;color:red;"></div>
+<p>
+<a href="https://www.outlookindia.com/website/story/india-news-ahead-of-rajasthan-assembly-session-ashok-gehlot-camp-mlas-to-be-shifted-to-jaisalmer-today-report/357708">Over 50 Gehlot Camp MLAs Moved To Jaisalmer Ahead Of Assembly Session, Others To Follow</a>
+</p>
+</li>
+<li class="story">
+<div class="image_div">
+<a href="https://www.outlookindia.com/blog/story/india-news-congress-silence-on-ram-mandir-bhoomi-pujan-is-deafening/4205"><img alt="Congress' Silence On Ram Mandir &lt;em&gt;Bhoomi Pujan&lt;/em&gt; Is Deafening" class="img-fluid" src="https://images.outlookindia.com/public/home_stories/f21a1317a20aef9785d3d5e85e7db704_133_200.jpg"/></a>
+</div>
+<div style="margin-left:10px;font-size:11px;color:red;">Blog</div>
+<p>
+<a href="https://www.outlookindia.com/blog/story/india-news-congress-silence-on-ram-mandir-bhoomi-pujan-is-deafening/4205">Congress' Silence On Ram Mandir <em>Bhoomi Pujan</em> Is Deafening</a>
+</p>
+</li>
+</ul>
+</div>
+</div>
+<a class="readmore" href="/website">Read more &gt;&gt;</a>
+</div>
+</div>
+<!-- TOP STORIES -->
+<!-- LATEST NEWS -->
+<div class="latest_section box_shadow">
+<div class="heading_tag">
+<a href="/website">Latest News </a> <span></span>
+</div>
+<ul>
+<div style="font-size:11px;color:red;"></div>
+<li>
+<a href="https://www.outlookindia.com/website/story/india-news-govind-dotasara-appointed-rajasthan-congress-chief-will-he-join-the-list-of-jats-who-couldnt-become-cm/357752">Dotasara Appointed Raj Cong Chief: Will He Join List Of Jats Who Couldn't Become CM?</a>
+</li><hr/>
+<div style="font-size:11px;color:red;"></div>
+<li>
+<a href="https://www.outlookindia.com/website/story/india-news-j-k-admin-extends-mehbooba-muftis-detention-under-psa-by-3-months/357734">Mehbooba Mufti's Detention Under PSA Extended By 3 Months</a>
+</li><hr/>
+<div style="font-size:11px;color:red;">Interview</div>
+<li>
+<a href="https://www.outlookindia.com/website/story/entertainment-news-women-centric-films-becoming-bigger-and-bigger-breathe-actor-nithya-menen/357735">Women-centric Films Becoming Bigger And Bigger: Nithya Menen</a>
+</li><hr/>
+<div style="font-size:11px;color:red;"></div>
+<li>
+<a href="https://www.outlookindia.com/website/story/india-news-dravidian-leader-cn-annadurais-statue-gets-saffron-treatment-in-tamil-nadu/357725">Dravidian Leader CN Annadurai's Statue Gets Saffron Treatment In TN </a>
+</li><hr/>
+<div style="font-size:11px;color:red;"></div>
+<li>
+<a href="https://www.outlookindia.com/website/story/india-news-truth-shall-prevail-rhea-chakraborty-on-allegations-of-sushant-singh-rajputs-family/357743">'Truth Shall Prevail': Rhea Chakraborty On Allegations Of Sushant's Family</a>
+</li><hr/>
+<div style="font-size:11px;color:red;"></div>
+<li>
+<a href="https://www.outlookindia.com/website/story/india-news-spurious-liquor-claims-38-lives-in-punjab-cm-amarinder-singh-orders-probe/357755">Spurious Liquor Claims 38 Lives In Punjab; CM Orders Probe</a>
+</li><hr/>
+<div style="font-size:11px;color:red;"></div>
+<li>
+<a href="https://www.outlookindia.com/website/story/sports-news-east-bengal-isl-controversy-wrong-to-support-one-particular-club-says-shocked-fpai-president-renedy/357742">East Bengal-ISL Controversy: 'Shocked' Renedy Dismisses FPAI's Demand</a>
+</li><hr/>
+<div style="font-size:11px;color:red;"></div>
+<li>
+<a href="https://www.outlookindia.com/website/story/sports-news-petition-filed-seeking-arrest-of-india-captain-virat-kohli-for-promoting-online-gambling/357745">Arrest Kohli For Promoting Gambling App, Chennai Lawyer Files Petition</a>
+</li><hr/>
+</ul>
+<a class="readmore" href="/website">Read more &gt;&gt;</a>
+</div>
+<!-- LATEST NEWS -->
+<!-- MAGAZINE COVER -->
+<div class="magazine_right_section box_shadow">
+<div class="magazine_issue">
+<div class="magazine_cover">
+<!--<a href="/magazine/issue/11684"><img src="https://images.outlookindia.com/public/uploads/coverpics/large/OLE-10-Aug_big-cover_20200810_300_220.jpg" class="img-fluid"></a>-->
+<a href="https://emagazine.outlookindia.com/the-new-contagion.html" target="_blank"><img class="img-fluid" src="/images/outlook_cover_10_august_2020.jpeg"/></a>
+<div class="issue_date_current">
+<div class="issue_date1">	10 August, 2020</div>
+</div>
+<a class="subscribe_now" href="https://emagazine.outlookindia.com/the-new-contagion.html" onclick="ga('send', 'event', 'PDF', 'Download', 'EMag – PDF Download');" target="_blank">E-Magazine</a>
+</div>
+</div>
+<ul>
+<li><a href="https://www.outlookindia.com/magazine/story/sports-news-from-ludo-to-rummy-online-gaming-comes-to-roost-during-covid-times-but-what-is-the-real-deal/303502">From Ludo To Rummy, Online Gaming Comes To Roost During COVID Times, But What Is The Real Deal?</a></li><hr/>
+<li><a href="https://www.outlookindia.com/magazine/story/sports-news-business-of-online-gaming-in-india-big-bucks-bigger-consumer-base-and-biggest-issues/303504">Business Of Online Gaming In India: Big Bucks, Bigger Consumer Base And Biggest Issues</a></li><hr/>
+<li><a href="https://www.outlookindia.com/magazine/story/india-news-unfinished-agenda/303497">Unfinished Agenda</a></li><hr/>
+</ul>
+<div class="btn_div">
+<a class="prev_issue" href="https://www.outlookindia.com/magazine/archive/">Previous Issues</a>
+<a class="prev_issue" href="https://www.outlookindia.com/magazine">Read Here</a>
+</div>
+</div>
+<!-- MAGAZINE COVER -->
+</section>
+<!-- INDIA CHINA SECTION -->
+<!-- INDIA CHINA SECTION -->
+<!-- OPINION AND BLOG SECTION -->
+<section id="opinion">
+<div class="heading_tag">
+<a href="/website/subsection/opinion/5">Opinion / </a><a href="/blog">Blogs </a> <span></span>
+</div>
+<div class="row">
+<div class="opinion">
+<div class="box_shadow">
+<div class="opinion_left">
+<a href="https://www.outlookindia.com/blog/story/sports-news-ipl-going-to-uae-will-clearly-betray-pm-narendra-modis-concept-of-at/4206">
+<img alt="IPL In UAE Will Betray India's 'Atmanirbharta'" class="img-fluid" data-src="https://images.outlookindia.com/public/home_stories/fc855595dfe7bcd9d414813dcc3b4715_100_100.jpg" src=""/>
+</a>
+</div>
+<div class="opinion_right">
+<p><a href="https://www.outlookindia.com/blog/story/sports-news-ipl-going-to-uae-will-clearly-betray-pm-narendra-modis-concept-of-at/4206">IPL In UAE Will Betray India's 'Atmanirbharta'</a></p>
+<div class="bloger_name"><a href="/people/soumitra-bose/6640">Soumitra Bose</a></div>
+</div>
+</div>
+</div>
+<div class="opinion">
+<div class="box_shadow">
+<div class="opinion_left">
+<a href="https://www.outlookindia.com/website/story/opinion-national-education-policy-2020-teaching-students-in-mother-tongue-will-help-inculcate-human-values-in-them/357730">
+<img alt="NEP 2020: Teaching Students In Mother Tongue Will Help Inculcate Human Values In Them" class="img-fluid" data-src="https://images.outlookindia.com/public/home_stories/65f14bc914fce3cdb4b437f883f96ee9_100_100.jpg" src=""/>
+</a>
+</div>
+<div class="opinion_right">
+<p><a href="https://www.outlookindia.com/website/story/opinion-national-education-policy-2020-teaching-students-in-mother-tongue-will-help-inculcate-human-values-in-them/357730">NEP 2020: Teaching Students In Mother Tongue Will Help...</a></p>
+<div class="bloger_name"><a href="/people/badri-narayan/15333">Badri Narayan</a></div>
+</div>
+</div>
+</div>
+<div class="opinion">
+<div class="box_shadow">
+<div class="opinion_left">
+<a href="https://www.outlookindia.com/website/story/opinion-new-education-policy-2020-is-modis-strategy-for-self-reliant-india/357681">
+<img alt="New Education Policy Is Modi’s Strategy For Self-reliant India" class="img-fluid" data-src="https://images.outlookindia.com/public/home_stories/f0a4687f3ef5987e9f4410d811e8fb1d_100_100.png" src=""/>
+</a>
+</div>
+<div class="opinion_right">
+<p><a href="https://www.outlookindia.com/website/story/opinion-new-education-policy-2020-is-modis-strategy-for-self-reliant-india/357681">New Education Policy Is Modi’s Strategy For Self-reliant...</a></p>
+<div class="bloger_name">Prof RP Gupta</div>
+</div>
+</div>
+</div>
+<div class="opinion">
+<div class="box_shadow">
+<div class="opinion_left">
+<a href="https://www.outlookindia.com/website/story/opinion-prashant-bhushans-right-to-dissent-stems-from-heart-of-democracy/357595">
+<img alt="Why I Defend Prashant Bhushan’s Right To Offend" class="img-fluid" data-src="https://images.outlookindia.com/public/home_stories/940cdf802f00d26713a790f467838b1a_100_100.jpg" src=""/>
+</a>
+</div>
+<div class="opinion_right">
+<p><a href="https://www.outlookindia.com/website/story/opinion-prashant-bhushans-right-to-dissent-stems-from-heart-of-democracy/357595">Why I Defend Prashant Bhushan’s Right To Offend</a></p>
+<div class="bloger_name"><a href="/people/suman-k-jha/20584">Suman K Jha</a></div>
+</div>
+</div>
+</div>
+</div>
+<a class="readmore" href="/website/subsection/opinion/5">Read more &gt;&gt;</a>
+</section>
+<!-- OPINION AND BLOG SECTION -->
+<!-- VIDEO SECTION -->
+<section id="video">
+<div class="video">
+<div class="heading_tag">
+<a href="/videos">Videos</a> <span></span>
+</div>
+<div class="row">
+<div class="video_div">
+<div class="video_inner">
+<a href="https://www.outlookindia.com/videos/truth-shall-prevail-rhea-chakraborty-on-allegations-of-sushant-singh-rajputs-family/3567">
+<img class="img-fluid" data-src="https://images.outlookindia.com/public/home_stories/3272ecc1629a3e1480094986e3bb42e1_280_349.jpg" src=""/>
+<div class="play_icon"><img alt="" src="/images/home_new/youtube_home.png"/></div>
+</a>
+</div>
+<p><a href="https://www.outlookindia.com/videos/truth-shall-prevail-rhea-chakraborty-on-allegations-of-sushant-singh-rajputs-family/3567">Truth Shall Prevail': Rhea Chakraborty On Allegations Of Sushant Singh Rajput's...</a></p>
+</div>
+<div class="video_div">
+<div class="video_inner">
+<a href="https://www.outlookindia.com/videos/planet-outlook-future-of-indias-tigers/3566">
+<img class="img-fluid" data-src="https://images.outlookindia.com/public/home_stories/59428f522e065b4b81e568c4b2026f91_280_349.jpg" src=""/>
+<div class="play_icon"><img alt="" src="/images/home_new/youtube_home.png"/></div>
+</a>
+</div>
+<p><a href="https://www.outlookindia.com/videos/planet-outlook-future-of-indias-tigers/3566">Planet Outlook: Future of India's Tigers</a></p>
+</div>
+<div class="video_div">
+<div class="video_inner">
+<a href="https://www.outlookindia.com/videos/covid-clinic-episode-12-frontrunners-in-the-race-for-coronavirus-vaccine/3565">
+<img class="img-fluid" data-src="https://images.outlookindia.com/public/home_stories/e54a86e8e1f3c5075555334fe79ff624_280_349.jpg" src=""/>
+<div class="play_icon"><img alt="" src="/images/home_new/youtube_home.png"/></div>
+</a>
+</div>
+<p><a href="https://www.outlookindia.com/videos/covid-clinic-episode-12-frontrunners-in-the-race-for-coronavirus-vaccine/3565">Covid Clinic- Episode 12 | Frontrunners In The Race For Coronavirus Vaccine</a></p>
+</div>
+<div class="video_div">
+<div class="video_inner">
+<a href="https://www.outlookindia.com/videos/the-outlier-ep-8-nandita-das-actor-and-filmmaker-in-conversation-with-satish-padmanabhan/3564">
+<img class="img-fluid" data-src="https://images.outlookindia.com/public/home_stories/355275643d57d09eecafe7f83d8eaa26_280_349.jpg" src=""/>
+<div class="play_icon"><img alt="" src="/images/home_new/youtube_home.png"/></div>
+</a>
+</div>
+<p><a href="https://www.outlookindia.com/videos/the-outlier-ep-8-nandita-das-actor-and-filmmaker-in-conversation-with-satish-padmanabhan/3564">The Outlier Ep 8 - Nandita Das, Actor and Filmmaker, in conversation with...</a></p>
+</div>
+</div>
+<a class="readmore" href="/videos">view more &gt;&gt;</a>
+</div>
+<div class="right_ad">
+<!-- BANNER 300 x 250 -->
+<div class="ads_right">
+				Advertisement<br/>
+<a href="https://casino.betway.com/" target="_blank"><img alt="Online Casino Betway Banner" src="https://www.outlookindia.com/images/ads/betway.jpg"/></a>
+</div>
+<!-- BANNER 300 x 250 -->
+<!-- Newsletter -->
+<div class="subscribe_div">
+<form accept-charset="utf-8" action="https://www.outlookindia.com/outlookcdn/newsletter_signup.php" id="signup-form" method="POST" name="signup-form">
+<input class="subs_input" name="name" placeholder="Name" type="text"/>
+<input class="subs_input" name="email" placeholder="Email" type="text"/>
+<label class="subs_label">Subscribe to Outlook’s Newsletter
+					<input class="subs_submit" id="submit-btn" type="submit" value="Sign up"/></label>
+<p id="newsletter_status" style="text-align:center;"></p>
+</form>
+</div>
+<!-- Newsletter -->
+</div>
+</section>
+<!-- VIDEO SECTION -->
+<!-- MAGAZINE SECTION -->
+<section id="magazine">
+<div class="heading_tag">
+<a href="/magazine">Magazine</a> <span></span>
+</div>
+<div class="row">
+<div class="mag_div">
+<div class="img_content">
+<a href="https://www.outlookindia.com/magazine/story/business-news-unbalanced-sheet-of-lockdown-woes/303498">
+<img alt="" class="img-fluid" data-src="https://images.outlookindia.com/public/home_stories/3fb505c42163240d5e86f05b9bca4532_309_377.jpg" src=""/>
+</a>
+</div>
+<div class="mag_content">
+<div class="story_slug">Economy/J&amp;K</div>
+<h4>
+<a href="https://www.outlookindia.com/magazine/story/business-news-unbalanced-sheet-of-lockdown-woes/303498">Unbalanced Sheet Of Lockdown Woes</a>
+</h4>
+<p>Amid unrest, pandemic and internet shutdowns, it’s hard times for the economy of the...</p>
+</div>
+</div>
+<div class="mag_div">
+<div class="img_content">
+<a href="https://www.outlookindia.com/magazine/story/world-news-a-persian-gulf/303501">
+<img alt="" class="img-fluid" data-src="https://images.outlookindia.com/public/home_stories/9e8690f84dc8c681d29c447af032776f_309_377.jpg" src=""/>
+</a>
+</div>
+<div class="mag_content">
+<div class="story_slug">Foreign/India-Iran</div>
+<h4>
+<a href="https://www.outlookindia.com/magazine/story/world-news-a-persian-gulf/303501">A Persian Gulf</a>
+</h4>
+<p>India’s ties with Iran go into a lean phase as Tehran joins China and Russia in a...</p>
+</div>
+</div>
+<div class="mag_div">
+<div class="img_content">
+<a href="https://www.outlookindia.com/magazine/story/entertainment-news-bollywood-has-zero-impact-people-make-fun-of-formulaic-bollywood-films/303512">
+<img alt="" class="img-fluid" data-src="https://images.outlookindia.com/public/home_stories/db603ededd359d0cf5cf74e561779182_309_377.jpg" src=""/>
+</a>
+</div>
+<div class="mag_content">
+<div class="story_slug">Interview</div>
+<h4>
+<a href="https://www.outlookindia.com/magazine/story/entertainment-news-bollywood-has-zero-impact-people-make-fun-of-formulaic-bollywood-films/303512">‘Bollywood Has Zero Impact. People Make Fun Of Formulaic Bollywood Films’</a>
+</h4>
+<p> </p>
+</div>
+</div>
+<div class="mag_div">
+<div class="img_content">
+<a href="https://www.outlookindia.com/magazine/story/lockdown-diary/303515">
+<img alt="" class="img-fluid" data-src="https://images.outlookindia.com/public/home_stories/a590f798d254ce0c4f461c1cd794eb42_309_377.jpg" src=""/>
+</a>
+</div>
+<div class="mag_content">
+<div class="story_slug">Last Page</div>
+<h4>
+<a href="https://www.outlookindia.com/magazine/story/lockdown-diary/303515">Lockdown Diary</a>
+</h4>
+<p> </p>
+</div>
+</div>
+</div>
+<a class="readmore" href="/magazine">view more &gt;&gt;</a>
+</section>
+<!-- MAGAZINE SECTION -->
+<!-- Corona -->
+<!-- corona -->
+<!-- PHOTO FEATURE SECTION -->
+<section id="photogallery">
+<div class="photogallery">
+<!-- TODAY'S PICTURE SECTION -->
+<div class="photo_slider">
+<div class="heading_tag"><a href="/photos">Day in Pics</a> <span></span></div>
+<div class="owl-carousel owl-theme" id="today_slider">
+<div class="item">
+<a href="https://www.outlookindia.com/photos/dayin/07/31/2020">
+<img alt="" class="img-responsive" data-src="https://images.outlookindia.com/public/uploads/gallery/20200731/mla_20200731_432_647.jpg" src="">
+</img></a>
+<p></p>
+						Rajasthan Congress MLAs arrive at Jaipur Airport as they shift to Jaisalmer amid state political crisis, in Jaipur.						
+						<div class="sourse" style="margin-top:10px;">PTI Photo</div>
+<a class="readmore" href="/photos" target="_blank">view more &gt;&gt;</a>
+</div>
+<div class="item">
+<a href="https://www.outlookindia.com/photos/dayin/07/31/2020">
+<img alt="" class="img-responsive" data-src="https://images.outlookindia.com/public/uploads/gallery/20200731/covid_test_20200731_432_647.jpg" src="">
+</img></a>
+<p></p>
+						People stand near a Covid-19 mobile testing facility, at Jafarguda near Karwan in the old city of Hyderabad. Intelligent Monitoring Analysis Services Quarantine’ (iMASQ), the testing facilities are housed in specially...						
+						<div class="sourse" style="margin-top:10px;">PTI Photo</div>
+<a class="readmore" href="/photos" target="_blank">view more &gt;&gt;</a>
+</div>
+<div class="item">
+<a href="https://www.outlookindia.com/photos/dayin/07/31/2020">
+<img alt="" class="img-responsive" data-src="https://images.outlookindia.com/public/uploads/gallery/20200731/eid_3_20200731_432_647.jpg" src="">
+</img></a>
+<p></p>
+						A boy stands near a goat, on sale for the sacrificial festival of Eid al-Adha, at a market during Unlock 2.0, in New Delhi.						
+						<div class="sourse" style="margin-top:10px;">PTI Photo/Manvender Vashist</div>
+<a class="readmore" href="/photos" target="_blank">view more &gt;&gt;</a>
+</div>
+<div class="item">
+<a href="https://www.outlookindia.com/photos/dayin/07/31/2020">
+<img alt="" class="img-responsive" data-src="https://images.outlookindia.com/public/uploads/gallery/20200731/gym_1_20200731_432_647.jpg" src="">
+</img></a>
+<p></p>
+						Workers clean a gym ahead of its reopening during Unlock 3.0, in Beawar.						
+						<div class="sourse" style="margin-top:10px;">PTI Photo</div>
+<a class="readmore" href="/photos" target="_blank">view more &gt;&gt;</a>
+</div>
+<div class="item">
+<a href="https://www.outlookindia.com/photos/dayin/07/31/2020">
+<img alt="" class="img-responsive" data-src="https://images.outlookindia.com/public/uploads/gallery/20200731/assam_20200731_432_647.jpg" src="">
+</img></a>
+<p></p>
+						Villagers walk on a road damaged due to floodwater following incessant rain, at Goalbil in Baksa district.						
+						<div class="sourse" style="margin-top:10px;">PTI Photo</div>
+<a class="readmore" href="/photos" target="_blank">view more &gt;&gt;</a>
+</div>
+</div>
+</div>
+<!-- TODAY'S PICTURE SECTION -->
+<!-- PHOTO FEATURE SECTION -->
+<div class="photo_feature">
+<div class="photo_feature_inner">
+<div class="img_div">
+<a href="https://www.outlookindia.com/photos/photoessay/stuart-broad-leads-england-to-test-series-victory-vs-west-indies/2036">
+<img alt="" class="img-fluid" data-src="https://images.outlookindia.com/public/uploads/gallery/thumbs/Cricket1_20200728_432_647.jpg" src="">
+</img></a>
+<div class="photofeature_slug">Stuart Broad Leads England To Test Series Victory Vs West Indies</div>
+</div>
+</div>
+<div class="photo_feature_inner">
+<div class="img_div">
+<a href="https://www.outlookindia.com/photos/photoessay/2020-monsoon-across-india-in-pictures/2029">
+<img alt="" class="img-fluid" data-src="https://images.outlookindia.com/public/uploads/gallery/thumbs/Weather_3_20200729_432_647.jpg" src="">
+</img></a>
+<div class="photofeature_slug">2020 Monsoon Across India: In Pictures</div>
+</div>
+</div>
+</div>
+<!-- PHOTO FEATURE SECTION -->
+</div>
+<!-- RIGHT SECTION -->
+<div class="right_ad">
+<!-- 300 x 250 BANNER -->
+<div class="ads">
+				Advertisement<br/>
+<!-- /1053654/OL_300x250_HP_02 -->
+<div id="div-gpt-ad-1560233857975-0"> <script>
+				googletag.cmd.push(function() {
+				googletag.display('div-gpt-ad-1560233857975-0'); }); </script></div>
+</div>
+<!-- 300 x 250 BANNER -->
+<!-- SPOTLIGHT SECTION -->
+<div class="biblofile">
+<div class="heading_tag">
+<a href="https://www.outlookindia.com/website/section/outlook-spotlight/37/">Spotlight</a> <span></span>
+</div>
+<div class="inner box_shadow">
+<ul>
+<li>
+<div class="img_div">
+<a href="https://www.outlookindia.com/website/story/outlook-spotlight-business-during-covid-19-times-dr-vinay-bajrangi/357414" target="_blank">
+<img alt="Business During Covid -19 Times: Dr. Vinay Bajrangi" class="img-fluid" data-src="https://images.outlookindia.com/public/home_stories/e8690701f645b9de38cee084f12b478b_100_100.jpg" src=""/>
+</a>
+</div>
+<div class="content"><h5>
+<a href="https://www.outlookindia.com/website/story/outlook-spotlight-business-during-covid-19-times-dr-vinay-bajrangi/357414" target="_blank">Business During Covid -19 Times: Dr. Vinay Bajrangi</a>
+</h5></div>
+</li>
+<li>
+<div class="img_div">
+<a href="https://www.outlookindia.com/website/story/outlook-spotlight-leadership-trumps-crisis/356454" target="_blank">
+<img alt="Leadership Trumps Crisis" class="img-fluid" data-src="https://images.outlookindia.com/public/home_stories/cdc72901718cd2c088b04c6aafa8f41f_100_100.JPG" src=""/>
+</a>
+</div>
+<div class="content"><h5>
+<a href="https://www.outlookindia.com/website/story/outlook-spotlight-leadership-trumps-crisis/356454" target="_blank">Leadership Trumps Crisis</a>
+</h5></div>
+</li>
+</ul>
+<!--<a href="" class="readmore">View more >></a>-->
+</div>
+</div>
+<!-- SPOTLIGHT SECTION -->
+</div>
+<!-- RIGHT SECTION -->
+</section>
+<!-- PHOTO FEATURE SECTION -->
+<section id="newscategory">
+<!-- NATIONAL SECTION -->
+<div class="india box_div">
+<div class="heading_tag">
+<a href="/website/section/national/19/">India</a> <span></span>
+</div>
+<div class="category_div">
+<div class="img_wrap">
+<a href="/website/story/india-news-bjp-derives-sadistic-pleasure-by-inflicting-pain-misery-on-delhiites-aap/357749">
+<img alt="Centre Derives 'Sadistic Pleasure' By Inflicting Pain, Misery On Delhiites: AAP" class="img-fluid" data-src="https://images.outlookindia.com/public/uploads/articles/2020/7/31/Raghav_570_850_270_400.jpg" src=""/>
+</a>
+</div>
+<div class="content">
+<h3>
+<a href="/website/story/india-news-bjp-derives-sadistic-pleasure-by-inflicting-pain-misery-on-delhiites-aap/357749">Centre Derives 'Sadistic Pleasure' By Inflicting Pain, Misery On Delhiites: AAP</a>
+</h3>
+<p>The party's reaction comes shortly after Delhi Lt Governor Anil Baijal rejected the Chief Minister Arvind...</p><hr/>
+<ul>
+<li>
+<div class="category_thum">
+<a href="/website/story/opinion-national-education-policy-2020-teaching-students-in-mother-tongue-will-help-inculcate-human-values-in-them/357730">
+<img alt="NEP 2020: Teaching Students In Mother Tongue Will Help Inculcate Human Values In Them" class="img-fluid" data-src="https://images.outlookindia.com/public/uploads/articles/2020/7/31/Exam_20200610_94_140.jpg" src=""/>
+</a>
+</div>
+<div class="category_list">
+<a href="/website/story/opinion-national-education-policy-2020-teaching-students-in-mother-tongue-will-help-inculcate-human-values-in-them/357730">NEP 2020: Teaching Students In Mother Tongue Will Help Inculcate Human Values...</a>
+</div>
+</li>
+<li>
+<div class="category_thum">
+<a href="/website/story/india-news-jkpc-chairman-sajad-gani-lone-released-from-year-long-detention/357727">
+<img alt="JKPC Chairman Sajad Gani Lone Released From Year-long Detention" class="img-fluid" data-src="https://images.outlookindia.com/public/uploads/articles/2020/7/31/Sajjad_lone_20141208_350_630_94_140.jpg" src=""/>
+</a>
+</div>
+<div class="category_list">
+<a href="/website/story/india-news-jkpc-chairman-sajad-gani-lone-released-from-year-long-detention/357727">JKPC Chairman Sajad Gani Lone Released From Year-long Detention</a>
+</div>
+</li>
+</ul>
+<a class="readmore" href="/website/section/national/19/">view more &gt;&gt;</a>
+</div>
+</div>
+</div>
+<!-- NATIONAL SECTION -->
+<!-- WORLD SECTION -->
+<div class="world box_div">
+<div class="heading_tag">
+<a href="/website/section/international/20/">World</a> <span></span>
+</div>
+<div class="category_div">
+<div class="img_wrap">
+<a href="/website/story/world-news-physical-distancing-linked-with-significant-reduction-in-covid-19-transmission-study/357715">
+<img alt="Physical Distancing Linked With Significant Reduction in COVID-19 Transmission: Study" class="img-fluid" data-src="https://images.outlookindia.com/public/uploads/articles/2020/7/31/download.jpg" src=""/>
+</a>
+</div>
+<div class="content">
+<h3>
+<a href="/website/story/world-news-physical-distancing-linked-with-significant-reduction-in-covid-19-transmission-study/357715">Physical Distancing Linked With Significant Reduction in COVID-19 Transmission:...</a>
+</h3>
+<p>The study, published in the journal PLOS ONE on Thursday, found that physical distancing policies enacted...</p><hr/>
+<ul>
+<li>
+<div class="category_thum">
+<a href="/website/story/world-news-china-reports-127-new-confirmed-covid-19-cases/357712">
+<img alt="China Reports 127 New Confirmed COVID-19 Cases" class="img-fluid" data-src="https://images.outlookindia.com/public/uploads/articles/2020/7/31/virus_571_855_94_140.jpg" src=""/>
+</a>
+</div>
+<div class="category_list">
+<a href="/website/story/world-news-china-reports-127-new-confirmed-covid-19-cases/357712">China Reports 127 New Confirmed COVID-19 Cases</a>
+</div>
+</li>
+<li>
+<div class="category_thum">
+<a href="/website/story/world-news-us-president-donald-trump-likely-to-be-only-world-leader-to-address-un-general-assembly-session-in-person/357710">
+<img alt="US President Donald Trump Likely To Be Only World Leader To Address UN General Assembly Session In Person" class="img-fluid" data-src="https://images.outlookindia.com/public/uploads/articles/2020/7/31/Trump14_630_630_630_630_94_140.jpg" src=""/>
+</a>
+</div>
+<div class="category_list">
+<a href="/website/story/world-news-us-president-donald-trump-likely-to-be-only-world-leader-to-address-un-general-assembly-session-in-person/357710">US President Donald Trump Likely To Be Only World Leader To Address UN General...</a>
+</div>
+</li>
+</ul>
+<a class="readmore" href="/website/section/international/20/">view more &gt;&gt;</a>
+</div>
+</div>
+</div>
+<!-- WORLD SECTION -->
+<!-- Sports SECTION -->
+<div class="sports box_div">
+<div class="heading_tag">
+<a href="/website/section/sports/22/">Sports</a> <span></span>
+</div>
+<div class="category_div">
+<div class="img_wrap">
+<a href="/website/story/sports-news-jurgen-klopps-liverpool-the-greatest-challenge-faced-by-manchester-city-boss-pep-guardiola/357754">
+<img alt="Jurgen Klopp's Liverpool The Greatest Challenge Faced By Manchester City Boss Pep Guardiola" class="img-fluid" data-src="https://images.outlookindia.com/public/uploads/articles/2020/7/31/Pep-Klopp_270_400.jpg" src=""/>
+</a>
+</div>
+<div class="content">
+<h3>
+<a href="/website/story/sports-news-jurgen-klopps-liverpool-the-greatest-challenge-faced-by-manchester-city-boss-pep-guardiola/357754">Jurgen Klopp's Liverpool The Greatest Challenge Faced By Manchester City Boss...</a>
+</h3>
+<p>Real Madrid have been a regular foe for Manchester City boss Pep Guardiola, but Liverpool and Jurgen Klopp...</p><hr/>
+<ul>
+<li>
+<div class="category_thum">
+<a href="/website/story/sports-news-mohammedan-sporting-appoint-yan-law-as-head-coach/357753">
+<img alt="Mohammedan Sporting Appoint Yan Law As Head Coach" class="img-fluid" data-src="https://images.outlookindia.com/public/uploads/articles/2020/7/31/Logo---Mohammedan-Sporting_94_140.jpg" src=""/>
+</a>
+</div>
+<div class="category_list">
+<a href="/website/story/sports-news-mohammedan-sporting-appoint-yan-law-as-head-coach/357753">Mohammedan Sporting Appoint Yan Law As Head Coach</a>
+</div>
+</li>
+<li>
+<div class="category_thum">
+<a href="/website/story/sports-news-fa-cup-final-willian-ngolo-kante-boost-for-chelsea-frank-lampard-undecided-on-goalkeeper/357751">
+<img alt="FA Cup Final: Willian, N'Golo Kante Boost For Chelsea; Frank Lampard Undecided On Goalkeeper" class="img-fluid" data-src="https://images.outlookindia.com/public/uploads/articles/2020/7/31/Willian-Chelsea-Twitter_94_140.jpg" src=""/>
+</a>
+</div>
+<div class="category_list">
+<a href="/website/story/sports-news-fa-cup-final-willian-ngolo-kante-boost-for-chelsea-frank-lampard-undecided-on-goalkeeper/357751">FA Cup Final: Willian, N'Golo Kante Boost For Chelsea; Frank Lampard Undecided...</a>
+</div>
+</li>
+</ul>
+<a class="readmore" href="/website/section/sports/22/">view more &gt;&gt;</a>
+</div>
+</div>
+</div>
+<!-- Sports SECTION -->
+<!-- Entertainment SECTION -->
+<div class="entertainment box_div">
+<div class="heading_tag">
+<a href="/website/section/arts-entertainment/23/">Entertainment</a> <span></span>
+</div>
+<div class="category_div">
+<div class="img_wrap">
+<a href="/website/story/entertainment-news-falsely-implicated-was-living-with-suhant-till-june-8-rhea-chakraborty-to-sc/357705">
+<img alt="Falsely Implicated; Was Living With Sushant Till June 8: Rhea Chakraborty To SC" class="img-fluid" data-src="https://images.outlookindia.com/public/uploads/articles/2020/7/31/rhea_270_400.jpg" src=""/>
+</a>
+</div>
+<div class="content">
+<h3>
+<a href="/website/story/entertainment-news-falsely-implicated-was-living-with-suhant-till-june-8-rhea-chakraborty-to-sc/357705">Falsely Implicated; Was Living With Sushant Till June 8: Rhea Chakraborty To SC</a>
+</h3>
+<p>Rhea Chakraborty in her plea admitted that she was in a live-in relationship with Sushant SIngh Rajput and...</p><hr/>
+<ul>
+<li>
+<div class="category_thum">
+<a href="/website/story/entertainment-news-movie-review-can-neither-stay-here-nor-journey-beyond-shows-how-caste-traps-the-human-soul/357694">
+<img alt="Movie Review: Can Neither Stay Here, Nor Journey Beyond Shows How Caste Traps The Human Soul" class="img-fluid" data-src="https://images.outlookindia.com/public/uploads/articles/2020/7/30/kasa_94_140.png" src=""/>
+</a>
+</div>
+<div class="category_list">
+<a href="/website/story/entertainment-news-movie-review-can-neither-stay-here-nor-journey-beyond-shows-how-caste-traps-the-human-soul/357694">Movie Review: Can Neither Stay Here, Nor Journey Beyond Shows How Caste Traps...</a>
+</div>
+</li>
+<li>
+<div class="category_thum">
+<a href="/website/story/entertainment-news-one-must-take-the-step-to-walk-out-of-abusive-marriage-actor-annup-sonii/357656">
+<img alt="One Must Take The Step To Walk Out Of Abusive Marriage: Actor Annup Sonii" class="img-fluid" data-src="https://images.outlookindia.com/public/uploads/articles/2020/7/30/Anup_94_140.jpg" src=""/>
+</a>
+</div>
+<div class="category_list">
+<a href="/website/story/entertainment-news-one-must-take-the-step-to-walk-out-of-abusive-marriage-actor-annup-sonii/357656">One Must Take The Step To Walk Out Of Abusive Marriage: Actor Annup Sonii</a>
+</div>
+</li>
+</ul>
+<a class="readmore" href="/website/section/arts-entertainment/23/">view more &gt;&gt;</a>
+</div>
+</div>
+</div>
+<!-- Entertainment SECTION -->
+<!-- Business SECTION -->
+<div class="business box_div">
+<div class="heading_tag">
+<a href="/website/section/business/18/">Business</a> <span></span>
+</div>
+<div class="category_div">
+<div class="img_wrap">
+<a href="/website/story/business-news-diesel-to-get-cheaper-by-rs-8-in-delhi-as-arvind-kejriwal-govt-cuts-taxes/357650">
+<img alt="Diesel To Get Cheaper By Rs 8 In Delhi As Arvind Kejriwal Govt Cuts Taxes" class="img-fluid" data-src="https://images.outlookindia.com/public/uploads/articles/2020/7/30/petrol_570_850_270_400.jpg" src=""/>
+</a>
+</div>
+<div class="content">
+<h3>
+<a href="/website/story/business-news-diesel-to-get-cheaper-by-rs-8-in-delhi-as-arvind-kejriwal-govt-cuts-taxes/357650">Diesel To Get Cheaper By Rs 8 In Delhi As Arvind Kejriwal Govt Cuts Taxes</a>
+</h3>
+<p>The diesel price will now come down from Rs 82 a litre to Rs 73.64 a litre.
+
+</p><hr/>
+<ul>
+<li>
+<div class="category_thum">
+<a href="/website/story/business-news-income-tax-return-filing-deadline-for-fy19-extended-by-two-months-till-september-30/357646">
+<img alt="Income Tax Return Filing Deadline For FY’19 Extended By Two Months Till September 30" class="img-fluid" data-src="https://images.outlookindia.com/public/uploads/articles/2020/7/30/Budget_Outlookindia1_571_855_94_140.jpg" src=""/>
+</a>
+</div>
+<div class="category_list">
+<a href="/website/story/business-news-income-tax-return-filing-deadline-for-fy19-extended-by-two-months-till-september-30/357646">Income Tax Return Filing Deadline For FY’19 Extended By Two Months Till...</a>
+</div>
+</li>
+<li>
+<div class="category_thum">
+<a href="/website/story/business-news-india-saw-2nd-highest-drive-by-download-attacks-in-asia-pacific-in-2019-microsoft/357608">
+<img alt="India Saw 2nd Highest 'Drive-by Download' Attacks In Asia-Pacific In 2019: Microsoft" class="img-fluid" data-src="https://images.outlookindia.com/public/uploads/articles/2020/7/29/cyber_crime-201701091_94_140.jpg" src=""/>
+</a>
+</div>
+<div class="category_list">
+<a href="/website/story/business-news-india-saw-2nd-highest-drive-by-download-attacks-in-asia-pacific-in-2019-microsoft/357608">India Saw 2nd Highest 'Drive-by Download' Attacks In Asia-Pacific In 2019:...</a>
+</div>
+</li>
+</ul>
+<a class="readmore" href="/website/section/business/18/">view more &gt;&gt;</a>
+</div>
+</div>
+</div>
+<!-- Business SECTION -->
+<!-- Poshan SECTION -->
+<div class="poshan box_div">
+<div class="heading_tag">
+<a href="https://poshan.outlookindia.com/">Poshan</a> <span><iframe class="custom-iframe" data-seconds="1000" data-src="https://www.outlookindia.com/outlook_poshan_iframe.php" frameborder="0" height="1px" scrolling="no" width="1px"></iframe></span>
+</div>
+<div class="category_div">
+<div class="img_wrap">
+<a href="https://poshan.outlookindia.com/story/poshan-news-beware-theres-toxic-metals-in-your-food/357626">
+<img alt="Beware: There's Toxic Metals In Your Food" class="img-fluid" data-src="https://images.outlookindia.com/public/home_stories/d18c2089d23d80929dc1075a6ae3cf65_270_400.jpg" src=""/>
+</a>
+</div>
+<div class="content">
+<h3>
+<a href="https://poshan.outlookindia.com/story/poshan-news-beware-theres-toxic-metals-in-your-food/357626">Beware: There's Toxic Metals In Your Food</a>
+</h3>
+<p>Beware: There's Toxic Metals In Your Food</p>
+<hr/>
+<ul>
+<li>
+<div class="category_thum">
+<a href="https://poshan.outlookindia.com/story/poshan-news-some-terrifying-trans-fatty-facts/357554">
+<img alt="Some Terrifying Trans Fatty Facts" class="img-fluid" data-src="https://images.outlookindia.com/public/home_stories/10fd5a46813f51d9459e5c5357e76b7a_270_400.jpg" src=""/>
+</a>
+</div>
+<div class="category_list">
+<a href="https://poshan.outlookindia.com/story/poshan-news-some-terrifying-trans-fatty-facts/357554">Some Terrifying Trans Fatty Facts </a>
+</div>
+</li>
+<li>
+<div class="category_thum">
+<a href="https://poshan.outlookindia.com/story/india-news-protein-week-and-why-it-matters/357447">
+<img alt="Protein Week, And Why It Matters" class="img-fluid" data-src="https://images.outlookindia.com/public/home_stories/37866d84b4d1bea66cc3282134de026b_270_400.jpg" src=""/>
+</a>
+</div>
+<div class="category_list">
+<a href="https://poshan.outlookindia.com/story/india-news-protein-week-and-why-it-matters/357447">Protein Week, And Why It Matters </a>
+</div>
+</li>
+</ul>
+<a class="readmore" href="https://poshan.outlookindia.com/">view more &gt;&gt;</a>
+</div>
+</div>
+</div>
+<!-- Poshan SECTION -->
+</section>
+<!-- BANNER 970 x 250 -->
+<section id="ads">
+<div class="ads_section">
+<!-- /1053654/OL_HP_970x250 -->
+<div id="div-gpt-ad-1556539390064-0">
+<script>
+				googletag.cmd.push(function() { googletag.display('div-gpt-ad-1556539390064-0'); });
+				</script>
+</div>
+</div>
+</section>
+<!-- BANNER 970 x 250 -->
+<section id="widgets">
+<div class="widgets_left">
+<div class="row">
+<!-- OUTLOOK TRAVELLER -->
+<iframe class="custom-iframe" data-seconds="1000" data-src="https://www.outlookindia.com/outlooktraveller/olt_widget_new.php" frameborder="0" height="421" scrolling="no" width="49.5%"></iframe>
+<!-- OUTLOOK TRAVELLER -->
+<!-- OUTLOOK BUSINESS -->
+<!--<iframe width="49.5%" height="421" scrolling="no" class="custom-iframe" data-seconds="1000" data-src="https://www.outlookbusiness.com/outlookindia_business_new_v2" frameBorder="0"></iframe>-->
+<iframe class="custom-iframe" data-seconds="1000" data-src="https://www.outlookindia.com/olb_widget.php" frameborder="0" height="421" scrolling="no" width="49.5%"></iframe>
+<!-- OUTLOOK BUSINESS -->
+</div>
+<div class="row">
+<!-- OUTLOOK MONEY -->
+<iframe class="custom-iframe" data-seconds="1000" data-src="https://www.outlookindia.com/outlookmoney/outlookindia_money_new_v2" frameborder="0" height="421" scrolling="no" width="49.5%"></iframe>
+<!-- OUTLOOK MONEY -->
+<!-- RESPONSIBLE TOURISM -->
+<iframe class="custom-iframe" data-seconds="1000" data-src="https://www.responsibletourismindia.com/responsible_tourism_new.php" frameborder="0" height="421" scrolling="no" width="49.5%"></iframe>
+<!-- RESPONSIBLE TOURISM -->
+<!-- OUTLOOK HINDI -->
+<iframe class="custom-iframe" data-seconds="1000" data-src="https://www.outlookhindi.com/outlookindia_hindi_new" frameborder="0" height="421" scrolling="no" width="49.5%"></iframe>
+<!-- OUTLOOK HINDI -->
+<!-- OUTLOOK SPLURGE -->
+<iframe class="custom-iframe" data-seconds="1000" data-src="https://www.outlookindia.com/outlook_splurge_backup.php" frameborder="0" height="421" scrolling="no" width="49.5%"></iframe>
+<!-- OUTLOOK SPLURGE -->
+</div>
+</div>
+<div class="right_ad">
+<!-- BANNER 300 x 600 -->
+<div class="ads">
+<!-- /1053654/OL_HP_300x600 -->
+<div id="div-gpt-ad-1557387208690-0"> <script>
+					googletag.cmd.push(function() {
+					googletag.display('div-gpt-ad-1557387208690-0'); }); </script> </div>
+</div>
+<!-- BANNER 300 x 600 -->
+<!-- Biblofile Section -->
+<div class="biblofile">
+<div class="heading_tag">
+<a href="https://www.outlookindia.com/videos/section/books/24">Bollywood Talkies</a> <span></span>
+</div>
+<div class="inner box_shadow">
+<ul>
+<li>
+<div class="img_div">
+<a href="https://www.outlookindia.com/videos/bollywood-talkies-with-outlook-episode-12-jimmy-sheirgill/3563">
+<img alt="Bollywood TALKies with Outlook Episode 12: Jimmy Sheirgill" class="img-fluid" data-src="https://images.outlookindia.com/public/home_stories/843ca4b6db527457b8eb6c0f37e50011_100_100.jpg" src=""/>
+</a>
+</div>
+<div class="content">
+<h5><a href="https://www.outlookindia.com/videos/bollywood-talkies-with-outlook-episode-12-jimmy-sheirgill/3563">Bollywood TALKies with Outlook Episode 12: Jimmy Sheirgill</a></h5>
+</div>
+</li><hr/>
+<li>
+<div class="img_div">
+<a href="https://www.outlookindia.com/videos/bollywood-talkies-with-outlook-episode-11-ram-madhvani/3556">
+<img alt="Bollywood TALKies with Outlook Episode 11: Ram Madhvani" class="img-fluid" data-src="https://images.outlookindia.com/public/home_stories/d2bd1ec26c6031985e6bdbb111a1376b_100_100.jpg" src=""/>
+</a>
+</div>
+<div class="content">
+<h5><a href="https://www.outlookindia.com/videos/bollywood-talkies-with-outlook-episode-11-ram-madhvani/3556">Bollywood TALKies with Outlook Episode 11: Ram Madhvani</a></h5>
+</div>
+</li><hr/>
+</ul>
+<a class="readmore" href="https://www.outlookindia.com/videos/section/arts-entertainment/23">view more &gt;&gt;</a>
+</div>
+</div>
+<!-- Biblofile Section -->
+<!-- BANNER 300 x 250 -->
+<div class="ads">Advertisement<br/>
+<!-- /1053654/OL_300x250_HP -->
+<div id="div-gpt-ad-1568794405612-0">
+<script>
+						googletag.cmd.push(function() { googletag.display('div-gpt-ad-1568794405612-0'); });
+					  </script>
+</div>
+</div>
+<!-- BANNER 300 x 250 -->
+</div>
+</section>
+<!-- BANNER 970 x 90 -->
+<section id="ads">
+<div class="ads_section">
+<!-- /1053654/OL_HP_Footer_970x90 -->
+<div id="div-gpt-ad-1556171230351-0">
+<script>
+				googletag.cmd.push(function() { googletag.display('div-gpt-ad-1556171230351-0'); });
+				</script>
+</div>
+</div>
+</section>
+<!-- BANNER 970 x 90 -->
+</div>
+<!-- FOOTER SECTION -->
+<footer>
+<div class="footer_colm">
+<ul>Magazine<div><span></span></div>
+<li><a href="https://www.outlookindia.com/magazine/">CURRENT ISSUE</a></li>
+<li><a href="https://www.outlookindia.com/magazine/subsection/cover-stories/2">COVER STORY</a></li>
+<li><a href="https://www.outlookindia.com/magazine/section/national/19">NATIONAL</a></li>
+<li><a href="https://www.outlookindia.com/magazine/section/international/20">INTERNATIONAL</a></li>
+<li><a href="https://www.outlookindia.com/magazine/section/business/18">BUSINESS</a></li>
+<li><a href="https://www.outlookindia.com/magazine/section/books/24">BOOK REVIEWS</a></li>
+<li><a href="https://www.outlookindia.com/magazine/subsection/documents/110">DOCUMENTS</a></li>
+<li><a href="https://www.outlookindia.com/magazine/subsection/essays/3">ESSAYS</a></li>
+<li><a href="https://www.outlookindia.com/magazine/subsection/extracts/9">EXTRACTS</a></li>
+<li><a href="https://www.outlookindia.com/magazine/subsection/interviews/4">INTERVIEWS</a></li>
+<li><a href="https://www.outlookindia.com/magazine/subsection/opinions/5">OPINIONS</a></li>
+<li><a href="https://www.outlookindia.com/magazine/subsection/portraits/7">PORTRAITS</a></li>
+<li><a href="https://www.outlookindia.com/magazine/subsection/profiles/8">PROFILES</a></li>
+</ul>
+</div>
+<div class="footer_colm">
+<ul>Traveller<div><span></span></div>
+<li><a href="https://www.outlookindia.com/outlooktraveller/" target="_blank">TRAVELOGUES</a></li>
+<li><a href="https://www.outlookindia.com/outlooktraveller/" target="_blank">WEEKEND BREAKS</a></li>
+<li><a href="https://www.outlookindia.com/outlooktraveller/destinations/" target="_blank">HOLIDAYS WITH OT</a></li>
+<li><a href="https://www.outlookindia.com/outlooktraveller/destinations/photo-features/" target="_blank">PHOTO FEATURES</a></li>
+<li><a href="https://www.outlookindia.com/outlooktraveller/hotels/" target="_blank">HOTELS</a></li>
+<li><a href="http://www.books.outlookindia.com/" target="_blank">GUIDEBOOKS</a></li> </ul>
+</div>
+<div class="footer_colm">
+<ul>Money<div><span></span></div>
+<li><a href="https://www.outlookindia.com/outlookmoney/mutual-funds" target="_blank">Mutual Funds</a></li>
+<li><a href="https://www.outlookindia.com/outlookmoney/insurance" target="_blank">Insurance</a></li>
+<li><a href="https://www.outlookindia.com/outlookmoney/equity" target="_blank">Equity</a></li>
+<li><a href="https://www.outlookindia.com/outlookmoney/fixed-assets" target="_blank">Fixed Assets</a></li>
+<li><a href="https://www.outlookindia.com/outlookmoney/banking" target="_blank">Banking</a></li>
+<li><a href="https://www.outlookindia.com/outlookmoney/asks" target="_blank">ASK</a></li>
+</ul>
+</div>
+<div class="footer_colm">
+<ul>Business<div><span></span></div>
+<li><a href="https://www.outlookbusiness.com/the-big-story/">THE BIG STORY</a></li>
+<li><a href="https://www.outlookbusiness.com/specials/">SPECIALS</a></li>
+<li><a href="https://www.outlookbusiness.com/perspective/">PERSPECTIVE</a></li>
+<li><a href="https://www.outlookbusiness.com/pixtory/">PIXSTORY</a></li>
+<li><a href="https://www.outlookbusiness.com/enterprise/">ENTERPRISE</a></li>
+<li><a href="https://www.outlookbusiness.com/strategy/">STRATEGY</a></li>
+<li><a href="https://www.outlookbusiness.com/markets/">MARKETS</a></li>
+<li><a href="https://www.outlookbusiness.com/cest-la-vie/">C'EST LA VIE</a></li> </ul>
+</div>
+<div class="footer_colm">
+<ul>Social Media<div><span></span></div>
+<li><a href="https://www.facebook.com/Outlookindia" target="_blank">Facebook <img alt="Facebook" data-src="/images/home_new/facebook.png" src=""/></a></li>
+<li><a href="https://twitter.com/outlookindia/" target="_blank">Twitter <img alt="Twitter" data-src="/images/home_new/twitter.png" src=""/></a></li>
+<li><a href="https://www.instagram.com/outlookindia" target="_blank">Instagram <img alt="Instagram" data-src="/images/home_new/instagram.png" src=""/></a></li>
+<li><a href="https://www.youtube.com/user/OutlookMagazine" target="_blank">Youtube <img alt="Youtube" data-src="/images/home_new/youtube.png" src=""/></a></li>
+<li><a href="https://www.outlookindia.com/rssfeed" target="_blank">RSS <img alt="RSS" data-src="/images/home_new/rss.png" src=""/></a></li>
+</ul>
+</div>
+<div class="footer_bottom">
+<ul class="footer_links">
+<li><a href="https://www.outlookindia.com/pages/aboutus">about us</a></li>
+<li><a href="https://www.outlookindia.com/pages/contactus">contact us</a></li>
+<li><a href="https://subscription.outlookindia.com/" target="_blank">subscribe</a></li>
+<li><a href="https://www.outlookindia.com/ratecard">advertising rates</a></li>
+<li><a href="https://www.outlookindia.com/pages/privacypolicy">copyright &amp; disclaimer</a></li>
+<li><a href="http://www.osm-awards.com" target="_blank">osm awards</a></li>
+<li><a href="https://www.outlookindia.com/compliance.pdf" target="_blank">compliance</a></li>
+<li><a href="https://www.outlookindia.com/newsscroll" target="_blank">newsscroll</a></li>
+<li><a href="https://poshan.outlookindia.com" target="_blank">poshan</a></li>
+</ul>
+<div class="search_by_lettter">
+<div class="search_left">
+		Outlook topics 
+		<a class="" href="https://www.outlookindia.com/search/A">A</a>
+<a class="" href="https://www.outlookindia.com/search/B">B</a>
+<a class="" href="https://www.outlookindia.com/search/C">C</a>
+<a class="" href="https://www.outlookindia.com/search/D">D</a>
+<a class="" href="https://www.outlookindia.com/search/E">E</a>
+<a class="" href="https://www.outlookindia.com/search/F">F</a>
+<a class="" href="https://www.outlookindia.com/search/G">G</a>
+<a class="" href="https://www.outlookindia.com/search/H">H</a>
+<a class="" href="https://www.outlookindia.com/search/I">I</a>
+<a class="" href="https://www.outlookindia.com/search/J">J</a>
+<a class="" href="https://www.outlookindia.com/search/K">K</a>
+<a class="" href="https://www.outlookindia.com/search/L">L</a>
+<a class="" href="https://www.outlookindia.com/search/M">M</a>
+<a class="" href="https://www.outlookindia.com/search/N">N</a>
+<a class="" href="https://www.outlookindia.com/search/O">O</a>
+<a class="" href="https://www.outlookindia.com/search/P">P</a>
+<a class="" href="https://www.outlookindia.com/search/Q">Q</a>
+<a class="" href="https://www.outlookindia.com/search/R">R</a>
+<a class="" href="https://www.outlookindia.com/search/S">S</a>
+<a class="" href="https://www.outlookindia.com/search/T">T</a>
+<a class="" href="https://www.outlookindia.com/search/U">U</a>
+<a class="" href="https://www.outlookindia.com/search/V">V</a>
+<a class="" href="https://www.outlookindia.com/search/W">W</a>
+<a class="" href="https://www.outlookindia.com/search/X">X</a>
+<a class="" href="https://www.outlookindia.com/search/Y">Y</a>
+<a class="" href="https://www.outlookindia.com/search/Z">Z</a>
+<a class="" href="https://www.outlookindia.com/search/0">0</a>
+<a class="" href="https://www.outlookindia.com/search/1">1</a>
+<a class="" href="https://www.outlookindia.com/search/2">2</a>
+<a class="" href="https://www.outlookindia.com/search/3">3</a>
+<a class="" href="https://www.outlookindia.com/search/4">4</a>
+<a class="" href="https://www.outlookindia.com/search/5">5</a>
+<a class="" href="https://www.outlookindia.com/search/6">6</a>
+<a class="" href="https://www.outlookindia.com/search/7">7</a>
+<a class="" href="https://www.outlookindia.com/search/8">8</a>
+<a class="" href="https://www.outlookindia.com/search/9">9</a>
+		or just type initial letters
+		</div>
+<div class="search_right">
+<form action="" id="footwebsitesearch" method="post" name="footwebsitesearch" onsubmit="return footwebsiteSearch();">
+<input autocomplete="off" class="footer_search" id="footsearchtext" name="footsearchtext" placeholder="Search with Letters" type="text" value=""/>
+<input class="go" name="submit" type="submit" value="Go"/>
+</form>
+</div>
+</div>
+</div>
+</footer>
+<!-- FOOTER SECTION -->
+<script src="https://www.outlookindia.com/jquery/home/owl.carousel.js"></script>
+<link href="https://www.outlookindia.com/css/home/owl.carousel.css" rel="stylesheet"/>
+<link href="https://www.outlookindia.com/css/home/owl.theme.css" rel="stylesheet"/>
+<script>
+$(document).ready(function() {
+   $("#today_slider").owlCarousel({
+	items:1,
+    loop:true,
+	autoPlay : 5000,
+	stopOnHover : false,
+    navigation : true,
+	autoWidth: false,
+	pagination: false
+  });
+  
+  $("#top_photo_feature").owlCarousel({
+	items:1,
+    loop:true,
+	autoPlay : 5000,
+	stopOnHover : false,
+    navigation : true,
+	autoWidth: false,
+	pagination: false
+  });
+});
+</script>
+<script>
+function footwebsiteSearch() {
+	window.location = 'https://www.outlookindia.com/search' + '/' + jQuery('#footsearchtext').val();
+	return false;
+}
+</script>
+<!-- NEWSLETTER -->
+<script>
+jQuery(document).ready(function() {
+	jQuery("#signup-form").submit(function(e){
+		e.preventDefault(); 
+		
+		var jQueryform = jQuery(this),
+		name = jQueryform.find('input[name="name"]').val(),
+		email = jQueryform.find('input[name="email"]').val(),
+		url = jQueryform.attr('action');
+		
+		jQuery.post(url, {name:name, email:email},
+		  function(data) {
+			  if(data)
+			  { 
+				if(data=="Some fields are missing.")
+				{
+					jQuery("#newsletter_status").text("Please fill your name and email.");
+					jQuery("#newsletter_status").css("color", "red");
+				}
+				else if(data=="Invalid email address.")
+				{
+					jQuery("#newsletter_status").text("Your email address is invalid.");
+					jQuery("#newsletter_status").css("color", "red");
+				}
+				else if(data=="Invalid list ID.")
+				{
+					jQuery("#newsletter_status").text("Your list ID is invalid.");
+					jQuery("#newsletter_status").css("color", "red");
+				}
+				else if(data=="Already subscribed.")
+				{	//jQuery("#signup-form")[0].reset();
+					jQuery("#newsletter_status").text("You're already subscribed!");
+					jQuery("#newsletter_status").css("color", "red");
+				}
+				else
+				{
+					jQuery("#newsletter_status").text("You're subscribed!");
+					jQuery("#newsletter_status").css("color", "green");
+				}
+			  }
+			  else
+			  {
+				alert("Sorry, unable to subscribe. Please try again later!");
+			  }
+		  }
+		);
+	});
+	jQuery("#signup-form").keypress(function(e) {
+			if(e.keyCode == 13) {
+				e.preventDefault(); 
+				jQuery(this).submit();
+			}
+		});
+	jQuery("#submit-btn").click(function(e){
+		e.preventDefault(); 
+		jQuery("#signup-form").submit();
+	});
+});
+
+ var iframes; 
+  var loadIframes = function(){
+	iframes = document.getElementsByClassName('custom-iframe');
+	for(var i=0; i<iframes.length; i++){
+
+	  var iframe = iframes[i],
+		  seconds = iframe.getAttribute('data-seconds'),
+		  src = iframe.getAttribute('data-src');
+
+	  run(i, src, seconds);
+	}
+  }
+
+  var run = function(i, src, seconds){
+	setTimeout(function(){
+	  iframes[i].src = src;
+	}, seconds);
+  }
+
+jQuery(document).ready(function(){
+  loadIframes();
+});
+</script>
+<style>
+#newscategory .img_wrap img{height:263px;}
+.bloger_name a {color: #DB1E1E;}
+.magazine_right_section ul li {line-height:16px;}
+#top_photo_feature .owl-controls .owl-prev{right: 326px !important;}
+.other_initiative {width:175px;}
+ul.second_navigat_menu li{padding: 0 30px;}
+.story {height: 242px;}
+#left_lead {height: 525px;}
+.latest_section {height: 525px;}
+.magazine_right_section {height: 525px;} 
+.latest_section ul hr:last-child {margin-bottom: 10px;}
+</style>
+</body>
+</html>
