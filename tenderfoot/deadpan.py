@@ -10,16 +10,10 @@ import gc
 import sys
 import ssl
 import requests
-# import urllib
-# import sqlite3
-# import urllib.error
 import mysql.connector
 from datetime import datetime
 from bs4 import BeautifulSoup
 from requests.compat import urljoin
-# from urllib.parse import urljoin
-# from urllib.parse import urlparse
-# from urllib.request import urlopen
 
 error_string = """
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n
@@ -89,17 +83,7 @@ class Deadpan(object):
         self.POSITIVE = 0.5
         self.NEGATIVE = 0.3
         super(Deadpan, self).__init__()
-        # try:
-        #     filesizes = {
-        #         os.stat('output/dumps/'+filename).st_size:
-        #         filename for filename in os.listdir('output/dumps/')}
-        #     self.filename = filesizes[min(filesizes.keys())]
-        # except Exception as ex:
-        #     os.mkdir('output')
-        #     os.mkdir('output/dumps')
-        #     self.filename = str(datetime.timestamp(datetime.now()))
-        #     with open('output/dumps/'+self.filename, 'w') as f:
-        #         f.close()
+
         self.filename = ""
         print(text_color.HEADER_COLOR
               + "Initialized deadpan object"
@@ -129,23 +113,11 @@ class Deadpan(object):
         try:
             # Connect to database
             self.connection = mysql.connector.connect(
-              host="localhost",
-              user="root",
-              password="Abhijit@123",
-              database="deadpan"
+                     host="database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com",
+                     user="admin",
+                     password="SIH_2020",
+                     database="pythanos_main"
             )
-            # self.connection = mysql.connector.connect(
-            #          host="database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com",
-            #          user="admin",
-            #          password="SIH_2020",
-            #          database="pythanos_main"
-            #        )
-            # self.connection = mysql.connector.connect(
-            #           host="""database-1.ce0yosk0xfgx.us-east-1.rds.amazonaws.com""",
-            #           user="admin",
-            #           password="SIH_2020",
-            #           database="database1"
-            #         )
 
             # self.connection = sqlite3.connect('output/tenderfoot.sqlite')
             self.cursor = self.connection.cursor(buffered=True)
@@ -153,51 +125,6 @@ class Deadpan(object):
                   + "Connected to database "
                   + 'tenderfoot' + text_color.ENDC)
 
-            # Creates the main table
-            self.cursor.execute('''
-                                    CREATE TABLE IF NOT EXISTS pages
-                                    (
-                                        pages_id INT PRIMARY KEY auto_increment,
-                                        url varchar(1000) UNIQUE,
-                                        keywords varchar(5000),
-                                        website varchar(5000),
-                                        error INT,
-                                        old_rank FLOAT,
-                                        new_rank FLOAT,
-                                        moved INT,
-                                        filename varchar(500)
-                                    );
-                                ''')
-
-            # Many to many tableId,url,title,keywords,
-            # content,author,publish_date,old_rank,new_rank,error
-            self.cursor.execute('''
-                                    CREATE TABLE IF NOT EXISTS links
-                                    (
-                                        from_id INT,
-                                        to_id INT,
-                                        UNIQUE(from_id, to_id)
-                                    );
-                                ''')
-
-            # Website main links, for site based ranking
-            self.cursor.execute('''
-                                    CREATE TABLE IF NOT EXISTS webs
-                                    (
-                                        name varchar(100),
-                                        url varchar(500) UNIQUE,
-                                        web_rank FLOAT
-                                    );
-                                ''')
-
-            # Error table, for error logging
-            self.cursor.execute('''
-                                    CREATE TABLE IF NOT EXISTS errors
-                                    (
-                                        url varchar(500) UNIQUE,
-                                        exception varchar(2000)
-                                    );
-                                ''')
         except Exception as ex:
             print(text_color.FAILED_COLOR
                   + error_string.format(ex)
@@ -253,9 +180,6 @@ class Deadpan(object):
             for row in self.cursor:
                 webs.append(str(row[0]))
 
-            # print(text_color.WARNING_COLOR
-            # + "Current Websites : " + text_color.ENDC,webs)
-
             # Counter
             many = int(self.many)
             while True:
@@ -294,10 +218,11 @@ class Deadpan(object):
                 self.cursor.execute('''DELETE from links
                                     WHERE from_id=%s''', (fromid,))
                 try:
-                    headers = {'user-agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36','referrer':'https://google.com'}
+                    headers = {
+                                'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36','referrer':'https://google.com'}
                     try:
                         # document = urlopen(req, context=self.SSL_CONTEXT,timeout = 1)
-                        document = requests.get(url,headers=headers,timeout=3,verify=False)
+                        document = requests.get(url, headers=headers, timeout=3, verify=False)
                         # print("Obtained document")
                     except Exception as ex:
                         print(text_color.FAILED_COLOR
@@ -321,12 +246,11 @@ class Deadpan(object):
                                             (url, str(document.status_code)))
                         self.cursor.execute('UPDATE webs SET web_rank=%s WHERE url=%s',
                                             (int(self.web_rank)-self.NEGATIVE, self.starturl))
-                        self.cursor.execute('UPDATE pages SET error=%s WHERE url=%s'
-                                    , (document.status_code, url))
+                        self.cursor.execute('UPDATE pages SET error=%s WHERE url=%s', (document.status_code, url))
 
-                    if 'text/html' != document.headers['content-type'].split(";")[0]:#info().get_content_type() :
+                    if 'text/html' != document.headers['content-type'].split(";")[0]:
                         print(text_color.FAILED_COLOR + "Non text/html page" + text_color.ENDC)
-                        self.cursor.execute('DELETE FROM pages WHERE url=%s',(url,))
+                        self.cursor.execute('DELETE FROM pages WHERE url=%s', (url,))
                         self.connection.commit()
                         continue
 
@@ -337,9 +261,9 @@ class Deadpan(object):
                     break
                 except Exception as ex:
                     print(text_color.FAILED_COLOR + "Unable to retrieve or parse page : " + str(ex) + text_color.ENDC)
-                    self.cursor.execute('UPDATE pages SET error=-1 WHERE url=%s',(url,))
+                    self.cursor.execute('UPDATE pages SET error=-1 WHERE url=%s', (url,))
                     self.cursor.execute('INSERT IGNORE INTO errors(url, exception) VALUES(%s, %s)',(url, str(ex)))
-                    self.cursor.execute('UPDATE webs SET web_rank=%s WHERE url=%s',(int(self.web_rank)-self.NEGATIVE,self.starturl))
+                    self.cursor.execute('UPDATE webs SET web_rank=%s WHERE url=%s', (int(self.web_rank)-self.NEGATIVE, self.starturl))
                     self.connection.commit()
                     continue
 
@@ -348,12 +272,11 @@ class Deadpan(object):
                 meta_keyword_str = helper.get_keyword(soup)
                 self.filename = helper.get_filename()
 
-
                 # Insert url and keywords
                 # Seperate statements make sure that error in first does not end up not inserting the keywords
-                self.cursor.execute('INSERT IGNORE INTO pages(url, website, keywords, moved, new_rank, filename) VALUES(%s, NULL, NULL, NULL, 1.0, NULL)',(url,))
-                self.cursor.execute('UPDATE pages SET website=%s, keywords=%s, moved=%s, filename=%s WHERE url=%s',(self.website_name, meta_keyword_str, 0, self.filename, url))
-                self.cursor.execute('UPDATE webs SET web_rank=%s WHERE url=%s',(int(self.web_rank)+self.POSITIVE,self.starturl))
+                self.cursor.execute('INSERT IGNORE INTO pages(url, website, keywords, moved, new_rank, filename) VALUES(%s, NULL, NULL, NULL, 1.0, NULL)', (url,))
+                self.cursor.execute('UPDATE pages SET website=%s, keywords=%s, moved=%s, filename=%s WHERE url=%s', (self.website_name, meta_keyword_str, 0, self.filename, url))
+                self.cursor.execute('UPDATE webs SET web_rank=%s WHERE url=%s',(int(self.web_rank)+self.POSITIVE, self.starturl))
 
                 # Dump html to 'dumps/'
                 helper.dump_html(row,soup,self.filename)
@@ -363,19 +286,21 @@ class Deadpan(object):
                 tags = soup('a')
                 for tag in tags:
                     href = tag.get('href', None)
-                    if(href is None) : continue
+                    if(href is None):
+                        continue
                     # Resolve common link issues and remove tags for images
                     # parsed_url = urlparse(href)
                     parsed_url = requests.utils.urlparse(href)
 
                     # If http or https is empty, add the domain url before href
-                    if(len(parsed_url.scheme)<1):
+                    if(len(parsed_url.scheme) < 1):
                         href = urljoin(url, href)
 
                     hashpos = href.find('#')
                     if(hashpos > 1):
                         href = href[:hashpos]
-                    if(href.endswith('.png') or href.endswith('.jpg') or href.endswith('.gif') or href.endswith('.jpeg')) : continue
+                    if(href.endswith('.png') or href.endswith('.jpg') or href.endswith('.gif') or href.endswith('.jpeg')):
+                        continue
                     if(href.endswith('/')):
                         href = href[:-1]
 

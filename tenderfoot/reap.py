@@ -6,7 +6,6 @@ This module is the initial ranker for the CA scraping bot.
 __version__ = '1'
 __author__ = 'Abhijit Acharya'
 
-import sqlite3
 import mysql.connector
 
 error_string = """
@@ -29,31 +28,21 @@ class Reaper(object):
     """Reaper class ranks the links"""
 
     def __init__(self, iterations):
-        self.iterations   = iterations
-        print(text_color.HEADER_COLOR + "Initialized Reaper object" + text_color.ENDC)
+        self.iterations = iterations
+        print(text_color.HEADER_COLOR
+              + "Initialized Reaper object"
+              + text_color.ENDC)
         super(Reaper, self).__init__()
 
     # Connect to database
     def connect_database(self):
         try:
             self.connection = mysql.connector.connect(
-              host="localhost",
-              user="root",
-              password="Abhijit@123",
-              database="deadpan"
-            )
-            # self.connection = mysql.connector.connect(
-            #          host="database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com",
-            #          user="admin",
-            #          password="SIH_2020",
-            #          database="pythanos_main"
-            #        )
-            # self.connection = mysql.connector.connect(
-            #           host="database-1.ce0yosk0xfgx.us-east-1.rds.amazonaws.com",
-            #           user="admin",
-            #           password="SIH_2020",
-            #           database="database1"
-            #         )
+                     host="database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com",
+                     user="admin",
+                     password="SIH_2020",
+                     database="pythanos_main"
+                   )
 
             # self.connection = sqlite3.connect('output/tenderfoot.sqlite')
             self.cursor = self.connection.cursor(buffered=True)
@@ -85,13 +74,19 @@ class Reaper(object):
             for row in self.cursor:
                 from_id = row[0]
                 to_id = row[1]
-                if from_id == to_id : continue
-                if from_id not in self.from_ids : continue
-                if to_id not in self.from_ids : continue
+                if from_id == to_id:
+                    continue
+                if from_id not in self.from_ids:
+                    continue
+                if to_id not in self.from_ids:
+                    continue
                 self.links.append(row)
-                if to_id not in self.to_ids : self.to_ids.append(to_id)
+                if to_id not in self.to_ids:
+                    self.to_ids.append(to_id)
         except Exception as ex:
-            print(text_color.FAILED_COLOR + error_string.format(ex) + text_color.ENDC)
+            print(text_color.FAILED_COLOR
+                  + error_string.format(ex)
+                  + text_color.ENDC)
 
     # Get page ranks
     def get_page_ranks(self):
@@ -111,11 +106,14 @@ class Reaper(object):
             # sval = input('How many iterations:')
             sval = self.iterations
             many = 1
-            if ( len(sval) > 0 ) : many = round(int(sval))
+            if (len(sval) > 0):
+                many = round(int(sval))
 
             # Sanity check
-            if len(self.prev_ranks) < 1 :
-                print(text_color.FAILED_COLOR + "Nothing to reap. Check your data." + text_color.ENDC)
+            if len(self.prev_ranks) < 1:
+                print(text_color.FAILED_COLOR
+                      + "Nothing to reap. Check your data."
+                      + text_color.ENDC)
                 # quit()
                 return
 
@@ -131,11 +129,13 @@ class Reaper(object):
                 for (node, old_rank) in list(self.prev_ranks.items()):
                     self.give_ids = list()
                     for (from_id, to_id) in self.links:
-                        if from_id != node : continue
-
-                        if to_id not in self.to_ids: continue
+                        if from_id != node:
+                            continue
+                        if to_id not in self.to_ids:
+                            continue
                         self.give_ids.append(to_id)
-                    if ( len(self.give_ids) < 1 ) : continue
+                    if (len(self.give_ids) < 1):
+                        continue
                     amount = old_rank / len(self.give_ids)
 
                     for id in self.give_ids:
@@ -172,7 +172,7 @@ class Reaper(object):
     def update_new_ranks(self):
         try:
             self.cursor.execute('''UPDATE pages SET old_rank=new_rank''')
-            for (id, new_rank) in list(self.next_ranks.items()) :
+            for (id, new_rank) in list(self.next_ranks.items()):
                 self.cursor.execute('''UPDATE pages SET new_rank=%s WHERE pages_id=%s''', (new_rank, id))
             self.connection.commit()
         except Exception as ex:

@@ -1,11 +1,11 @@
 import sys
 sys.path.insert(0, '')
-import sqlite3
 import mysql.connector
 from tenderfoot.deadpan import Deadpan
 from tenderfoot.reap import Reaper
 from tenderfoot.hollow import Hollow
 from tenderfoot.loathe import Loathe
+
 
 class text_color:
     HEADER_COLOR = '\033[95m'
@@ -16,6 +16,7 @@ class text_color:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+
 
 init_web_list = [
     ["moneycontrol1", "https://www.moneycontrol.com/news/business", "15"],
@@ -75,59 +76,52 @@ init_web_list = [
 ]
 
 
-def deadpan_and_hollow(i,sum_rank):
-    deadpan = Deadpan(i[0],i[1],round(int(i[2])*500/sum_rank))
+def deadpan_and_hollow(i, sum_rank):
+    deadpan = Deadpan(i[0], i[1], round(int(i[2])*100/sum_rank))
     deadpan.spider()
-#
-# deadpan_and_hollow(["moneycontrol", "https://www.moneycontrol.com/news/business", "5"],100)
-#
-# for i in init_web_list:
-#    deadpan_and_hollow(i,100)
 
-while True:
-    # Connect to database
-    connection = mysql.connector.connect(
-              host="localhost",
-              user="root",
-              password="Abhijit@123",
-              database="deadpan"
-            )
-    # connection = mysql.connector.connect(
-    #          host="database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com",
-    #          user="admin",
-    #          password="SIH_2020",
-    #          database="pythanos_main"
-    #        )
-    # connection = mysql.connector.connect(
-    #           host="database-1.ce0yosk0xfgx.us-east-1.rds.amazonaws.com",
-    #           user="admin",
-    #           password="SIH_2020",
-    #           database="database1"
-    #         )
 
-    cursor = connection.cursor(buffered=True)
-    web_list = cursor.execute('SELECT * from webs ORDER BY RAND()')
-    row = cursor.fetchall()
-    cursor.close()
-    web_rank_list = []
-    for i in row:
-        web_rank_list.append(i[2])
+if __name__ == "__main__":
+    # add webs table if not existing
+    # deadpan_and_hollow(["moneycontrol", "https://www.moneycontrol.com/news/business", "5"], 100)
 
-    sum_rank = max(web_rank_list)
+    for i in init_web_list:
+        deadpan_and_hollow(i, 100)
 
-    try:
-        # for i in row:
-        #     deadpan_and_hollow(i,sum_rank)
-        #
-        #     reaper = Reaper("5")
-        #     reaper.reap()
+    while True:
+        connection = mysql.connector.connect(
+                 host="database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com",
+                 user="admin",
+                 password="SIH_2020",
+                 database="pythanos_main"
+        )
 
-        hollow = Hollow(i[0],i[1])
-        hollow.drain()
+        cursor = connection.cursor(buffered=True)
+        web_list = cursor.execute('SELECT * from webs ORDER BY RAND()')
+        row = cursor.fetchall()
+        cursor.close()
+        web_rank_list = []
+        for i in row:
+            web_rank_list.append(i[2])
 
-        loathe = Loathe()
-        loathe.loathe()
+        sum_rank = sum(web_rank_list)
 
-    except KeyboardInterrupt:
-        print(text_color.FAILED_COLOR + 'Program interrupted by user...' + text_color.ENDC)
-        break
+        try:
+            hollow = Hollow()
+            hollow.drain()
+
+            loathe = Loathe()
+            loathe.loathe()
+
+            for i in row:
+                deadpan_and_hollow(i, sum_rank)
+
+                reaper = Reaper("5")
+                reaper.reap()
+
+        except KeyboardInterrupt:
+            print(text_color.FAILED_COLOR + 'Program interrupted by user...' + text_color.ENDC)
+            break
+
+        except Exception as ex:
+            continue

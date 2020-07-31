@@ -22,6 +22,7 @@ Exception : {}\n
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n
 """
 
+
 class text_color:
     HEADER_COLOR = '\033[95m'
     BLUE_COLOR = '\033[94m'
@@ -32,40 +33,35 @@ class text_color:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+
 class Loathe(object):
     """Loathe class ranks the urls"""
 
     def __init__(self):
-        print(text_color.HEADER_COLOR + "Initialized loathe object" + text_color.ENDC)
+        print(text_color.HEADER_COLOR
+              + "Initialized loathe object"
+              + text_color.ENDC)
         super(Loathe, self).__init__()
 
     # Connect to database
     def connect_database(self):
         try:
             self.connection = mysql.connector.connect(
-              host="localhost",
-              user="root",
-              password="Abhijit@123",
-              database="deadpan"
-            )
-            # self.connection = mysql.connector.connect(
-            #          host="database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com",
-            #          user="admin",
-            #          password="SIH_2020",
-            #          database="pythanos_main"
-            #        )
-            # self.connection = mysql.connector.connect(
-            #           host="database-1.ce0yosk0xfgx.us-east-1.rds.amazonaws.com",
-            #           user="admin",
-            #           password="SIH_2020",
-            #           database="database1"
-            #         )
+                     host="database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com",
+                     user="admin",
+                     password="SIH_2020",
+                     database="pythanos_main"
+                   )
 
             # self.connection = sqlite3.connect('output/tenderfoot.sqlite')
             self.cursor = self.connection.cursor(buffered=True)
-            print(text_color.GREEN_COLOR + "Connected to database" + text_color.ENDC)
+            print(text_color.GREEN_COLOR
+                  + "Connected to database"
+                  + text_color.ENDC)
         except Exception as ex:
-            print(text_color.FAILED_COLOR + error_string.format(ex) + text_color.ENDC)
+            print(text_color.FAILED_COLOR
+                  + error_string.format(ex)
+                  + text_color.ENDC)
             sys.exit(0)
 
     # Load models
@@ -73,7 +69,9 @@ class Loathe(object):
         try:
             self.model = load_model('models/best_model.h5')
         except Exception as ex:
-            print(text_color.FAILED_COLOR + error_string.format(ex) + text_color.ENDC)
+            print(text_color.FAILED_COLOR
+                  + error_string.format(ex)
+                  + text_color.ENDC)
 
     # loop over articles and classify
     def loop_over_articles_and_classify(self):
@@ -84,8 +82,8 @@ class Loathe(object):
                 row = self.cursor.fetchone()
                 streeng = [[row[2]]]
                 tokenizer.fit_on_texts(list(streeng))
-                x_tr_seq  = tokenizer.texts_to_sequences(streeng)
-                x_tr_seq  = pad_sequences(x_tr_seq, maxlen=100)
+                x_tr_seq = tokenizer.texts_to_sequences(streeng)
+                x_tr_seq = pad_sequences(x_tr_seq, maxlen=100)
                 new_rank_value = self.model.predict_proba(x_tr_seq)[0][0]
                 self.cursor.execute('UPDATE articles SET ranks=%s WHERE url=%s', (float(new_rank_value),row[1]) )
         except Exception as ex:
