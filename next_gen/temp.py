@@ -18,7 +18,7 @@ myrds1 = sql.connect (host='database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com'
 mycursor1 = myrds1.cursor()
 print (myrds1)
 
-'''
+
 mycursor = myrds.cursor()
 query_search = ("select * from corporate_actions ")
 mycursor.execute(query_search)
@@ -30,4 +30,3 @@ for r in result:
     mycursor1.execute (query_insert, values)
     myrds1.commit()
     # print(type(r[1]))
-'''
