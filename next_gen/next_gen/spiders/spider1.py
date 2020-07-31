@@ -14,10 +14,12 @@ class spider1(scrapy.Spider):
     # ]
     # c = response.xpath("//following::tr[4]/td[2]/a[contains(@href,'.pdf')]")
     def start_requests(self):
-        yield scrapy.Request('https://www.ril.com/InvestorRelations/Corporate-Announcements.aspx', self.parse)
-        yield scrapy.Request('https://www.silvertouch.com/about-us/investors/', self.parse)
+        # yield scrapy.Request('https://www.ril.com/InvestorRelations/Corporate-Announcements.aspx', self.parse)
+        # yield scrapy.Request('https://www.silvertouch.com/about-us/investors/', self.parse)
+        # yield scrapy.Request('https://www.tcs.com/view-all-corporate-actions#searchIn=/content/tcs/_en&tagId=tcs_discover-tcs/investor-relations/ir-corporate-actions&sortBy=publishedDate&M=yes&Y=yes&IR=true', self.parse)
+        yield scrapy.Request('https://www.nestle.in/media/specialannouncements', self.parse)
+        # yield scrapy.Request('https://www.godrejagrovet.com/corporate-announcements.aspx', self.parse)
         
-
     def parse(self, response):
         # link = response.xpath("//a")
         # print(link)
@@ -30,12 +32,13 @@ class spider1(scrapy.Spider):
 
         print (mycursor)
         link = response.xpath("//@href").extract()
+        print (type(response.url))
         for abs_urls in link:
             if (abs_urls[-4:] == '.pdf'):
                 loader = ItemLoader(item = NextGenItem(),selector=link)
                 absolute_url = response.urljoin(abs_urls)
                 str_absolute_url = str(absolute_url)
-                # print (absolute_url)
+                #print (absolute_url)
                 temp_filename = abs_urls.split('/')
                 # final_filename = ''
                 for i in temp_filename:
@@ -43,8 +46,9 @@ class spider1(scrapy.Spider):
                         loader.add_value('file_name',i)
                         # final_filename = str(i)
                         # print (i)        
+                
                 parent_link = "https://www.ril.com/InvestorRelations/Corporate-Announcements.aspx"
-                company_name = "ril.com"
+                company_name = "tata.com"
 
                 query_search = ("select id from crawler_2 where file_url = (%s)")
                 query_value = (str(absolute_url))
@@ -68,4 +72,5 @@ class spider1(scrapy.Spider):
                     mydatabase.commit()
                     loader.add_value('file_urls', absolute_url)
                     yield loader.load_item()
-                
+            
+

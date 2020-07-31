@@ -84,7 +84,7 @@ DATABASES = {
         'HOST':'database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com',
         'PORT':'3306',
     }
-}
+}   
 
 
 # Password validation

@@ -3,14 +3,14 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import UserRegistrationForm
 from django.contrib.auth.decorators import login_required,permission_required
-from dashboard.models import file_download
+from dashboard.models import file_download,corp_action_data
 import mysql.connector 
 
 # Create your views here.
 
 @login_required
 def index (request):
-    data = file_download.objects.all()[:5]
+    data = corp_action_data.objects.all()[:100]
     content = {
         'data':data
     }
@@ -19,7 +19,19 @@ def index (request):
 
 @login_required
 def report(request):
-    return render (request, 'report.html')
+    #future expected page
+    data = corp_action_data.objects.all()[:5]
+    data1 = list(data)
+    print (data1)
+    
+    for d in data:
+        print(d.data)
+
+    content = {
+        'data': data 
+    }
+
+    return render (request, 'report.html',content)
 @login_required
 def rep_generatoion(request):
     return render (request, 'gen.html') 
