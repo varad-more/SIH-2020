@@ -32,7 +32,6 @@ def verify_article(Article_verified,Article_Id, Article_keywords,Article_content
 
     except mysql.connector.Error as error:
         print("Failed to update record to database: {}".format(error))
-##import time
 
 print(time.time() - s)
 

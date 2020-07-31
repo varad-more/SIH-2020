@@ -18,11 +18,10 @@ cursor = conn.cursor()
 
 
 def securities_update(Company_name,Security_type,ISIN,Trade_volume,Listed_on_exchange,Exchange_symbol):
-# def securities_update(Company_name):
+
     
     try:
       
-        # sql_update_query = ("INSERT INTO Company_name = %s,Security_type = %s,ISIN = %s,Trade_volume = %d,Listed_on_exchange = %s,Exchange_symbol = %s"
         sql_update_query = ("INSERT INTO Securities(Company_name,Security_type,ISIN,Trade_volume,Listed_on_exchange,Exchange_symbol) VALUES(%s,%s,%s,%s,%s,%s)")
 
         inputData = (Company_name,Security_type,ISIN,Trade_volume,Listed_on_exchange,Exchange_symbol)
@@ -36,10 +35,10 @@ def securities_update(Company_name,Security_type,ISIN,Trade_volume,Listed_on_exc
         print("Failed to update record to database: {}".format(error))
     
 
-# securities_update('e','f','yyy', '2' ,'h','d')
+
 
 securities_update(Company_name,Security_type,ISIN,Trade_volume,Listed_on_exchange,Exchange_symbol)
-# conn.commit()
+
 print("Record Updated successfully ")
 
 
@@ -48,10 +47,6 @@ Securities = cursor.fetchall()
 print(Securities)
 
 conn.commit()
-# finally:
-#     if (conn.is_connected()):
-#         cursor.close()
-#         conn.close()
-#         print("MySQL connection is closed")
+
 
 
