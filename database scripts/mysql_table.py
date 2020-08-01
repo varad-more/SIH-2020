@@ -1,7 +1,13 @@
+
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# Importing mysql.connector to stream data between Python and MySQL database 
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 import mysql.connector
 import re
 from mysql.connector import Error
-
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# Establish connection with AWS RDS Endpoint to host system's database
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 try:
     conn = mysql.connector.connect(host='database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com',
                                          user='admin',
@@ -40,6 +46,7 @@ except Error as e:
 
 cursor = conn.cursor()
 
+
 sql = """ALTER DATABASE pythanos_main CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;"""
 cursor.execute(sql)
 
@@ -59,6 +66,11 @@ cursor.execute(sql)
 # cursor.execute(sql)
 # sql = "DROP TABLE IF EXISTS Websites"
 # cursor.execute(sql)
+
+
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# Creating Schema for db pythanos_main
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 ##Articles
 sql = """CREATE TABLE IF NOT EXISTS articles
@@ -204,7 +216,9 @@ cursor.execute(sql)
 
 conn.commit() 
 
-
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# Fetching and displaying available tables in db pythanos_main
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 cursor.execute("SHOW TABLES")
 result= cursor.fetchall()
 print ('----------------------Created table:-------------------',result)
