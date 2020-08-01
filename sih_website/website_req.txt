@@ -1,5 +1,2 @@
-1. Django 3.0
-pip install django
-
-2. crispy-djagno-forms 
-pip install django-crispy-forms
+django
+crispy-djagno-forms 

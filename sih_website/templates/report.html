@@ -1,25 +1,57 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div class="future-cont">
+	<div class="future-ex-header">
+		<div class="future-ex-heading">Corporate Actions</div>
+		<div class="filter-box">
+			<input type="text" id="filter-ca" name="filter-ca" placeholder="Filter">
+			<i class="fa fa-filter mr-1"></i>
+		</div>
+	</div>
 
-
-
-<div class="position-relative container border overflow-auto" style="width:750px;height: 700px;">
-  <h2 style="color:#80c72f;"> Corporate Actions </h2>
-  
-  {% for d in data %}
-    <div class="card" style="width: 750px;">
-        <div class="card-header border">
-          Company : {{ d.company_name }}
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">CA TYPE: {{ d.ca_type}} </h5>
-          <p class="card-text">Detailas of the CA: {{ d.data }}  </p>
-          <a href="#" class="btn btn-primary">Open pdf</a>
-        </div>
-  {% endfor %}
+	<div class="future-ex-cards">
+		<div class="card col-4">
+			<div class="card-header">
+				Company Name
+			</div>
+			<div class="card-body">
+				<div class="info">
+					<div class="info-header">
+						Date:
+					</div>
+					<div class="info-value">
+						1 August 2020
+					</div>
+				</div>
+			</div>
+			<a>
+				<div class="card-footer">
+					<i class="fa fa-file-pdf-o"></i>
+					Open PDF
+				</div>
+			</a>
+		</div>
+	</div>
 </div>
-        <!-- <div class="card-header border">
+
+
+<!-- <div class="position-relative container border overflow-auto" style="width:750px;height: 700px;">
+	<h2 style="color:#80c72f;"> Corporate Actions </h2>
+
+	{% for d in data %}
+	<div class="card" style="width: 750px;">
+		<div class="card-header border">
+			Company : {{ d.company_name }}
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">CA TYPE: {{ d.ca_type}} </h5>
+			<p class="card-text">Detailas of the CA: {{ d.data }} </p>
+			<a href="#" class="btn btn-primary">Open pdf</a>
+		</div>
+		{% endfor %}
+	</div>
+	<div class="card-header border">
             Company 2
           </div>
           <div class="card-body">
@@ -52,8 +84,8 @@
             <a href="#" class="btn btn-primary">Open pdf</a>
           </div>
       </div>
-      </div> -->
-      <!-- <div class="sticky-top", style="position:sticky-top;float:right;height:750px;width:750px;">
+      </div>
+	<div class="sticky-top", style="position:sticky-top;float:right;height:750px;width:750px;">
 
         <p> website 1</p> 
         <div class="progress">
@@ -64,6 +96,13 @@
       <div class="progress">
         <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
-      </div> -->
-    </div>
+      </div> 
+</div> -->
+{% endblock %}
+
+{% block scripts %}
+<script>
+	$('.sidebar-menu-item').removeClass('active');
+	$('#future').addClass('active');
+</script>
 {% endblock %}
