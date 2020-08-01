@@ -51,3 +51,8 @@ zipp==3.1.0
 spacy
 tika
 nltk
+re
+pandas
+pytesseract
+pdf2image
+glob

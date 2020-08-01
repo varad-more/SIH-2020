@@ -250,17 +250,17 @@ if __name__ == "__main__":
                     perc VARCHAR(10), 
                     fv VARCHAR(25))
                     """"
-        if ca_name=='bonus':
+        elif ca_name=='bonus':
             ratio = get_bon_data(text_string)
             sql = """CREATE TABLE IF NOT EXISTS dashboard 
                     (ca_name VARCHAR(20) NOT NULL, 
                     date VARCHAR(10), 
                     ratio VARCHAR(10))
                     """"
-        if ca_name=='stock split':
+        elif ca_name=='stock split':
             fv,qty = get_ss_data(text_string)
 
-        if ca_name=='rights issue':
+        elif ca_name=='rights issue':
             price = get_rts_data(text_string)
 
         else:       
