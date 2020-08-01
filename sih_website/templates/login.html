@@ -1,22 +1,25 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <div class="container" style="width:750px; height:750px">
-        <form method="POST" action="" style="color:#80c72f;">
-        {% csrf_token %}
-            <fieldset class="form-group">
+    
+<div class="login-container">
+    <div class="login-form-wrapper">
+        <form method="POST" action="" class="login-form">
+            {% csrf_token %}
+            <fieldset class="login-form-grp form-group">
                 <legend class="border-bottom mb-4"> Login </legend>
-                {{ form | crispy }}
+                <div class="form-fields">
+                    {{ form | crispy }}
+                </div>
             </fieldset>
             <div class="form-group">
-                <button class= "btn btn-outline-info" type="submit" style="color:#80c72f;">Log In</button>    
+                <button class="btn login-btn" type="submit">Log In</button>
             </div>
-        </form>    
-            <div class="border-top pt-3">
-                <small>
-                    Need an account ? <a class="ml-2" href="{% url 'register' %}">Register </a>     
-                </small>
-            </div>             
+        </form>
     </div>
+    <div class="alt-opt">
+        Need an account ? <a class="ml-2" href="{% url 'register' %}">Register </a>
+    </div>
+</div>
 
 {% endblock %}

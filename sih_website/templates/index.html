@@ -1,26 +1,46 @@
 {% extends 'base.html' %}
 
     {% block content %}
-    <div class = "container border float-right" style="width:450px;height:700px">
+    <!-- <div class = "container border float-right">
     <h1 style="color:#80c72f;"> NEWS </h1 >
-    </div>
+    </div> -->
 
-    <div class = "container border float-left overflow-auto" style="width:800px;height:700px">
-    <h1 style="color:#80c72f;"> Latest Corporate Actions  </h1 >
-        <table class= "border"  style ="height:700px">
-            <tr>
-            <td> company name</td>
-            <td> CA type</td>
-            <td> data </td>
-            </tr>
-            {% for d in data %}
-            <tr>
-                <td>  {{ d.company_name }} </td>
-                <td>  {{ d.ca_type }} </td>
-                <td>  {{ d.date }} </td>
-            </tr>
-            {% endfor %}
-        </table>
+    <div class="ca-cont">
+    <h1> Latest Corporate Actions  </h1 >
+        <div class="table-card">
+            <table id="latest-corporate-actions" class= "table"  style ="height:700px">
+                {% for d in data %}
+                <tr>
+                    <td> {{ d.company_name }} </td>
+                    <td> {{ d.ca_type }} </td>
+                    
+                    <td></td>
+                    <td></td>
+                    
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
     </div>
     {% endblock %}
+
+    
+    
+    {% block scripts %}
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+                $('#latest-corporate-actions').DataTable({
+                    columns: [
+                        { title: "Company Name" },
+                        { title: "CA Type" },
+                        { title: "Agenda" },
+                        { title: "Date" },
+                    ]
+                });
+            });
+    </script>
+    {% endblock %}
+    
     
