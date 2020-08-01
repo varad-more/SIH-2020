@@ -103,26 +103,28 @@ def get_ca_type_1(text_string):
                     "stock split", 
                     "reverse stock split", 
                     "rights issue", 
-                    "merge and acquisition", 
+                    "merger and acquisition", 
                     "employee"], 
                     'regex':[r"( bankrupt(cy| ))|( demerge )|( liquidat)",
-                     r"(dividend)|(interim)",
-                     r"(bonus (right|issue|share|))",
+                     r"(( interim| final|) dividend)|( interim)",
+                     r"( bonus (right|issue|share|))",
                      r"(reverse{0} stock split)|( split)",
-                     r"(reverse stock split)|(reverse)",
-                     r"(issue(. | ))(right(s | )|(right(s | )(issue|))",
-                     r"(merger)|(mrgr)|(acquisition)|(acquir..)",
+                     r"( reverse stock split)|(reverse)",
+                     r"((issue(. | ))(right(s | )))|(rights (issue|basis|))",
+                     r"( merger)|( merge)|( acquisition)|( acquir(.*))",
                      r"(employee)|(scheme)" ] ,
                     'sum':[0, 0, 0, 0, 0, 0, 0, 0]}
     df = pd.DataFrame(word_search)
-
+    num = 0
     for row in df.itertuples():
-        regex = row['regex']
-        row['sum'] = len(re.findall(regex, text_string))
-        
-    print(df)
-    ca_name = (df['type'][df.sum == df.sum.max()])
-
+        regex = row.__getattribute__('regex')
+        df['sum'][num] = len(re.findall(regex, text_string))
+        num = num + 1
+    df2 = ((df.loc[df['sum'] == df['sum'].max()] ))
+    if(len(df.index) > 1):
+        df2 = df2[:1]
+    ca_name = str(df2['type'].to_string(index=False))
+    ca_name = ca_name.strip()
     return ca_name
 
 def get_ca_type_2(text_string):  
@@ -176,16 +178,34 @@ def get_other_dates():
     return rec_date, pay_date
         
 def get_div_data(text_string):
-    # ratio
-    ratio = ""
-    regex = r"(\d+)([a-zA-Z]+)( per equity share )([a-zA-Z]+)(\d+)"
+    # face value per share
+    fv = ""
+    regex = r"(\d+)(.*) ((per|equity) equity share(.*))(\d+)"
     match = re.search(regex, text_string)  
     if match != None:
-        ratio = "Rs. "+ match.group(1) +"per equity share of Rs. "+ match.group(5)
-    
+        fv = "Rs. "+ match.group(1) +"per equity share of Rs. "+ match.group(6)  #remember to change .group(par) after changing regex
     perc=""
+    regex = r"(\d+).(\d+)% | (\d+)%" # considers the first occurence
+    match = re.search(regex, text_string)  
+    if match != None:
+        print ("match  ", match.group(0))
+        perc = match.group(0)
+    return perc,fv
 
-    return perc,ratio
+def get_bon_data(text_string):
+    ratio=""
+    return ratio
+
+
+def get_ss_data(text_string):
+    fv=""
+    qty=""
+    return fv,qty
+
+
+def get_rts_data(text_string):
+    price=""
+    return price
 
 
 def connect_database():
@@ -223,8 +243,26 @@ if __name__ == "__main__":
         # rec_date, pay_date = get_other_dates()
         ca_name = get_ca_type_1(text_string)
         if ca_name=='dividend':
-            perc,ratio = get_div_data(text_string)
-            sql = "CREATE TABLE IF NOT EXISTS dashboard (ca_name VARCHAR(20) NOT NULL, date VARCHAR(10), perc VARCHAR(10), ratio VARCHAR(10)"
+            perc,fv = get_div_data(text_string)
+            sql = """CREATE TABLE IF NOT EXISTS dashboard 
+                    (ca_name VARCHAR(20) NOT NULL, 
+                    date VARCHAR(10), 
+                    perc VARCHAR(10), 
+                    fv VARCHAR(25))
+                    """"
+        if ca_name=='bonus':
+            ratio = get_bon_data(text_string)
+            sql = """CREATE TABLE IF NOT EXISTS dashboard 
+                    (ca_name VARCHAR(20) NOT NULL, 
+                    date VARCHAR(10), 
+                    ratio VARCHAR(10))
+                    """"
+        if ca_name=='stock split':
+            fv,qty = get_ss_data(text_string)
+
+        if ca_name=='rights issue':
+            price = get_rts_data(text_string)
+
         else:       
             sql = "CREATE TABLE IF NOT EXISTS dashboard (ca_name VARCHAR(20) NOT NULL, date VARCHAR(10), rec_date VARCHAR(10), pay_date VARCHAR(10)"
         cursor.execute(sql)
