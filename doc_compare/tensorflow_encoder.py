@@ -8,7 +8,7 @@ from gensim.parsing.preprocessing import strip_punctuation
 from gensim.parsing.preprocessing import strip_multiple_whitespaces
 #from gensim.parsing.preprocessing import stem_text
 from operator import itemgetter
-import sqlite3
+#import sqlite3
 import pandas as pd
 import time
 from sklearn import preprocessing
@@ -23,8 +23,9 @@ from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
 import mysql.connector
-import urllib.request as urllib2
+#import urllib.request as urllib2
 import ssl
+import re
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
@@ -39,7 +40,7 @@ class Article_matcher():
         self.mydb.close()
 
     def initialize_CA_vars(self):
-        cooperate_action_code=["ANN","ARR" ,"ASSM" ,"BB" 	,"BKRP" ,"BON" ,"BR" 	,#"CALL" 	,
+        cooperate_action_code=["ANN","ARR" ,"ASSM" ,"BB" 	,"BKRP" ,"BON" ,"BR" ,
                                 "CAPRD" 	,"AGM" 	,"CONSD" 	,"CONV" 	,"CTX" 	,
                                 "CURRD","DIST" 	,"DIV" 	, "DMRGR ","DRIP" ,"DVST" ,"ENT" 	,"FRANK" ,"FTT" 	,"FYCHG" ,                           
                                 "ICC" 	,"INCHG" ,"ISCHG" ,"LAWST","LCC" ,"LIQ" 	,"LSTAT" ,"LTCHG" ,"MKCHG" ,"MRGR" 	,"NLIST" ,
@@ -96,9 +97,7 @@ class Article_matcher():
 
         return cooperate_action_code,cooperate_action_list
 
-    def set_exclude_variable(self):
-        self.exclude=["allotment"]
-        
+            
     def load_universal_encoder(self,module_url):
         print("--------------------------------loading_model------------------------------------------")
         embed = hub.Module(module_url)
@@ -129,7 +128,7 @@ class Article_matcher():
         #self.mycursor.execute("SELECT id,url,content,ranks FROM articles where news_checked is NULL and content is not NULL")
         self.mycursor.execute("SELECT id,url,content,ranks,company_name FROM articles where news_checked is NULL and content is not NULL")
         articles_database = pd.DataFrame(self.mycursor.fetchall(),columns=["id","url","content","ranks","company_name"])
-        self.mycursor.execute("UPDATE articles set news_checked=0 where news_checked is NULL")
+      #  self.mycursor.execute("UPDATE articles set news_checked=0 where news_checked is NULL")
         self.mydb.commit()
         
         return articles_database
@@ -210,12 +209,23 @@ class Article_matcher():
         #articles_database["company_name"] = articles_database["company_name"].str[1:]
         return articles_database
 
-    def get_CA_info(self,articles_database):
-        articles_database=articles_database.loc[articles_database["present"]]
-        for ca in articles_database:
+    def get_dividend(self,content):
+        p = re.compile(r'\dfv ', re.IGNORECASE)
 
-            pass
+
+    def get_CA_info(self,articles_database):
+        print("H----------------------------------------------------------------------------------------------------------H")
+        articles_database=articles_database.loc[articles_database["present"]]
+        print(articles_database)
+        
+        for ca,content in zip(articles_database["action"],articles_database["content"]):
+            if "dividend" in ca:
+                dividend=self.get_dividend(content)
+                print(ca)
+                print(content)
+                print("---------------------------------------------------")
             
+        #h    
 
     def remove_stopwords_from_database(self,articles_database):
         links=articles_database['url'].tolist()
@@ -259,13 +269,8 @@ class Article_matcher():
         for i in range(len(stop_words_removed)):
                 if len(np.where(corr[i]>threshold)[0].tolist())>1:
                     for n,m in zip(np.where(corr[i]>threshold)[0].tolist(),itemgetter(*np.where(corr[i]>threshold)[0].tolist())(stop_words_removed)):
-                #        if not (np.where(corr[i]>threshold)[0].tolist() in already_checked ):
-                            print(n,np.where(corr[i]>threshold)[0].tolist())
-                            articles_database.loc[articles_database.url.str.contains(links[n],case=False),"matches"]=len(np.where(corr[i]>threshold)[0].tolist())
-                 #       else:
-                  #          break
-                      #  already_checked.append(np.where(corr[i]>threshold)[0].tolist())
-
+                        print(n,np.where(corr[i]>threshold)[0].tolist())
+                        articles_database.loc[articles_database.url.str.contains(links[n],case=False),"matches"]=len(np.where(corr[i]>threshold)[0].tolist()) 
                 else:
                     n=np.where(corr[i]>threshold)[0].tolist()[0]
                     articles_database.loc[articles_database.url.str.contains(links[n],case=False),"matches"]=1                    
@@ -377,6 +382,7 @@ class Article_matcher():
         cooperate_action,cooperate_action_code=self.cooperate_actions_lists_and_code(self.cooperate_action_list,self.cooperate_action_code)
         articles_database=self.find_actions(articles_database,cooperate_action,cooperate_action_code)
         articles_database=self.check_company_names(articles_database)
+        self.get_CA_info(articles_database)
         links,stop_words_removed,CA_names=self.remove_stopwords_from_database(articles_database)
         corr=self.run_universal_encoder(stop_words_removed)
         articles_database=self.check_matching_count_of_articles(articles_database,corr,stop_words_removed,links,threshold=0.92)
@@ -396,7 +402,7 @@ class Article_matcher():
         
     def reset_database(self):
         self.mycursor.execute("UPDATE articles set news_checked=NULL")
-        self.mycursor.execute("UPDATE crawler_2 set ca_checked=NULL")
+        #self.mycursor.execute("UPDATE crawler_2 set ca_checked=NULL")
         self.mydb.commit()
 
     def run_pdf_data_extraction(self):
@@ -459,12 +465,13 @@ if __name__ == "__main__":
             matcher=Article_matcher("https://tfhub.dev/google/universal-sentence-encoder/1?tf-hub-format=compressed")
             break
         except :
+            time.sleep(5)
             continue
     print("database_connected")   
     while True:
         #matcher.reset_database()
         articles_database=matcher.run_article_matching()
-        pdf_data=matcher.run_pdf_data_extraction()
+        #pdf_data=matcher.run_pdf_data_extraction()
         print(time.time()-start)
         start=time.time()
     
