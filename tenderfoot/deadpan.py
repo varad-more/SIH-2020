@@ -17,7 +17,7 @@ from requests.compat import urljoin
 
 error_string = """
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n
-ERROR : {}\n
+ERROR in {} : {}\n
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n
 """
 
@@ -50,7 +50,9 @@ class Helper:
             try:
                 f.write(str(soup))
             except Exception as ex:
-                print(ex)
+                print(text_color.FAILED_COLOR
+                      + error_string.format("", ex)
+                      + text_color.ENDC)
             finally:
                 f.close()
 
@@ -63,6 +65,9 @@ class Helper:
                 return 'NULL'
             return meta_keyword_str
         except Exception as ex:
+            print(text_color.FAILED_COLOR
+                  + error_string.format("", ex)
+                  + text_color.ENDC)
             return 'NULL'
 
     def __del__(self):
@@ -105,7 +110,7 @@ class Deadpan(object):
                       + text_color.ENDC)
         except Exception as ex:
             print(text_color.FAILED_COLOR
-                  + error_string.format(ex)
+                  + error_string.format("", ex)
                   + text_color.ENDC)
 
     # Create table if not already created
@@ -127,7 +132,7 @@ class Deadpan(object):
 
         except Exception as ex:
             print(text_color.FAILED_COLOR
-                  + error_string.format(ex)
+                  + error_string.format("", ex)
                   + text_color.ENDC)
             sys.exit(0)
 
@@ -168,7 +173,7 @@ class Deadpan(object):
                     self.connection.commit()
         except Exception as ex:
             print(text_color.FAILED_COLOR
-                  + error_string.format(ex)
+                  + error_string.format("", ex)
                   + text_color.ENDC)
 
     # get current website and start crawling
@@ -279,8 +284,8 @@ class Deadpan(object):
                 self.cursor.execute('UPDATE webs SET web_rank=%s WHERE url=%s',(int(self.web_rank)+self.POSITIVE, self.starturl))
 
                 # Dump html to 'dumps/'
-                helper.dump_html(row,soup,self.filename)
-                del helper,row
+                helper.dump_html(row, soup, self.filename)
+                del helper, row
 
                 # Retrieve all of the anchor tags
                 tags = soup('a')
@@ -342,7 +347,7 @@ class Deadpan(object):
                   + text_color.ENDC)
         except Exception as ex:
             print(text_color.FAILED_COLOR
-                  + error_string.format(ex)
+                  + error_string.format("", ex)
                   + text_color.ENDC)
 
     # Close connection
@@ -354,7 +359,7 @@ class Deadpan(object):
                   + text_color.ENDC)
         except Exception as ex:
             print(text_color.FAILED_COLOR
-                  + error_string.format(ex)
+                  + error_string.format("", ex)
                   + text_color.ENDC)
 
     # Main spider
