@@ -3,3 +3,9 @@ pip install django
 
 2. crispy-djagno-forms 
 pip install django-crispy-forms
+
+3. mysql client  
+pip install mysqlclient
+
+4. Report Lab
+

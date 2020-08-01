@@ -3,10 +3,11 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import UserRegistrationForm
 from django.contrib.auth.decorators import login_required,permission_required
-from dashboard.models import file_download,corp_action_data
+from dashboard.models import file_download,corp_action_data,articles,company, dashboard,errors, historic_data, links, pages, securities,links 
 import mysql.connector 
 
 import io
+import ast
 from django.http import FileResponse
 from reportlab.pdfgen import canvas
 from reportlab.lib.utils import ImageReader
@@ -19,28 +20,25 @@ from reportlab.platypus import Paragraph
 
 @login_required
 def index (request):
-    data = corp_action_data.objects.all()[:100]
+    data = corp_action_data.objects.all()[:10]
     content = {
         'data':data
     }
-
+    print (content)
     return render (request , 'index.html',content)
 
 @login_required
 def report(request):
     #future expected page
     data = corp_action_data.objects.all()[:5]
-    data1 = list(data)
-    print (data1)
-    
-    for d in data:
-        print(d.data)
+
 
     content = {
         'data': data 
     }
 
     return render (request, 'report.html',content)
+
 @login_required
 def rep_generatoion(request):
     data = corp_action_data.objects.all()[:100]
