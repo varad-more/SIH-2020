@@ -26,7 +26,13 @@ class spider1(scrapy.Spider):
         # yield scrapy.Request('https://www.tcs.com/view-all-corporate-actions#searchIn=/content/tcs/_en&tagId=tcs_discover-tcs/investor-relations/ir-corporate-actions&sortBy=publishedDate&M=yes&Y=yes&IR=true', self.parse)
         yield scrapy.Request('https://www.nestle.in/media/specialannouncements', self.parse)
         # yield scrapy.Request('https://www.godrejagrovet.com/corporate-announcements.aspx', self.parse)
-        
+
+
+
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# Connect to database, download CA announcement pdf from the company's webpage 
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+  
     def parse(self, response):
         # link = response.xpath("//a")
         # print(link)
@@ -70,6 +76,10 @@ class spider1(scrapy.Spider):
 
                 file_hash_temp =  hashlib.sha1(str_absolute_url.encode())
                 file_hash = file_hash_temp.hexdigest()
+
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# In case the page is previously scraped download pdf if not yet done
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
                 # print (len(result))
                 if (len(result) == 0 ):
