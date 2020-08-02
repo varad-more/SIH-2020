@@ -6,6 +6,7 @@ import gensim
 from gensim.parsing.preprocessing import remove_stopwords
 from gensim.parsing.preprocessing import strip_punctuation
 from gensim.parsing.preprocessing import strip_multiple_whitespaces
+from gensim.parsing.preprocessing import strip_numeric
 #from gensim.parsing.preprocessing import stem_text
 from operator import itemgetter
 #import sqlite3
@@ -26,7 +27,8 @@ import mysql.connector
 #import urllib.request as urllib2
 import ssl
 import re
-
+import spacy
+#python -m spacy download en_core_web_lg
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 class Article_matcher():
@@ -43,7 +45,7 @@ class Article_matcher():
         cooperate_action_code=["ANN","ARR" ,"ASSM" ,"BB" 	,"BKRP" ,"BON" ,"BR" ,
                                 "CAPRD" 	,"AGM" 	,"CONSD" 	,"CONV" 	,"CTX" 	,
                                 "CURRD","DIST" 	,"DIV" 	, "DMRGR ","DRIP" ,"DVST" ,"ENT" 	,"FRANK" ,"FTT" 	,"FYCHG" ,                           
-                                "ICC" 	,"INCHG" ,"ISCHG" ,"LAWST","LCC" ,"LIQ" 	,"LSTAT" ,"LTCHG" ,"MKCHG" ,"MRGR" 	,"NLIST" ,
+                                "INCHG" ,"ISCHG" ,"LAWST","LCC" ,"LIQ" 	,"LSTAT" ,"LTCHG" ,"MKCHG" ,"MRGR" 	,"NLIST" ,
                                 "ODDLT","PID" ,"PO" ,"PRCHG" ,"PRF" ,"PVRD" 	,"RCAP"  ,"REDEM" ,	"RTS" ,"SCCHG" ,"SCSWP" ,
                                 "SD" ,"SECRC" ,"TKOVR","IPO"]
 
@@ -53,9 +55,9 @@ class Article_matcher():
                                     "Name Change","Odd lot Tender","Optional Dividend","Optional Put","Other Event","Partial Redemption",
                                     "Par Value Change","Reverse Stock Split","Rights Auction","Rights Issue","Scheme of Arrangement",
                                     "Scrip Dividend","Scrip Issue","Spin-Off","Spin Off","Stock Dividend","Subscription Offer","Tender Offer",
-                                    "Warrant Exercise","Warrant Expiry","Warrant Issue",
+                                    "Warrant Exercise","Warrant Expiry","Warrant Issue","annual general meeting",
                                         "Capital Reduction",
-                                        "Company Meeting",
+                                        "Company Meeting","board meeting"
                                         "Consolidation" ,"stock split",
                                         "Conversion",
                                         "Certificate Exchange",
@@ -128,17 +130,20 @@ class Article_matcher():
         #self.mycursor.execute("SELECT id,url,content,ranks FROM articles where news_checked is NULL and content is not NULL")
         self.mycursor.execute("SELECT id,url,content,ranks,company_name FROM articles where news_checked is NULL and content is not NULL")
         articles_database = pd.DataFrame(self.mycursor.fetchall(),columns=["id","url","content","ranks","company_name"])
-      #  self.mycursor.execute("UPDATE articles set news_checked=0 where news_checked is NULL")
+        self.mycursor.execute("UPDATE articles set news_checked=0 where news_checked is NULL")
         self.mydb.commit()
         
         return articles_database
 
     def update_articles_table(self,articles_database):
+        print("updating database")
         for action,url,matches in zip(articles_database["action"].tolist(),articles_database["url"].tolist(),articles_database["matches"].tolist()):
+         #   print("updating database")
             a=(matches,action,url)
             self.mycursor.execute("UPDATE articles set news_checked=%s,ca_name=%s WHERE news_checked=0 and url=%s",a)
         #self.mycursor.execute("UPDATE crawler_2 set ca_checked=1 where ca_checked=0")
         self.mydb.commit()
+        print("database updated")
 
     def clean_database(self,articles_database):
         articles_database=articles_database.iloc[articles_database['content'].notna().tolist()]
@@ -205,27 +210,48 @@ class Article_matcher():
                     articles_database.loc[num,['present']]=True
                     articles_database.loc[num,['action']]+=","+i
         
-        #articles_database=articles_database.loc[articles_database["present"]]
+        articles_database=articles_database.loc[articles_database["present"]]
+        articles_database=articles_database.loc[~(articles_database["company_name"]=="NULL")]
+        articles_database=articles_database.loc[articles_database["action"].str.len()>0]
         #articles_database["company_name"] = articles_database["company_name"].str[1:]
         return articles_database
 
     def get_dividend(self,content):
         p = re.compile(r'\dfv ', re.IGNORECASE)
 
+    def hasNumbers(self,inputString):
+        return any(char.isdigit() for char in inputString)
+
 
     def get_CA_info(self,articles_database):
         print("H----------------------------------------------------------------------------------------------------------H")
         articles_database=articles_database.loc[articles_database["present"]]
+        nlp = spacy.load("en_core_web_lg")       
         print(articles_database)
-        
         for ca,content in zip(articles_database["action"],articles_database["content"]):
-            if "dividend" in ca:
-                dividend=self.get_dividend(content)
-                print(ca)
-                print(content)
-                print("---------------------------------------------------")
+            print(ca)
+            #print(content)
+            tagged_text = nlp(content)
+            extractedentities = [(i.text, i.label_) if i.label_=="DATE" else ("","") for i in tagged_text.ents]
+            #print(content)
+            z=[]
+            for i,j in extractedentities:
+                if j=="":
+                    continue
+                elif(self.hasNumbers(i)):
+                    z.append(content.find(i))
+            print(z)
+            #print(extractedentities)
+            print("---------------------------------------------------------------------")
             
-        #h    
+        
+    def company_name_security_master(self):
+        self.mycursor.execute("SELECT name_of_company FROM security_master")
+        company_name=pd.DataFrame(self.mycursor.fetchall())
+        company_name.columns=["name"]
+        company_name=company_name[~company_name['name'].duplicated()]
+        print(company_name)
+
 
     def remove_stopwords_from_database(self,articles_database):
         links=articles_database['url'].tolist()
@@ -237,12 +263,14 @@ class Article_matcher():
             message = strip_punctuation(message)
             #message=stem_text(message)
             message = strip_multiple_whitespaces(message)
+            message=strip_numeric(message)
             stop_words_removed.append(remove_stopwords(message))
         return links,stop_words_removed,CA_names
 
 
 
     def run_universal_encoder(self,stop_words_removed):
+
         similarity_input_placeholder = tensorflow.placeholder(tensorflow.string, shape=(None))
         similarity_message_encodings = self.embed(similarity_input_placeholder)
         corr=None
@@ -261,6 +289,7 @@ class Article_matcher():
                     message_embeddings_=np.append(message_embeddings_,session.run(similarity_message_encodings, feed_dict={similarity_input_placeholder: sentences}),axis=0)
             message_embeddings_ = preprocessing.normalize(message_embeddings_, norm='l2')          
             corr = np.inner(message_embeddings_, message_embeddings_)
+        print(corr)
         return corr
     
     def check_matching_count_of_articles(self,articles_database,corr,stop_words_removed,links,threshold=0.92):
@@ -269,21 +298,29 @@ class Article_matcher():
         for i in range(len(stop_words_removed)):
                 if len(np.where(corr[i]>threshold)[0].tolist())>1:
                     for n,m in zip(np.where(corr[i]>threshold)[0].tolist(),itemgetter(*np.where(corr[i]>threshold)[0].tolist())(stop_words_removed)):
-                        print(n,np.where(corr[i]>threshold)[0].tolist())
                         articles_database.loc[articles_database.url.str.contains(links[n],case=False),"matches"]=len(np.where(corr[i]>threshold)[0].tolist()) 
+                        #print(articles_database.loc[np.where(corr[i]>threshold)[0].tolist(),"content"])
+                        #j
                 else:
                     n=np.where(corr[i]>threshold)[0].tolist()[0]
                     articles_database.loc[articles_database.url.str.contains(links[n],case=False),"matches"]=1                    
         print("----------------")
-        print(articles_database.loc[articles_database['matches'] > 0 ])
+        articles_database.action = articles_database.action.str[1:]
+        print(articles_database.loc[articles_database['matches'] > 10,["content","company_name","matches","action"]])
+        temp=articles_database.where(articles_database['matches'] > 1).dropna()
+        for content,action,matches in zip(temp["content"],temp["action"],temp["matches"]):
+            #print(type(i))
+            #print(i[0])
+
+            #print(action+"matches:"+str(matches)+"\n"+content)
+            print("------------------------")
+
         return articles_database
 
 
-    def write_output_file(self,corr,stop_words_removed,links,CA_names):
-        threshold=0.92
+    def write_output_file(self,corr,stop_words_removed,links,CA_names,threshold=0.93):
         already_checked=[]
         nomatch=0
-        #matching_articles=[]
         print(time.time()-start)
         with open("output.txt", "w") as file1:
             file1.write("##########################################----Testing New article-----####################################################"+"\n")
@@ -381,14 +418,14 @@ class Article_matcher():
         cooperate_action_code,cooperate_action_list=self.initialize_CA_vars()
         cooperate_action,cooperate_action_code=self.cooperate_actions_lists_and_code(self.cooperate_action_list,self.cooperate_action_code)
         articles_database=self.find_actions(articles_database,cooperate_action,cooperate_action_code)
-        articles_database=self.check_company_names(articles_database)
-        self.get_CA_info(articles_database)
+        #articles_database=self.check_company_names(articles_database)
+        #self.get_CA_info(articles_database)
         links,stop_words_removed,CA_names=self.remove_stopwords_from_database(articles_database)
         corr=self.run_universal_encoder(stop_words_removed)
-        articles_database=self.check_matching_count_of_articles(articles_database,corr,stop_words_removed,links,threshold=0.92)
+        articles_database=self.check_matching_count_of_articles(articles_database,corr,stop_words_removed,links,threshold=0.93)
         self.update_articles_table(articles_database)
         self.write_output_file(corr,stop_words_removed,links,CA_names)
-        #self.run_stanford_word_2_vec(stop_words_removed=stop_words_removed)
+        
         return articles_database
     
     def update_pdf_database(self,pdf_data):
@@ -462,14 +499,19 @@ if __name__ == "__main__":
     start=time.time()
     while True:
         try:
-            matcher=Article_matcher("https://tfhub.dev/google/universal-sentence-encoder/1?tf-hub-format=compressed")
+            matcher=Article_matcher("https://tfhub.dev/google/universal-sentence-encoder-large/4")
+            #matcher=Article_matcher("https://tfhub.dev/google/universal-sentence-encoder/1?tf-hub-format=compressed")
             break
         except :
-            time.sleep(5)
+            time.sleep(1)
             continue
     print("database_connected")   
     while True:
-        #matcher.reset_database()
+        #matcher.company_name_security_master()
+        #j
+        matcher.run_universal_encoder([])
+        
+        matcher.reset_database()
         articles_database=matcher.run_article_matching()
         #pdf_data=matcher.run_pdf_data_extraction()
         print(time.time()-start)
