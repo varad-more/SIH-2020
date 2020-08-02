@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required,permission_required
 from dashboard.models import file_download,corp_action_data,articles,company, dashboard,errors, historic_data, links, pages, securities,links 
 import mysql.connector 
 
+
 import io
 import ast
 from django.http import FileResponse
@@ -44,7 +45,7 @@ def report(request):
     content = {
         'data':data
     }
-    return render (request, 'new.html',content)
+    return render (request, 'report.html',content)
 
 @login_required
 def rep_generatoion(request):

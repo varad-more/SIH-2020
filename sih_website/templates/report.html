@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="future-cont">
+<div class="future-cont card-deck">
 	<div class="future-ex-header">
 		<div class="future-ex-heading">Corporate Actions</div>
 		<div class="filter-box">
@@ -10,8 +10,9 @@
 		</div>
 	</div>
 	{% for d in data %}
+
 	<div class="future-ex-cards">
-		<div class="card col-4">
+		<div class="card col-6">
 			<div class="card-header">
 				 Company Name : {{ d.company_name}}
 			</div>
@@ -40,8 +41,9 @@
 			</a>
 		</div>
 	</div>
+	{% endfor %}
 </div>
-{% endfor %}
+
 {% endblock %}
 
 <!-- <div class="position-relative container border overflow-auto" style="width:750px;height": 700px;">
@@ -93,18 +95,7 @@
           </div>
       </div>
       </div> -->
-	<div class="sticky-top", style="position:sticky-top;float:right;height:750px;width:750px;">
 
-        <p> website 1</p> 
-        <div class="progress">
-
-        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-      </div>
-      <p> website 2</p>
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-      </div>
-      </div> 
 <!-- </div>  -->
 
 
