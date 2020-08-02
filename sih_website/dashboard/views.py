@@ -19,8 +19,10 @@ from reportlab.platypus import Paragraph
 # Create your views here.
 
 @login_required
+@permission_required ('corp_action_data.view_user')
 def index (request):
-    data = corp_action_data.objects.all()[:10]
+    data = corp_action_data.objects.all()
+    
     content = {
         'data':data
     }
@@ -30,13 +32,11 @@ def index (request):
 @login_required
 def report(request):
     #future expected page
-    data = corp_action_data.objects.all()[:5]
-
-
+    data = articles.objects.filter(news_checked__gt = 1)
+    print (type (data))
     content = {
-        'data': data 
+        'data':data
     }
-
     return render (request, 'report.html',content)
 
 @login_required

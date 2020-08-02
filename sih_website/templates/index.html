@@ -4,19 +4,18 @@
     <!-- <div class = "container border float-right">
     <h1 style="color:#80c72f;"> NEWS </h1 >
     </div> -->
-
+    
     <div class="ca-cont">
-    <h1> Latest Corporate Actions  </h1 >
+    <h1> Latest Corporate Actions </h1 >
         <div class="table-card">
             <table id="latest-corporate-actions" class= "table"  style ="height:700px">
                 {% for d in data %}
                 <tr>
                     <td> {{ d.company_name }} </td>
                     <td> {{ d.ca_type }} </td>
-                    
-                    <td></td>
-                    <td></td>
-                    
+                    <td> {{ d.div_type}}</td>
+                    <td> {{ d.fv }}</td>
+
                 </tr>
                 {% endfor %}
             </table>
@@ -35,8 +34,9 @@
                     columns: [
                         { title: "Company Name" },
                         { title: "CA Type" },
-                        { title: "Agenda" },
-                        { title: "Date" },
+                        { title: "Dividend_type" },
+                        { title: "Dividend Date" },
+  
                     ]
                 });
             });

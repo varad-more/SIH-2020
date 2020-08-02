@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-{% block content %}
 
+{% block content %}
 <div class="future-cont">
 	<div class="future-ex-header">
 		<div class="future-ex-heading">Corporate Actions</div>
@@ -9,34 +9,42 @@
 			<i class="fa fa-filter mr-1"></i>
 		</div>
 	</div>
-
+	{% for d in data %}
 	<div class="future-ex-cards">
 		<div class="card col-4">
 			<div class="card-header">
-				Company Name
+				 Company Name : {{ d.company_name}}
 			</div>
 			<div class="card-body">
 				<div class="info">
 					<div class="info-header">
-						Date:
+						Date: 
 					</div>
 					<div class="info-value">
-						1 August 2020
+						{{ d.publish_date }}
+					</div>
+				</div>
+				<div class="info">
+					<div class="info-header">
+						Ca_name: 
+					</div>
+					<div class="info-value">
+						{{ d.ca_name }}
 					</div>
 				</div>
 			</div>
 			<a>
-				<div class="card-footer">
-					<i class="fa fa-file-pdf-o"></i>
-					Open PDF
+				<div class="card-footer" >
+					<a href="{{ d.url }}" style="color:aqua">Open Link</a> 
 				</div>
 			</a>
 		</div>
 	</div>
 </div>
+{% endfor %}
+{% endblock %}
 
-
-<!-- <div class="position-relative container border overflow-auto" style="width:750px;height: 700px;">
+<!-- <div class="position-relative container border overflow-auto" style="width:750px;height": 700px;">
 	<h2 style="color:#80c72f;"> Corporate Actions </h2>
 
 	{% for d in data %}
@@ -84,7 +92,7 @@
             <a href="#" class="btn btn-primary">Open pdf</a>
           </div>
       </div>
-      </div>
+      </div> -->
 	<div class="sticky-top", style="position:sticky-top;float:right;height:750px;width:750px;">
 
         <p> website 1</p> 
@@ -97,8 +105,8 @@
         <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
       </div> 
-</div> -->
-{% endblock %}
+<!-- </div>  -->
+
 
 {% block scripts %}
 <script>
