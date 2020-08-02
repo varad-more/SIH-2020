@@ -81,14 +81,15 @@ def extract_currency_relations(doc):
 
 def currencies():
     nlp = spacy.load('en_core_web_lg')
-    doc = nlp(text_string)
-    print("\n*** CURRENCY RELATIONS ***\n")
+    doc = nlp(text_string) 
+    # print("\n*** CURRENCY RELATIONS ***\n")
     relations = extract_currency_relations(doc)
-    for r1, r2 in relations:
-        print("{:<10}\t{}\t{}".format(r1.text, r2.ent_type_, r2.text))
+    extracted_entities = [(i.text_string, i.label_) for i in doc.ents]
+    print(extracted_entities)
 
 def get_ca_type_1(text_string):  
     text_string = text_string.lower()
+    text_string = text_string.replace('-\n', '')
     # regex = r"( bankrupt(cy| ))|( demerge )|( liquidat)"
     # regex = r"(dividend)|(interim)"
     # regex = r"(bonus (right|issue|share|))"
@@ -149,6 +150,15 @@ def get_ca_type_2(text_string):
         ca_weight[ca1] = sum(values)
     return (str(max(ca_weight, key=ca_weight.get)))
 
+def get_scrip(text_string):
+    scrip=""
+    text_string = text_string.lower()
+
+    regex = r"((security code)|(scrip code)|(code))(.*)(\d+)"
+    if match != None:
+        scrip = match.group(6)
+    return scrip
+
 def get_date(pdf):
     raw = parser.from_file(pdf)
     md = raw['metadata']
@@ -178,17 +188,20 @@ def get_other_dates():
     return rec_date, pay_date
         
 def get_div_data(text_string):
+    pattern = re.compile(r"( z l | Z l | zl | Zl )")
+    text_string = pattern.sub(r" rs 1 ", text_string)
+    print(text_string)
+
     # face value per share
     fv = ""
-    regex = r"(\d+)(.*) ((per|equity) equity share(.*))(\d+)"
+    regex = r"(\d+)(.*) ((per|every) equity share(.*))(\d+)"
     match = re.search(regex, text_string)  
     if match != None:
         fv = "Rs. "+ match.group(1) +"per equity share of Rs. "+ match.group(6)  #remember to change .group(par) after changing regex
     perc=""
-    regex = r"(\d+).(\d+)% | (\d+)%" # considers the first occurence
+    regex = r"((\d+)\.(\d+)( |)%) | (\d+)( |)%" # considers the first occurence
     match = re.search(regex, text_string)  
     if match != None:
-        print ("match  ", match.group(0))
         perc = match.group(0)
     return perc,fv
 
@@ -196,12 +209,10 @@ def get_bon_data(text_string):
     ratio=""
     return ratio
 
-
 def get_ss_data(text_string):
     fv=""
     qty=""
     return fv,qty
-
 
 def get_rts_data(text_string):
     price=""
@@ -238,6 +249,8 @@ if __name__ == "__main__":
     for pdf in pdf_list:
         read_pdf(pdf)
         text_string = read_text_file()
+        scrip_code = get_scrip(text_string)
+        trading_symbol = get_trading_symbol(text_string)
 
         date = get_date(pdf)
         # rec_date, pay_date = get_other_dates()
