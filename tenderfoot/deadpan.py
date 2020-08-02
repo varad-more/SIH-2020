@@ -9,12 +9,15 @@ __author__ = 'Abhijit Acharya'
 import gc
 import sys
 import ssl
+import time
 import requests
 import traceback
 import mysql.connector
 from datetime import datetime
 from bs4 import BeautifulSoup
 from requests.compat import urljoin
+from selenium.webdriver import PhantomJS
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 error_string = """
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n
@@ -41,12 +44,15 @@ class Helper:
         pass
 
     def get_filename(self):
+        start = time.clock()
         filename = str(datetime.timestamp(datetime.now()))
         open('output/dumps/'+filename, 'a', encoding='utf-8').close()
+        print("get filename : ", time.clock()-start)
         return filename
 
     def dump_html(self, row, soup, filename):
         # Insert html
+        start = time.clock()
         with open('output/dumps/'+filename, 'w', encoding='utf-8') as f:
             try:
                 f.write(str(soup))
@@ -54,12 +60,15 @@ class Helper:
                 print(ex)
             finally:
                 f.close()
+        print("Dump : ", time.clock()-start)
 
     def get_keyword(self, soup):
+        start = time.clock()
         try:
             header = soup.find('head')
             html_str = header.find('meta', attrs={'name': 'news_keywords'})
             meta_keyword_str = html_str.get('content')
+            print("get keyword : ", time.clock()-start)
             if meta_keyword_str == '[]':
                 return 'NULL'
             return meta_keyword_str
@@ -83,6 +92,7 @@ class Deadpan(object):
         self.starturl = website_url
         self.POSITIVE = 0.5
         self.NEGATIVE = 0.3
+        self.driver = PhantomJS(executable_path ="python/phantomjs",service_log_path='tmp/geckodriver.log')
         super(Deadpan, self).__init__()
 
         self.filename = ""
@@ -90,8 +100,9 @@ class Deadpan(object):
               + "Initialized deadpan object"
               + text_color.ENDC)
 
-    # Ignore SSL certificate errors
+    # Ignore SSL certificate errors ############################ REMOVE ############################
     def ignore_ssl_error(self, state=False):
+        start = time.clock()
         try:
             if state:
                 print(text_color.GREEN_COLOR
@@ -106,11 +117,13 @@ class Deadpan(object):
                       + text_color.ENDC)
         except Exception as ex:
             print(text_color.FAILED_COLOR
-                  + error_string.format("ssl",ex)
+                  + error_string.format("ssl", ex)
                   + text_color.ENDC)
+        print("Dump : ", time.clock()-start)
 
     # Create table if not already created
     def create_table_if_not_exists(self):
+        start = time.clock()
         try:
             # Connect to database
             self.connection = mysql.connector.connect(
@@ -125,15 +138,16 @@ class Deadpan(object):
             print(text_color.GREEN_COLOR
                   + "Connected to database "
                   + 'tenderfoot' + text_color.ENDC)
-
+            print("Dump : ", time.clock()-start)
         except Exception as ex:
             print(text_color.FAILED_COLOR
-                  + error_string.format("connect",ex)
+                  + error_string.format("connect", ex)
                   + text_color.ENDC)
             sys.exit(0)
 
     # Check to see if we are already in progress...
     def check_if_already_in_progress(self):
+        start = time.clock()
         try:
             # Get id and url of empty html
             self.cursor.execute('''
@@ -169,11 +183,13 @@ class Deadpan(object):
                     self.connection.commit()
         except Exception as ex:
             print(text_color.FAILED_COLOR
-                  + error_string.format("check",ex)
+                  + error_string.format("check", ex)
                   + text_color.ENDC)
+        print("Dump : ", time.clock()-start)
 
     # get current website and start crawling
     def get_current_webs_and_deadpan(self):
+        start = time.clock()
         try:
             # Get current website
             self.cursor.execute('''SELECT url FROM webs''')
@@ -219,11 +235,11 @@ class Deadpan(object):
                 self.cursor.execute('''DELETE from links
                                     WHERE from_id=%s''', (fromid,))
                 try:
-                    headers = {
-                                'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36','referrer':'https://google.com'}
+                    headers = {'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36','referrer':'https://google.com'}
                     try:
                         # document = urlopen(req, context=self.SSL_CONTEXT,timeout = 1)
-                        document = requests.get(url, headers=headers, timeout=3, verify=False)
+                        # document = requests.get(url, headers=headers, timeout=3, verify=False)
+                        document = self.driver.get(url)
                         # print("Obtained document")
                     except Exception as ex:
                         print(text_color.FAILED_COLOR
@@ -234,7 +250,8 @@ class Deadpan(object):
                                             (url, str(document.status_code)))
 
                     # html_doc = document.read()
-                    html_doc = document.text.strip()
+                    # html_doc = document.text.strip()
+                    html_doc = self.driver.page_source
                     # print("html extracted")
                     # if document.getcode() != 200:
                     if document.status_code != 200:
@@ -344,11 +361,13 @@ class Deadpan(object):
         except Exception as ex:
             print(text_color.FAILED_COLOR
                   + str(traceback.format_exc())
-                  + error_string.format("drain",ex)
+                  + error_string.format("drain", ex)
                   + text_color.ENDC)
+        print("Dump : ", time.clock()-start)
 
     # Close connection
     def close_cur(self):
+        start = time.clock()
         try:
             self.cursor.close()
             print(text_color.GREEN_COLOR
@@ -356,12 +375,13 @@ class Deadpan(object):
                   + text_color.ENDC)
         except Exception as ex:
             print(text_color.FAILED_COLOR
-                  + error_string.format("close cursor",ex)
+                  + error_string.format("close cursor", ex)
                   + text_color.ENDC)
+        print("Dump : ", time.clock()-start)
 
     # Main spider
     def spider(self):
-        self.ignore_ssl_error(True)
+        # self.ignore_ssl_error(True)
         self.create_table_if_not_exists()
         self.check_if_already_in_progress()
         self.get_current_webs_and_deadpan()
