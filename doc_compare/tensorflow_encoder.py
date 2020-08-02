@@ -1,3 +1,9 @@
+
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# Script to collect and find similar articles from the database and rank the 
+# sites providing them by the order of reliability using fuzzy logic
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 import tensorflow_hub as hub
 import numpy as np
 import tensorflow
@@ -31,6 +37,8 @@ import spacy
 #python -m spacy download en_core_web_lg
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
+
+
 class Article_matcher():
     def __init__(self,module_url):
         self.cooperate_action_code,self.cooperate_action_list=self.initialize_CA_vars()
@@ -41,6 +49,9 @@ class Article_matcher():
         self.mycursor.close()
         self.mydb.close()
 
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# Initializing the list of CA codes and event types in a dictionary format
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
     def initialize_CA_vars(self):
         cooperate_action_code=["ANN","ARR" ,"ASSM" ,"BB" 	,"BKRP" ,"BON" ,"BR" ,
                                 "CAPRD" 	,"AGM" 	,"CONSD" 	,"CONV" 	,"CTX" 	,
@@ -99,7 +110,11 @@ class Article_matcher():
 
         return cooperate_action_code,cooperate_action_list
 
-            
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# Loading and executing the universal Google encoder script for NLP
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+
     def load_universal_encoder(self,module_url):
         print("--------------------------------loading_model------------------------------------------")
         embed = hub.Module(module_url)
@@ -117,6 +132,10 @@ class Article_matcher():
         
         return articles_database
 
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# Connecting to RDS database 'pythanos_main'
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
     def connect_database(self):
         self.mydb = mysql.connector.connect(host='database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com',
                                          database='pythanos_main',
@@ -125,7 +144,9 @@ class Article_matcher():
 
         self.mycursor = self.mydb.cursor()
      
-        
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# Extract content, url, ranks & company name associated with the articles
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>        
     def get_articles(self):
         #self.mycursor.execute("SELECT id,url,content,ranks FROM articles where news_checked is NULL and content is not NULL")
         self.mycursor.execute("SELECT id,url,content,ranks,company_name FROM articles where news_checked is NULL and content is not NULL")
@@ -134,6 +155,9 @@ class Article_matcher():
         self.mydb.commit()
         
         return articles_database
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# Updating the verification status, CA name after running the encoder model
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     def update_articles_table(self,articles_database):
         print("updating database")
@@ -144,6 +168,10 @@ class Article_matcher():
         #self.mycursor.execute("UPDATE crawler_2 set ca_checked=1 where ca_checked=0")
         self.mydb.commit()
         print("database updated")
+
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# Data Frame for organizing the content, CA, Company name in articles_database
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     def clean_database(self,articles_database):
         articles_database=articles_database.iloc[articles_database['content'].notna().tolist()]
@@ -186,7 +214,7 @@ class Article_matcher():
         #articles_database["company_name"] = articles_database["company_name"].str[1:]
         articles_database=articles_database.loc[articles_database["company_name"].str.len()>0]
         articles_database=articles_database.loc[articles_database["action"].str.len()>0]
-        print("artticles database updated")
+        print("articles database updated")
         print(articles_database)
 
         return articles_database
