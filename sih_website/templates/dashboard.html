@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<canvas id="myfun"></canvas>
+
+
+
+{% endblock %}
+
+
+{% block scripts %}
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"> </script>    
+<script>
+$(document).ready(function () {
+    $('#myfun').Chart(
+        ctx,
+        {
+            type:'pie',
+            data:[2,3,4,5],
+            options:[2,3,4,4]
+        });
+});
+
+</script>
+{% endblock %}

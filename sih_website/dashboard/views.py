@@ -48,6 +48,17 @@ def report(request):
     return render (request, 'report.html',content)
 
 @login_required
+def dash_web(request):
+    count = corp_action_data.objects.all()
+    data = corp_action_data.objects
+    content = {
+        'ca_count':count,
+        'data' : data
+    }
+
+    return render(request,'dashboard.html',content)
+
+@login_required
 def rep_generatoion(request):
     data = corp_action_data.objects.all()[:100]
     content = {

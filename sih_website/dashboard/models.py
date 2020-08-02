@@ -9,7 +9,8 @@ class file_download(models.Model):
     sha_file = models.CharField(max_length=200,default=None)
     ca_checked = models.BooleanField(default=None)
     ca_type = models.CharField(max_length=100,default=None)
-
+    ca_extracted = models.BooleanField(default=None) #aishwarya column 
+    exception_ca = models.BooleanField(default=None) #varad ka column for exception  
     class meta:
         db_table = "file_download"
 
@@ -85,9 +86,17 @@ class errors(models.Model):
 
 
 class historic_data(models.Model):
+    security_code  = models.TextField(default=None)
+    security_name  = models.TextField(default=None)
     company_name = models.CharField(max_length=255)
+    ex_date = models.DateField(default=None)
     ca_type = models.CharField(max_length=255)
-    data = models.CharField(max_length=5000)
+    rec_date = models.DateField(default=None)
+    bc_start_date = models.DateField(default=None)
+    bc_end_date = models.DateField(default=None)
+    nd_start_date = models.DateField(default=None)
+    nd_end_date = models.DateField(default=None)
+    pay_date = models.DateField(default=None)
 
 class links(models.Model):
     from_id = models.IntegerField()
@@ -120,3 +129,22 @@ class webs(models.Model):
     name = models.CharField(max_length=100)
     url = models.CharField(max_length=1000)
     web_rank = models.FloatField()
+
+class securities_master(models.Model):
+    isin =  models.CharField(max_length=100) 
+    security_code  = models.CharField(max_length=100)
+    trading_symbol = models.CharField(max_length=100)
+    security_name  = models.CharField(max_length=100)
+    status  = models.CharField(max_length=100)
+    security_group  = models.CharField(max_length=100)
+    face_value  = models.IntegerField()
+    industry   = models.CharField(max_length=100)
+    instrument  = models.CharField(max_length=100)
+    nse_listed  = models.BooleanField()
+    bse_listed  = models.BooleanField()
+    trading_location = models.CharField(max_length=6)
+
+class ca_list (models.Model):
+    ca_type = models.CharField(max_length=20)
+    ca_src = models.CharField(max_length=20,default=None)
+
