@@ -3,16 +3,15 @@
     {% block content %}
     
     <div class="ca-cont">
-    <h1> Latest Corporate Actions </h1 >
+    <h1> News scrapped </h1 >
         <div class="table-card">
             <table id="latest-corporate-actions" class= "table"  style ="height:700px">
                 {% for d in data %}
                 <tr>
                     <td> {{ d.company_name }} </td>
-                    <td> {{ d.ca_type }} </td>
-                    <td> {{ d.div_percent}}</td>
-                    <td> {{ d.div_type }}</td>
-                    <td> {{ d.ex_date }}</td>    
+                    <td> {{ d.publish_date }} </td>
+                    <td> {{ d.ca_name}}</td>
+                    <td> <a href=  "{{ d.url }}"> Source</td>
                 </tr>
                 {% endfor %}
             </table>
@@ -30,15 +29,11 @@
                 $('#latest-corporate-actions').DataTable({
                     columns: [
                         { title: "Company Name" },
-                        { title: "CA Type" },
-                        { title: "Dividend_%" },
-                        { title: "Dividend Type" },
-                        { title: "ex_date"},
-  
+                        { title: "Date" },
+                        { title: "Corporate action" },
+                        { title: "Source" },
                     ]
                 });
             });
     </script>
     {% endblock %}
-    
-    

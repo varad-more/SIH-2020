@@ -22,22 +22,29 @@ from reportlab.platypus import Paragraph
 @permission_required ('corp_action_data.view_user')
 def index (request):
     data = corp_action_data.objects.all()
-    
+    data_1 = corp_action_data.objects.filter(ca_type="dividends")
+    data_2 = corp_action_data.objects.filter(ca_type="board_meeting")
+    data_3 = corp_action_data.objects.filter(ca_type="agm_egm")
+    data_4 = corp_action_data.objects.filter(ca_type="bonus")
+    data_5 = corp_action_data.objects.filter(ca_type="book closures")
+    data_6 = corp_action_data.objects.filter(ca_type="rights")
+    data_7 = corp_action_data.objects.filter(ca_type="splits")
+
     content = {
-        'data':data
+        'data':data_1
     }
-    print (content)
+
     return render (request , 'index.html',content)
 
 @login_required
 def report(request):
     #future expected page
-    data = articles.objects.filter(news_checked__gt = 1)
+    data = articles.objects.filter(news_checked__gt = 0)
     print (type (data))
     content = {
         'data':data
     }
-    return render (request, 'report.html',content)
+    return render (request, 'new.html',content)
 
 @login_required
 def rep_generatoion(request):
@@ -46,6 +53,15 @@ def rep_generatoion(request):
         'data':data
     }
     return render (request, 'gen.html', content) 
+
+
+@login_required
+def sec_master(request):
+    data = corp_action_data.objects.all()[:100]
+    content = {
+        'data':data
+    }
+    return render (request, 'secmast.html', content) 
 
 
 
