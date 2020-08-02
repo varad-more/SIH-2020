@@ -89,14 +89,14 @@ class historic_data(models.Model):
     security_code  = models.TextField(default=None)
     security_name  = models.TextField(default=None)
     company_name = models.CharField(max_length=255)
-    ex_date = models.DateField(default=None)
+    ex_date = models.CharField(max_length=255,null=True)
     ca_type = models.CharField(max_length=255)
-    rec_date = models.DateField(default=None)
-    bc_start_date = models.DateField(default=None)
-    bc_end_date = models.DateField(default=None)
-    nd_start_date = models.DateField(default=None)
-    nd_end_date = models.DateField(default=None)
-    pay_date = models.DateField(default=None)
+    rec_date = models.CharField(max_length=255,null=True)
+    bc_start_date = models.CharField(max_length=255,null=True)
+    bc_end_date = models.CharField(max_length=255,null=True)
+    nd_start_date = models.CharField(max_length=255,null=True)
+    nd_end_date = models.CharField(max_length=255,null=True)
+    
 
 class links(models.Model):
     from_id = models.IntegerField()

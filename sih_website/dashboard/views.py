@@ -49,8 +49,13 @@ def report(request):
 
 @login_required
 def dash_web(request):
-    count = corp_action_data.objects.all()
-    data = corp_action_data.objects
+    count = []
+    ca = []
+
+    data = corp_action_data.objects.all()
+    for d in data:
+         
+     
     content = {
         'ca_count':count,
         'data' : data
