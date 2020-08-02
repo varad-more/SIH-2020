@@ -10,3 +10,10 @@ datefinder
 pdfminer
 tika
 spacy
+re
+nltk
+pytesseract
+glob
+pdf2image
+pillow
+
