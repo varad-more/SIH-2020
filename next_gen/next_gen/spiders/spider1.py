@@ -23,8 +23,27 @@ class spider1(scrapy.Spider):
         yield scrapy.Request('https://www.godrejagrovet.com/corporate-announcements.aspx', self.parse)
         yield scrapy.Request('https://www.dabur.com/in/en-us/investor/investor-information/notices/annual-general-meetings', self.parse) 
         yield scrapy.Request('https://www.dabur.com/in/en-us/investor/investor-information/notices/notices-of-agm-postal-ballots', self.parse)  
-        
-        
+        yield scrapy.Request('https://www.itcportal.com/investor/index.aspx', self.parse)
+        yield scrapy.Request('https://www.cipla.com/investors/intimation-stock-exchanges', self.parse)        
+        yield scrapy.Request('https://www.crisil.com/en/home/investors/corporate-announcements.html', self.parse)
+        yield scrapy.Request('https://www.dabur.com/in/en-us/investor/investor-information/notices/record-date-book-closure',self.parse)
+        yield scrapy.Request('https://www.dabur.com/in/en-us/investor/investor-information/notices/notices-of-agm-postal-ballots',self.parse)
+        yield scrapy.Request('https://www.dabur.com/in/en-us/investor/investor-information/notices/board-meetings',self.parse)
+        yield scrapy.Request('https://www.dabur.com/in/en-us/investor/investor-information/notices/annual-general-meetings',self.parse)
+        yield scrapy.Request('http://www.bhel.com/index.php/notice_announce',self.parse)
+        yield scrapy.Request('https://www.sbi.co.in/web/corporate-governance/corporate-governance',self.parse)
+        yield scrapy.Request('https://sail.co.in/financials-0',self.parse)
+        yield scrapy.Request('https://www.titancompany.in/investors/investor-relations/corporate-announcements',self.parse)
+        yield scrapy.Request('https://finolex.com/investor/',self.parse)
+        yield scrapy.Request('https://www.hdfc.com/investor-services#listing',self.parse)
+        yield scrapy.Request('https://www.hdfc.com/sites/default/files/2020-07/EQUITY%20HISTORY-30062020.pdf',self.parse)
+        yield scrapy.Request('https://www.heromotocorp.com/en-in/announcements-and-disclosures.html',self.parse)
+        yield scrapy.Request('https://www.heromotocorp.com/en-in/dividend-details-pattern.html',self.parse)
+        yield scrapy.Request('https://www.ambujacement.com/investors/shareholders-information/disclosures-to-the-stock-exchanges/board-meeting',self.parse)
+        yield scrapy.Request('https://www.voltas.com/announcements',self.parse)
+        yield scrapy.Request('https://www.tataconsumer.com/investors/inv_announcements?reload',self.parse)
+
+
 
     def parse(self, response):
         # link = response.xpath("//a")
@@ -56,7 +75,7 @@ class spider1(scrapy.Spider):
                 company_name_temp = parent_link.split('/')
                 company_name = ''
                 for i in company_name_temp:
-                    if ((i[-4:] == '.com') | (i[-4:] == '.in')):
+                    if ((i[-4:] == '.com') or (i[-4:] == '.in')):
                         company_name = i
 
 

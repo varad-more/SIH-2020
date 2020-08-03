@@ -9,5 +9,8 @@ pip install mysqlclient
 
 4. Report Lab
 
-django
-crispy-djagno-forms 
+5. django
+crispy-djagno-forms
+
+6. django-rest framework
+pip install djangorestframework
