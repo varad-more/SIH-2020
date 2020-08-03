@@ -18,13 +18,21 @@ class spider1(scrapy.Spider):
         yield scrapy.Request('https://www.silvertouch.com/about-us/investors/', self.parse)
         yield scrapy.Request('https://www.tcs.com/view-all-corporate-actions#searchIn=/content/tcs/_en&tagId=tcs_discover-tcs/investor-relations/ir-corporate-actions&sortBy=publishedDate&M=yes&Y=yes&IR=true', self.parse)
         yield scrapy.Request('https://www.dabur.com/in/en-us/investor/investor-information/notices/record-date-book-closure', self.parse)
-        # yield scrapy.Request('https://www.nestle.in/media/specialannouncements', self.parse)
+        yield scrapy.Request('https://www.nestle.in/media/specialannouncements', self.parse)
         yield scrapy.Request('https://www.dabur.com/in/en-us/investor/investor-information/notices/board-meetings', self.parse)
         yield scrapy.Request('https://www.godrejagrovet.com/corporate-announcements.aspx', self.parse)
         yield scrapy.Request('https://www.dabur.com/in/en-us/investor/investor-information/notices/annual-general-meetings', self.parse) 
         yield scrapy.Request('https://www.dabur.com/in/en-us/investor/investor-information/notices/notices-of-agm-postal-ballots', self.parse)  
-        
-        
+        yield scrapy.Request( 'https://www.dabur.com/in/en-us/investor/investor-information/notices/board-meetings',self.parse)
+        yield scrapy.Request( 'https://www.dabur.com/in/en-us/investor/investor-information/notices/annual-general-meetings',self.parse)
+        yield scrapy.Request( 'http://www.bhel.com/index.php/notice_announce',self.parse)
+        yield scrapy.Request( 'https://www.titancompany.in/investors/investor-relations/corporate-announcements',self.parse)
+        yield scrapy.Request( 'https://www.hdfc.com/investor-services#listing',self.parse)
+        yield scrapy.Request( 'https://www.hdfc.com/sites/default/files/2020-07/EQUITY%20HISTORY-30062020.pdf',self.parse)
+        yield scrapy.Request( 'https://www.voltas.com/announcements',self.parse)
+        yield scrapy.Request( 'https://www.ambujacement.com/investors/shareholders-information',self.parse)
+        yield scrapy.Request( 'https://www.heromotocorp.com/en-in/dividend-details-pattern.html' ,self.parse)
+        yield scrapy.Request('https://www.heromotocorp.com/en-in/announcements-and-disclosures.html', self.parse)
 
     def parse(self, response):
         # link = response.xpath("//a")
