@@ -251,18 +251,18 @@ def get_ss_data(text_string):
     return fv
 
 
-def connect_database():
-    conn = mysql.connector.connect(host='database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com',
-                                        user='admin',
-                                        password='SIH_2020',
-                                        database='web_server')
-    cursor = conn.cursor()
-    if conn.is_connected():
-        cursor.execute("show tables")
-        res = cursor.fetchall()
-        print("Available databases: ", res,"\n")
+# def connect_database():
+#     conn = mysql.connector.connect(host='database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com',
+#                                         user='admin',
+#                                         password='SIH_2020',
+#                                         database='web_server')
+#     cursor = conn.cursor()
+#     if conn.is_connected():
+#         cursor.execute("show tables")
+#         res = cursor.fetchall()
+#         print("Available tables: ", res,"\n")
 
-    return(conn,cursor)
+#     return(conn,cursor)
 
 
 def pdf_load(conn,cursor):
@@ -301,7 +301,7 @@ def pdf_load(conn,cursor):
                 else:
                     security_id_type = "trading symbol"
                 print (date_ca ,ca_name, security_id_type,ex_date,rec_date , pay_date )
-                
+
                 if ca_name=='dividend':
                     perc, fv = get_div_data(text_string)
                     remarks = fv
@@ -313,14 +313,17 @@ def pdf_load(conn,cursor):
                     pay_date ,
                     remarks)
                     VALUES
-                    (date_ca , 
-                    ca_name, 
-                    security_id_type,
-                    ex_date,
-                    rec_date , 
-                    pay_date ,
-                    remarks) """
+                    (%s, 
+                    %s, 
+                    %s,
+                    %s,
+                    %s , 
+                    %s ,
+                    %s) """
+                    values = (date_ca ,ca_name, security_id_type,ex_date,rec_date , pay_date ,remarks)
+                    # cursor.execute(sql,values)
                     print (date_ca ,ca_name, security_id_type,ex_date,rec_date , pay_date ,remarks)
+                
                 elif ca_name=='stock split':
                     fv = get_ss_data(text_string)
                     remarks = fv
@@ -332,14 +335,18 @@ def pdf_load(conn,cursor):
                     pay_date ,
                     remarks )
                     VALUES
-                    (date_ca , 
-                    ca_name , 
-                    security_id_type,
-                    ex_date , 
-                    rec_date , 
-                    pay_date ,
-                    remarks ) """
+                    (%s , 
+                    %s , 
+                    %s,
+                    %s , 
+                    %s , 
+                    %s ,
+                    %s ) """
+                    values = (date_ca , ca_name , security_id_type, ex_date , rec_date , pay_date , remarks )
+                    
+                    print (date_ca ,ca_name, security_id_type,ex_date,rec_date , pay_date ,remarks)
                 else:       
+                    remarks='else'
                     sql = """INSERT INTO dashboard_dashboard (date_ca , 
                     ca_name , 
                     security_id_type,
@@ -348,30 +355,43 @@ def pdf_load(conn,cursor):
                     pay_date ,
                     remarks)
                     VALUES 
-                    (date_ca , 
-                    ca_name , 
-                    security_id_type,
-                    ex_date , 
-                    rec_date , 
-                    pay_date ,
-                    remarks) """
-                
-                cursor.execute(sql)
+                    (%s, 
+                    %s , 
+                    %s,
+                    %s , 
+                    %s , 
+                    %s,
+                    %s) """
+                    values = (date_ca , ca_name , security_id_type, ex_date , rec_date , pay_date , remarks )
+
+                cursor.execute(sql,values)
+                conn.commit()
+                # cursor.execute(sql)
                 
             # except:
             #     # cursor.execute("UPDATE crawler_2 set url_error=1 WHERE url_of_file=%s",(link,))
             #     print("couldn't download from "+link)
 
 
+conn = mysql.connector.connect(host='database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com',
+                                        user='admin',
+                                        password='SIH_2020',
+                                        database='web_server')
+cursor = conn.cursor()
+if conn.is_connected():
+    cursor.execute("show tables")
+    res = cursor.fetchall()
+    print("Available tables: ", res,"\n")
+
 
 
 if __name__ == "__main__":
     start_time = time.time()
-    conn,cursor = connect_database()
+    # conn,cursor = connect_database()
     print(conn)
 
     pdf_load(conn,cursor)
-    conn.commit()
+ 
 
     print("main time = ", time.time() - start_time)
         
