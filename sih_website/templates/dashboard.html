@@ -2,25 +2,109 @@
 
 {% block content %}
 
-<canvas id="myfun"></canvas>
+<div class="row">
+    <div class= "col-sm-4">
+        <canvas id="myChart"> </canvas>
+    </div>
+    <div class= "col-sm-4">    
+        <canvas id="myChart2"></canvas>
+    </div>
+</div>
+
+<div class="row">
+    <div class= "col-sm-4">
+        <canvas id="myChart3"> </canvas>
+    </div>
+    <div class= "col-sm-4">    
+        <canvas id="myChart4"></canvas>
+    </div>
+</div>
 
 
-
-{% endblock %}
-
-
-{% block scripts %}
 <script src= "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"> </script>    
 <script>
-$(document).ready(function () {
-    $('#myfun').Chart(
-        ctx,
-        {
-            type:'pie',
-            data:[2,3,4,5],
-            options:[2,3,4,4]
-        });
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+        labels: [{%  for i in data  %}  "{{ i.ca_type }}", {% endfor %}],
+        datasets: [{
+            label: 'distribution of CA',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [{% for i in data %} {{i.ann}} , {% endfor %}]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
 });
 
+var ctx = document.getElementById('myChart2').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: [{%  for i in data  %}  "{{ i.ca_type }}", {% endfor %}],
+        datasets: [{
+            label: 'distribution of other things ',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [{% for i in data %} {{i.ann}} , {% endfor %}]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+
+var ctx = document.getElementById('myChart3').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'pie',
+
+    // The data for our dataset
+    data: {
+        labels: [{%  for i in data  %}  "{{ i.ca_type }}", {% endfor %}],
+        datasets: [{
+            label: 'distribution of other things ',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [{% for i in data %} {{i.ann}} , {% endfor %}]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+
+var ctx = document.getElementById('myChart4').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'radar',
+
+    // The data for our dataset
+    data: {
+        labels: [{%  for i in data  %}  "{{ i.ca_type }}", {% endfor %}],
+        datasets: [{
+            label: 'distribution of other things ',
+            backgroundColor:    'aqua',
+            data: [{% for i in data %} {{i.ann}} , {% endfor %}]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+
+$('.sidebar-menu-item').click(function() {
+    $('.sidebar-menu-item').removeClass('active');
+    $(this).addClass('active');
+    })
 </script>
 {% endblock %}

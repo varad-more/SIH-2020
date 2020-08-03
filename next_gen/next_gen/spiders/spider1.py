@@ -14,12 +14,18 @@ class spider1(scrapy.Spider):
     # ]
     # c = response.xpath("//following::tr[4]/td[2]/a[contains(@href,'.pdf')]")
     def start_requests(self):
-        # yield scrapy.Request('https://www.ril.com/InvestorRelations/Corporate-Announcements.aspx', self.parse)
-        # yield scrapy.Request('https://www.silvertouch.com/about-us/investors/', self.parse)
-        # yield scrapy.Request('https://www.tcs.com/view-all-corporate-actions#searchIn=/content/tcs/_en&tagId=tcs_discover-tcs/investor-relations/ir-corporate-actions&sortBy=publishedDate&M=yes&Y=yes&IR=true', self.parse)
+        yield scrapy.Request('https://www.ril.com/InvestorRelations/Corporate-Announcements.aspx', self.parse)
+        yield scrapy.Request('https://www.silvertouch.com/about-us/investors/', self.parse)
+        yield scrapy.Request('https://www.tcs.com/view-all-corporate-actions#searchIn=/content/tcs/_en&tagId=tcs_discover-tcs/investor-relations/ir-corporate-actions&sortBy=publishedDate&M=yes&Y=yes&IR=true', self.parse)
+        yield scrapy.Request('https://www.dabur.com/in/en-us/investor/investor-information/notices/record-date-book-closure', self.parse)
         yield scrapy.Request('https://www.nestle.in/media/specialannouncements', self.parse)
-        # yield scrapy.Request('https://www.godrejagrovet.com/corporate-announcements.aspx', self.parse)
+        yield scrapy.Request('https://www.dabur.com/in/en-us/investor/investor-information/notices/board-meetings', self.parse)
+        yield scrapy.Request('https://www.godrejagrovet.com/corporate-announcements.aspx', self.parse)
+        yield scrapy.Request('https://www.dabur.com/in/en-us/investor/investor-information/notices/annual-general-meetings', self.parse) 
+        yield scrapy.Request('https://www.dabur.com/in/en-us/investor/investor-information/notices/notices-of-agm-postal-ballots', self.parse)  
         
+        
+
     def parse(self, response):
         # link = response.xpath("//a")
         # print(link)
@@ -27,12 +33,11 @@ class spider1(scrapy.Spider):
         # mydatabase = mysql.connector.connect (host = 'localhost', user = 'root',password='', database = 'temp_sih')
         # mycursor = mydatabase.cursor()
         
-        mydatabase = mysql.connector.connect (host='database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com', user='admin', password='SIH_2020',database='pythanos_main',)
+        mydatabase = mysql.connector.connect (host='database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com', user='admin', password='SIH_2020',database='web_server')
         mycursor = mydatabase.cursor()
 
         print (mycursor)
         link = response.xpath("//@href").extract()
-        print (type(response.url))
         for abs_urls in link:
             if (abs_urls[-4:] == '.pdf'):
                 loader = ItemLoader(item = NextGenItem(),selector=link)
@@ -47,30 +52,40 @@ class spider1(scrapy.Spider):
                         # final_filename = str(i)
                         # print (i)        
                 
-                parent_link = "https://www.ril.com/InvestorRelations/Corporate-Announcements.aspx"
-                company_name = "tata.com"
-
-                query_search = ("select id from crawler_2 where file_url = (%s)")
-                query_value = (str(absolute_url))
-                mycursor.execute(query_search,(query_value,))
-                result = mycursor.fetchall()
-                '''
-                query_search = ("select file_url from crawler_2 ")
-                mycursor.execute(query_search)
-                result = mycursor.fetchall()
-                '''
+                parent_link = response.url
+                company_name_temp = parent_link.split('/')
+                company_name = ''
+                for i in company_name_temp:
+                    if ((i[-4:] == '.com') | (i[-4:] == '.in')):
+                        company_name = i
 
 
-                file_hash_temp =  hashlib.sha1(str_absolute_url.encode())
-                file_hash = file_hash_temp.hexdigest()
+                query_search_1 = ("select count(id) from dashboard_file_download")
+                mycursor.execute(query_search_1)                
+                result_1 = mycursor.fetchall()
 
-                # print (len(result))
-                if (len(result) == 0 ):
+                if (result_1[0][0] > 0):
+                    query_search = ("select id from dashboard_file_download where url_of_file = (%s)")
+                    query_value = (str(absolute_url))
+                    mycursor.execute(query_search,(query_value,))
+                    result = mycursor.fetchall()
+                 
+                    file_hash_temp =  hashlib.sha1(str_absolute_url.encode())
+                    file_hash = file_hash_temp.hexdigest()
+                    if (len(result) == 0 ):
+                        values = (company_name, parent_link ,str(absolute_url),file_hash)
+                        query_insert = "INSERT INTO dashboard_file_download (company_name, parent_link,url_of_file,sha_file)  values (%s,%s,%s,%s)"
+                        mycursor.execute (query_insert, values)
+                        mydatabase.commit()
+                        loader.add_value('file_urls', absolute_url)
+                        # yield loader.load_item()
+                else:
+                    file_hash_temp =  hashlib.sha1(str_absolute_url.encode())
+                    file_hash = file_hash_temp.hexdigest()
                     values = (company_name, parent_link ,str(absolute_url),file_hash)
-                    query_insert = "INSERT INTO crawler_2 (company_name, parent_link,file_url,sha_file)  values (%s,%s,%s,%s)"
+                    query_insert = "INSERT INTO dashboard_file_download (company_name, parent_link,url_of_file,sha_file)  values (%s,%s,%s,%s)"
                     mycursor.execute (query_insert, values)
                     mydatabase.commit()
                     loader.add_value('file_urls', absolute_url)
-                    yield loader.load_item()
-            
+                    # yield loader.load_item()
 

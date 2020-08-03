@@ -14,13 +14,13 @@ class spider1(scrapy.Spider):
     # ]
     # c = response.xpath("//following::tr[4]/td[2]/a[contains(@href,'.pdf')]")
     def start_requests(self):
-        # yield scrapy.Request('https://www.ril.com/InvestorRelations/Corporate-Announcements.aspx', self.parse)
-        # yield scrapy.Request('https://www.silvertouch.com/about-us/investors/', self.parse)
-        # yield scrapy.Request('https://www.tcs.com/view-all-corporate-actions#searchIn=/content/tcs/_en&tagId=tcs_discover-tcs/investor-relations/ir-corporate-actions&sortBy=publishedDate&M=yes&Y=yes&IR=true', self.parse)
+        yield scrapy.Request('https://www.ril.com/InvestorRelations/Corporate-Announcements.aspx', self.parse)
+        yield scrapy.Request('https://www.silvertouch.com/about-us/investors/', self.parse)
+        yield scrapy.Request('https://www.tcs.com/view-all-corporate-actions#searchIn=/content/tcs/_en&tagId=tcs_discover-tcs/investor-relations/ir-corporate-actions&sortBy=publishedDate&M=yes&Y=yes&IR=true', self.parse)
         yield scrapy.Request('https://www.dabur.com/in/en-us/investor/investor-information/notices/record-date-book-closure', self.parse)
         # yield scrapy.Request('https://www.nestle.in/media/specialannouncements', self.parse)
         yield scrapy.Request('https://www.dabur.com/in/en-us/investor/investor-information/notices/board-meetings', self.parse)
-        # yield scrapy.Request('https://www.godrejagrovet.com/corporate-announcements.aspx', self.parse)
+        yield scrapy.Request('https://www.godrejagrovet.com/corporate-announcements.aspx', self.parse)
         yield scrapy.Request('https://www.dabur.com/in/en-us/investor/investor-information/notices/annual-general-meetings', self.parse) 
         yield scrapy.Request('https://www.dabur.com/in/en-us/investor/investor-information/notices/notices-of-agm-postal-ballots', self.parse)  
         
@@ -38,7 +38,6 @@ class spider1(scrapy.Spider):
 
         print (mycursor)
         link = response.xpath("//@href").extract()
-        print (type(response.url))
         for abs_urls in link:
             if (abs_urls[-4:] == '.pdf'):
                 loader = ItemLoader(item = NextGenItem(),selector=link)
@@ -64,9 +63,8 @@ class spider1(scrapy.Spider):
                 query_search_1 = ("select count(id) from dashboard_file_download")
                 mycursor.execute(query_search_1)                
                 result_1 = mycursor.fetchall()
-                print (result_1[0][0])
 
-                if (result_1[0][0] != 0):
+                if (result_1[0][0] > 0):
                     query_search = ("select id from dashboard_file_download where url_of_file = (%s)")
                     query_value = (str(absolute_url))
                     mycursor.execute(query_search,(query_value,))
@@ -80,7 +78,7 @@ class spider1(scrapy.Spider):
                         mycursor.execute (query_insert, values)
                         mydatabase.commit()
                         loader.add_value('file_urls', absolute_url)
-                        yield loader.load_item()
+                        # yield loader.load_item()
                 else:
                     file_hash_temp =  hashlib.sha1(str_absolute_url.encode())
                     file_hash = file_hash_temp.hexdigest()
@@ -89,5 +87,5 @@ class spider1(scrapy.Spider):
                     mycursor.execute (query_insert, values)
                     mydatabase.commit()
                     loader.add_value('file_urls', absolute_url)
-                    yield loader.load_item()
+                    # yield loader.load_item()
 

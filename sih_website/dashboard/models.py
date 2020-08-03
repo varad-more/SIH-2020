@@ -90,7 +90,7 @@ class historic_data(models.Model):
     security_name  = models.TextField(default=None)
     company_name = models.CharField(max_length=255)
     ex_date = models.CharField(max_length=255,null=True)
-    ca_type = models.CharField(max_length=255)
+    ca_type  = models.CharField(max_length=255)
     rec_date = models.CharField(max_length=255,null=True)
     bc_start_date = models.CharField(max_length=255,null=True)
     bc_end_date = models.CharField(max_length=255,null=True)

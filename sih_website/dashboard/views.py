@@ -5,7 +5,7 @@ from .forms import UserRegistrationForm
 from django.contrib.auth.decorators import login_required,permission_required
 from dashboard.models import file_download,corp_action_data,articles,company, dashboard,errors, historic_data, links, pages, securities,links 
 import mysql.connector 
-
+from django.db.models import Count 
 
 import io
 import ast
@@ -49,16 +49,13 @@ def report(request):
 
 @login_required
 def dash_web(request):
-    count = []
-    ca = []
-
-    data = corp_action_data.objects.all()
+    data = corp_action_data.objects.values('ca_type').order_by().annotate(ann=Count('ca_type'))
     for d in data:
-         
-     
+        print(d)
+    
+    
     content = {
-        'ca_count':count,
-        'data' : data
+        'data':data
     }
 
     return render(request,'dashboard.html',content)
