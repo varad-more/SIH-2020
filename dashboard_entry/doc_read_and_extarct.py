@@ -38,7 +38,8 @@ def read_pdf(pdf):
         text_string = file2.read()
     else:
         text_string = ""
-        text_string = read_pdf_by_ocr(pdf)
+        print("image")
+        # text_string = read_pdf_by_ocr(pdf)
     return text_string
 
 
@@ -248,7 +249,14 @@ def get_ss_data(text_string):
     match = re.search(regex, text_string)  
     if match != None:
         fv = "Rs. "+ match.group(1) +"per equity share of Rs. "+ match.group(6)  #remember to change .group(par) after changing regex
-    return fv
+    perc=""
+    regex = r"((\d+)\.(\d+)( |)%) | (\d+)( |)%" # considers the first occurence
+    match = re.search(regex, text_string)  
+    if match != None:
+        perc = match.group(0)
+    return perc,fv
+
+
 
 
 # def connect_database():
@@ -266,12 +274,12 @@ def get_ss_data(text_string):
 
 
 def pdf_load(conn,cursor):
-    cursor.execute("SELECT url_of_file,company_name FROM dashboard_file_download where ca_extracted=0 limit 100")
+    cursor.execute("SELECT url_of_file FROM dashboard_file_download where ca_extracted=0 limit 10")
     pdf_links_from_table = pd.DataFrame(cursor.fetchall())
     if len(pdf_links_from_table)!=0:
         # print(pdf_links_from_table)
         pdf_links = pdf_links_from_table[0].tolist()
-        # company_name = pdf_links[1].tolist()
+        # company_name = pdf_links_from_table[1].tolist()
         # print("company links: ",company_name)
         
         for link in pdf_links:
@@ -280,93 +288,123 @@ def pdf_load(conn,cursor):
                 with open('data.pdf', 'wb') as fd:
                     for chunk in r.iter_content(2000):
                         fd.write(chunk)
-                
+                        
                 print(link)
                 text_string = read_pdf("data.pdf")
+                # text_string = read_pdf(pdf)
                 
                 print("------------------------------")
                 # print(text_string)
                 # print("------------------------------")
                 
-                
-                sql = "UPDATE dashboard_file_download SET ca_extracted=0 WHERE url_of_file=%s"
-                cursor.execute(sql ,(link,))
+                cursor.execute("UPDATE dashboard_file_download SET ca_extracted=1 WHERE url_of_file=%s" ,(link,))
 
                 scrip_code = get_scrip(text_string)
                 date_ca = get_date("data.pdf")
+                # date_ca = get_date(pdf)
                 ca_name = get_ca_type_1(text_string)
                 ex_date, rec_date, pay_date = get_other_dates("data.pdf", text_string)
+                # ex_date, rec_date, pay_date = get_other_dates(pdf, text_string)
                 if scrip_code!="":
                     security_id_type = "scrip code"
                 else:
                     security_id_type = "trading symbol"
-                print (date_ca ,ca_name, security_id_type,ex_date,rec_date , pay_date )
+                
+                company_name = ""
+
+                sql_select = "SELECT url_of_file,company_name FROM dashboard_file_download WHERE ca_extracted=1 limit 10"
+                cursor.execute(sql_select)
+                records = cursor.fetchall()
+
+                for row in records:
+                    if row[0]==link:
+                        company_name = row[1]
+                print("---", date_ca ,ca_name, security_id_type,ex_date,rec_date , pay_date, scrip_code, "  CN  ",company_name)
+
+                sql = ""
 
                 if ca_name=='dividend':
                     perc, fv = get_div_data(text_string)
                     remarks = fv
                     sql = """INSERT INTO dashboard_dashboard (date_ca , 
+                    company_name,
                     ca_name, 
                     security_id_type,
                     ex_date,
                     rec_date , 
                     pay_date ,
-                    remarks)
+                    remarks,
+                    scrip_code,
+                    link)
                     VALUES
                     (%s, 
+                    %s,
                     %s, 
                     %s,
                     %s,
                     %s , 
                     %s ,
+                    %s,
+                    %s,
+                    %s,
                     %s) """
-                    values = (date_ca ,ca_name, security_id_type,ex_date,rec_date , pay_date ,remarks)
+                    values = (date_ca ,company_name, ca_name, security_id_type,ex_date,rec_date , pay_date ,remarks, scrip_code, link)
                     # cursor.execute(sql,values)
-                    print (date_ca ,ca_name, security_id_type,ex_date,rec_date , pay_date ,remarks)
+                    print (date_ca ,company_name, ca_name, security_id_type,ex_date,rec_date , pay_date ,remarks, scrip_code, fv)
                 
                 elif ca_name=='stock split':
                     fv = get_ss_data(text_string)
                     remarks = fv
                     sql = """INSERT INTO dashboard_dashboard (date_ca , 
+                    company_name,
                     ca_name , 
                     security_id_type,
                     ex_date , 
                     rec_date , 
                     pay_date ,
-                    remarks )
+                    remarks,
+                    scrip_code,
+                    link )
                     VALUES
                     (%s , 
+                    %s ,
                     %s , 
                     %s,
                     %s , 
                     %s , 
                     %s ,
+                    %s ,
+                    %s ,
                     %s ) """
-                    values = (date_ca , ca_name , security_id_type, ex_date , rec_date , pay_date , remarks )
+                    values = (date_ca , company_name, ca_name , security_id_type, ex_date , rec_date , pay_date , remarks, scrip_code, link )
                     
-                    print (date_ca ,ca_name, security_id_type,ex_date,rec_date , pay_date ,remarks)
+                    print (date_ca ,company_name, ca_name, security_id_type,ex_date,rec_date , pay_date ,remarks, scrip_code)
                 else:       
-                    remarks='else'
+                    remarks='Confirmed by news source'
                     sql = """INSERT INTO dashboard_dashboard (date_ca , 
+                    company_name,
                     ca_name , 
                     security_id_type,
                     ex_date , 
                     rec_date , 
                     pay_date ,
-                    remarks)
+                    remarks,
+                    scrip_code,
+                    link)
                     VALUES 
                     (%s, 
+                    %s,
                     %s , 
                     %s,
                     %s , 
                     %s , 
+                    %s,
+                    %s,
                     %s,
                     %s) """
-                    values = (date_ca , ca_name , security_id_type, ex_date , rec_date , pay_date , remarks )
-
+                    values = (date_ca , company_name, ca_name , security_id_type, ex_date , rec_date , pay_date , remarks, scrip_code, link )
                 cursor.execute(sql,values)
                 conn.commit()
-                # cursor.execute(sql)
                 
             # except:
             #     # cursor.execute("UPDATE crawler_2 set url_error=1 WHERE url_of_file=%s",(link,))
@@ -391,7 +429,6 @@ if __name__ == "__main__":
     print(conn)
 
     pdf_load(conn,cursor)
- 
 
     print("main time = ", time.time() - start_time)
         
