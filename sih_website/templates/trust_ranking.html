@@ -2,9 +2,91 @@
 
     {% block content %}
     <div class="ca-cont">
-    <h1> Trusted Website Ranking </h1 >
+    
+        <div class="trusted-header">
+            Most Trusted Sources
+        </div>
+
+        <div class="col-12 rank-summary d-flex p-0 mb-5">
+            <div class="col-3">
+                <div class="rank-chart-wrapper">
+                    <div class="rank-heading">
+                        {{data.0.name}}
+                    </div>
+    
+                    <div class="trust-chart">
+                        <canvas width="200" height="200" id="chart-1">
+    
+                        </canvas >
+    
+                        <div class="trust-percent">
+                            {{ data.0.web_rank}}%
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="rank-chart-wrapper">
+                    <div class="rank-heading">
+                        {{data.1.name}}
+                    </div>
+    
+                    <div class="trust-chart">
+                        <canvas width="200" height="200" id="chart-2">
+    
+                        </canvas >
+    
+                        <div class="trust-percent">
+                            {{ data.1.web_rank}}%
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="rank-chart-wrapper">
+                    <div class="rank-heading">
+                        {{data.2.name}}
+                    </div>
+    
+                    <div class="trust-chart">
+                        <canvas width="200" height="200" id="chart-3">
+    
+                        </canvas >
+    
+                        <div class="trust-percent">
+                            {{ data.2.web_rank}}%
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="rank-chart-wrapper">
+                    <div class="rank-heading">
+                        {{data.3.name}}
+                    </div>
+    
+                    <div class="trust-chart">
+                        <canvas width="200" height="200" id="chart-4">
+    
+                        </canvas >
+    
+                        <div class="trust-percent">
+                            {{ data.3.web_rank}}%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="trusted-header">
+            Trust Ranking
+        </div>
+
         <div class="table-card">
-            <table id="Trusted Website Ranking" class= "table"  style ="height:700px">
+            <table id="trusted-website-ranking" class= "table"  style ="height:700px">
                 {% for d in data %}
                 <tr>
                     <td> {{ d.name  }} </td>
@@ -20,27 +102,155 @@
     
     
     {% block scripts %}
-    <!-- <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"> </script>    
+    <script>
+        var p1 = {{data.0.web_rank | escapejs }}
+
+        var p2 = {{data.1.web_rank | escapejs }}
+
+        var p3 = {{data.2.web_rank | escapejs }}
+
+        var p4 = {{data.3.web_rank | escapejs }}
+
+        var ctx1 = document.getElementById('chart-1').getContext('2d');
+        var dc1 = new Chart(ctx1, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Trust Score', '',],
+                    datasets: [{
+                        label: 'OK',
+                        data: [p1, 100-p1],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.4)',
+                            '#F6F6F8',
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,0)',
+                            '#F6F6F8',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    tooltips: {
+                        enabled: false,
+                    },
+                    legend: {
+                        display: false
+                    },
+                }
+            });
+
+        
+        var ctx2 = document.getElementById('chart-2').getContext('2d');
+        var dc2 = new Chart(ctx2, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Trust Score', '',],
+                    datasets: [{
+                        label: 'OK',
+                        data: [p2, 100-p2],
+                        backgroundColor: [
+                            '#16DBCC50',
+                            '#F6F6F8',
+                        ],
+                        borderColor: [
+                            '#16DBCC00',
+                            '#F6F6F8',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    tooltips: {
+                        enabled: false,
+                    },
+                    legend: {
+                        display: false
+                    },
+                }
+            });
+
+        var ctx3 = document.getElementById('chart-3').getContext('2d');
+        var dc3 = new Chart(ctx3, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Trust Score', '',],
+                    datasets: [{
+                        label: 'OK',
+                        data: [p3, 100-p3],
+                        backgroundColor: [
+                            '#FFBB3850',
+                            '#F6F6F8',
+                        ],
+                        borderColor: [
+                            '#FFBB3800',
+                            '#F6F6F8',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    tooltips: {
+                        enabled: false,
+                    },
+                    legend: {
+                        display: false
+                    },
+                }
+            });
+
+        var ctx4 = document.getElementById('chart-4').getContext('2d');
+        var dc4 = new Chart(ctx4, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Trust Score', '',],
+                    datasets: [{
+                        label: 'OK',
+                        data: [p4, 100-p4],
+                        backgroundColor: [
+                            '#2D60FF50',
+                            '#F6F6F8',
+                        ],
+                        borderColor: [
+                            '#2D60FF00',
+                            '#F6F6F8',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    tooltips: {
+                        enabled: false,
+                    },
+                    legend: {
+                        display: false
+                    },
+                }
+            });
+    </script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function () {
-            
-                $('#latest-corporate-actions').DataTable({
+
+                $('#trusted-website-ranking').DataTable({
                     columns: [
-                        { title: "Company Name" },
-                        { title: "CA Type" },
-                        { title: "Dividend_%" },
-                        { title: "Dividend Type" },
-                        { title: "ex_date"},
-  
+                        { title: "Website Name" },
+                        { title: "Website URL" },
+                        { title: "Rank" },
                     ]
                 });
             });
 
-        $('.sidebar-menu-item').click(function() {
+        /* $('.sidebar-menu-item').click(function() {
             $('.sidebar-menu-item').removeClass('active');
             $(this).addClass('active');
-        })        
-    </script> -->
+        })  */       
+    </script>
     {% endblock %}
     
     
