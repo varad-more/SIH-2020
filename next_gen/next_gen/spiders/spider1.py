@@ -9,10 +9,6 @@ import hashlib
 class spider1(scrapy.Spider):
     name = "spider1"
 
-    # start_urls = [
-    #     "https://www.ril.com/InvestorRelations/Corporate-Announcements.aspx"
-    # ]
-    # c = response.xpath("//following::tr[4]/td[2]/a[contains(@href,'.pdf')]")
     def start_requests(self):
         yield scrapy.Request('https://www.ril.com/InvestorRelations/Corporate-Announcements.aspx', self.parse)
         yield scrapy.Request('https://www.silvertouch.com/about-us/investors/', self.parse)
@@ -45,13 +41,7 @@ class spider1(scrapy.Spider):
 
 
 
-    def parse(self, response):
-        # link = response.xpath("//a")
-        # print(link)
-        
-        # mydatabase = mysql.connector.connect (host = 'localhost', user = 'root',password='', database = 'temp_sih')
-        # mycursor = mydatabase.cursor()
-        
+    def parse(self, response):        
         mydatabase = mysql.connector.connect (host='database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com', user='admin', password='SIH_2020',database='web_server')
         mycursor = mydatabase.cursor()
 

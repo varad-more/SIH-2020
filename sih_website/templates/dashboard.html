@@ -3,19 +3,19 @@
 {% block content %}
 
 <div class="row">
-    <div class= "col-sm-4">
+    <div class= "col-md-5">
         <canvas id="myChart"> </canvas>
     </div>
-    <div class= "col-sm-4">    
+    <div class= "col-md-5">    
         <canvas id="myChart2"></canvas>
     </div>
 </div>
 
 <div class="row">
-    <div class= "col-sm-4">
+    <div class= "col-md-5">
         <canvas id="myChart3"> </canvas>
     </div>
-    <div class= "col-sm-4">    
+    <div class= "col-md-5">    
         <canvas id="myChart4"></canvas>
     </div>
 </div>
@@ -102,9 +102,7 @@ var chart = new Chart(ctx, {
     options: {}
 });
 
-$('.sidebar-menu-item').click(function() {
-    $('.sidebar-menu-item').removeClass('active');
-    $(this).addClass('active');
-    })
+        $('.sidebar-menu-item').removeClass('active');
+	    $('#Dashboard').addClass('active');
 </script>
 {% endblock %}

@@ -78,6 +78,7 @@ class dashboard(models.Model):
     other = models.CharField(max_length=30)
     exception = models.BooleanField()
     remarks = models.CharField(max_length=30)
+    scrip_code = models.CharField(max_length=30, default=None)
 
 
 class errors(models.Model):

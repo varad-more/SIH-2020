@@ -8,11 +8,11 @@
             <table id="latest-corporate-actions" class= "table"  style ="height:700px">
                 {% for d in data %}
                 <tr>
-                    <td> {{ d.company_name }} </td>
-                    <td> {{ d.ca_type }} </td>
-                    <td> {{ d.div_percent}}</td>
-                    <td> {{ d.div_type }}</td>
-                    <td> {{ d.ex_date }}</td>    
+                    <td> {{ d.isin }} </td>
+                    <td> {{ d.security_code }} </td>
+                    <td> {{ d.trading_symbol }}</td>
+                    <td> {{ d.industry }}</td>
+                    <td> {{ d.security_group }}</td>    
                 </tr>
                 {% endfor %}
             </table>
@@ -29,15 +29,18 @@
             
                 $('#latest-corporate-actions').DataTable({
                     columns: [
-                        { title: "Company Name" },
-                        { title: "CA Type" },
-                        { title: "Dividend_%" },
-                        { title: "Dividend Type" },
-                        { title: "ex_date"},
+                        { title: "ISIN" },
+                        { title: "Security Code" },
+                        { title: "Trading Symbol" },
+                        { title: "Industry" },
+                        { title: "Security Group" },
   
                     ]
                 });
             });
+
+        $('.sidebar-menu-item').removeClass('active');
+	        $('#Security-Master').addClass('active');      
     </script>
     {% endblock %}
     
