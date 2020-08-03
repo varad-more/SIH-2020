@@ -24,13 +24,16 @@ from .router import router
 
 urlpatterns = [
     path ('admin/', admin.site.urls),
-    path ('', index, name ='index'),
+    path ('', dash_web, name ='dash_web'),
+    # path ('', index, name ='index'),
     path ('future_expected', report, name='report'),
     path ('report_gen', rep_generatoion, name='report_gen'),
     path ('register',register, name ='register'),
     path ('security-master',sec_master, name ='secmaster'),
-    path ('dashboard',dash_web , name ='dash_web'),
+    path ('index',index , name ='index'),
+    # path ('index',index , name ='index'),
     path ('pdf_downloader', pdf_downloader, name= 'pdf_downloader'),
+    path ('conflict_manager', conflict_manager, name= 'conflict_manager'),
     path ('trust_ranking', trust_ranking, name= 'trust_ranking'),
     path ('login',auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path ('logout',auth_views.LogoutView.as_view(template_name='logout.html'), name='logout'),

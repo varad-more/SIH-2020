@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>CA Tracker</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -30,11 +30,11 @@
             </div>
 
             <div class="sidebar-menu">
-                <a href="{% url 'index' %}">
-                    <div id="home" class="sidebar-menu-item active">
+                <a href="{% url 'dash_web' %}">
+                    <div id="Dashboard" class="sidebar-menu-item active">
                         <i class="sidebar-menu-icon fa fa-home"></i>
                         <div class="sidebar-menu-option">
-                            Home
+                            Dashboard
                         </div>
                     </div>
                 </a>
@@ -58,7 +58,7 @@
                 </a>
 
                 <a href="security-master">
-                    <div id="Security Master" class="sidebar-menu-item">
+                    <div id="SecurityMaster" class="sidebar-menu-item">
                         <i class="sidebar-menu-icon fa fa-file-text"></i>
                         <div class="sidebar-menu-option">
                             Security Master
@@ -66,11 +66,29 @@
                     </div>
                 </a>
 
-                <a href="dashboard">
-                    <div id="Security Master" class="sidebar-menu-item">
+                <a href="#">
+                    <div id="home" class="sidebar-menu-item">
                         <i class="sidebar-menu-icon fa fa-file-text"></i>
                         <div class="sidebar-menu-option">
-                            Dashboard
+                            Corporate Actions
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="trust_ranking">
+                    <div id="Trusted Index" class="sidebar-menu-item">
+                        <i class="sidebar-menu-icon fa fa-file-text"></i>
+                        <div class="sidebar-menu-option">
+                            Trusted Index
+                        </div>
+                    </div>
+                </a>
+
+                <a href="conflict_manager">
+                    <div id="conflict_manager" class="sidebar-menu-item">
+                        <i class="sidebar-menu-icon fa fa-file-text"></i>
+                        <div class="sidebar-menu-option">
+                            Conflict Manager
                         </div>
                     </div>
                 </a>

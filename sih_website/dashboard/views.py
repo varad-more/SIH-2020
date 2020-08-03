@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import UserRegistrationForm
 from django.contrib.auth.decorators import login_required,permission_required
-from dashboard.models import file_download,corp_action_data,articles,company, dashboard,errors, historic_data, links, pages, securities,links, webs 
+from dashboard.models import file_download,corp_action_data,articles,company, securities_master, dashboard,errors, historic_data, links, pages, securities,links, webs, latest_news 
 import mysql.connector 
 from django.db.models import Count 
 
@@ -45,7 +45,7 @@ def report(request):
     content = {
         'data':data
     }
-    return render (request, 'report.html',content)
+    return render (request, 'new.html',content)
 
 @login_required
 def dash_web(request):
@@ -71,7 +71,7 @@ def rep_generatoion(request):
 
 @login_required
 def sec_master(request):
-    data = corp_action_data.objects.all()[:100]
+    data = securities_master.objects.all()[:100]
     content = {
         'data':data
     }
@@ -179,6 +179,15 @@ def trust_ranking(request):
     }
     return render (request, 'trust_ranking.html', content) 
 
+
+
+@login_required
+def conflict_manager(request):
+    data = latest_news.objects.all()[:]
+    content = {     
+        'data':data
+    }
+    return render (request, 'conflict_manager.html', content) 
 
 
 def register(request):
