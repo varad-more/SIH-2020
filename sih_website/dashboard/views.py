@@ -3,7 +3,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import UserRegistrationForm
 from django.contrib.auth.decorators import login_required,permission_required
-from dashboard.models import file_download,corp_action_data,articles,company, dashboard,errors, historic_data, links, pages, securities,links, webs 
+# from dashboard.models import file_download,corp_action_data,articles,company, dashboard,errors, historic_data, links, pages, securities,links, webs 
+from dashboard.models import *
 import mysql.connector 
 from django.db.models import Count 
 
@@ -20,7 +21,6 @@ from reportlab.platypus import Paragraph
 # Create your views here.
 
 @login_required
-@permission_required ('corp_action_data.view_user')
 def index (request):
     data = corp_action_data.objects.all()
     data_1 = corp_action_data.objects.filter(ca_type="dividends")
@@ -45,7 +45,7 @@ def report(request):
     content = {
         'data':data
     }
-    return render (request, 'report.html',content)
+    return render (request, 'new.html',content)
 
 @login_required
 def dash_web(request):
@@ -71,7 +71,7 @@ def rep_generatoion(request):
 
 @login_required
 def sec_master(request):
-    data = corp_action_data.objects.all()[:100]
+    data = securities_master.objects.all()[:100]
     content = {
         'data':data
     }

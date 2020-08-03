@@ -130,6 +130,6 @@ STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static'), ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'dash_web'
 
 LOGIN_URL = 'login'
