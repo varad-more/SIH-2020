@@ -35,6 +35,7 @@ def read_pdf(pdf):
         file2 = open("output_of_pdf_read.txt","r") 
         text_string = file2.read()
     else:
+        text_string = ""
         text_string = read_pdf_by_ocr(pdf)
     return text_string
 
@@ -174,7 +175,10 @@ def get_date(pdf):
     try:
         date = md['date']
     except KeyError:
-        date = md['Creation-Date']
+        try:
+            date = md['Creation-Date']
+        except:
+            date = '2020-01-01'
     return(date[0:10])
 
 
@@ -287,35 +291,68 @@ def pdf_load(conn,cursor):
                 date_ca = get_date("data.pdf")
                 ca_name = get_ca_type_1(text_string)
                 ex_date, rec_date, pay_date = get_other_dates("data.pdf", text_string)
-
+                if scrip_code!="":
+                    security_id_type = "scrip code"
+                else:
+                    security_id_type = "trading symbol"
+                print (date_ca ,ca_name, security_id_type,ex_date,rec_date , pay_date )
+                
                 if ca_name=='dividend':
                     perc, fv = get_div_data(text_string)
                     remarks = fv
-                    sql = """INSERT INTO dashboard_dashboard VALUES 
-                    (date_ca VARCHAR(11), 
-                    ca_name VARCHAR(25), 
-                    ex_date VARCHAR(10), 
-                    rec_date VARCHAR(10), 
-                    pay_date VARCHAR(10),
-                    remarks VARCHAR(30)) """
+                    sql = """INSERT INTO dashboard_dashboard (date_ca , 
+                    ca_name, 
+                    security_id_type,
+                    ex_date,
+                    rec_date , 
+                    pay_date ,
+                    remarks)
+                    VALUES
+                    (date_ca , 
+                    ca_name, 
+                    security_id_type,
+                    ex_date,
+                    rec_date , 
+                    pay_date ,
+                    remarks) """
+                    print (date_ca ,ca_name, security_id_type,ex_date,rec_date , pay_date ,remarks)
                 elif ca_name=='stock split':
                     fv = get_ss_data(text_string)
-                    sql = """INSERT INTO dashboard_dashboard VALUES 
-                    (date_ca VARCHAR(11), 
-                    ca_name VARCHAR(25), 
-                    ex_date VARCHAR(10), 
-                    rec_date VARCHAR(10), 
-                    pay_date VARCHAR(10),
-                    remarks VARCHAR(30)) """
+                    remarks = fv
+                    sql = """INSERT INTO dashboard_dashboard (date_ca , 
+                    ca_name , 
+                    security_id_type,
+                    ex_date , 
+                    rec_date , 
+                    pay_date ,
+                    remarks )
+                    VALUES
+                    (date_ca , 
+                    ca_name , 
+                    security_id_type,
+                    ex_date , 
+                    rec_date , 
+                    pay_date ,
+                    remarks ) """
                 else:       
-                    sql = """INSERT INTO dashboard_dashboard VALUES 
-                    (date_ca VARCHAR(10), 
-                    ca_name VARCHAR(25), 
-                    ex_date VARCHAR(10), 
-                    rec_date VARCHAR(10), 
-                    pay_date VARCHAR(10),
-                    remarks VARCHAR(30)) """
+                    sql = """INSERT INTO dashboard_dashboard (date_ca , 
+                    ca_name , 
+                    security_id_type,
+                    ex_date , 
+                    rec_date , 
+                    pay_date ,
+                    remarks)
+                    VALUES 
+                    (date_ca , 
+                    ca_name , 
+                    security_id_type,
+                    ex_date , 
+                    rec_date , 
+                    pay_date ,
+                    remarks) """
+                
                 cursor.execute(sql)
+                
             # except:
             #     # cursor.execute("UPDATE crawler_2 set url_error=1 WHERE url_of_file=%s",(link,))
             #     print("couldn't download from "+link)
