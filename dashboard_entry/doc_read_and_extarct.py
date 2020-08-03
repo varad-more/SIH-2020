@@ -14,6 +14,7 @@ import pandas as pd
 import re
 import docx
 import mysql.connector
+import mysql
 import ssl
 import requests
 
@@ -28,9 +29,10 @@ def read_pdf(pdf):
     
     try:
         file1.write(raw['content'])
+        # print(raw['content'])
     except:
         flag = 0
-    if flag==0:
+    if flag==1:
         file1.close()
         file2 = open("output_of_pdf_read.txt","r") 
         text_string = file2.read()
@@ -53,7 +55,7 @@ def read_pdf_by_ocr(pdf):
     file1 = open(outfile, "a") #check append mode
     for i in range(1, filelimit + 1): 
         filename = "page_"+str(i)+".jpg"
-        text = str(((pytesseract.image_to_string(Image.open(filename)))))
+        text = str((pytesseract.image_to_string(Image.open(filename))))
         text = text.replace('-\n', '')
         file1.write(text)
     file1.close()
@@ -218,7 +220,7 @@ def get_other_dates(pdf,text_string):
 def get_div_data(text_string):
     pattern = re.compile(r"( z l | Z l | zl | Zl )")
     text_string = pattern.sub(r" rs 1 ", text_string)
-    print(text_string)
+    # print(text_string)
 
     # face value per share extraction
     fv = ""
@@ -283,6 +285,9 @@ def pdf_load(conn,cursor):
                 text_string = read_pdf("data.pdf")
                 
                 print("------------------------------")
+                # print(text_string)
+                # print("------------------------------")
+                
                 
                 sql = "UPDATE dashboard_file_download SET ca_extracted=0 WHERE url_of_file=%s"
                 cursor.execute(sql ,(link,))
