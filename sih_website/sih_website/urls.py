@@ -31,6 +31,7 @@ urlpatterns = [
     path ('security-master',sec_master, name ='secmaster'),
     path ('dashboard',dash_web , name ='dash_web'),
     path ('pdf_downloader', pdf_downloader, name= 'pdf_downloader'),
+    path ('trust_ranking', trust_ranking, name= 'trust_ranking'),
     path ('login',auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path ('logout',auth_views.LogoutView.as_view(template_name='logout.html'), name='logout'),
     path ('api/', include(router.urls)),

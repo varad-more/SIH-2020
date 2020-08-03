@@ -3,8 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import UserRegistrationForm
 from django.contrib.auth.decorators import login_required,permission_required
-from dashboard.models import *
-# from dashboard.models import file_download,corp_action_data,articles,company, dashboard,errors, historic_data, links, pages, securities,links 
+from dashboard.models import file_download,corp_action_data,articles,company, dashboard,errors, historic_data, links, pages, securities,links, webs 
 import mysql.connector 
 from django.db.models import Count 
 
@@ -46,14 +45,14 @@ def report(request):
     content = {
         'data':data
     }
-    return render (request, 'new.html',content)
+    return render (request, 'report.html',content)
 
 @login_required
 def dash_web(request):
     data = corp_action_data.objects.values('ca_type').order_by().annotate(ann=Count('ca_type'))
     for d in data:
         print(d)
-
+    
     
     content = {
         'data':data
@@ -72,7 +71,7 @@ def rep_generatoion(request):
 
 @login_required
 def sec_master(request):
-    data = securities_master.objects.all()[:100]
+    data = corp_action_data.objects.all()[:100]
     content = {
         'data':data
     }
@@ -172,6 +171,13 @@ def pdf_downloader(request):
     # pass
 
 
+@login_required
+def trust_ranking(request):
+    data = webs.objects.all()[:]
+    content = {
+        'data':data
+    }
+    return render (request, 'trust_ranking.html', content) 
 
 
 

@@ -78,8 +78,15 @@ class dashboard(models.Model):
     other = models.CharField(max_length=30)
     exception = models.BooleanField()
     remarks = models.CharField(max_length=30)
-    scrip_code = models.CharField(max_length=30, default=None)
+    link = models.CharField(max_length=255, default=None)
 
+class latest_news(models.Model):
+    headline = models.CharField(max_length=255)
+    source = models.CharField(max_length=255)
+    link = models.CharField(max_length=255)
+    ner_summary = models.CharField(max_length=2000)
+    repetition = models.IntegerField()
+    #map
 
 class errors(models.Model):
     url = models.CharField(max_length=1000)

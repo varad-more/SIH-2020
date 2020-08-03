@@ -12,7 +12,7 @@
 	{% for d in data %}
 
 	<div class="future-ex-cards">
-		<div class="card col-4">
+		<div class="card col-6">
 			<div class="card-header">
 				 Company Name : {{ d.company_name}}
 			</div>
@@ -102,6 +102,6 @@
 {% block scripts %}
 <script>
 	$('.sidebar-menu-item').removeClass('active');
-	$('#future-expected').addClass('active');
+	$('#future').addClass('active');
 </script>
 {% endblock %}
