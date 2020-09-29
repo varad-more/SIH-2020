@@ -3,12 +3,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import UserRegistrationForm
 from django.contrib.auth.decorators import login_required,permission_required
-<<<<<<< HEAD
-from dashboard.models import file_download,corp_action_data,articles,company, securities_master, dashboard,errors, historic_data, links, pages, securities,links, webs, latest_news 
-=======
 # from dashboard.models import file_download,corp_action_data,articles,company, dashboard,errors, historic_data, links, pages, securities,links, webs 
 from dashboard.models import *
->>>>>>> 2cfdbeb5391dc84aadad7d4329733c57535ec556
 import mysql.connector 
 from django.db.models import Count 
 
@@ -89,7 +85,7 @@ def pdf_downloader(request):
     date_end = request.GET['date_end']
     print (Company_Name)
     
-    data_1 = corp_action_data.objects.get(company_name=Company_Name)    
+    data_1 = securities_master.objects.get(company_name=Company_Name)    
     content = {'data':data_1}
     print (data_1.company_name, data_1.ca_type, data_1.data)
 
