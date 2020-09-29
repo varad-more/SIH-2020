@@ -12,16 +12,16 @@ from pdf2image import convert_from_path
 import os
 import pandas as pd
 import re
+import mysql.connector
 
 def read_pdf(pdf):
     raw = parser.from_file(pdf)
-    # print(raw['content'])
     file1 = open("output_of_pdf_read.txt","w")
     try:
         file1.write(raw['content'])
     except:
         print("image pdf problem")
-        read_pdf_by_ocr(pdf)
+        # read_pdf_by_ocr(pdf)
     file1.close()
 
 def read_pdf_by_ocr(pdf): #check append mode
@@ -184,13 +184,13 @@ def get_other_dates():
         sorted_dates = sorted(matches)
         print(sorted_dates) 
     rec_date = str(sorted_dates[0])
-    pay_date = str(sorted_dates[len(sorted_dates-1])
+    pay_date = str(sorted_dates[len(sorted_dates)-1])
     return rec_date, pay_date
         
 def get_div_data(text_string):
     pattern = re.compile(r"( z l | Z l | zl | Zl )")
     text_string = pattern.sub(r" rs 1 ", text_string)
-    print(text_string)
+    # print(text_string)
 
     # face value per share
     fv = ""
@@ -224,19 +224,15 @@ def connect_database():
         conn = mysql.connector.connect(host='database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com',
                                         user='admin',
                                         password='SIH_2020',
-                                        database='corporate_actions')
+                                        database='pythanos_main')
+        cursor = conn.cursor()
         if conn.is_connected():
-            db_Info = conn.get_server_info()
-            print("Connected to MySQL Server version ", db_Info)
-            cursor = conn.cursor()
-            cursor.execute("create database pythanos_main;")
-            # cursor.execute('create database web_server;')
-            cursor.execute("show databases")
+            cursor.execute("show tables")
             res = cursor.fetchall()
             print("Available databases: ", res)
 
-    except Error as e:
-        print("Error while connecting to MySQL", e)
+    except:
+        print("Error while connecting to MySQL")
 
     return(conn,cursor)
 
@@ -245,16 +241,20 @@ if __name__ == "__main__":
     start_time = time.time()
     conn,cursor = connect_database()
     print(conn)
-    pdf_list = glob.glob("../next_gen/next_gen/full/*.pdf")
+    sql = "SELECT file_url FROM crawler_2"
+    cursor.execute(sql)
+    pdf_list = cursor.fetchall()
     for pdf in pdf_list:
+        
         read_pdf(pdf)
         text_string = read_text_file()
         scrip_code = get_scrip(text_string)
-        trading_symbol = get_trading_symbol(text_string)
+        # trading_symbol = get_trading_symbol(text_string)
 
         date = get_date(pdf)
         # rec_date, pay_date = get_other_dates()
         ca_name = get_ca_type_1(text_string)
+        '''
         if ca_name=='dividend':
             perc,fv = get_div_data(text_string)
             sql = """CREATE TABLE IF NOT EXISTS dashboard 
@@ -262,14 +262,14 @@ if __name__ == "__main__":
                     date VARCHAR(10), 
                     perc VARCHAR(10), 
                     fv VARCHAR(25))
-                    """"
+                    """
         elif ca_name=='bonus':
             ratio = get_bon_data(text_string)
-            sql = """CREATE TABLE IF NOT EXISTS dashboard 
+            sql = """INSERT INTO dashboard_dashboard
                     (ca_name VARCHAR(20) NOT NULL, 
                     date VARCHAR(10), 
                     ratio VARCHAR(10))
-                    """"
+                    """
         elif ca_name=='stock split':
             fv,qty = get_ss_data(text_string)
 
@@ -279,6 +279,16 @@ if __name__ == "__main__":
         else:       
             sql = "CREATE TABLE IF NOT EXISTS dashboard (ca_name VARCHAR(20) NOT NULL, date VARCHAR(10), rec_date VARCHAR(10), pay_date VARCHAR(10)"
         cursor.execute(sql)
+        '''
+        if ca_name=='dividend':
+            perc,fv = get_div_data(text_string)
+            print("- %s\t%s\t%s\t%s\t%s",date,ca_name,scrip_code,perc,fv) #sql query will come here
+            # print(fv)
+        if ca_name=='stock split':
+            fv = get_ss_data(text_string)
+            print("- ",date , "\t", ca_name, "\t", scrip_code, "\t", fv)
+        else:    
+            print("- ",date , "\t", ca_name, "\t", scrip_code, "") 
 
     print("main time = ", time.time() - start_time)
         
