@@ -85,7 +85,7 @@ def pdf_downloader(request):
     date_end = request.GET['date_end']
     print (Company_Name)
     
-    data_1 = corp_action_data.objects.get(company_name=Company_Name)    
+    data_1 = securities_master.objects.get(company_name=Company_Name)    
     content = {'data':data_1}
     print (data_1.company_name, data_1.ca_type, data_1.data)
 
@@ -179,6 +179,15 @@ def trust_ranking(request):
     }
     return render (request, 'trust_ranking.html', content) 
 
+
+
+@login_required
+def conflict_manager(request):
+    data = latest_news.objects.all()[:]
+    content = {     
+        'data':data
+    }
+    return render (request, 'conflict_manager.html', content) 
 
 
 def register(request):

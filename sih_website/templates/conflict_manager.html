@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+    <div class="ca-cont">
+    <h1> Conflicting Corporate Actions </h1 >
+        <div class="table-card">
+            <table id="conflicting-corporate-actions" class= "table"  style ="height:700px">
+                {% for d in data %}
+                <tr>
+                    <td> {{ d.isin }} </td>
+                    <td> {{ d.security_code }} </td>
+                    <td> {{ d.trading_symbol}}</td>
+                    <td> {{ d.security_name }}</td>
+                    <td> {{ d.status }}</td>   
+                    <td> {{ d.security_group }}</td>   
+                    <td> {{ d.face_value }}</td>   
+                    <td> {{ d.industry }}</td>    
+                    <td> {{ d.instrument }}</td>   
+                    <td> {{ d.nse_listed }}</td>   
+                    <td> {{ d.bse_listed }}</td>   
+                    <td> {{ d.trading_location }}</td>   
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    {% endblock %}
+
+    
+    
+    {% block scripts %}
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+                $('#latest-corporate-actions').DataTable({
+                    columns: [
+                        { title: "ISIN" },
+                        { title: "Security Code" },
+                        { title: "Company Name" },
+                        { title: "Status" },
+                        { title: "Security Group" },
+                        { title: "Face Value"},
+                        { title: "Industry"},
+                        { title: "Instrument"},
+                        { title: "NSE"},
+                        { title: "BSE"},
+                        { title: "Country"},
+  
+                    ]
+                });
+            });
+
+            $('.sidebar-menu-item').removeClass('active');
+	        $('#home').addClass('active');  
+    </script>
+    {% endblock %}
+    
+    

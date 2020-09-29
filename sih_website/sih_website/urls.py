@@ -33,6 +33,7 @@ urlpatterns = [
     path ('index',index , name ='index'),
     # path ('index',index , name ='index'),
     path ('pdf_downloader', pdf_downloader, name= 'pdf_downloader'),
+    path ('conflict_manager', conflict_manager, name= 'conflict_manager'),
     path ('trust_ranking', trust_ranking, name= 'trust_ranking'),
     path ('login',auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path ('logout',auth_views.LogoutView.as_view(template_name='logout.html'), name='logout'),

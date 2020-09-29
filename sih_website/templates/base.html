@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>CA Tracker</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -39,7 +39,17 @@
                     </div>
                 </a>
 
+
+                <a href="index">
+                    <div id="home" class="sidebar-menu-item">
+                        <i class="sidebar-menu-icon fa fa-file-text"></i>
+                        <div class="sidebar-menu-option">
+                            Corporate Actions
+                        </div>
+                    </div>
+                </a>
                 
+
                 <a href="trust_ranking">
                     <div id="TrustedIndex" class="sidebar-menu-item">
                         <i class="sidebar-menu-icon fa fa-file-text"></i>
@@ -59,30 +69,40 @@
 
                 <a href="security-master">
                     <div id="SecurityMaster" class="sidebar-menu-item">
-                        <i class="sidebar-menu-icon fa fa-file-text"></i>
+                        <i class="sidebar-menu-icon fa fa-archive"></i>
                         <div class="sidebar-menu-option">
                             Security Master
                         </div>
                     </div>
                 </a>
 
-                <a href="index">
-                    <div id="home" class="sidebar-menu-item">
+<!-- 
+                <a href="trust_ranking">
+                    <div id="Trusted Index" class="sidebar-menu-item">
                         <i class="sidebar-menu-icon fa fa-file-text"></i>
                         <div class="sidebar-menu-option">
-                            Corporate Actions
+                            Trusted Index
+                        </div>
+                    </div>
+                </a> -->
+
+                <a href="conflict_manager">
+                    <div id="conflict_manager" class="sidebar-menu-item">
+                        <i class="sidebar-menu-icon fa fa-file-text"></i>
+                        <div class="sidebar-menu-option">
+                            Conflict Manager
                         </div>
                     </div>
                 </a>
+                
                 <a href="report_gen">
                     <div id="report" class="sidebar-menu-item">
-                        <i class="sidebar-menu-icon fa fa-file-text"></i>
+                        <i class="sidebar-menu-icon fa fa-line-chart"></i>
                         <div class="sidebar-menu-option">
                             Report Generation
-                        </div>
-                    </div>
+                </div>
+                </div>
                 </a>
-
                 <a href="#">
                     <div id="archive" class="sidebar-menu-item">
                         <i class="sidebar-menu-icon fa fa-archive"></i>
