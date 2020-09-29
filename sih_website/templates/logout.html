@@ -1,0 +1,12 @@
+{% extends 'base.html' %}   
+{% block content %}
+<div class="login-container">
+    <div class="login-form-wrapper">
+        <h2 > You are logged out</h2>
+        <a href="{% url 'login' %}" > Log in Again</a>         
+    </div>
+    <div class="alt-opt">
+        Need an account ? <a class="ml-2" href="{% url 'register' %}">Register </a>
+    </div>
+</div>
+{% endblock %}

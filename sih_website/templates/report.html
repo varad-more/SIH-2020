@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="future-cont card-deck">
+	<div class="future-ex-header">
+		<div class="future-ex-heading">Corporate Actions</div>
+		<div class="filter-box">
+			<input type="text" id="filter-ca" name="filter-ca" placeholder="Filter">
+			<i class="fa fa-filter mr-1"></i>
+		</div>
+	</div>
+	{% for d in data %}
+
+	<div class="future-ex-cards">
+		<div class="card col-6">
+			<div class="card-header">
+				 Company Name : {{ d.company_name}}
+			</div>
+			<div class="card-body">
+				<div class="info">
+					<div class="info-header">
+						Date: 
+					</div>
+					<div class="info-value">
+						{{ d.publish_date }}
+					</div>
+				</div>
+				<div class="info">
+					<div class="info-header">
+						Ca_name: 
+					</div>
+					<div class="info-value">
+						{{ d.ca_name }}
+					</div>
+				</div>
+			</div>
+			<a>
+				<div class="card-footer" >
+					<a href="{{ d.url }}" style="color:aqua">Open Link</a> 
+				</div>
+			</a>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock %}
+
+<!-- <div class="position-relative container border overflow-auto" style="width:750px;height": 700px;">
+	<h2 style="color:#80c72f;"> Corporate Actions </h2>
+
+	{% for d in data %}
+	<div class="card" style="width: 750px;">
+		<div class="card-header border">
+			Company : {{ d.company_name }}
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">CA TYPE: {{ d.ca_type}} </h5>
+			<p class="card-text">Detailas of the CA: {{ d.data }} </p>
+			<a href="#" class="btn btn-primary">Open pdf</a>
+		</div>
+		{% endfor %}
+	</div>
+	<div class="card-header border">
+            Company 2
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">CA NAME</h5>
+            <p class="card-text">Detailas of the CA</p>
+            <a href="#" class="btn btn-primary">Open pdf</a>
+          </div>
+          <div class="card-header border">
+            Company 3
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">CA NAME</h5>
+            <p class="card-text">Detailas of the CA</p>
+            <a href="#" class="btn btn-primary">Open pdf</a>
+          </div>
+          <div class="card-header border">
+            Company xyz
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">CA NAME</h5>
+            <p class="card-text">Detailas of the CA</p>
+            <a href="#" class="btn btn-primary">Open pdf</a>
+          </div>
+          <div class="card-header border">
+            Company abc
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">CA NAME</h5>
+            <p class="card-text">Detailas of the CA</p>
+            <a href="#" class="btn btn-primary">Open pdf</a>
+          </div>
+      </div>
+      </div> -->
+
+<!-- </div>  -->
+
+
+{% block scripts %}
+<script>
+	$('.sidebar-menu-item').removeClass('active');
+	$('#future').addClass('active');
+</script>
+{% endblock %}

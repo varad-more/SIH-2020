@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+    
+    <div class="ca-cont">
+    <h1> News scrapped </h1 >
+        <div class="table-card">
+            <table id="latest-corporate-actions" class= "table"  style ="height:700px">
+                {% for d in data %}
+                <tr>
+                    <td> {{ d.company_name }} </td>
+                    <td> {{ d.publish_date }} </td>
+                    <td> {{ d.ca_name}}</td>
+                    <td> <a href=  "{{ d.url }}"> Source</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div id="pie_chart">    
+    </div>
+    {% endblock %}
+
+    
+    
+    {% block scripts %}
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            
+                $('#latest-corporate-actions').DataTable({
+                    columns: [
+                        { title: "Company Name" },
+                        { title: "Date" },
+                        { title: "Corporate action" },
+                        { title: "Source" },
+                    ]
+                });
+            });
+            $('.sidebar-menu-item').removeClass('active');
+	        $('#future').addClass('active');
+    </script>
+    {% endblock %}

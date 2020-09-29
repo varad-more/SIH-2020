@@ -1,0 +1,16 @@
+1. Django 3.0
+pip install django
+
+2. crispy-djagno-forms 
+pip install django-crispy-forms
+
+3. mysql client  
+pip install mysqlclient
+
+4. Report Lab
+
+5. django
+crispy-djagno-forms
+
+6. django-rest framework
+pip install djangorestframework
