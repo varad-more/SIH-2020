@@ -3,7 +3,6 @@
 # Script to collect and find similar articles from the database and rank the 
 # sites providing them by the order of reliability using fuzzy logic
 #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
 import tensorflow_hub as hub
 import numpy as np
 import tensorflow
@@ -44,6 +43,8 @@ class Article_matcher():
         self.cooperate_action_code,self.cooperate_action_list=self.initialize_CA_vars()
         self.embed=self.load_universal_encoder(module_url)
         self.connect_database()
+        self.connect_websever()
+        self.company_spacy = spacy.load("en_core_web_lg")
         
     def __del__(self):
         self.mycursor.close()
@@ -53,85 +54,53 @@ class Article_matcher():
 # Initializing the list of CA codes and event types in a dictionary format
 #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
     def initialize_CA_vars(self):
-        cooperate_action_code=["ANN","ARR" ,"ASSM" ,"BB" 	,"BKRP" ,"BON" ,"BR" ,
+        cooperate_action_code=["ANN","ARR" ,"ASSM"	,"BKRP" ,"BR" ,
                                 "CAPRD" 	,"AGM" 	,"CONSD" 	,"CONV" 	,"CTX" 	,
-                                "CURRD","DIST" 	,"DIV" 	, "DMRGR ","DRIP" ,"DVST" ,"ENT" 	,"FRANK" ,"FTT" 	,"FYCHG" ,                           
+                                "CURRD","DIST" 	,"DIV" 	, "DMRGR ","DRIP" ,"DVST" ,                           
                                 "INCHG" ,"ISCHG" ,"LAWST","LCC" ,"LIQ" 	,"LSTAT" ,"LTCHG" ,"MKCHG" ,"MRGR" 	,"NLIST" ,
-                                "ODDLT","PID" ,"PO" ,"PRCHG" ,"PRF" ,"PVRD" 	,"RCAP"  ,"REDEM" ,	"RTS" ,"SCCHG" ,"SCSWP" ,
-                                "SD" ,"SECRC" ,"TKOVR","IPO"]
+                                "ODDLT" ,"PRCHG" ,"PRF" ,"PVRD","RCAP"  ,"REDEM" ,	"RTS" ,"SCCHG" ,"SCSWP" ,
+                                "SECRC" ,"TKOVR"]
 
-        cooperate_action_list=[ "Acquisition","Announcement","Arrangement","Assimilation","Buy Back","Bankruptcy","Bonus","Bonus Issue","Bonus Rights",
-                                    "Cash Dividend","Class Action","Conversion of convertible bonds","Coupon Payment","Delisting","Dutch Auction",
-                                    "Early Redemption","Final Redemption","General Announcement","Initial Public Offering","Lottery",
-                                    "Name Change","Odd lot Tender","Optional Dividend","Optional Put","Other Event","Partial Redemption",
-                                    "Par Value Change","Reverse Stock Split","Rights Auction","Rights Issue","Scheme of Arrangement",
+        cooperate_action_list=["Acquisition","Bonus Issue","Bonus Rights","Cash Dividend",
+                                    "Final Redemption","General Announcement",
+                                    "Name Change","Optional Dividend","Partial Redemption",
+                                    "Par Value Change","Reverse Stock Split","Rights Auction","Rights Issue",
                                     "Scrip Dividend","Scrip Issue","Spin-Off","Spin Off","Stock Dividend","Subscription Offer","Tender Offer",
                                     "Warrant Exercise","Warrant Expiry","Warrant Issue","annual general meeting",
                                         "Capital Reduction",
                                         "Company Meeting","board meeting"
-                                        "Consolidation" ,"stock split",
-                                        "Conversion",
-                                        "Certificate Exchange",
-                                        "Currency Redenomination",
+                                        "Consolidation" ,"stock split","stock-split",
                                         "Distribution",
                                         "Dividend",
                                         "Demerger",
                                         "Dividend Reinvestment Plan",
                                         "Divestment",
                                         "Entitlements",
-                                        "Franking",
-                                        "Financial Transaction Tax",
-                                        "Financial Year Change",
-                                        "International Code Change",
-                                        "Incorporation Change",
                                         "Issuer Name Change",
                                         "Lawsuit",
-                                        "Local Code Change",
-                                        "Liquidation",
                                         "Listing Status Change",
                                         "Lot Change",
-                                        "Market Segment Change",
                                         "Merger",
                                         "New Listing",
-                                        "Odd Lot Offer",
-                                        "Property Income Distribution",
-                                        "Purchase Offer",
-                                        "Primary Exchange Change",
                                         "Preferential Offer",
                                         "Parvalue Redenomination",
                                         "Return of Capital",
                                         "Preference Redemption",
-                                        "Rights",
                                         "Security Description Change",
-                                        "Security Swap",
                                         "Subdivision",
-                                        "Security Reclassification",
-                                        "Takeover","Equity"]
+                                        "Takeover","Equity","Debt"]
 
         return cooperate_action_code,cooperate_action_list
 
 #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # Loading and executing the universal Google encoder script for NLP
 #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
-
-
     def load_universal_encoder(self,module_url):
         print("--------------------------------loading_model------------------------------------------")
         embed = hub.Module(module_url)
         print("model loaded")
         return embed
-
-
-    def load_database(self,database_list=["financialexpress","moneycontrol","yahoo","reuters","livemint","marketwatch","tenderfoot"]):
-        con = sqlite3.connect("/home/suraj/database_sih/"+database_list[0]+".sqlite")
-        articles_database=pd.read_sql_query("SELECT * from Articles", con)
-        for database in database_list[1:]:
-            con = sqlite3.connect("/home/suraj/database_sih/"+database+".sqlite")
-            temp = pd.read_sql_query("SELECT * from Articles", con)
-            articles_database=articles_database.append(temp)
-        
-        return articles_database
-
+    
 #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # Connecting to RDS database 'pythanos_main'
 #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -143,16 +112,34 @@ class Article_matcher():
                                          password='SIH_2020')
 
         self.mycursor = self.mydb.cursor()
-     
+    
+    def connect_websever(self):
+        self.webserver_db = mysql.connector.connect(host='database-1.chm9rhozwggi.us-east-1.rds.amazonaws.com',
+                                         database='web_server',
+                                         user='admin',
+                                         password='SIH_2020')
+
+        self.webserver_mycursor = self.webserver_db.cursor()
 #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # Extract content, url, ranks & company name associated with the articles
 #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>        
     def get_articles(self):
         #self.mycursor.execute("SELECT id,url,content,ranks FROM articles where news_checked is NULL and content is not NULL")
-        self.mycursor.execute("SELECT id,url,content,ranks,company_name FROM articles where news_checked is NULL and content is not NULL")
-        articles_database = pd.DataFrame(self.mycursor.fetchall(),columns=["id","url","content","ranks","company_name"])
+        self.mycursor.execute("SELECT id,url,content,ranks,company_keywords,keywords FROM articles where news_checked is NULL and content is not NULL limit 10")
+        articles_database = pd.DataFrame(self.mycursor.fetchall(),columns=["id","url","content","ranks","company_name","keywords"])
         self.mycursor.execute("UPDATE articles set news_checked=0 where news_checked is NULL")
         self.mydb.commit()
+        #self.webserver_mycursor.execute("SELECT link FROM dashboard_latest_news limit 100")
+      #  print(self.webserver_mycursor.fetchall)
+        for i in articles_database["url"].tolist():
+            print(i)
+            self.webserver_mycursor.execute("UPDATE dashboard_latest_news set link=%s,repetition=%s",(i,"0"))
+            print("-")
+        print(articles_database)
+        self.webserver_db.commit()
+        time.sleep(1)
+        self.webserver_mycursor.execute("SELECT link FROM dashboard_latest_news")
+        print(self.webserver_mycursor.fetchall())
         
         return articles_database
 #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -161,12 +148,16 @@ class Article_matcher():
 
     def update_articles_table(self,articles_database):
         print("updating database")
-        for action,url,matches in zip(articles_database["action"].tolist(),articles_database["url"].tolist(),articles_database["matches"].tolist()):
-         #   print("updating database")
-            a=(matches,action,url)
-            self.mycursor.execute("UPDATE articles set news_checked=%s,ca_name=%s WHERE news_checked=0 and url=%s",a)
+        for company,action,url,matches,rank,keywords in zip(articles_database["company_name"],articles_database["action"].tolist(),articles_database["url"].tolist(),articles_database["matches"].tolist(),articles_database["ranks"].tolist(),articles_database["keywords"].tolist()):
+            #print("updating database")
+            print(type(company),type(action),type(url),type(matches),type(rank),type(keywords))
+            a=(" ".join(company),matches,action,rank,url)
+            print(a)
+            self.mycursor.execute("UPDATE articles set company_keywords=%s,news_checked=%s,ca_name=%s,ranks=%s WHERE news_checked=0 and url=%s",a)
+            self.webserver_mycursor.execute("UPDATE dashboard_latest_news set repetition=%s,headline=%s WHERE link=%s",(matches,keywords,url))
         #self.mycursor.execute("UPDATE crawler_2 set ca_checked=1 where ca_checked=0")
         self.mydb.commit()
+        self.webserver_db.commit()
         print("database updated")
 
 #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -189,6 +180,11 @@ class Article_matcher():
         
         return articles_database
 
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# Coperate actions lists and codes taken as dataframe
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    
+    
     def cooperate_actions_lists_and_code(self,cooperate_action_list,cooperate_action_code):
         
         cooperate_action_list=[x.lower() for x in cooperate_action_list]
@@ -201,21 +197,30 @@ class Article_matcher():
         
         return cooperate_action,cooperate_action_code
 
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# Get company name
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    
+    def get_company(self, keywords):
+            tagged_text = self.company_spacy(keywords)
+            extracted_entities = [(i.text, i.label_) for i in tagged_text.ents]
+            company = []
+            for j in extracted_entities:
+                if j[1]=="ORG" and j[0].lower()!="coronavirus" and j[0].lower()!="isis" and j[0].lower()!="covid" and j[0].lower()!="gold" and j[0].lower()!="goa" :
+                    company.append(j[0])
+            if company==[]:
+                return ""
+            return company
+
 
     def check_company_names(self,articles_database):
-        #articles_database["company"]=""
-        file_name="company_names.xlsx"
-        sheet="Sheet1"
-        company_df = pd.read_excel(io=file_name, sheet_name=sheet,columns=["company"])
-        articles_database.loc[articles_database["company_name"]=="NULL",["company_name"]]=""
-
-        for company in company_df["company"]:
-            articles_database.loc[articles_database["content"].str.contains(company, case=False),["company_name"]]+=","+company
-        #articles_database["company_name"] = articles_database["company_name"].str[1:]
+        articles_database["company_name"]=""
+        articles_database["company_name"]=articles_database["keywords"].apply(self.get_company)
         articles_database=articles_database.loc[articles_database["company_name"].str.len()>0]
-        articles_database=articles_database.loc[articles_database["action"].str.len()>0]
+        #articles_database=articles_database.loc[articles_database["action"].str.len()>0]
         print("articles database updated")
-        print(articles_database)
+        print(articles_database["company_name"])
 
         return articles_database
 
@@ -239,39 +244,47 @@ class Article_matcher():
                     articles_database.loc[num,['action']]+=","+i
         
         articles_database=articles_database.loc[articles_database["present"]]
-        articles_database=articles_database.loc[~(articles_database["company_name"]=="NULL")]
-        articles_database=articles_database.loc[articles_database["action"].str.len()>0]
-        #articles_database["company_name"] = articles_database["company_name"].str[1:]
+        print(articles_database)
+        print("---")
+        print(articles_database)
         return articles_database
 
-    def get_dividend(self,content):
-        p = re.compile(r'\dfv ', re.IGNORECASE)
-
-    def hasNumbers(self,inputString):
-        return any(char.isdigit() for char in inputString)
-
-
+    
     def get_CA_info(self,articles_database):
         print("H----------------------------------------------------------------------------------------------------------H")
         articles_database=articles_database.loc[articles_database["present"]]
-        nlp = spacy.load("en_core_web_lg")       
+        nlp = spacy.load("ca_extractor_dividend")
         print(articles_database)
-        for ca,content in zip(articles_database["action"],articles_database["content"]):
-            print(ca)
-            #print(content)
-            tagged_text = nlp(content)
-            extractedentities = [(i.text, i.label_) if i.label_=="DATE" else ("","") for i in tagged_text.ents]
-            #print(content)
-            z=[]
-            for i,j in extractedentities:
-                if j=="":
-                    continue
-                elif(self.hasNumbers(i)):
-                    z.append(content.find(i))
-            print(z)
-            #print(extractedentities)
-            print("---------------------------------------------------------------------")
-            
+        articles_database.action = articles_database.action.str[1:]
+        for ca,url,content in zip(articles_database["action"],articles_database["url"],articles_database["content"]):
+            if "dividend" in ca:
+                doc2 = nlp(content)   
+                z=1
+                x=1
+                ca_type=""
+                rec_date=""
+                for ent in doc2.ents:
+                    if ent.label_=="ca_type" and z:
+                        ca_type=" ca type: "+ent.text
+                        z=0
+                    if ent.label_=="rec_date" and x:
+                        rec_date=" rec date :"+ent.text
+                        x=0
+                    if x==0 and z==0:        
+                        
+                        self.webserver_mycursor.execute("UPDATE dashboard_latest_news set ner_summary=%s WHERE link=%s",(ca_type+rec_date,url))
+                        print(ca_type+rec_date,url)
+                        break
+            else :
+                doc2=self.company_spacy(content)
+                for ent in doc2.ents:
+                    if ent.label_=="DATE":
+                        print("---")
+                        self.webserver_mycursor.execute("UPDATE dashboard_latest_news set ner_summary=%s WHERE link=%s",(ca+" rec_date:"+ent.text,url))
+                        print(ca+" rec_date:"+ent.text,url)
+                        break
+                        
+        self.webserver_db.commit()
         
     def company_name_security_master(self):
         self.mycursor.execute("SELECT name_of_company FROM security_master")
@@ -293,8 +306,8 @@ class Article_matcher():
             message = strip_multiple_whitespaces(message)
             message=strip_numeric(message)
             stop_words_removed.append(remove_stopwords(message))
+        
         return links,stop_words_removed,CA_names
-
 
 
     def run_universal_encoder(self,stop_words_removed):
@@ -326,7 +339,8 @@ class Article_matcher():
         for i in range(len(stop_words_removed)):
                 if len(np.where(corr[i]>threshold)[0].tolist())>1:
                     for n,m in zip(np.where(corr[i]>threshold)[0].tolist(),itemgetter(*np.where(corr[i]>threshold)[0].tolist())(stop_words_removed)):
-                        articles_database.loc[articles_database.url.str.contains(links[n],case=False),"matches"]=len(np.where(corr[i]>threshold)[0].tolist()) 
+                        articles_database.loc[articles_database.url.str.contains(links[n],case=False),"matches"]=len(np.where(corr[i]>threshold)[0].tolist())
+                        articles_database.loc[articles_database.url.str.contains(links[n],case=False),"ranks"]=len(np.where(corr[i]>threshold)[0].tolist())*0.6+0.4*articles_database.loc[articles_database.url.str.contains(links[n],case=False),"ranks"]
                         #print(articles_database.loc[np.where(corr[i]>threshold)[0].tolist(),"content"])
                         #j
                 else:
@@ -334,8 +348,8 @@ class Article_matcher():
                     articles_database.loc[articles_database.url.str.contains(links[n],case=False),"matches"]=1                    
         print("----------------")
         articles_database.action = articles_database.action.str[1:]
-        print(articles_database.loc[articles_database['matches'] > 10,["content","company_name","matches","action"]])
-        temp=articles_database.where(articles_database['matches'] > 1).dropna()
+        print(articles_database.loc[articles_database['matches'] > 1,["content","company_name","matches","action"]])
+        temp=articles_database.where(articles_database['matches'] < 1).dropna()
         for content,action,matches in zip(temp["content"],temp["action"],temp["matches"]):
             #print(type(i))
             #print(i[0])
@@ -373,11 +387,9 @@ class Article_matcher():
                     file1.write("--------------------------------------------------------")
                     
                 file1.write("##########################################----Testing New article-----####################################################"+"\n")
-        
-
     
     def get_pdf_links(self):
-        self.mycursor.execute("SELECT file_url FROM crawler_2 where url_error=0 and ca_checked is NULL limit 100")
+        self.mycursor.execute("SELECT file_url FROM crawler_2 where url_error=0 and ca_checked is NULL limit 10")
         pdf_links = pd.DataFrame(self.mycursor.fetchall())
         #self.mydb.commit()
         if len(pdf_links)==0:
@@ -420,7 +432,7 @@ class Article_matcher():
             try:
             #pdf= urllib2.urlopen(link,context=context)
                 r = requests.get(link,verify=False,stream=True,timeout=(5,20))
-                with open('data.pdf', 'wb') as fd:
+                with open(link+'.pdf', 'wb') as fd:
                     for chunk in r.iter_content(2000):
                         fd.write(chunk)
                 print(link)
@@ -445,14 +457,15 @@ class Article_matcher():
         articles_database=self.clean_database(articles_database)
         cooperate_action_code,cooperate_action_list=self.initialize_CA_vars()
         cooperate_action,cooperate_action_code=self.cooperate_actions_lists_and_code(self.cooperate_action_list,self.cooperate_action_code)
+        articles_database=self.check_company_names(articles_database)
         articles_database=self.find_actions(articles_database,cooperate_action,cooperate_action_code)
-        #articles_database=self.check_company_names(articles_database)
-        #self.get_CA_info(articles_database)
+        self.get_CA_info(articles_database)
+        print(articles_database)
         links,stop_words_removed,CA_names=self.remove_stopwords_from_database(articles_database)
         corr=self.run_universal_encoder(stop_words_removed)
-        articles_database=self.check_matching_count_of_articles(articles_database,corr,stop_words_removed,links,threshold=0.93)
+        articles_database=self.check_matching_count_of_articles(articles_database,corr,stop_words_removed,links,threshold=0.95)
         self.update_articles_table(articles_database)
-        self.write_output_file(corr,stop_words_removed,links,CA_names)
+        #self.write_output_file(corr,stop_words_removed,links,CA_names)
         
         return articles_database
     
@@ -467,7 +480,7 @@ class Article_matcher():
         
     def reset_database(self):
         self.mycursor.execute("UPDATE articles set news_checked=NULL")
-        #self.mycursor.execute("UPDATE crawler_2 set ca_checked=NULL")
+        self.mycursor.execute("UPDATE crawler_2 set ca_checked=NULL")
         self.mydb.commit()
 
     def run_pdf_data_extraction(self):
@@ -526,22 +539,20 @@ class Article_matcher():
 if __name__ == "__main__":
     start=time.time()
     while True:
-        try:
-            matcher=Article_matcher("https://tfhub.dev/google/universal-sentence-encoder-large/4")
+       # try:
+        #    matcher=Article_matcher("https://tfhub.dev/google/universal-sentence-encoder/4")
+            matcher=Article_matcher("https://tfhub.dev/google/universal-sentence-encoder-large/3")
             #matcher=Article_matcher("https://tfhub.dev/google/universal-sentence-encoder/1?tf-hub-format=compressed")
             break
-        except :
-            time.sleep(1)
-            continue
+        #except :
+        #    time.sleep(1)
+         #   continue
     print("database_connected")   
     while True:
         #matcher.company_name_security_master()
-        #j
-        matcher.run_universal_encoder([])
-        
         matcher.reset_database()
         articles_database=matcher.run_article_matching()
-        #pdf_data=matcher.run_pdf_data_extraction()
+    #    pdf_data=matcher.run_pdf_data_extraction()
         print(time.time()-start)
         start=time.time()
     
