@@ -1,6 +1,8 @@
 # Crawler I
 
-<<<<<<< HEAD
+
+This README would normally document whatever steps are necessary to get your application up and running.
+=======
 ## Deadpan:
 
 - doesn't load any server unnecessarily, by intelligently scraping over time
@@ -20,6 +22,3 @@ $ scrapy crawl spider1
 ```
 
 it will download the files in the download folder inside next_gen folder 
-
-
->>>>>>> Prathamesh
