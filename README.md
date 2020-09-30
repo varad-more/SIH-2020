@@ -5,6 +5,21 @@ This README would normally document whatever steps are necessary to get your app
 =======
 ## Deadpan:
 
+
+### Libraries Used ###
+
+datefinder
+pdfminer
+tika
+spacy
+re
+nltk
+pytesseract
+glob
+pdf2image
+pillow
+
+=======
 - doesn't load any server unnecessarily, by intelligently scraping over time
 - 
 
