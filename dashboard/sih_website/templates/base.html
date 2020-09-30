@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CA Tracker</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</head>
+
+<body>
+           
+    <div class="body-container">
+        {% if user.is_authenticated %}
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-header-img">
+                    <img src="{% static 'images/globe-flat.png' %}">
+                </div>
+                <span>FIS GLOBAL CORPORATE ACTION </span>
+            </div>
+
+            <div class="sidebar-menu">
+                <a href="{% url 'dash_web' %}">
+                    <div id="Dashboard" class="sidebar-menu-item active">
+                        <i class="sidebar-menu-icon fa fa-home"></i>
+                        <div class="sidebar-menu-option">
+                            Dashboard
+                        </div>
+                    </div>
+                </a>
+
+
+                <a href="index">
+                    <div id="home" class="sidebar-menu-item">
+                        <i class="sidebar-menu-icon fa fa-file-text"></i>
+                        <div class="sidebar-menu-option">
+                            Corporate Actions
+                        </div>
+                    </div>
+                </a>
+                
+
+                <a href="trust_ranking">
+                    <div id="TrustedIndex" class="sidebar-menu-item">
+                        <i class="sidebar-menu-icon fa fa-file-text"></i>
+                        <div class="sidebar-menu-option">
+                            Trusted Index
+                        </div>
+                    </div>
+                </a>
+                <a href="future_expected">
+                    <div id="future" class="sidebar-menu-item">
+                        <i class="sidebar-menu-icon fa fa-line-chart"></i>
+                        <div class="sidebar-menu-option">
+                            Future Expected
+                        </div>
+                    </div>
+                </a>
+
+                <a href="security-master">
+                    <div id="SecurityMaster" class="sidebar-menu-item">
+                        <i class="sidebar-menu-icon fa fa-archive"></i>
+                        <div class="sidebar-menu-option">
+                            Security Master
+                        </div>
+                    </div>
+                </a>
+
+<!-- 
+                <a href="trust_ranking">
+                    <div id="Trusted Index" class="sidebar-menu-item">
+                        <i class="sidebar-menu-icon fa fa-file-text"></i>
+                        <div class="sidebar-menu-option">
+                            Trusted Index
+                        </div>
+                    </div>
+                </a> -->
+
+                <a href="conflict_manager">
+                    <div id="conflict_manager" class="sidebar-menu-item">
+                        <i class="sidebar-menu-icon fa fa-file-text"></i>
+                        <div class="sidebar-menu-option">
+                            Conflict Manager
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="report_gen">
+                    <div id="report" class="sidebar-menu-item">
+                        <i class="sidebar-menu-icon fa fa-line-chart"></i>
+                        <div class="sidebar-menu-option">
+                            Report Generation
+                </div>
+                </div>
+                </a>
+                <a href="#">
+                    <div id="archive" class="sidebar-menu-item">
+                        <i class="sidebar-menu-icon fa fa-archive"></i>
+                        <div class="sidebar-menu-option">
+                            Archive
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            {% if messages %}
+            <div class="sidebar-messages">
+                <div>Messages</div>
+                {% for message in messages %}
+                <div class="">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+            {%endif%}
+            
+
+        </div>
+        {%endif%}
+        <div class="body-content">
+
+            <div class="body-nav">
+                {% if user.is_authenticated %}
+                <div class="user-profile">
+                    <i class="fa fa-user"></i>
+                    <div class="user-name">
+                        {{ user.username }}
+                    </div>
+                </div>
+                <a href="{% url 'logout' %}">
+                    <div class="body-nav-btn">
+                        <i class="fa fa-sign-out"></i>
+                        <div class="body-nav-option">
+                            Log out
+                        </div>
+                    </div>
+                </a>
+            
+                {% endif %}
+            </div>
+
+            <div class="body-main">
+                {% block content %}
+                {% endblock %}
+            </div>
+
+        </div>
+    </div>
+
+    {% block scripts %}
+    <script>
+        $('.sidebar-menu-item').click(function() {
+            $('.sidebar-menu-item').removeClass('active');
+            $(this).addClass('active');
+        })
+    </script>
+    {% endblock %}
+</body>
+
+</html>

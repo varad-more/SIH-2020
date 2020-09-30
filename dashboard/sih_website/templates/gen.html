@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+  
+<div class="report-gen-cont">
+    <div class="report-gen-wrapper">
+        <div class="report-gen-header">Generate Report - Historical CA</div>
+    
+        <div class="report-gen-form-card">
+            <form action='pdf_downloader' method='GET'>
+                <div class="form-group" style="position: relative;" id="company-grp">
+                    <label for="Company_Name">Choose a Company:</label>
+                    <div class="select-company-name">
+                        <input type="text" name="Company_Name" id="Company_Name">
+                        <div class="open-ddl">
+                            <i class="fa fa-angle-down"></i>
+                        </div>
+                    </div>
+
+                    <div class="dd-menu d-none">
+                        {% for d in data %}
+                        <div class="menu-item" id="{{d.company_name | cut:' '}}" data-value="{{d.company_name}}">
+                           {{ d.company_name }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="startDate">Start Date:</label>
+                    <input id="startDate" width="276" name="date_start" />
+                </div>
+
+                <div class="form-group">
+                    <label for="endDate">Start Date:</label>
+                    <input id="endDate" width="276" name="date_end" />
+                </div>
+
+                <button type='submit' class="login-btn submit-btn">Generate Report</button>
+            </form>
+        </div>
+    </div>
+</div>
+   
+
+{% endblock %}
+
+{% block scripts %}
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+<script>
+    // $('#datepicker').datepicker({
+    // uiLibrary: 'bootstrap4'
+    // });
+    var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+    $('#startDate').datepicker({
+        uiLibrary: 'bootstrap4',
+        iconsLibrary: 'fontawesome',
+        minDate: today,
+        maxDate: function () {
+            return $('#endDate').val();
+        }
+    });
+    $('#endDate').datepicker({
+        uiLibrary: 'bootstrap4',
+        iconsLibrary: 'fontawesome',
+        minDate: function () {
+            return $('#startDate').val();
+        }
+    });
+</script>
+<script>
+    function openDropdown() {
+        $('.dd-menu').removeClass('d-none');
+    }
+
+    function closeDropdown() {
+        restoreDropdown();
+        $('.dd-menu').addClass('d-none');
+    }
+
+    function filterDropdown(str) {
+        var dataList = [{% for d in data %}'{{ d.company_name | escapejs }}',{% endfor %}];
+        $('.menu-item').addClass('d-none');
+        dataList.forEach(element => {
+            if(element.toLowerCase().indexOf(str.toLowerCase()) != -1) {
+                var id = '#'+element.replace(' ','');
+                $(id).removeClass('d-none');
+            }
+        });
+    }
+
+    function restoreDropdown() {
+        $('.menu-item').removeClass('d-none');
+    }  
+
+    $('.menu-item').click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var value = $(this).data('value');
+        $('#Company_Name').val(value);
+        closeDropdown();
+    })
+
+    $('#Company_Name').on('focus', function() {
+        openDropdown();
+    });
+
+    /* $('#Company_Name').on('blur', function() {
+        closeDropdown();
+    }) */
+
+    $('#Company_Name').on('keyup', function() {
+        var value = $(this).val();
+        if(value == '')
+            restoreDropdown();
+        else 
+            filterDropdown(value);
+    })
+
+    $('.open-ddl').click(function(e) {
+        if($('.dd-menu').hasClass('d-none')) {
+            $('#Company_Name').focus();
+        } else {
+            closeDropdown();
+        }
+    });
+
+    $('.sidebar-menu-item').removeClass('active');
+	$('#report').addClass('active');
+</script>
+{% endblock %}

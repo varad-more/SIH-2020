@@ -1,31 +1,24 @@
-# README #
+# Crawler I
 
-#WE WILL WIN
 
 This README would normally document whatever steps are necessary to get your application up and running.
+=======
+## Deadpan:
 
-### What is this repository for? ###
+- doesn't load any server unnecessarily, by intelligently scraping over time
+- 
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+Hollow:
 
-### How do I get set up? ###
+- parses data based 
+======
+---
+## To run the cralwer
+open next_gen folder in your terminal 
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+and enter the foll command:
+```
+$ scrapy crawl spider1
+```
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+it will download the files in the download folder inside next_gen folder 
